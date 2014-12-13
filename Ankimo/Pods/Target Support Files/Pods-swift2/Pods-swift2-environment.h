@@ -48,6 +48,30 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 0
 
+// CocoaLumberjack
+#define COCOAPODS_POD_AVAILABLE_CocoaLumberjack
+#define COCOAPODS_VERSION_MAJOR_CocoaLumberjack 1
+#define COCOAPODS_VERSION_MINOR_CocoaLumberjack 9
+#define COCOAPODS_VERSION_PATCH_CocoaLumberjack 2
+
+// CocoaLumberjack/Core
+#define COCOAPODS_POD_AVAILABLE_CocoaLumberjack_Core
+#define COCOAPODS_VERSION_MAJOR_CocoaLumberjack_Core 1
+#define COCOAPODS_VERSION_MINOR_CocoaLumberjack_Core 9
+#define COCOAPODS_VERSION_PATCH_CocoaLumberjack_Core 2
+
+// CocoaLumberjack/Extensions
+#define COCOAPODS_POD_AVAILABLE_CocoaLumberjack_Extensions
+#define COCOAPODS_VERSION_MAJOR_CocoaLumberjack_Extensions 1
+#define COCOAPODS_VERSION_MINOR_CocoaLumberjack_Extensions 9
+#define COCOAPODS_VERSION_PATCH_CocoaLumberjack_Extensions 2
+
+// FXKeychain
+#define COCOAPODS_POD_AVAILABLE_FXKeychain
+#define COCOAPODS_VERSION_MAJOR_FXKeychain 1
+#define COCOAPODS_VERSION_MINOR_FXKeychain 3
+#define COCOAPODS_VERSION_PATCH_FXKeychain 4
+
 // Realm
 #define COCOAPODS_POD_AVAILABLE_Realm
 #define COCOAPODS_VERSION_MAJOR_Realm 0
@@ -59,4 +83,10 @@
 #define COCOAPODS_VERSION_MAJOR_Realm_Headers 0
 #define COCOAPODS_VERSION_MINOR_Realm_Headers 88
 #define COCOAPODS_VERSION_PATCH_Realm_Headers 0
+
+// SVProgressHUD
+#define COCOAPODS_POD_AVAILABLE_SVProgressHUD
+#define COCOAPODS_VERSION_MAJOR_SVProgressHUD 0
+#define COCOAPODS_VERSION_MINOR_SVProgressHUD 9
+#define COCOAPODS_VERSION_PATCH_SVProgressHUD 0
 

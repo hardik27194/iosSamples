@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		14933C421A29C2A30048C613 /* sampleview1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14933C401A29C2A30048C613 /* sampleview1ViewController.m */; };
 		14933C431A29C2A30048C613 /* sampleview1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14933C411A29C2A30048C613 /* sampleview1ViewController.xib */; };
+		14933C451A39E64A0048C613 /* FloorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14933C441A39E64A0048C613 /* FloorView.xib */; };
+		14933C471A39E66E0048C613 /* FloorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14933C461A39E66E0048C613 /* FloorView.swift */; };
 		14E6EE771A29B71E00E0C90B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6EE761A29B71E00E0C90B /* Default-568h@2x.png */; };
 		72F4953B19ECC24B0042EFE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F4953A19ECC24B0042EFE5 /* AppDelegate.swift */; };
 		72F4953D19ECC24B0042EFE5 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F4953C19ECC24B0042EFE5 /* RootViewController.swift */; };
@@ -31,6 +33,8 @@
 		14933C3F1A29C2A30048C613 /* sampleview1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sampleview1ViewController.h; sourceTree = "<group>"; };
 		14933C401A29C2A30048C613 /* sampleview1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sampleview1ViewController.m; sourceTree = "<group>"; };
 		14933C411A29C2A30048C613 /* sampleview1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sampleview1ViewController.xib; sourceTree = "<group>"; };
+		14933C441A39E64A0048C613 /* FloorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloorView.xib; sourceTree = "<group>"; };
+		14933C461A39E66E0048C613 /* FloorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloorView.swift; sourceTree = "<group>"; };
 		14E6EE761A29B71E00E0C90B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4A059D1CB280782E7D255455 /* Pods-swift2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift2.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift2/Pods-swift2.release.xcconfig"; sourceTree = "<group>"; };
 		4A78B108B1CE4619809C60AD /* libPods-swift2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-swift2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +121,8 @@
 				14E6EE751A29B6FB00E0C90B /* Resources */,
 				72F4953A19ECC24B0042EFE5 /* AppDelegate.swift */,
 				72F4953C19ECC24B0042EFE5 /* RootViewController.swift */,
+				14933C441A39E64A0048C613 /* FloorView.xib */,
+				14933C461A39E66E0048C613 /* FloorView.swift */,
 				72F4954119ECC24B0042EFE5 /* Images.xcassets */,
 				72F4953819ECC24B0042EFE5 /* Supporting Files */,
 				14933C3F1A29C2A30048C613 /* sampleview1ViewController.h */,
@@ -236,6 +242,7 @@
 				72F4954219ECC24B0042EFE5 /* Images.xcassets in Resources */,
 				14933C431A29C2A30048C613 /* sampleview1ViewController.xib in Resources */,
 				14E6EE771A29B71E00E0C90B /* Default-568h@2x.png in Resources */,
+				14933C451A39E64A0048C613 /* FloorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +296,7 @@
 				72F4953D19ECC24B0042EFE5 /* RootViewController.swift in Sources */,
 				72F4953B19ECC24B0042EFE5 /* AppDelegate.swift in Sources */,
 				14933C421A29C2A30048C613 /* sampleview1ViewController.m in Sources */,
+				14933C471A39E66E0048C613 /* FloorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,6 +35,10 @@ class RootViewController: UIViewController {
         button.layer.cornerRadius = 8
         self.view.addSubview(button)
         
+        
+        var floorView = FloorView(frame: CGRectMake(0, 0, 300, 300))
+        self.view.addSubview(floorView)
+        
     }
 
 }

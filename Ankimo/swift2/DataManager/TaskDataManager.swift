@@ -24,16 +24,20 @@ class TaskDataManager: NSObject {
             println(dic["resultData"])
             
             var resultData = dic["resultData"] as NSArray
-            
-            let realm = RLMRealm.defaultRealm()
-            
-            realm.beginWriteTransaction()
+
+            // dic -> realm object
+            var tasks = Array<Task>()
             for tmp in resultData {
-                let task = Task()
                 var tmp1 = tmp as NSDictionary
+                let task = Task()
                 task.taskName = tmp1["taskName"] as String
-                realm.addObject(task)
+                tasks.append(task)
             }
+
+            // add to realm
+            let realm = RLMRealm.defaultRealm()
+            realm.beginWriteTransaction()
+            realm.addObjects(tasks)
             realm.commitWriteTransaction()
             
         }

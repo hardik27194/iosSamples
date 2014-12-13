@@ -38,12 +38,12 @@ class TaskApiClient: BaseApiClient {
             [
                 [
                     "id":"1",
-                    "taskName":"みく飲み物",
+                    "taskName":"みく飲み物1",
                     "periodTime":"2014/12/31",
                 ],
                 [
                     "id":"2",
-                    "taskName":"みくオムツ",
+                    "taskName":"みくオムツ1",
                     "periodTime":"2014/12/31",
                 ],
             ]

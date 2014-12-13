@@ -35,35 +35,16 @@ class RootViewController: UIViewController {
         button.layer.cornerRadius = 8
         self.view.addSubview(button)
         
-        
         var floorView = FloorView(frame: CGRectMake(0, 0, 300, 300))
         self.view.addSubview(floorView)
-
         
-        networkConnect()
+
+        var taskDataManager = TaskDataManager()
+        taskDataManager.exec()
+        
         
     }
     
-    func networkConnect(){
-    
-
-        let url  = NSURL.URLWithString("http://qiita.com/")
-        
-        
-        
-        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-        let task    = session.dataTaskWithURL(url, completionHandler: {
-            (data, resp, err) in
-            println(NSString(data: data, encoding:NSUTF8StringEncoding))
-        })
-        
-        task.resume()
-        
-//        let manager = AFURLSessionManager()
-//        manager.URLSession(sessionConfigration, task: task, didCompleteWithError: error)
-        
-        
-    }
 
 }
 

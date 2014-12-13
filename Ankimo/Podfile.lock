@@ -26,23 +26,18 @@ PODS:
   - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
   - FXKeychain (1.3.4)
-  - Realm (0.88.0):
-    - Realm/Headers (= 0.88.0)
-  - Realm/Headers (0.88.0)
   - SVProgressHUD (0.9)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - CocoaLumberjack
   - FXKeychain (~> 1.3.1)
-  - Realm
   - SVProgressHUD (~> 0.9)
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
   FXKeychain: 416b9de1cee84eae8d64833fc2929c7d60bbe2c0
-  Realm: 56fd06bf4e97da2829f864e2bca229a060825c61
   SVProgressHUD: adf9def97327df88dee15e9ad8033fde6961f7b4
 
 COCOAPODS: 0.35.0

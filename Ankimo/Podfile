@@ -5,7 +5,7 @@ target "swift2" do
     
 pod 'AFNetworking', '~> 2.0'
 pod 'CocoaLumberjack'
-pod "Realm"
+#pod "Realm"
 pod 'SVProgressHUD', '~> 0.9'
 pod 'FXKeychain', '~> 1.3.1'
 

@@ -11,6 +11,13 @@
 		14933C431A29C2A30048C613 /* sampleview1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14933C411A29C2A30048C613 /* sampleview1ViewController.xib */; };
 		14933C451A39E64A0048C613 /* FloorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14933C441A39E64A0048C613 /* FloorView.xib */; };
 		14933C471A39E66E0048C613 /* FloorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14933C461A39E66E0048C613 /* FloorView.swift */; };
+		14933C4C1A3C424B0048C613 /* TaskApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14933C4B1A3C424B0048C613 /* TaskApiClient.swift */; };
+		14933C4E1A3C43090048C613 /* BaseApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14933C4D1A3C43090048C613 /* BaseApiClient.swift */; };
+		14DDEC651A3C74100026E1C7 /* TaskDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDEC641A3C74100026E1C7 /* TaskDataManager.swift */; };
+		14DDEC681A3C78480026E1C7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDEC671A3C78480026E1C7 /* Task.swift */; };
+		14DDEC6A1A3C7EAF0026E1C7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DDEC691A3C7EAF0026E1C7 /* Realm.framework */; };
+		14DDEC6C1A3C818A0026E1C7 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DDEC6B1A3C818A0026E1C7 /* libc++.dylib */; };
+		14DDEC6E1A3C81A70026E1C7 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDEC6D1A3C81A70026E1C7 /* RLMSupport.swift */; };
 		14E6EE771A29B71E00E0C90B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6EE761A29B71E00E0C90B /* Default-568h@2x.png */; };
 		72F4953B19ECC24B0042EFE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F4953A19ECC24B0042EFE5 /* AppDelegate.swift */; };
 		72F4953D19ECC24B0042EFE5 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F4953C19ECC24B0042EFE5 /* RootViewController.swift */; };
@@ -35,6 +42,13 @@
 		14933C411A29C2A30048C613 /* sampleview1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = sampleview1ViewController.xib; sourceTree = "<group>"; };
 		14933C441A39E64A0048C613 /* FloorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloorView.xib; sourceTree = "<group>"; };
 		14933C461A39E66E0048C613 /* FloorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloorView.swift; sourceTree = "<group>"; };
+		14933C4B1A3C424B0048C613 /* TaskApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskApiClient.swift; path = ApiClient/TaskApiClient.swift; sourceTree = "<group>"; };
+		14933C4D1A3C43090048C613 /* BaseApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseApiClient.swift; path = ApiClient/BaseApiClient.swift; sourceTree = "<group>"; };
+		14DDEC641A3C74100026E1C7 /* TaskDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskDataManager.swift; path = DataManager/TaskDataManager.swift; sourceTree = "<group>"; };
+		14DDEC671A3C78480026E1C7 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = DataObject/Task.swift; sourceTree = "<group>"; };
+		14DDEC691A3C7EAF0026E1C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		14DDEC6B1A3C818A0026E1C7 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		14DDEC6D1A3C81A70026E1C7 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		14E6EE761A29B71E00E0C90B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4A059D1CB280782E7D255455 /* Pods-swift2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift2.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift2/Pods-swift2.release.xcconfig"; sourceTree = "<group>"; };
 		4A78B108B1CE4619809C60AD /* libPods-swift2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-swift2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DDEC6C1A3C818A0026E1C7 /* libc++.dylib in Frameworks */,
+				14DDEC6A1A3C7EAF0026E1C7 /* Realm.framework in Frameworks */,
 				F70DBBF5C6424228820B1EEB /* libPods-swift2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,9 +88,36 @@
 		0F2E1B03E003409FB20536BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14DDEC6B1A3C818A0026E1C7 /* libc++.dylib */,
+				14DDEC691A3C7EAF0026E1C7 /* Realm.framework */,
 				4A78B108B1CE4619809C60AD /* libPods-swift2.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14933C4A1A3C41E90048C613 /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				14933C4D1A3C43090048C613 /* BaseApiClient.swift */,
+				14933C4B1A3C424B0048C613 /* TaskApiClient.swift */,
+			);
+			name = ApiClient;
+			sourceTree = "<group>";
+		};
+		14DDEC631A3C73D50026E1C7 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				14DDEC641A3C74100026E1C7 /* TaskDataManager.swift */,
+			);
+			name = DataManager;
+			sourceTree = "<group>";
+		};
+		14DDEC661A3C782D0026E1C7 /* DataObject */ = {
+			isa = PBXGroup;
+			children = (
+				14DDEC671A3C78480026E1C7 /* Task.swift */,
+			);
+			name = DataObject;
 			sourceTree = "<group>";
 		};
 		14E6EE751A29B6FB00E0C90B /* Resources */ = {
@@ -118,6 +161,10 @@
 		72F4953719ECC24B0042EFE5 /* swift2 */ = {
 			isa = PBXGroup;
 			children = (
+				14DDEC661A3C782D0026E1C7 /* DataObject */,
+				14DDEC631A3C73D50026E1C7 /* DataManager */,
+				14933C4A1A3C41E90048C613 /* ApiClient */,
+				14DDEC6D1A3C81A70026E1C7 /* RLMSupport.swift */,
 				14E6EE751A29B6FB00E0C90B /* Resources */,
 				72F4953A19ECC24B0042EFE5 /* AppDelegate.swift */,
 				72F4953C19ECC24B0042EFE5 /* RootViewController.swift */,
@@ -293,9 +340,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DDEC681A3C78480026E1C7 /* Task.swift in Sources */,
+				14DDEC6E1A3C81A70026E1C7 /* RLMSupport.swift in Sources */,
+				14933C4C1A3C424B0048C613 /* TaskApiClient.swift in Sources */,
 				72F4953D19ECC24B0042EFE5 /* RootViewController.swift in Sources */,
 				72F4953B19ECC24B0042EFE5 /* AppDelegate.swift in Sources */,
+				14DDEC651A3C74100026E1C7 /* TaskDataManager.swift in Sources */,
 				14933C421A29C2A30048C613 /* sampleview1ViewController.m in Sources */,
+				14933C4E1A3C43090048C613 /* BaseApiClient.swift in Sources */,
 				14933C471A39E66E0048C613 /* FloorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +454,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = swift2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -417,6 +473,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = swift2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

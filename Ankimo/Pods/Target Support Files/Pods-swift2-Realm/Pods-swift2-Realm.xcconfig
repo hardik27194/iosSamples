@@ -1,4 +1,0 @@
-PODS_SWIFT__REALM_CLANG_CXX_LANGUAGE_STANDARD = compiler-default
-PODS_SWIFT__REALM_LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/Realm/core"
-PODS_SWIFT__REALM_OTHER_CPLUSPLUSFLAGS = -std=c++1y $(inherited) -std=c++1y $(inherited)
-PODS_SWIFT__REALM_OTHER_LDFLAGS = -l"c++" -l"tightdb-ios"

@@ -9,7 +9,12 @@
 import Realm
 
 class Task: RLMObject {
-   
+    dynamic var id = ""
     dynamic var taskName: String = ""
+    dynamic var delFlg : Bool = false
+        
+    override class func primaryKey() -> String! {
+        return "id"
+    }
     
 }

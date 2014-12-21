@@ -58,6 +58,11 @@ class FloorView: UIView {
         view.backgroundColor = UIColor(red: 1, green: 1, blue: 0.8, alpha: 1)
         self.addSubview(view)
         
+        
+        var questionView = QuestionView.view()
+        
+        self.addSubview(questionView)
+        
     }
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

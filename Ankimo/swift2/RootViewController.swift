@@ -38,7 +38,6 @@ class RootViewController: UIViewController {
         var floorView = FloorView(frame: CGRectMake(0, 0, 300, 300))
         self.view.addSubview(floorView)
         
-
         var taskDataManager = TaskDataManager()
         taskDataManager.exec()
         

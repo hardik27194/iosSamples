@@ -60,7 +60,7 @@ class FloorView: UIView {
         
         
         var questionView = QuestionView.view()
-        
+        questionView.frame = CGRectMake(0, 50, 320, 100)
         self.addSubview(questionView)
         
     }

@@ -10,12 +10,15 @@ import UIKit
 
 class QuestionView: UIView {
 
+    
+    @IBOutlet weak var questionCellView: UIView?
+    @IBOutlet weak var answerCellView: UIView?
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     override init(frame: CGRect) {
-//        super.init(frame: CGRectMake(0, 0, 0, 0))
         super.init(frame: frame)
     }
     
@@ -34,4 +37,16 @@ class QuestionView: UIView {
         
     }
 
+    func moveQuestionView(posx:CGFloat){
+        
+        var x = posx
+        var y = questionCellView!.frame.origin.y
+        var w = questionCellView!.frame.size.width
+        var h = questionCellView!.frame.size.height
+        
+        questionCellView!.frame = CGRectMake(posx, y, w, h)
+    
+    }
+    
+    
 }

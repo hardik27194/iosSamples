@@ -11,17 +11,27 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JG3-xi-eAL">
-                    <rect key="frame" x="8" y="8" width="123" height="29"/>
-                    <segments>
-                        <segment title="First"/>
-                        <segment title="Second"/>
-                    </segments>
-                </segmentedControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWA-Ag-HeT" userLabel="anserView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                    <color key="backgroundColor" red="0.23453291650506725" green="0.61185015802355158" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AN9-dr-byA" userLabel="questionView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                    <color key="backgroundColor" red="0.54067309153793552" green="1" blue="0.61212464710733061" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-44.5" y="-130"/>
+            <connections>
+                <outlet property="answerCellView" destination="XWA-Ag-HeT" id="jAb-I0-o8t"/>
+                <outlet property="questionCellView" destination="AN9-dr-byA" id="vLu-l5-FGR"/>
+            </connections>
+            <point key="canvasLocation" x="-45" y="-130"/>
         </view>
     </objects>
 </document>

@@ -21,6 +21,7 @@ class FloorView: UIView {
     var st = state.normal
     
     var cellView = UIView()
+    var questionView = QuestionView()
     
     var startPoint : CGPoint = CGPointMake(0, 0)
     var posx: CGFloat = 0.0
@@ -59,8 +60,8 @@ class FloorView: UIView {
         self.addSubview(view)
         
         
-        var questionView = QuestionView.view()
-        questionView.frame = CGRectMake(0, 50, 320, 100)
+        questionView = QuestionView.view()
+        questionView.frame = CGRectMake(0, 200, 320, 100)
         self.addSubview(questionView)
         
     }
@@ -81,8 +82,6 @@ class FloorView: UIView {
             } else {
                 st = state.normal
             }
-            
-            
             
             println("startpoint \(startPoint.x) \(startPoint.y) ")
         }
@@ -106,7 +105,10 @@ class FloorView: UIView {
                 var posy = cellView.frame.origin.y
                 var posx = diffy * 2
                 
-                cellView.frame = CGRectMake(posx, posy, cellView.frame.width, cellView.frame.height)
+//                cellView.frame = CGRectMake(posx, posy, cellView.frame.width, cellView.frame.height)
+                
+                questionView.moveQuestionView(posx)
+                
             
             }
             
@@ -120,7 +122,8 @@ class FloorView: UIView {
         if st == state.pull {
             
             UIView.animateWithDuration(0.2 , animations: {() -> Void in
-                self.cellView.frame = CGRectMake(0, 100, self.bounds.width, 100)
+//                self.cellView.frame = CGRectMake(0, 100, self.bounds.width, 100)
+                self.questionView.moveQuestionView(0)
                 
                 }, completion: {(Bool) -> Void in
             })

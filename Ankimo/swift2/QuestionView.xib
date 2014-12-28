@@ -21,9 +21,19 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DQ-ju-gV7" userLabel="LineView">
+                            <rect key="frame" x="0.0" y="99" width="320" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="LmO-hs-6EO"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.59582389254303902" green="1" blue="0.77636276973233975" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="8DQ-ju-gV7" secondAttribute="trailing" id="3eZ-Pv-pmL"/>
+                        <constraint firstItem="8DQ-ju-gV7" firstAttribute="leading" secondItem="znU-Lo-Kqo" secondAttribute="leading" id="HEG-s7-5ag"/>
+                        <constraint firstAttribute="bottom" secondItem="8DQ-ju-gV7" secondAttribute="bottom" id="I1v-f3-oDx"/>
                         <constraint firstItem="AN9-dr-byA" firstAttribute="top" secondItem="znU-Lo-Kqo" secondAttribute="top" constant="10" id="Pj7-OH-Oeq"/>
                         <constraint firstAttribute="bottom" secondItem="AN9-dr-byA" secondAttribute="bottom" constant="10" id="R4b-Bh-Rp2"/>
                         <constraint firstAttribute="trailing" secondItem="AN9-dr-byA" secondAttribute="trailing" constant="10" id="c0K-vu-wa4"/>
@@ -39,6 +49,13 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPd-pv-Bu9" userLabel="LineView">
+                            <rect key="frame" x="0.0" y="99" width="320" height="1"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Njw-qi-dRb"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.28742539830000002" green="0.62007201339999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -46,6 +63,9 @@
                         <constraint firstAttribute="trailing" secondItem="XWA-Ag-HeT" secondAttribute="trailing" constant="10" id="GQQ-OZ-Ga0"/>
                         <constraint firstItem="XWA-Ag-HeT" firstAttribute="leading" secondItem="whG-FM-H58" secondAttribute="leading" constant="10" id="QyI-RE-QXf"/>
                         <constraint firstItem="XWA-Ag-HeT" firstAttribute="top" secondItem="whG-FM-H58" secondAttribute="top" constant="10" id="VMo-bX-9Lr"/>
+                        <constraint firstAttribute="trailing" secondItem="GPd-pv-Bu9" secondAttribute="trailing" id="Vxm-6H-O5t"/>
+                        <constraint firstItem="GPd-pv-Bu9" firstAttribute="leading" secondItem="whG-FM-H58" secondAttribute="leading" id="s3G-A5-ktJ"/>
+                        <constraint firstAttribute="bottom" secondItem="GPd-pv-Bu9" secondAttribute="bottom" id="tBO-qh-lnn"/>
                     </constraints>
                 </view>
             </subviews>

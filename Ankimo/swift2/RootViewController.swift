@@ -27,15 +27,7 @@ class RootViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
-        let button = UIButton.buttonWithType(.System) as UIButton
-        button.frame = CGRectMake(100, 100, 200, 50)
-        button.setTitle("ログイン", forState: UIControlState.Normal)
-        button.backgroundColor = UIColor(red: 0.2, green: 0.6, blue: 1, alpha: 1)
-        button.tintColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        button.layer.cornerRadius = 8
-        self.view.addSubview(button)
-        
-        var floorView = FloorView(frame: CGRectMake(0, 0, 300, 300))
+        var floorView = FloorView()
         self.view.addSubview(floorView)
         
         var taskDataManager = TaskDataManager()

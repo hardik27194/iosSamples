@@ -9,24 +9,19 @@
 import UIKit
 
 
-class FloorView: UIView {
-
-    enum state: Int {
-        case normal = 0
-        case pull
-        case release
+class FloorView: UIView  {
     
+    struct customRect {
+        var x: CGFloat = 0.0
+        var y: CGFloat = 0.0
+        var w: CGFloat = 0.0
+        var h: CGFloat = 0.0
     }
-
-    var st = state.normal
     
     var cellView = UIView()
     var questionView = QuestionView()
-    
-    var startPoint : CGPoint = CGPointMake(0, 0)
-    var posx: CGFloat = 0.0
-
-    
+    var questionViews = Array<QuestionView>()
+        
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -34,102 +29,58 @@ class FloorView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupViews()
-        
     }
 
     override init() {
         super.init()
+        
+        self.frame = UIScreen.mainScreen().bounds
+
+        setupViews()
+
     }
     
     
     func setupViews(){
-    
-        cellView.frame = CGRectMake(0, 100, self.bounds.width, 100)
-        cellView.backgroundColor = UIColor(red: 0.4, green: 1, blue: 1, alpha: 0.8)
-        self.addSubview(cellView)
         
-        var bounds = UIScreen.mainScreen().bounds
-        //self.frame = CGRectMake(0, 0, 200, 400)
-        self.frame = bounds
+        self.frame = UIScreen.mainScreen().bounds
         
-        self.backgroundColor = UIColor(red: 0.9, green: 1.0, blue: 1.0, alpha: 1)
-        var rect = CGRectMake(0, bounds.height / 2, bounds.width, bounds.height / 2)
-        var view = UIView(frame: rect)
-        view.backgroundColor = UIColor(red: 1, green: 1, blue: 0.8, alpha: 1)
-        self.addSubview(view)
+        var touchView = TouchView()
+        touchView.touchViewDelegate = self
+        self.addSubview(touchView)
         
+        var rect = customRect(x: 0, y: 0, w: 0, h: 0);
+        rect.h = 100
+        rect.y = UIScreen.mainScreen().bounds.height / 2 - rect.h
+        rect.w = UIScreen.mainScreen().bounds.width
         
-        questionView = QuestionView.view()
-        questionView.frame = CGRectMake(0, 200, 320, 100)
-        self.addSubview(questionView)
-        
-    }
-
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        println(" \(touches.count) ")
-        
-        
-        if (touches.anyObject() != nil){
-            
-            var point = touches.anyObject()!.locationInView(self)
-            
-            if point.y > 300 && point.y < 400 && point.x > 100 && point.x < 200 {
-            
-                st = state.pull
-                startPoint = touches.anyObject()!.locationInView(self)
-            
-            } else {
-                st = state.normal
-            }
-            
-            println("startpoint \(startPoint.x) \(startPoint.y) ")
+        for i in 0...5 {
+            questionView = QuestionView.view()
+            questionView.frame = CGRectMake(rect.x, rect.y, rect.w, rect.h)
+            self.addSubview(questionView)
+            questionViews.append(questionView)
+            rect.y = rect.y - rect.h
         }
         
-        
     }
+}
 
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+extension FloorView : TouchViewDelegate {
+ 
+    func movePoint(diffy: CGFloat) {
         
-        if (touches.anyObject() != nil){
-            
-            if st == state.pull {
-                
-                var touchPoint = touches.anyObject()!.locationInView(self)
-                
-                var diffx = touchPoint.x - startPoint.x
-                var diffy = touchPoint.y - startPoint.y
-                
-                println("diff  \(diffx) \(diffy) ")
-                
-                var posy = cellView.frame.origin.y
-                var posx = diffy * 2
-                
-//                cellView.frame = CGRectMake(posx, posy, cellView.frame.width, cellView.frame.height)
-                
-                questionView.moveQuestionView(posx)
-                
-            
-            }
-            
-        }
-        
-        
-    }
-
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        
-        if st == state.pull {
-            
-            UIView.animateWithDuration(0.2 , animations: {() -> Void in
-//                self.cellView.frame = CGRectMake(0, 100, self.bounds.width, 100)
-                self.questionView.moveQuestionView(0)
-                
-                }, completion: {(Bool) -> Void in
-            })
-            
-        }
+        var posx = diffy * 2
+        questionViews[0].moveQuestionView(posx)
         
     }
     
+    func releaseTouch() {
+        
+        UIView.animateWithDuration(0.2 , animations: {() -> Void in
+            self.questionViews[0].moveQuestionView(0)
+            }, completion: {(Bool) -> Void in
+        })
+        
+    }
+
 }

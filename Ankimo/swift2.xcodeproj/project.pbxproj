@@ -14,6 +14,7 @@
 		14933C4E1A3C43090048C613 /* BaseApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14933C4D1A3C43090048C613 /* BaseApiClient.swift */; };
 		14D85F5D1A46E973008F0EF6 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D85F5C1A46E973008F0EF6 /* QuestionView.swift */; };
 		14D85F611A46EBA6008F0EF6 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D85F601A46EBA6008F0EF6 /* QuestionView.xib */; };
+		14D85F631A4FC8EB008F0EF6 /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D85F621A4FC8EB008F0EF6 /* TouchView.swift */; };
 		14DDEC651A3C74100026E1C7 /* TaskDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDEC641A3C74100026E1C7 /* TaskDataManager.swift */; };
 		14DDEC681A3C78480026E1C7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDEC671A3C78480026E1C7 /* Task.swift */; };
 		14DDEC6A1A3C7EAF0026E1C7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DDEC691A3C7EAF0026E1C7 /* Realm.framework */; };
@@ -46,6 +47,7 @@
 		14933C4D1A3C43090048C613 /* BaseApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseApiClient.swift; path = ApiClient/BaseApiClient.swift; sourceTree = "<group>"; };
 		14D85F5C1A46E973008F0EF6 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		14D85F601A46EBA6008F0EF6 /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
+		14D85F621A4FC8EB008F0EF6 /* TouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
 		14DDEC641A3C74100026E1C7 /* TaskDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskDataManager.swift; path = DataManager/TaskDataManager.swift; sourceTree = "<group>"; };
 		14DDEC671A3C78480026E1C7 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = DataObject/Task.swift; sourceTree = "<group>"; };
 		14DDEC691A3C7EAF0026E1C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				14933C461A39E66E0048C613 /* FloorView.swift */,
 				14D85F601A46EBA6008F0EF6 /* QuestionView.xib */,
 				14D85F5C1A46E973008F0EF6 /* QuestionView.swift */,
+				14D85F621A4FC8EB008F0EF6 /* TouchView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				14DDEC6E1A3C81A70026E1C7 /* RLMSupport.swift in Sources */,
 				14933C4C1A3C424B0048C613 /* TaskApiClient.swift in Sources */,
 				72F4953D19ECC24B0042EFE5 /* RootViewController.swift in Sources */,
+				14D85F631A4FC8EB008F0EF6 /* TouchView.swift in Sources */,
 				72F4953B19ECC24B0042EFE5 /* AppDelegate.swift in Sources */,
 				14DDEC651A3C74100026E1C7 /* TaskDataManager.swift in Sources */,
 				14933C421A29C2A30048C613 /* sampleview1ViewController.m in Sources */,

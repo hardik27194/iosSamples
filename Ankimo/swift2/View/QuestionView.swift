@@ -30,23 +30,40 @@ class QuestionView: UIView {
     }
     
     class func view() -> QuestionView {
-    
         var questionView = NSBundle.mainBundle().loadNibNamed("QuestionView", owner: self, options: nil)[0] as QuestionView
-
         return questionView
-        
     }
 
-    func moveQuestionView(posx:CGFloat){
-        
-        var x = posx
-        var y = questionCellView!.frame.origin.y
-        var w = questionCellView!.frame.size.width
-        var h = questionCellView!.frame.size.height
-        
-        questionCellView!.frame = CGRectMake(posx, y, w, h)
-    
+    func moveQuestionView(#movedRate:CGFloat){
+        questionCellView!.frame = originx(view: questionCellView!, x: self.bounds.width * movedRate)
+
+    }
+
+    func openQuestion() {
+        UIView.animateWithDuration(0.3 , animations: {() -> Void in
+            self.moveQuestionView(movedRate: self.bounds.width)
+            }, completion: {(Bool) -> Void in
+                
+        })
+    }
+
+    func releaseTouch() {
+        UIView.animateWithDuration(0.2 , animations: {() -> Void in
+            self.moveQuestionView(movedRate: 0)
+            }, completion: {(Bool) -> Void in
+        })
+
     }
     
+    func moveBaseView(posx:CGFloat){
+        answerCellView!.frame = originx(view: answerCellView!, x: posx)
+    }
+    
+    func originx (#view: UIView ,x: CGFloat) -> CGRect {
+        var y = view.frame.origin.y
+        var w = view.frame.size.width
+        var h = view.frame.size.height
+        return CGRectMake(x, y, w, h)
+    }
     
 }

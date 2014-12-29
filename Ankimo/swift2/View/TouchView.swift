@@ -10,6 +10,7 @@ import UIKit
 
 protocol TouchViewDelegate: class {
     func movePoint(diffy: CGFloat) -> ()
+    func finishMove() -> ()
     func releaseTouch() -> ()
 }
 
@@ -20,64 +21,99 @@ class TouchView: UIView {
         case normal = 0
         case pull
         case release
-        
+        case finish
     }
     
     weak var touchViewDelegate: TouchViewDelegate?
+    @IBOutlet weak var frickPointView: UIImageView?
     
     var st = state.normal
     
-    var posx: CGFloat = 0.0
     var startPoint : CGPoint = CGPointMake(0, 0)
 
-
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-
-    override init(frame: CGRect) {
-            super.init(frame: frame)
+    class func view() -> TouchView {
+        var touchView = NSBundle.mainBundle().loadNibNamed("TouchView", owner: self, options: nil)[0] as TouchView
+        
+        return touchView
     }
     
-    override init() {
-        super.init()
-        
-        var bounds = UIScreen.mainScreen().bounds
-        var rect = CGRectMake(0, bounds.size.height / 2, bounds.size.width, bounds.size.height / 2 )
-        self.frame = rect
-        self.backgroundColor = UIColor(red: 0.8, green: 1, blue: 0.8, alpha: 1)
-        
+    func setupViews() {
+    
+//        frickPointView?.frame
+    
     }
 
+
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        println(" \(touches.count) ")
-        startPoint = touches.anyObject()!.locationInView(self)
+
+        var touch =  touches.anyObject()? as UITouch
+        println(" tag  \(touch.view.tag) ")
+        
+        if (touches.anyObject() != nil){
+            
+            var touchPoint = touches.anyObject()!.locationInView(self)
+
+                var pp1 = touchPoint.y > 10 && touchPoint.y < 100
+                var pp2 = touchPoint.x > 100 && touchPoint.y < UIScreen.mainScreen().bounds.width - 100
+                
+                if pp1 && pp2 {
+                    st = state.pull
+                    startPoint = touches.anyObject()!.locationInView(self)
+                }
+            
+        }
         
     }
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         
         if (touches.anyObject() != nil){
-            
+        
             var touchPoint = touches.anyObject()!.locationInView(self)
             
-            var diffx = touchPoint.x - startPoint.x
-            var diffy = touchPoint.y - startPoint.y
-            
-            println("diff  \(diffx) \(diffy) ")
-            
-            touchViewDelegate?.movePoint(diffy)
+            if st == state.pull {
+                
+                if touchPoint.y < 200 {
+                    
+                    var diffy = touchPoint.y - startPoint.y
+                    touchViewDelegate?.movePoint( moveRate(diffy: diffy) )
+
+                } else {
+                    
+                    st = state.finish
+                    touchViewDelegate?.finishMove()
+                
+                }
+                
+            }
             
         }
-        
         
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
 
+        st = state.normal
         touchViewDelegate?.releaseTouch()
         
     }
     
+    private func moveRate(#diffy: CGFloat) -> CGFloat {
+    
+        var selfViewHeight = self.frame.height
+        var moveRate = diffy / selfViewHeight
+        
+        
+        if moveRate < 0 {
+            moveRate = 0
+        } else if moveRate > 1 {
+            moveRate = 1
+        }
+        
+        println(" moveRate \(moveRate) ")
+    
+        return moveRate
+    
+    }
     
 }

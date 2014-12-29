@@ -19,7 +19,7 @@ class FloorView: UIView  {
     }
     
     var cellView = UIView()
-    var questionView = QuestionView()
+//    var questionView = QuestionView()
     var questionViews = Array<QuestionView>()
         
     required init(coder aDecoder: NSCoder) {
@@ -45,17 +45,22 @@ class FloorView: UIView  {
         
         self.frame = UIScreen.mainScreen().bounds
         
-        var touchView = TouchView()
+        var rect = customRect(x: 0, y: 0, w: 0, h: 0);
+        rect.h = UIScreen.mainScreen().bounds.height / 2
+        rect.y = UIScreen.mainScreen().bounds.height / 2
+        rect.w = UIScreen.mainScreen().bounds.width
+        
+        var touchView = TouchView.view()
+        touchView.frame = CGRectMake(rect.x, rect.y, rect.w, rect.h)
         touchView.touchViewDelegate = self
         self.addSubview(touchView)
         
-        var rect = customRect(x: 0, y: 0, w: 0, h: 0);
         rect.h = 100
         rect.y = UIScreen.mainScreen().bounds.height / 2 - rect.h
         rect.w = UIScreen.mainScreen().bounds.width
         
         for i in 0...5 {
-            questionView = QuestionView.view()
+            var questionView = QuestionView.view()
             questionView.frame = CGRectMake(rect.x, rect.y, rect.w, rect.h)
             self.addSubview(questionView)
             questionViews.append(questionView)
@@ -67,20 +72,16 @@ class FloorView: UIView  {
 
 extension FloorView : TouchViewDelegate {
  
-    func movePoint(diffy: CGFloat) {
-        
-        var posx = diffy * 2
-        questionViews[0].moveQuestionView(posx)
-        
+    func movePoint(moveDistance: CGFloat) {
+        questionViews[0].moveQuestionView(movedRate: moveDistance)
+    }
+    
+    func finishMove () {
+        self.questionViews[0].openQuestion()
     }
     
     func releaseTouch() {
-        
-        UIView.animateWithDuration(0.2 , animations: {() -> Void in
-            self.questionViews[0].moveQuestionView(0)
-            }, completion: {(Bool) -> Void in
-        })
-        
+        self.questionViews[0].releaseTouch()
     }
 
 }

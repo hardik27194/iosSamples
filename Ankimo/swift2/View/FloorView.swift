@@ -45,6 +45,7 @@ class FloorView: UIView  {
         
         self.frame = UIScreen.mainScreen().bounds
         
+        
         var rect = customRect(x: 0, y: 0, w: 0, h: 0);
         rect.h = UIScreen.mainScreen().bounds.height / 2
         rect.y = UIScreen.mainScreen().bounds.height / 2
@@ -59,13 +60,20 @@ class FloorView: UIView  {
         rect.y = UIScreen.mainScreen().bounds.height / 2 - rect.h
         rect.w = UIScreen.mainScreen().bounds.width
         
-        for i in 0...5 {
+        for i in 0...1 {
             var questionView = QuestionView.view()
             questionView.frame = CGRectMake(rect.x, rect.y, rect.w, rect.h)
             self.addSubview(questionView)
             questionViews.append(questionView)
             rect.y = rect.y - rect.h
         }
+
+        var btn = UIButton(frame: CGRectMake(10, 70, 100, 50))
+        btn.setTitle("aaa", forState: UIControlState.Normal)
+        btn.backgroundColor = UIColor.blueColor()
+        btn.addTarget(self, action: "endBaseView", forControlEvents: UIControlEvents.TouchUpInside)
+        self.addSubview(btn)
+
         
     }
 }
@@ -73,7 +81,7 @@ class FloorView: UIView  {
 extension FloorView : TouchViewDelegate {
  
     func movePoint(moveDistance: CGFloat) {
-        questionViews[0].moveQuestionView(movedRate: moveDistance)
+        self.questionViews[0].moveQuestionView(movedRate: moveDistance)
     }
     
     func finishMove () {
@@ -84,4 +92,8 @@ extension FloorView : TouchViewDelegate {
         self.questionViews[0].releaseTouch()
     }
 
+    func endBaseView() {
+        self.questionViews[0].endBaseView()
+    }
+    
 }

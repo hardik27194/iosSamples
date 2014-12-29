@@ -11,6 +11,7 @@ import UIKit
 protocol TouchViewDelegate: class {
     func movePoint(diffy: CGFloat) -> ()
     func finishMove() -> ()
+    func endBaseView() -> ()
     func releaseTouch() -> ()
 }
 
@@ -78,14 +79,22 @@ class TouchView: UIView {
                     var diffy = touchPoint.y - startPoint.y
                     touchViewDelegate?.movePoint( moveRate(diffy: diffy) )
 
-                } else {
-                    
+                } else if touchPoint.y < 250 {
+
                     st = state.finish
                     touchViewDelegate?.finishMove()
+                    
+                } else {
                 
                 }
                 
             }
+            
+            
+            if touchPoint.y > 250 && touchPoint.y < 300 {
+                touchViewDelegate?.endBaseView()
+            }
+
             
         }
         

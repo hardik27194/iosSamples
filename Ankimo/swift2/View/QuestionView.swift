@@ -24,9 +24,6 @@ class QuestionView: UIView {
     
     override init() {
         super.init()
-        
-        self.frame = CGRectMake(0, 200, 320, 100)
-
     }
     
     class func view() -> QuestionView {
@@ -43,7 +40,6 @@ class QuestionView: UIView {
         UIView.animateWithDuration(0.3 , animations: {() -> Void in
             self.moveQuestionView(movedRate: self.bounds.width)
             }, completion: {(Bool) -> Void in
-                
         })
     }
 
@@ -55,8 +51,13 @@ class QuestionView: UIView {
 
     }
     
-    func moveBaseView(posx:CGFloat){
-        answerCellView!.frame = originx(view: answerCellView!, x: posx)
+    func endBaseView(){
+        UIView.animateWithDuration(0.3 , animations: {() -> Void in
+            self.answerCellView!.frame = self.originx(view: self.answerCellView!, x: self.bounds.width)
+            self.questionCellView!.frame = self.originx(view: self.questionCellView!, x: self.bounds.width)
+            }, completion: {(Bool) -> Void in
+        })
+
     }
     
     func originx (#view: UIView ,x: CGFloat) -> CGRect {

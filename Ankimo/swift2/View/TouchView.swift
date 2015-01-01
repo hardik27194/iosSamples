@@ -34,6 +34,7 @@ class TouchView: UIView {
     
     weak var touchViewDelegate: TouchViewDelegate?
     var frickPointView = UIImageView()
+    let square = UIView()
     
     var st = state.normal
     
@@ -62,6 +63,11 @@ class TouchView: UIView {
         selfviewRect.w = UIScreen.mainScreen().bounds.width
         self.frame = CGRectMake(selfviewRect.x, selfviewRect.y, selfviewRect.w, selfviewRect.h)
         
+        // 四角
+        square.frame = CGRectMake(100, 100, 50, 50)
+        square.backgroundColor = UIColor.lightGrayColor()
+        self.addSubview(square)
+
         // フリック画像
         let frickImage = UIImage(named: "frickPointView")
         frickPointView = UIImageView(frame: frickPointViewFirstRect())
@@ -69,6 +75,8 @@ class TouchView: UIView {
         frickPointView.userInteractionEnabled = true
         frickPointView.tag = 1002
         self.addSubview(frickPointView)
+        
+        
     }
 
 
@@ -89,15 +97,27 @@ class TouchView: UIView {
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         
+        
+//        if (CGRectIntersectsRect(bird.frame, lowerPipe.frame)) {
+//            let loser = self.childNodeWithName("loser")
+//            let action = SKAction.fadeInWithDuration(3)
+//            loser.runAction(action)
+//        }
+        
+        if CGRectIntersectsRect(frickPointView.frame, square.frame) {
+            println(" うひゃー")
+        
+        }
+        
         if (touches.anyObject() != nil){
         
             var touchPoint = touches.anyObject()!.locationInView(self)
         
             println("\(st.rawValue)")
+            
             if st == state.pull {
 
                 frickPointView.center = touchPoint
-
                 
                 if touchPoint.y < 200 {
                     
@@ -123,15 +143,24 @@ class TouchView: UIView {
             
         }
         
+        
+        
+        
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         st = state.normal
-        frickPointView.frame = frickPointViewFirstRect()
         touchViewDelegate?.releaseTouch()
+
+        UIView.animateWithDuration(0.1, animations: {() -> Void in
+            self.frickPointView.frame = self.frickPointViewFirstRect()
+        })
         
     }
     
+    /*!
+    * @abstract frickPointViewの元の場所
+    */
     private func frickPointViewFirstRect () -> CGRect {
         let w = 60 as CGFloat
         let h = 60 as CGFloat

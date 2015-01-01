@@ -26,41 +26,51 @@ class TouchView: UIView {
     }
     
     weak var touchViewDelegate: TouchViewDelegate?
-    @IBOutlet weak var frickPointView: UIImageView?
+    weak var frickPointView: UIView?
     
     var st = state.normal
     
     var startPoint : CGPoint = CGPointMake(0, 0)
 
-    class func view() -> TouchView {
-        var touchView = NSBundle.mainBundle().loadNibNamed("TouchView", owner: self, options: nil)[0] as TouchView
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
-        return touchView
+    }
+    
+    override init() {
+        super.init()
+        
+        self.frame = UIScreen.mainScreen().bounds
+        
+        setupViews()
+        
     }
     
     func setupViews() {
-    
-//        frickPointView?.frame
+        
+        var rect = CGRectMake(0, 0, 0, 0)
+        frickPointView = UIView(frame: rect)
+        
     
     }
 
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
 
-        var touch =  touches.anyObject()? as UITouch
-        println(" tag  \(touch.view.tag) ")
         
         if (touches.anyObject() != nil){
             
-            var touchPoint = touches.anyObject()!.locationInView(self)
-
-                var pp1 = touchPoint.y > 10 && touchPoint.y < 100
-                var pp2 = touchPoint.x > 100 && touchPoint.y < UIScreen.mainScreen().bounds.width - 100
-                
-                if pp1 && pp2 {
-                    st = state.pull
-                    startPoint = touches.anyObject()!.locationInView(self)
-                }
+            var touch =  touches.anyObject()? as UITouch
+            
+            if touch.view.tag == 1002 {
+                st = state.pull
+                startPoint = touches.anyObject()!.locationInView(self)
+            }
             
         }
         
@@ -71,8 +81,12 @@ class TouchView: UIView {
         if (touches.anyObject() != nil){
         
             var touchPoint = touches.anyObject()!.locationInView(self)
+        
             
             if st == state.pull {
+
+                frickPointView?.center = touchPoint
+
                 
                 if touchPoint.y < 200 {
                     

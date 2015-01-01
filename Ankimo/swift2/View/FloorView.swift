@@ -19,7 +19,6 @@ class FloorView: UIView  {
     }
     
     var cellView = UIView()
-//    var questionView = QuestionView()
     var questionViews = Array<QuestionView>()
         
     required init(coder aDecoder: NSCoder) {
@@ -40,7 +39,6 @@ class FloorView: UIView  {
 
     }
     
-    
     func setupViews(){
         
         self.frame = UIScreen.mainScreen().bounds
@@ -53,6 +51,7 @@ class FloorView: UIView  {
         
         var touchView = TouchView.view()
         touchView.frame = CGRectMake(rect.x, rect.y, rect.w, rect.h)
+        touchView.setupSubViews()
         touchView.touchViewDelegate = self
         self.addSubview(touchView)
         

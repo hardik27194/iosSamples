@@ -12,10 +12,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view tag="1002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smH-mM-GKJ">
-                    <rect key="frame" x="107" y="115" width="85" height="71"/>
+                    <rect key="frame" x="109" y="100" width="60" height="60"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" tag="1001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frickPointView.png" translatesAutoresizingMaskIntoConstraints="NO" id="tS6-Oq-zgg">
-                            <rect key="frame" x="13" y="3" width="60" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,7 +36,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="frickPointView" destination="tS6-Oq-zgg" id="kPf-1v-3Fu"/>
+                <outlet property="frickPointView" destination="smH-mM-GKJ" id="QWH-Ia-gaM"/>
             </connections>
         </view>
     </objects>

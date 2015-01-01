@@ -43,17 +43,15 @@ class FloorView: UIView  {
         
         self.frame = UIScreen.mainScreen().bounds
         
-        
+        var touchView = TouchView()
+        touchView.touchViewDelegate = self
+        self.addSubview(touchView)
+
         var rect = customRect(x: 0, y: 0, w: 0, h: 0);
         rect.h = UIScreen.mainScreen().bounds.height / 2
         rect.y = UIScreen.mainScreen().bounds.height / 2
         rect.w = UIScreen.mainScreen().bounds.width
-        
-        var touchView = TouchView.view()
-        touchView.frame = CGRectMake(rect.x, rect.y, rect.w, rect.h)
-        touchView.setupSubViews()
-        touchView.touchViewDelegate = self
-        self.addSubview(touchView)
+
         
         rect.h = 100
         rect.y = UIScreen.mainScreen().bounds.height / 2 - rect.h

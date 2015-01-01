@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14281D1B1A512017005E4448 /* frickPointView.png in Resources */ = {isa = PBXBuildFile; fileRef = 14281D1A1A512017005E4448 /* frickPointView.png */; };
+		14281D1E1A559388005E4448 /* CommonUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14281D1D1A559388005E4448 /* CommonUtility.swift */; };
 		14933C4C1A3C424B0048C613 /* TaskApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14933C4B1A3C424B0048C613 /* TaskApiClient.swift */; };
 		14933C4E1A3C43090048C613 /* BaseApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14933C4D1A3C43090048C613 /* BaseApiClient.swift */; };
 		149A64771A4FEE800029A11F /* FloorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149A64731A4FEE800029A11F /* FloorView.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		14281D1A1A512017005E4448 /* frickPointView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frickPointView.png; sourceTree = "<group>"; };
+		14281D1D1A559388005E4448 /* CommonUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonUtility.swift; path = Utility/CommonUtility.swift; sourceTree = "<group>"; };
 		14933C4B1A3C424B0048C613 /* TaskApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskApiClient.swift; path = ApiClient/TaskApiClient.swift; sourceTree = "<group>"; };
 		14933C4D1A3C43090048C613 /* BaseApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseApiClient.swift; path = ApiClient/BaseApiClient.swift; sourceTree = "<group>"; };
 		149A64731A4FEE800029A11F /* FloorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FloorView.swift; path = View/FloorView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 				4A78B108B1CE4619809C60AD /* libPods-swift2.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14281D1C1A55935D005E4448 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				14281D1D1A559388005E4448 /* CommonUtility.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		14933C4A1A3C41E90048C613 /* ApiClient */ = {
@@ -174,6 +184,7 @@
 		72F4953719ECC24B0042EFE5 /* swift2 */ = {
 			isa = PBXGroup;
 			children = (
+				14281D1C1A55935D005E4448 /* Utility */,
 				14D85F551A3F219E008F0EF6 /* View */,
 				14DDEC661A3C782D0026E1C7 /* DataObject */,
 				14DDEC631A3C73D50026E1C7 /* DataManager */,
@@ -353,6 +364,7 @@
 				14DDEC681A3C78480026E1C7 /* Task.swift in Sources */,
 				14DDEC6E1A3C81A70026E1C7 /* RLMSupport.swift in Sources */,
 				14933C4C1A3C424B0048C613 /* TaskApiClient.swift in Sources */,
+				14281D1E1A559388005E4448 /* CommonUtility.swift in Sources */,
 				72F4953D19ECC24B0042EFE5 /* RootViewController.swift in Sources */,
 				149A647A1A4FEE800029A11F /* TouchView.swift in Sources */,
 				72F4953B19ECC24B0042EFE5 /* AppDelegate.swift in Sources */,

@@ -34,7 +34,7 @@ class TouchView: UIView {
     
     weak var touchViewDelegate: TouchViewDelegate?
     var frickPointView = UIImageView()
-    let square = UIView()
+    var squareViews = [UIView]()
     
     var st = state.normal
     
@@ -63,11 +63,24 @@ class TouchView: UIView {
         selfviewRect.w = UIScreen.mainScreen().bounds.width
         self.frame = CGRectMake(selfviewRect.x, selfviewRect.y, selfviewRect.w, selfviewRect.h)
         
-        // 四角
-        square.frame = CGRectMake(100, 100, 50, 50)
-        square.backgroundColor = UIColor.lightGrayColor()
-        self.addSubview(square)
+        
 
+        
+        // 落とすところ
+        for i in 1...4 {
+            let squareHeight = 90.0 as CGFloat
+            var squareRect = customRect(x: 0, y: 0, w: 0, h: 0);
+            squareRect.x = CGRectGetMinX(self.frame)
+            squareRect.y = CGRectGetHeight(self.frame) - squareHeight
+            squareRect.w = CGRectGetWidth(self.frame) / 4
+            squareRect.h = squareHeight
+            let squareView = UIView()
+            squareView.frame = CGRectMake(squareRect.x, squareRect.y, squareRect.w, squareRect.h)
+            squareView.backgroundColor = UIColor.lightGrayColor()
+            self.addSubview(squareView)
+            squareViews.append(squareView)
+        }
+        
         // フリック画像
         let frickImage = UIImage(named: "frickPointView")
         frickPointView = UIImageView(frame: frickPointViewFirstRect())
@@ -75,7 +88,6 @@ class TouchView: UIView {
         frickPointView.userInteractionEnabled = true
         frickPointView.tag = 1002
         self.addSubview(frickPointView)
-        
         
     }
 
@@ -97,17 +109,11 @@ class TouchView: UIView {
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         
-        
-//        if (CGRectIntersectsRect(bird.frame, lowerPipe.frame)) {
-//            let loser = self.childNodeWithName("loser")
-//            let action = SKAction.fadeInWithDuration(3)
-//            loser.runAction(action)
+//        if CGRectIntersectsRect(frickPointView.frame, squareView.frame) {
+//            println(" うひゃー")
+//            
 //        }
         
-        if CGRectIntersectsRect(frickPointView.frame, square.frame) {
-            println(" うひゃー")
-        
-        }
         
         if (touches.anyObject() != nil){
         
@@ -169,6 +175,8 @@ class TouchView: UIView {
         let rect = CGRectMake(x, y, w, h)
         return rect
     }
+    
+    
     
     private func moveRate(#diffy: CGFloat) -> CGFloat {
     

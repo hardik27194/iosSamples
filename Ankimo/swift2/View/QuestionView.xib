@@ -11,10 +11,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="znU-Lo-Kqo" userLabel="anserView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="znU-Lo-Kqo" userLabel="answerView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AN9-dr-byA" userLabel="questionLabel">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AN9-dr-byA" userLabel="answerLabel">
                             <rect key="frame" x="10" y="10" width="300" height="80"/>
                             <color key="backgroundColor" white="0.87373991935483875" alpha="0.0" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -43,7 +43,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whG-FM-H58" userLabel="questionView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWA-Ag-HeT" userLabel="anserLabel">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWA-Ag-HeT" userLabel="questionLabel">
                             <rect key="frame" x="10" y="10" width="300" height="80"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -82,9 +82,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="answerCellView" destination="znU-Lo-Kqo" id="PuG-Or-u05"/>
-                <outlet property="questionCellView" destination="whG-FM-H58" id="CGF-8T-W48"/>
-                <outlet property="questionLabel" destination="AN9-dr-byA" id="eFv-1n-Sx2"/>
+                <outlet property="answerCellView" destination="znU-Lo-Kqo" id="yrW-ba-zHJ"/>
+                <outlet property="answerLabel" destination="AN9-dr-byA" id="FlB-Di-VCh"/>
+                <outlet property="questionCellView" destination="whG-FM-H58" id="bCQ-LI-p22"/>
+                <outlet property="questionLabel" destination="XWA-Ag-HeT" id="9r5-js-gjk"/>
             </connections>
             <point key="canvasLocation" x="-57" y="-143"/>
         </view>

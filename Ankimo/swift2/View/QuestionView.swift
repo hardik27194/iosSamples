@@ -13,6 +13,7 @@ class QuestionView: UIView {
     @IBOutlet weak var questionCellView: UIView?
     @IBOutlet weak var answerCellView: UIView?
     @IBOutlet weak var questionLabel: UILabel?
+    @IBOutlet weak var answerLabel: UILabel?
     
     var question = Question()
     

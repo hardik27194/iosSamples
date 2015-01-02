@@ -94,15 +94,9 @@ class FloorView: UIView  {
     func adjustQuestionView() {
 
         var rect = customRect(x: 0, y: 0, w: 0, h: 0);
-        rect.h = UIScreen.mainScreen().bounds.height / 2
-        rect.y = UIScreen.mainScreen().bounds.height / 2
-        rect.w = UIScreen.mainScreen().bounds.width
-        
-        
         rect.h = 100
         rect.y = UIScreen.mainScreen().bounds.height / 2 - rect.h
         rect.w = UIScreen.mainScreen().bounds.width
-
         
         for questionView in questionViews {
             questionView.frame = CGRectMake(rect.x, rect.y, rect.w, rect.h)

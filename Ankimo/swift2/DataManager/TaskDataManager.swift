@@ -6,7 +6,6 @@
 //  Copyright (c) 2014年 jp.co.sakura.charorin. All rights reserved.
 //
 
-import UIKit
 import Realm
 
 class TaskDataManager: NSObject {

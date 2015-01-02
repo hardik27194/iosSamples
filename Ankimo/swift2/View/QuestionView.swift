@@ -9,10 +9,12 @@
 import UIKit
 
 class QuestionView: UIView {
-
     
     @IBOutlet weak var questionCellView: UIView?
     @IBOutlet weak var answerCellView: UIView?
+    @IBOutlet weak var questionLabel: UILabel?
+    
+    var question = Question()
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -31,6 +33,10 @@ class QuestionView: UIView {
         return questionView
     }
 
+    func setupViews(question: Question) {
+        questionLabel!.text = question.questionText
+    }
+    
     func moveQuestionView(#movedRate:CGFloat){
         questionCellView!.frame = originx(view: questionCellView!, x: self.bounds.width * movedRate)
 

@@ -84,6 +84,7 @@
             <connections>
                 <outlet property="answerCellView" destination="znU-Lo-Kqo" id="PuG-Or-u05"/>
                 <outlet property="questionCellView" destination="whG-FM-H58" id="CGF-8T-W48"/>
+                <outlet property="questionLabel" destination="AN9-dr-byA" id="eFv-1n-Sx2"/>
             </connections>
             <point key="canvasLocation" x="-57" y="-143"/>
         </view>

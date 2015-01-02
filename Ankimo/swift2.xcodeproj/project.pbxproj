@@ -15,6 +15,8 @@
 		149A64781A4FEE800029A11F /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149A64741A4FEE800029A11F /* QuestionView.swift */; };
 		149A64791A4FEE800029A11F /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149A64751A4FEE800029A11F /* QuestionView.xib */; };
 		149A647A1A4FEE800029A11F /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149A64761A4FEE800029A11F /* TouchView.swift */; };
+		14C8B6531A567A540065861D /* QuestionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8B6521A567A540065861D /* QuestionDataManager.swift */; };
+		14C8B6571A567A8B0065861D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C8B6561A567A8B0065861D /* Question.swift */; };
 		14DDEC651A3C74100026E1C7 /* TaskDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDEC641A3C74100026E1C7 /* TaskDataManager.swift */; };
 		14DDEC681A3C78480026E1C7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DDEC671A3C78480026E1C7 /* Task.swift */; };
 		14DDEC6A1A3C7EAF0026E1C7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14DDEC691A3C7EAF0026E1C7 /* Realm.framework */; };
@@ -47,6 +49,8 @@
 		149A64741A4FEE800029A11F /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionView.swift; path = View/QuestionView.swift; sourceTree = "<group>"; };
 		149A64751A4FEE800029A11F /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionView.xib; path = View/QuestionView.xib; sourceTree = "<group>"; };
 		149A64761A4FEE800029A11F /* TouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TouchView.swift; path = View/TouchView.swift; sourceTree = "<group>"; };
+		14C8B6521A567A540065861D /* QuestionDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionDataManager.swift; path = DataManager/QuestionDataManager.swift; sourceTree = "<group>"; };
+		14C8B6561A567A8B0065861D /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = DataObject/Question.swift; sourceTree = "<group>"; };
 		14DDEC641A3C74100026E1C7 /* TaskDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskDataManager.swift; path = DataManager/TaskDataManager.swift; sourceTree = "<group>"; };
 		14DDEC671A3C78480026E1C7 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = DataObject/Task.swift; sourceTree = "<group>"; };
 		14DDEC691A3C7EAF0026E1C7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				14DDEC641A3C74100026E1C7 /* TaskDataManager.swift */,
+				14C8B6521A567A540065861D /* QuestionDataManager.swift */,
 			);
 			name = DataManager;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				14DDEC671A3C78480026E1C7 /* Task.swift */,
+				14C8B6561A567A8B0065861D /* Question.swift */,
 			);
 			name = DataObject;
 			sourceTree = "<group>";
@@ -365,8 +371,10 @@
 				14DDEC6E1A3C81A70026E1C7 /* RLMSupport.swift in Sources */,
 				14933C4C1A3C424B0048C613 /* TaskApiClient.swift in Sources */,
 				14281D1E1A559388005E4448 /* CommonUtility.swift in Sources */,
+				14C8B6531A567A540065861D /* QuestionDataManager.swift in Sources */,
 				72F4953D19ECC24B0042EFE5 /* RootViewController.swift in Sources */,
 				149A647A1A4FEE800029A11F /* TouchView.swift in Sources */,
+				14C8B6571A567A8B0065861D /* Question.swift in Sources */,
 				72F4953B19ECC24B0042EFE5 /* AppDelegate.swift in Sources */,
 				149A64771A4FEE800029A11F /* FloorView.swift in Sources */,
 				14DDEC651A3C74100026E1C7 /* TaskDataManager.swift in Sources */,

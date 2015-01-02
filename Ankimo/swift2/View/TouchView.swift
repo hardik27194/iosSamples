@@ -10,7 +10,7 @@ import UIKit
 
 protocol TouchViewDelegate: class {
     func movePoint(diffy: CGFloat) -> ()
-    func finishMove() -> ()
+    func enterOpenArea() -> ()
     func endBaseView() -> ()
     func releaseTouch() -> ()
 }
@@ -34,7 +34,12 @@ class TouchView: UIView {
     
     weak var touchViewDelegate: TouchViewDelegate?
     var frickPointView = UIImageView()
+    let frickCenterView = UIView()
+    let moveAreaView = UIView()
+    let openAreaView = UIView()
     var squareViews = [UIView]()
+    
+    var x:CGFloat = 0, y:CGFloat = 0, w:CGFloat = 0, h:CGFloat = 0
     
     var st = state.normal
     
@@ -57,37 +62,72 @@ class TouchView: UIView {
     func setupViews() {
         
         // このView
-        var selfviewRect = customRect(x: 0, y: 0, w: 0, h: 0);
-        selfviewRect.h = UIScreen.mainScreen().bounds.height / 2
-        selfviewRect.y = UIScreen.mainScreen().bounds.height / 2
-        selfviewRect.w = UIScreen.mainScreen().bounds.width
-        self.frame = CGRectMake(selfviewRect.x, selfviewRect.y, selfviewRect.w, selfviewRect.h)
-        
-        
+        x = 0 as CGFloat
+        h = UIScreen.mainScreen().bounds.height / 2
+        y = UIScreen.mainScreen().bounds.height / 2
+        w = UIScreen.mainScreen().bounds.width
+        self.frame = CGRectMake(x, y, w, h)
 
+        // オープンエリア view
+        x = 0 as CGFloat
+        y = 0 as CGFloat
+        h = 190 as CGFloat
+        w = CGRectGetWidth(self.frame)
+        moveAreaView.frame = CGRectMake(x, y, w, h)
+        moveAreaView.backgroundColor = UIColor.yellowColor()
+        self.addSubview(moveAreaView)
+        
+        // オープンエリア view
+        x = 0 as CGFloat
+        y = CGRectGetMaxY(moveAreaView.frame)
+        h = 190 as CGFloat
+        w = CGRectGetWidth(self.frame)
+        openAreaView.frame = CGRectMake(x, y, w, h)
+        openAreaView.backgroundColor = UIColor.lightGrayColor()
+        self.addSubview(openAreaView)
         
         // 落とすところ
-        for i in 1...4 {
+        let colors = [
+            UIColor(red: 0, green: 1, blue: 1, alpha: 1),
+            UIColor(red: 1, green: 0, blue: 1, alpha: 1),
+            UIColor(red: 1, green: 1, blue: 0, alpha: 1),
+            UIColor(red: 1, green: 0, blue: 0, alpha: 1),
+        ]
+        
+        for i in 0...3 {
             let squareHeight = 90.0 as CGFloat
-            var squareRect = customRect(x: 0, y: 0, w: 0, h: 0);
-            squareRect.x = CGRectGetMinX(self.frame)
-            squareRect.y = CGRectGetHeight(self.frame) - squareHeight
-            squareRect.w = CGRectGetWidth(self.frame) / 4
-            squareRect.h = squareHeight
+            w = CGRectGetWidth(self.frame) / 4
+            x = CGRectGetMinX(self.frame) + CGFloat(i) * w
+            y = CGRectGetHeight(self.frame) - squareHeight
+            h = squareHeight
             let squareView = UIView()
-            squareView.frame = CGRectMake(squareRect.x, squareRect.y, squareRect.w, squareRect.h)
-            squareView.backgroundColor = UIColor.lightGrayColor()
+            squareView.tag = 2000 + i
+            squareView.frame = CGRectMake(x, y, w, h)
+            squareView.backgroundColor = colors[i]
             self.addSubview(squareView)
             squareViews.append(squareView)
         }
-        
+
         // フリック画像
+        w = 60 as CGFloat
+        h = 60 as CGFloat
+        x = self.frame.width / 2 - w / 2
+        y = 30.0 as CGFloat
         let frickImage = UIImage(named: "frickPointView")
-        frickPointView = UIImageView(frame: frickPointViewFirstRect())
+        frickPointView = UIImageView(frame: CGRectMake(x, y, w, h))
         frickPointView.image = frickImage
         frickPointView.userInteractionEnabled = true
         frickPointView.tag = 1002
         self.addSubview(frickPointView)
+        
+        // フリック中心
+        x = frickPointView.center.x
+        y = frickPointView.center.y
+        h = 1 as CGFloat
+        w = 1 as CGFloat
+        frickCenterView.frame = CGRectMake(x, y, w, h)
+        frickCenterView.backgroundColor = UIColor.whiteColor()
+        self.addSubview(frickCenterView)
         
     }
 
@@ -109,80 +149,48 @@ class TouchView: UIView {
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         
-//        if CGRectIntersectsRect(frickPointView.frame, squareView.frame) {
-//            println(" うひゃー")
-//            
-//        }
-        
-        
         if (touches.anyObject() != nil){
         
             var touchPoint = touches.anyObject()!.locationInView(self)
         
             println("\(st.rawValue)")
-            
-            if st == state.pull {
 
-                frickPointView.center = touchPoint
+            frickPointView.center = touchPoint
+            frickCenterView.center = touchPoint
+
+            if CGRectIntersectsRect(frickCenterView.frame, moveAreaView.frame) {
+                var diffy = touchPoint.y - startPoint.y
+                touchViewDelegate?.movePoint( moveRate(diffy: diffy) )
                 
-                if touchPoint.y < 200 {
-                    
-                    var diffy = touchPoint.y - startPoint.y
-                    touchViewDelegate?.movePoint( moveRate(diffy: diffy) )
-
-                } else if touchPoint.y < 250 {
-
-                    st = state.finish
-                    touchViewDelegate?.finishMove()
-                    
-                } else {
-                
-                }
+            } else if CGRectIntersectsRect(frickCenterView.frame, openAreaView.frame) {
+                touchViewDelegate?.enterOpenArea()
                 
             }
-            
-            
-            if touchPoint.y > 250 && touchPoint.y < 300 {
-                touchViewDelegate?.endBaseView()
-            }
-
             
         }
-        
-        
-        
         
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        st = state.normal
-        touchViewDelegate?.releaseTouch()
+
+        if CGRectIntersectsRect(frickCenterView.frame, squareViews[0].frame) {
+            touchViewDelegate?.endBaseView()
+            
+        } else {
+            touchViewDelegate?.releaseTouch()
+        }
 
         UIView.animateWithDuration(0.1, animations: {() -> Void in
-            self.frickPointView.frame = self.frickPointViewFirstRect()
+            self.frickPointView.center = CGPointMake(self.center.x, 30)
+            self.frickCenterView.center = CGPointMake(self.center.x, 30)
         })
         
     }
     
-    /*!
-    * @abstract frickPointViewの元の場所
-    */
-    private func frickPointViewFirstRect () -> CGRect {
-        let w = 60 as CGFloat
-        let h = 60 as CGFloat
-        let x = self.frame.width / 2 - w / 2
-        let y = 50.0 as CGFloat
-        let rect = CGRectMake(x, y, w, h)
-        return rect
-    }
-    
-    
-    
     private func moveRate(#diffy: CGFloat) -> CGFloat {
     
-        var selfViewHeight = self.frame.height
-        var moveRate = diffy / selfViewHeight
-        
+        var selfViewHeight = moveAreaView.frame.height
+        var moveRate = 0.7 * diffy / selfViewHeight
         
         if moveRate < 0 {
             moveRate = 0

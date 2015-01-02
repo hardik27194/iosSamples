@@ -38,7 +38,7 @@ class QuestionView: UIView {
 
     func openQuestion() {
         UIView.animateWithDuration(0.3 , animations: {() -> Void in
-            self.moveQuestionView(movedRate: self.bounds.width)
+            self.moveQuestionView(movedRate: 1)
             }, completion: {(Bool) -> Void in
         })
     }

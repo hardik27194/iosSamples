@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Realm
 
 protocol TouchViewDelegate: class {
     func movePoint(diffy: CGFloat) -> ()
@@ -68,10 +69,10 @@ class TouchView: UIView {
         w = UIScreen.mainScreen().bounds.width
         self.frame = CGRectMake(x, y, w, h)
 
-        // オープンエリア view
+        // moveArea view
         x = 0 as CGFloat
         y = 0 as CGFloat
-        h = 190 as CGFloat
+        h = CGRectGetHeight(self.frame) * 0.5
         w = CGRectGetWidth(self.frame)
         moveAreaView.frame = CGRectMake(x, y, w, h)
         moveAreaView.backgroundColor = UIColor.yellowColor()
@@ -80,7 +81,7 @@ class TouchView: UIView {
         // オープンエリア view
         x = 0 as CGFloat
         y = CGRectGetMaxY(moveAreaView.frame)
-        h = 190 as CGFloat
+        h = CGRectGetHeight(self.frame) - y
         w = CGRectGetWidth(self.frame)
         openAreaView.frame = CGRectMake(x, y, w, h)
         openAreaView.backgroundColor = UIColor.lightGrayColor()
@@ -104,6 +105,7 @@ class TouchView: UIView {
             squareView.tag = 2000 + i
             squareView.frame = CGRectMake(x, y, w, h)
             squareView.backgroundColor = colors[i]
+            
             self.addSubview(squareView)
             squareViews.append(squareView)
         }

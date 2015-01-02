@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Realm
 
 class FloorView: UIView  {
     
@@ -35,6 +35,7 @@ class FloorView: UIView  {
         
         self.frame = UIScreen.mainScreen().bounds
 
+        makeData()
         setupViews()
 
     }
@@ -57,9 +58,20 @@ class FloorView: UIView  {
         rect.y = UIScreen.mainScreen().bounds.height / 2 - rect.h
         rect.w = UIScreen.mainScreen().bounds.width
         
+        var manager = QuestionDataManager.sharedInstance
+        var questions = manager.exec()
+        
+        
         for i in 0...2 {
             var questionView = QuestionView.view()
             questionView.frame = CGRectMake(rect.x, rect.y, rect.w, rect.h)
+            
+//            var query = "id = '" + String(i) + "'"
+//            var question = questions.objectsWhere(query).firstObject() as RLMObject
+            
+            var question = manager.find(String(i))
+            questionView.setupViews(question!)
+            
             self.addSubview(questionView)
             questionViews.append(questionView)
             rect.y = rect.y - rect.h
@@ -71,6 +83,12 @@ class FloorView: UIView  {
         btn.addTarget(self, action: "endBaseView", forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(btn)
         
+    }
+    
+    func makeData() {
+    
+        var manager = QuestionDataManager.sharedInstance
+        manager.makeData()
     }
     
     func adjustQuestionView() {

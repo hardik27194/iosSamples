@@ -37,24 +37,30 @@ class QuestionView: UIView {
     }
 
     func openQuestion() {
-        UIView.animateWithDuration(0.3 , animations: {() -> Void in
-            self.moveQuestionView(movedRate: 1)
+        UIView.animateWithDuration(0.3 , animations: {[weak self]() -> Void in
+            if let weakSelf = self {
+                weakSelf.moveQuestionView(movedRate: 1)
+            }
             }, completion: {(Bool) -> Void in
         })
     }
 
     func releaseTouch() {
-        UIView.animateWithDuration(0.2 , animations: {() -> Void in
-            self.moveQuestionView(movedRate: 0)
+        UIView.animateWithDuration(0.2 , animations: {[weak self]() -> Void in
+            if let weakSelf = self {
+                weakSelf.moveQuestionView(movedRate: 0)
+            }
             }, completion: {(Bool) -> Void in
         })
 
     }
     
     func endBaseView(){
-        UIView.animateWithDuration(0.3 , animations: {() -> Void in
-            self.answerCellView!.frame = self.originx(view: self.answerCellView!, x: self.bounds.width)
-            self.questionCellView!.frame = self.originx(view: self.questionCellView!, x: self.bounds.width)
+        UIView.animateWithDuration(0.3 , animations: {[weak self]() -> Void in
+            if let weakSelf = self {
+                weakSelf.answerCellView!.frame = weakSelf.originx(view: weakSelf.answerCellView!, x: weakSelf.bounds.width)
+                weakSelf.questionCellView!.frame = weakSelf.originx(view: weakSelf.questionCellView!, x: weakSelf.bounds.width)
+            }
             }, completion: {(Bool) -> Void in
         })
 

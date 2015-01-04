@@ -15,7 +15,6 @@ class QuestionView: UIView {
     @IBOutlet weak var questionLabel: UILabel?
     @IBOutlet weak var answerLabel: UILabel?
     
-    var question = Question()
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -36,6 +35,7 @@ class QuestionView: UIView {
 
     func setupViews(question: Question) {
         questionLabel!.text = question.questionText
+        answerLabel!.text = question.answerText
     }
     
     func moveQuestionView(#movedRate:CGFloat){

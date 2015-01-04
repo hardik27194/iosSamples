@@ -60,12 +60,12 @@
 		4A059D1CB280782E7D255455 /* Pods-swift2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift2.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift2/Pods-swift2.release.xcconfig"; sourceTree = "<group>"; };
 		4A78B108B1CE4619809C60AD /* libPods-swift2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-swift2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		727C9EE419F49B2500C2488A /* swift2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swift2-Bridging-Header.h"; sourceTree = "<group>"; };
-		72F4953519ECC24B0042EFE5 /* swift2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72F4953519ECC24B0042EFE5 /* ankimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ankimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F4953919ECC24B0042EFE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72F4953A19ECC24B0042EFE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72F4953C19ECC24B0042EFE5 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		72F4954119ECC24B0042EFE5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		72F4954A19ECC24B0042EFE5 /* swift2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swift2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72F4954A19ECC24B0042EFE5 /* ankimoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ankimoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F4954F19ECC24C0042EFE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72F4955019ECC24C0042EFE5 /* swift2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift2Tests.swift; sourceTree = "<group>"; };
 		B34DC9183C286B12272B642D /* Pods-swift2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift2/Pods-swift2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,8 +181,8 @@
 		72F4953619ECC24B0042EFE5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				72F4953519ECC24B0042EFE5 /* swift2.app */,
-				72F4954A19ECC24B0042EFE5 /* swift2Tests.xctest */,
+				72F4953519ECC24B0042EFE5 /* ankimo.app */,
+				72F4954A19ECC24B0042EFE5 /* ankimoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,9 +233,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		72F4953419ECC24B0042EFE5 /* swift2 */ = {
+		72F4953419ECC24B0042EFE5 /* ankimo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72F4955419ECC24C0042EFE5 /* Build configuration list for PBXNativeTarget "swift2" */;
+			buildConfigurationList = 72F4955419ECC24C0042EFE5 /* Build configuration list for PBXNativeTarget "ankimo" */;
 			buildPhases = (
 				A29FB0C5DF714AB2950955FE /* Check Pods Manifest.lock */,
 				72F4953119ECC24B0042EFE5 /* Sources */,
@@ -247,14 +247,14 @@
 			);
 			dependencies = (
 			);
-			name = swift2;
+			name = ankimo;
 			productName = swift2;
-			productReference = 72F4953519ECC24B0042EFE5 /* swift2.app */;
+			productReference = 72F4953519ECC24B0042EFE5 /* ankimo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		72F4954919ECC24B0042EFE5 /* swift2Tests */ = {
+		72F4954919ECC24B0042EFE5 /* ankimoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 72F4955719ECC24C0042EFE5 /* Build configuration list for PBXNativeTarget "swift2Tests" */;
+			buildConfigurationList = 72F4955719ECC24C0042EFE5 /* Build configuration list for PBXNativeTarget "ankimoTests" */;
 			buildPhases = (
 				72F4954619ECC24B0042EFE5 /* Sources */,
 				72F4954719ECC24B0042EFE5 /* Frameworks */,
@@ -265,9 +265,9 @@
 			dependencies = (
 				72F4954C19ECC24C0042EFE5 /* PBXTargetDependency */,
 			);
-			name = swift2Tests;
+			name = ankimoTests;
 			productName = swift2Tests;
-			productReference = 72F4954A19ECC24B0042EFE5 /* swift2Tests.xctest */;
+			productReference = 72F4954A19ECC24B0042EFE5 /* ankimoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -288,7 +288,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 72F4953019ECC24B0042EFE5 /* Build configuration list for PBXProject "swift2" */;
+			buildConfigurationList = 72F4953019ECC24B0042EFE5 /* Build configuration list for PBXProject "ankimo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -301,8 +301,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				72F4953419ECC24B0042EFE5 /* swift2 */,
-				72F4954919ECC24B0042EFE5 /* swift2Tests */,
+				72F4953419ECC24B0042EFE5 /* ankimo */,
+				72F4954919ECC24B0042EFE5 /* ankimoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -395,7 +395,7 @@
 /* Begin PBXTargetDependency section */
 		72F4954C19ECC24C0042EFE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 72F4953419ECC24B0042EFE5 /* swift2 */;
+			target = 72F4953419ECC24B0042EFE5 /* ankimo */;
 			targetProxy = 72F4954B19ECC24C0042EFE5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -491,7 +491,7 @@
 				INFOPLIST_FILE = swift2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ankimo;
 				SWIFT_OBJC_BRIDGING_HEADER = "swift2-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -510,7 +510,7 @@
 				INFOPLIST_FILE = swift2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ankimo;
 				SWIFT_OBJC_BRIDGING_HEADER = "swift2-Bridging-Header.h";
 			};
 			name = Release;
@@ -529,7 +529,7 @@
 				);
 				INFOPLIST_FILE = swift2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ankimoTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift2.app/swift2";
 			};
 			name = Debug;
@@ -544,7 +544,7 @@
 				);
 				INFOPLIST_FILE = swift2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ankimoTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift2.app/swift2";
 			};
 			name = Release;
@@ -552,7 +552,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		72F4953019ECC24B0042EFE5 /* Build configuration list for PBXProject "swift2" */ = {
+		72F4953019ECC24B0042EFE5 /* Build configuration list for PBXProject "ankimo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72F4955219ECC24C0042EFE5 /* Debug */,
@@ -561,7 +561,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72F4955419ECC24C0042EFE5 /* Build configuration list for PBXNativeTarget "swift2" */ = {
+		72F4955419ECC24C0042EFE5 /* Build configuration list for PBXNativeTarget "ankimo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72F4955519ECC24C0042EFE5 /* Debug */,
@@ -570,7 +570,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		72F4955719ECC24C0042EFE5 /* Build configuration list for PBXNativeTarget "swift2Tests" */ = {
+		72F4955719ECC24C0042EFE5 /* Build configuration list for PBXNativeTarget "ankimoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				72F4955819ECC24C0042EFE5 /* Debug */,

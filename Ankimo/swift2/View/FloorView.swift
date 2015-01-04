@@ -77,11 +77,13 @@ class FloorView: UIView  {
             rect.y = rect.y - rect.h
         }
 
+        /*
         var btn = UIButton(frame: CGRectMake(10, 70, 100, 50))
         btn.setTitle("aaa", forState: UIControlState.Normal)
         btn.backgroundColor = UIColor.blueColor()
         btn.addTarget(self, action: "endBaseView", forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(btn)
+        */
         
     }
     
@@ -121,7 +123,7 @@ extension FloorView : TouchViewDelegate {
         self.questionViews[0].releaseTouch()
     }
 
-    func endBaseView() {
+    func releaseTouchInFinishArea() {
         self.questionViews[0].endBaseView()
         
         var tmp = questionViews[0]

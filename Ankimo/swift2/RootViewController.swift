@@ -30,6 +30,12 @@ class RootViewController: UIViewController {
         var floorView = FloorView()
         self.view.addSubview(floorView)
         
+        var rect = UIScreen.mainScreen().bounds
+        rect.offset(dx: 100, dy: 0)
+        var questionInputView = QuestionInputView(frame: rect)
+        self.view.addSubview(questionInputView)
+        
+        
         var taskDataManager = TaskDataManager()
         taskDataManager.exec()
         

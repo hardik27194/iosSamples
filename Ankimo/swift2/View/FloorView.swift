@@ -66,9 +66,6 @@ class FloorView: UIView  {
             var questionView = QuestionView.view()
             questionView.frame = CGRectMake(rect.x, rect.y, rect.w, rect.h)
             
-//            var query = "id = '" + String(i) + "'"
-//            var question = questions.objectsWhere(query).firstObject() as RLMObject
-            
             var question = manager.find(String(i))
             questionView.setupViews(question!)
             
@@ -76,14 +73,6 @@ class FloorView: UIView  {
             questionViews.append(questionView)
             rect.y = rect.y - rect.h
         }
-
-        /*
-        var btn = UIButton(frame: CGRectMake(10, 70, 100, 50))
-        btn.setTitle("aaa", forState: UIControlState.Normal)
-        btn.backgroundColor = UIColor.blueColor()
-        btn.addTarget(self, action: "endBaseView", forControlEvents: UIControlEvents.TouchUpInside)
-        self.addSubview(btn)
-        */
         
     }
     

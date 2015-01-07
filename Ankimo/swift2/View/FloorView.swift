@@ -123,7 +123,7 @@ extension FloorView : TouchViewDelegate {
         self.questionViews[0].releaseTouch()
     }
 
-    func releaseTouchInFinishArea() {
+    func releaseTouchInFinishArea(AreaNo:Int) {
         self.questionViews[0].endBaseView()
         
         var tmp = questionViews[0]

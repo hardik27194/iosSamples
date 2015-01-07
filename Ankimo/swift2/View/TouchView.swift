@@ -12,7 +12,7 @@ import Realm
 protocol TouchViewDelegate: class {
     func movePoint(diffy: CGFloat) -> ()
     func enterOpenArea() -> ()
-    func releaseTouchInFinishArea() -> ()
+    func releaseTouchInFinishArea(AreaNo:Int) -> ()
     func releaseTouch() -> ()
 }
 
@@ -176,16 +176,16 @@ class TouchView: UIView {
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         
         if CGRectIntersectsRect(frickCenterView.frame, squareViews[0].frame) {
-            touchViewDelegate?.releaseTouchInFinishArea()
+            touchViewDelegate?.releaseTouchInFinishArea(0)
             
         } else if CGRectIntersectsRect(frickCenterView.frame, squareViews[1].frame) {
-            touchViewDelegate?.releaseTouchInFinishArea()
+            touchViewDelegate?.releaseTouchInFinishArea(1)
             
         } else if CGRectIntersectsRect(frickCenterView.frame, squareViews[2].frame) {
-            touchViewDelegate?.releaseTouchInFinishArea()
+            touchViewDelegate?.releaseTouchInFinishArea(2)
             
         } else if CGRectIntersectsRect(frickCenterView.frame, squareViews[3].frame) {
-            touchViewDelegate?.releaseTouchInFinishArea()
+            touchViewDelegate?.releaseTouchInFinishArea(3)
             
         } else {
             touchViewDelegate?.releaseTouch()

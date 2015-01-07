@@ -26,7 +26,6 @@
 		72F4953B19ECC24B0042EFE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F4953A19ECC24B0042EFE5 /* AppDelegate.swift */; };
 		72F4953D19ECC24B0042EFE5 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F4953C19ECC24B0042EFE5 /* RootViewController.swift */; };
 		72F4954219ECC24B0042EFE5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F4954119ECC24B0042EFE5 /* Images.xcassets */; };
-		72F4955119ECC24C0042EFE5 /* swift2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F4955019ECC24C0042EFE5 /* swift2Tests.swift */; };
 		F70DBBF5C6424228820B1EEB /* libPods-swift2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A78B108B1CE4619809C60AD /* libPods-swift2.a */; };
 /* End PBXBuildFile section */
 
@@ -386,7 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72F4955119ECC24C0042EFE5 /* swift2Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: TAKESHI SHIMADA (KND29T57MN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -530,6 +529,7 @@
 				INFOPLIST_FILE = swift2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ankimoTests;
+				PROVISIONING_PROFILE = "569671ed-413b-4d66-bf77-dab6ffd5e2c2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift2.app/swift2";
 			};
 			name = Debug;
@@ -538,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: TAKESHI SHIMADA (KND29T57MN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -545,6 +546,7 @@
 				INFOPLIST_FILE = swift2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ankimoTests;
+				PROVISIONING_PROFILE = "569671ed-413b-4d66-bf77-dab6ffd5e2c2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swift2.app/swift2";
 			};
 			name = Release;

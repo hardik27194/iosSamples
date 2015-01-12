@@ -112,6 +112,23 @@ class QuestionDataManager: NSObject {
         question.questionText = "Figure out the answer to this calculus problem."
         question.answerText = " この微積分問題の答えを出しなさい."
         questions.append(question)
+
+        
+        question = Question()
+        question.questionText = "Figure out the answer to this calculus problem."
+        question.answerText = " この微積分問題の答えを出しなさい."
+        questions.append(question)
+
+        question = Question()
+        question.questionText = "Figure out the answer to this calculus problem."
+        question.answerText = " この微積分問題の答えを出しなさい."
+        questions.append(question)
+
+        question = Question()
+        question.questionText = "Figure out the answer to this calculus problem."
+        question.answerText = " この微積分問題の答えを出しなさい."
+        questions.append(question)
+
         
         let realm = RLMRealm.defaultRealm()
         

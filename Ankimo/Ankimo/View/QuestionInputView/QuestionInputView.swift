@@ -17,6 +17,9 @@ class QuestionInputView: UIView {
 //        h:CGFloat = 0 as CGFloat
 //    }
     
+    let questionText = UITextField()
+    let answerText = UITextField()
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -47,7 +50,6 @@ class QuestionInputView: UIView {
         self.addSubview(questionLabel)
         
         // Question Text
-        let questionText = UITextField()
         let questionX = CGRectGetMaxX(questionLabel.frame)
         let questionY = CGRectGetMinY(questionLabel.frame)
         let questionW = self.bounds.width - rightPadding - CGRectGetMaxX(questionLabel.frame)
@@ -64,7 +66,6 @@ class QuestionInputView: UIView {
         self.addSubview(answerLabel)
         
         // Answer Text
-        let answerText = UITextField()
         let answerX = CGRectGetMaxX(answerLabel.frame)
         let answerY = CGRectGetMinY(answerLabel.frame)
         let answerW = self.bounds.width - rightPadding - CGRectGetMaxX(answerLabel.frame)
@@ -98,7 +99,7 @@ class QuestionInputView: UIView {
         registerButton.layer.cornerRadius = 5.0
         registerButton.setTitle("登録", forState: UIControlState.Normal)
         registerButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        registerButton.addTarget(self, action: "", forControlEvents: UIControlEvents.TouchUpInside)
+        registerButton.addTarget(self, action: "registerButtonPush", forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(registerButton)
         
     }
@@ -115,15 +116,14 @@ class QuestionInputView: UIView {
         return returnRect
     }
     
-    private func registerButtonPush(){
+    func registerButtonPush(){
     
         var question = Question()
-        question.questionText = "q1"
-        question.answerText = "a1"
+        question.questionText = questionText.text
+        question.answerText = answerText.text
         
-//        let manager = QuestionDataManager.sharedInstance
-        
-    
+        let manager = QuestionDataManager.sharedInstance
+        manager.registQuestion(question)
         
     }
     

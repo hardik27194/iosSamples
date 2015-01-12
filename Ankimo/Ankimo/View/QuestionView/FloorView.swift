@@ -58,9 +58,8 @@ class FloorView: UIView  {
         rect.y = UIScreen.mainScreen().bounds.height / 2 - rect.h
         rect.w = UIScreen.mainScreen().bounds.width
         
-        var manager = QuestionDataManager.sharedInstance
+        var manager = QuestionDataManager.sharedInstance()
         var questions = manager.exec()
-        
         
         for i in 0...2 {
             var questionView = QuestionView.view()
@@ -78,7 +77,7 @@ class FloorView: UIView  {
     
     func makeData() {
     
-        var manager = QuestionDataManager.sharedInstance
+        var manager = QuestionDataManager.sharedInstance()
         manager.makeData()
     }
     

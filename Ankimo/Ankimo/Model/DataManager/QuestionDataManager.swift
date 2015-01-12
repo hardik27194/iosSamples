@@ -12,11 +12,13 @@ class QuestionDataManager: NSObject {
    
     let realm = RLMRealm.defaultRealm()
 
-    class var sharedInstance : QuestionDataManager {
-        struct Static {
-            static let instance : QuestionDataManager = QuestionDataManager()
+    class sharedInstance {
+        class var sharedInstance: QuestionDataManager {
+            struct Static {
+                static let instance: QuestionDataManager = QuestionDataManager()
+            }
+            return Static.instance
         }
-        return Static.instance
     }
     
     func exec () -> RLMResults {
@@ -43,6 +45,30 @@ class QuestionDataManager: NSObject {
         return nil
     }
 
+    func registQuestion(question:Question){
+        
+        var questions = Array<Question>()
+        questions.append(question)
+        
+        for question in questions {
+            realm.beginWriteTransaction()
+            Question.createOrUpdateInDefaultRealmWithObject(question)
+            realm.commitWriteTransaction()
+        }
+
+        
+    }
+    
+    func maxIdQuestion(){
+//        NSPredicate(format: "", <#args: CVarArgType#>...)
+//        Question.objectsWithPredicate(<#predicate: NSPredicate!#>)
+        let tmp1 = Question.allObjects()
+        let tmp2 = tmp1.maxOfProperty("id") as String
+
+        println("max id -> \(tmp2)")
+
+    }
+    
     func makeData () {
         
         var questions = Array<Question>()

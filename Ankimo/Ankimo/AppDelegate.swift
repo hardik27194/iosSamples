@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  swift2
+//  Ankimo
 //
-//  Created by 島田武史 on 2014/10/14.
-//  Copyright (c) 2014年 jp.co.sakura.charorin. All rights reserved.
+//  Created by takeshi on 2015/01/12.
+//  Copyright (c) 2015年 takeshi. All rights reserved.
 //
 
 import UIKit
@@ -15,14 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Override point for customization after application launch.
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         var naviController = UINavigationController()
+        naviController.setNavigationBarHidden(true, animated: true)
         let rootVC:RootViewController = RootViewController()
         naviController.pushViewController(rootVC, animated: false)
         self.window!.rootViewController = naviController
         self.window!.makeKeyAndVisible()
-        
+
         return true
     }
 

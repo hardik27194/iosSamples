@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:swift2.xcodeproj">
+      location = "self:Ankimo.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,5 +1,5 @@
 //
-//  QuestionInputView.swift
+//  QuestionInputTableView.swift
 //  ankimo
 //
 //  Created by takeshi on 2015/01/07.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionInputView: UIView {
+class QuestionInputTableView: UIView {
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -24,15 +24,10 @@ class QuestionInputView: UIView {
     }
 
     func setupViews(){
-        
-//        var x:CGFloat = 0, y:CGFloat = 0, w:CGFloat = 0, h:CGFloat = 0
-//        
-//        var rect = UIScreen.mainScreen().bounds
-//        self.frame = rect
-        self.backgroundColor = UIColor.orangeColor()
-        
-        
-        
+        var tblview = UITableView()
+        tblview.frame = self.frame
+        self.addSubview(tblview)
+
     }
     
 }

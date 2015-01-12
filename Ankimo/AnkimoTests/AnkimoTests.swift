@@ -1,15 +1,15 @@
 //
-//  swift2Tests.swift
-//  swift2Tests
+//  AnkimoTests.swift
+//  AnkimoTests
 //
-//  Created by 島田武史 on 2014/10/14.
-//  Copyright (c) 2014年 jp.co.sakura.charorin. All rights reserved.
+//  Created by takeshi on 2015/01/12.
+//  Copyright (c) 2015年 takeshi. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class swift2Tests: XCTestCase {
+class AnkimoTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

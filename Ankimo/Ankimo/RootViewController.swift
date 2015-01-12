@@ -31,7 +31,7 @@ class RootViewController: UIViewController {
         self.view.addSubview(floorView)
         
         var rect = UIScreen.mainScreen().bounds
-        rect.offset(dx: 100, dy: 0)
+        rect.offset(dx: 0, dy: 0)
         var questionInputView = QuestionInputView(frame: rect)
         self.view.addSubview(questionInputView)
         

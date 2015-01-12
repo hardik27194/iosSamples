@@ -15,8 +15,8 @@ class Question: RLMObject {
     dynamic var answerText: String = ""
 //    dynamic var delFlg : Bool = false
     
-//    override class func primaryKey() -> String! {
-//        return "id"
-//    }
+    override class func primaryKey() -> String! {
+        return "id"
+    }
 
 }

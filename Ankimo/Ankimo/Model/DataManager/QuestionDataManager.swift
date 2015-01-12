@@ -9,16 +9,14 @@
 import Realm
 
 class QuestionDataManager: NSObject {
-   
+    
     let realm = RLMRealm.defaultRealm()
-
-    class sharedInstance {
-        class var sharedInstance: QuestionDataManager {
-            struct Static {
-                static let instance: QuestionDataManager = QuestionDataManager()
-            }
-            return Static.instance
+    
+    class var sharedInstance : QuestionDataManager {
+        struct Static {
+            static let instance : QuestionDataManager = QuestionDataManager()
         }
+        return Static.instance
     }
     
     func exec () -> RLMResults {
@@ -27,12 +25,12 @@ class QuestionDataManager: NSObject {
         
         let questions = Question.allObjects()
         
-//        for tmp in questions {
-//            var question = tmp as Question
-//            println( question.questionText )
-//            
-//        }
-
+        //        for tmp in questions {
+        //            var question = tmp as Question
+        //            println( question.questionText )
+        //
+        //        }
+        
         return Question.allObjects()
         
     }
@@ -44,7 +42,7 @@ class QuestionDataManager: NSObject {
         }
         return nil
     }
-
+    
     func registQuestion(question:Question){
         
         var questions = Array<Question>()
@@ -55,18 +53,18 @@ class QuestionDataManager: NSObject {
             Question.createOrUpdateInDefaultRealmWithObject(question)
             realm.commitWriteTransaction()
         }
-
+        
         
     }
     
     func maxIdQuestion(){
-//        NSPredicate(format: "", <#args: CVarArgType#>...)
-//        Question.objectsWithPredicate(<#predicate: NSPredicate!#>)
+        //        NSPredicate(format: "", <#args: CVarArgType#>...)
+        //        Question.objectsWithPredicate(<#predicate: NSPredicate!#>)
         let tmp1 = Question.allObjects()
         let tmp2 = tmp1.maxOfProperty("id") as String
-
+        
         println("max id -> \(tmp2)")
-
+        
     }
     
     func makeData () {
@@ -102,19 +100,19 @@ class QuestionDataManager: NSObject {
         question.questionText = "A newspaper answered for a tablecloth."
         question.answerText = " 新聞紙 1 枚でテーブルクロスの代わりになった."
         questions.append(question)
-
+        
         question = Question()
         question.id = "5"
         question.questionText = "Her answer to my greeting was a smile."
         question.answerText = " 私のあいさつに答えて彼女はにっこり笑った."
         questions.append(question)
-
+        
         question = Question()
         question.id = "6"
         question.questionText = "Figure out the answer to this calculus problem."
         question.answerText = " この微積分問題の答えを出しなさい."
         questions.append(question)
-
+        
         let realm = RLMRealm.defaultRealm()
         
         println(realm.path)
@@ -126,5 +124,5 @@ class QuestionDataManager: NSObject {
         }
         
     }
-
+    
 }

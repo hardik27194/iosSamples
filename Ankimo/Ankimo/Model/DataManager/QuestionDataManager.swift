@@ -35,8 +35,12 @@ class QuestionDataManager: NSObject {
         
     }
     
-    func find(id:String) -> Question? {
-        let result = Question.objectsWithPredicate(NSPredicate(format: "id = %@", id))
+    func maxId() -> Int {
+        return Question.allObjects().maxOfProperty("id").integerValue
+    }
+    
+    func find(id:Int) -> Question? {
+        let result = Question.objectsWithPredicate(NSPredicate(format: "id = %d", id))
         if let question = result {
             return question.firstObject() as? Question
         }
@@ -53,7 +57,6 @@ class QuestionDataManager: NSObject {
             Question.createOrUpdateInDefaultRealmWithObject(question)
             realm.commitWriteTransaction()
         }
-        
         
     }
     
@@ -72,41 +75,42 @@ class QuestionDataManager: NSObject {
         var questions = Array<Question>()
         
         var question = Question()
-        question.id = "0"
+        question.id = 0
         question.questionText = "She answered (me) that she would be happy to come"
         question.answerText = "彼女は喜んでお伺いしますと(私に)返事をよこした."
         questions.append(question)
         
         question = Question()
-        question.id = "1"
+        question.id = 1
         question.questionText = "I'm fine, thank you,\" she answered."
         question.answerText = "元気です, ありがとう」と彼女は答えた."
         questions.append(question)
         
         question = Question()
-        question.id = "2"
+        question.id = 2
         question.questionText = "He didn't answer a word (to me). "
         question.answerText = "彼は(私に)ひと言も答えなかった."
         questions.append(question)
         
         question = Question()
-        question.id = "3"
+        question.id = 3
         question.questionText = "I phoned but nobody answered."
         question.answerText = " 電話をかけたがだれも出なかった."
         questions.append(question)
         
         question = Question()
-        question.id = "4"
+        question.id = 4
         question.questionText = "A newspaper answered for a tablecloth."
         question.answerText = " 新聞紙 1 枚でテーブルクロスの代わりになった."
         questions.append(question)
         
         question = Question()
-        question.id = "5"
+        question.id = 5
         question.questionText = "Her answer to my greeting was a smile."
         question.answerText = " 私のあいさつに答えて彼女はにっこり笑った."
         questions.append(question)
         
+        /*
         question = Question()
         question.id = "6"
         question.questionText = "Figure out the answer to this calculus problem."
@@ -128,7 +132,7 @@ class QuestionDataManager: NSObject {
         question.questionText = "Figure out the answer to this calculus problem."
         question.answerText = " この微積分問題の答えを出しなさい."
         questions.append(question)
-
+        */
         
         let realm = RLMRealm.defaultRealm()
         

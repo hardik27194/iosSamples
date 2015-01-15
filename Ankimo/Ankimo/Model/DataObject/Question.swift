@@ -10,7 +10,7 @@ import Realm
 
 class Question: RLMObject {
    
-    dynamic var id = ""
+    dynamic var id = 0
     dynamic var questionText: String = ""
     dynamic var answerText: String = ""
 //    dynamic var delFlg : Bool = false

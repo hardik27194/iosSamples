@@ -64,7 +64,7 @@ class FloorView: UIView  {
             var questionView = QuestionView.view()
             questionView.frame = CGRectMake(rect.x, rect.y, rect.w, rect.h)
             
-            var question = manager.find(String(i))
+            var question = manager.find(i)
             questionView.setupViews(question!)
             
             self.addSubview(questionView)

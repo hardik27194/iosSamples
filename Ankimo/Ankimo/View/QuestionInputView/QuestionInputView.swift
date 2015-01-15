@@ -117,12 +117,16 @@ class QuestionInputView: UIView {
     }
     
     func registerButtonPush(){
+
+        let manager = QuestionDataManager.sharedInstance
     
+        var maxid = manager.maxId()
+        
         var question = Question()
         question.questionText = questionText.text
         question.answerText = answerText.text
+        question.id = maxid + 1
         
-        let manager = QuestionDataManager.sharedInstance
         manager.registQuestion(question)
         
     }

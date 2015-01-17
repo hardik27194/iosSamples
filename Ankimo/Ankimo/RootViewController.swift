@@ -30,12 +30,19 @@ class RootViewController: UIViewController {
         var floorView = FloorView()
         self.view.addSubview(floorView)
         
+        //　質問登録画面
         var rect = UIScreen.mainScreen().bounds
         rect.offset(dx: 0, dy: 0)
         var questionInputView = QuestionInputView(frame: rect)
+        questionInputView.initWithMode(questionInputViewMode.edit)
         self.view.addSubview(questionInputView)
         
+        //　質問リスト
+        let questionInputTableView = QuestionInputTableView(frame: UIScreen.mainScreen().bounds)
+        self.view.addSubview(questionInputTableView)
+        questionInputTableView.dataReload()
         
+            // ネットワークから読み込み
         var taskDataManager = TaskDataManager()
         taskDataManager.exec()
         

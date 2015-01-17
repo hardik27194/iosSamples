@@ -8,17 +8,20 @@
 
 import UIKit
 
+enum questionInputViewMode {
+    case register
+    case edit
+}
+
 class QuestionInputView: UIView {
 
-//    struct rect {
-//        x:CGFloat = 0 as CGFloat,
-//        y:CGFloat = 0 as CGFloat,
-//        w:CGFloat = 0 as CGFloat,
-//        h:CGFloat = 0 as CGFloat
-//    }
+    var mode = questionInputViewMode.register
     
     let questionText = UITextField()
     let answerText = UITextField()
+    let dispSwitch = UISwitch()
+    
+    var buttonString = ""
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,13 +29,31 @@ class QuestionInputView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupViews()
     }
     
     override init() {
         super.init()
     }
 
+    func initWithMode (mode: questionInputViewMode){
+    
+        if mode == questionInputViewMode.register {
+            
+            buttonString = NSLocalizedString("buttonStringRegister", comment: "")
+            dispSwitch.hidden = true
+            
+        } else if mode == questionInputViewMode.edit {
+        
+            buttonString = NSLocalizedString("buttonStringEdit", comment: "")
+            dispSwitch.hidden = false
+            
+        }
+
+        setupViews()
+
+    }
+    
+    
     func setupViews(){
         self.backgroundColor = UIColor.orangeColor()
 
@@ -45,7 +66,8 @@ class QuestionInputView: UIView {
         // Question Label
         let questionLabelY = 50.0 as CGFloat
         let questionLabel = UILabel()
-        questionLabel.frame = CGRectMake(leftPadding, questionLabelY, titleWidth, textHeight)
+        var questionLabelRect = customRect(x:leftPadding, y:questionLabelY, w:titleWidth, h:textHeight)
+        questionLabel.frame = questionLabelRect.rect()
         questionLabel.text = "問い"
         self.addSubview(questionLabel)
         
@@ -54,7 +76,7 @@ class QuestionInputView: UIView {
         let questionY = CGRectGetMinY(questionLabel.frame)
         let questionW = self.bounds.width - rightPadding - CGRectGetMaxX(questionLabel.frame)
         questionText.frame = CGRectMake(questionX, questionY, questionW, textHeight)
-        questionText.backgroundColor = UIColor.whiteColor()
+        questionText.borderStyle = UITextBorderStyle.RoundedRect
         questionText.layer.cornerRadius = 5.0
         self.addSubview(questionText)
         
@@ -70,7 +92,7 @@ class QuestionInputView: UIView {
         let answerY = CGRectGetMinY(answerLabel.frame)
         let answerW = self.bounds.width - rightPadding - CGRectGetMaxX(answerLabel.frame)
         answerText.frame = CGRectMake(answerX, answerY, answerW, textHeight)
-        answerText.backgroundColor = UIColor.whiteColor()
+        answerText.borderStyle = UITextBorderStyle.RoundedRect
         answerText.layer.cornerRadius = 5.0
         self.addSubview(answerText)
         
@@ -82,7 +104,6 @@ class QuestionInputView: UIView {
         self.addSubview(dispSwitchLabel)
         
         // disp Switch
-        let dispSwitch = UISwitch()
         let dispSwitchX = CGRectGetMaxX(dispSwitchLabel.frame)
         let dispSwitchY = CGRectGetMaxY(answerText.frame) + verticalPadding
         let dispSwitchW = 100.0 as CGFloat
@@ -97,7 +118,7 @@ class QuestionInputView: UIView {
         registerButton.frame = CGRectMake(leftPadding, registerButtonY, registerButtonW, textHeight * 1.5)
         registerButton.backgroundColor = UIColor(red: 0.8, green: 1, blue: 1, alpha: 1)
         registerButton.layer.cornerRadius = 5.0
-        registerButton.setTitle("登録", forState: UIControlState.Normal)
+        registerButton.setTitle(buttonString, forState: UIControlState.Normal)
         registerButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         registerButton.addTarget(self, action: "registerButtonPush", forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(registerButton)
@@ -125,10 +146,14 @@ class QuestionInputView: UIView {
         var question = Question()
         question.questionText = questionText.text
         question.answerText = answerText.text
+        question.createDate = NSDate()
+        question.modifyDate = NSDate()
         question.id = maxid + 1
         
         manager.registQuestion(question)
-        
+     
+        questionText.text = ""
+        answerText.text = ""
     }
     
 }

@@ -19,24 +19,50 @@ class QuestionDataManager: NSObject {
         return Static.instance
     }
     
-    func exec () -> RLMResults {
+    func objectAtIndex(idx: Int) -> Question {
         
+        
+//        let q = Question.objectsWhere("id = \(idx)")
+//        
+//        let q1: AnyObject! = Question.objectsWhere("id = \(idx)").firstObject()
+//        
+//        let q2 = Question.objectsWhere("id = \(idx)").firstObject() as? Question
+
+        let questions =  Question.objectsWhere("id = %d", idx)
+  
+//        for question in questions {
+//        
+//            let aa = (question as Question).questionText
+//            
+//            println("jkjk")
+//        }
+//        
+        
+        let question = (questions.firstObject() as Question)
+
+            println("jkjk")
+        
+//        for (var question in questions){
+//
+//            println("a2")
+//        
+//        }
+        
+        return question
+    }
+    
+    func allObjects () -> RLMResults {
         println("realm.defaultRealmPath  \(RLMRealm.defaultRealmPath()) ")
-        
         let questions = Question.allObjects()
-        
-        //        for tmp in questions {
-        //            var question = tmp as Question
-        //            println( question.questionText )
-        //
-        //        }
-        
         return Question.allObjects()
-        
     }
     
     func maxId() -> Int {
         return Question.allObjects().maxOfProperty("id").integerValue
+    }
+
+    func allObjectCount() -> Int {
+        return Int(Question.allObjects().count)
     }
     
     func find(id:Int) -> Question? {

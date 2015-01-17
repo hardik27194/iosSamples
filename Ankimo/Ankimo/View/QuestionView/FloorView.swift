@@ -8,14 +8,18 @@
 
 import UIKit
 
-class FloorView: UIView  {
+struct customRect {
+    var x: CGFloat = 0.0
+    var y: CGFloat = 0.0
+    var w: CGFloat = 0.0
+    var h: CGFloat = 0.0
     
-    struct customRect {
-        var x: CGFloat = 0.0
-        var y: CGFloat = 0.0
-        var w: CGFloat = 0.0
-        var h: CGFloat = 0.0
+    func rect()->CGRect{
+        return CGRectMake(x, y, w, h)
     }
+}
+
+class FloorView: UIView  {
     
     var cellView = UIView()
     var questionViews = Array<QuestionView>()
@@ -47,29 +51,24 @@ class FloorView: UIView  {
         touchView.touchViewDelegate = self
         self.addSubview(touchView)
 
-        var rect = customRect(x: 0, y: 0, w: 0, h: 0);
-        rect.h = UIScreen.mainScreen().bounds.height / 2
-        rect.y = UIScreen.mainScreen().bounds.height / 2
-        rect.w = UIScreen.mainScreen().bounds.width
-
-        
-        rect.h = 100
-        rect.y = UIScreen.mainScreen().bounds.height / 2 - rect.h
-        rect.w = UIScreen.mainScreen().bounds.width
+        var questionViewRect = customRect(x: 0, y: 0, w: 0, h: 0);
+        questionViewRect.h = 100
+        questionViewRect.y = UIScreen.mainScreen().bounds.height / 2 - questionViewRect.h
+        questionViewRect.w = UIScreen.mainScreen().bounds.width
         
         var manager = QuestionDataManager.sharedInstance
-        var questions = manager.exec()
+        var questions = manager.allObjects()
         
         for i in 0...2 {
             var questionView = QuestionView.view()
-            questionView.frame = CGRectMake(rect.x, rect.y, rect.w, rect.h)
+            questionView.frame = questionViewRect.rect()
             
             var question = manager.find(i)
             questionView.setupViews(question!)
             
             self.addSubview(questionView)
             questionViews.append(questionView)
-            rect.y = rect.y - rect.h
+            questionViewRect.y = questionViewRect.y - questionViewRect.h
         }
         
     }

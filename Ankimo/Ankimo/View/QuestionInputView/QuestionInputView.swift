@@ -166,6 +166,10 @@ class QuestionInputView: UIView {
      
         questionText.text = ""
         answerText.text = ""
+        
+        var questionInputTableView = ViewManager.sharedInstance.questionInputTableView
+        ViewManager.sharedInstance.popView(preView: self, nextView: questionInputTableView)
+
     }
     
 }

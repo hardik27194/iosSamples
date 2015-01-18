@@ -14,6 +14,7 @@ class ViewManager: NSObject {
     var nextView = UIView()
     
     var questionInputView = QuestionInputView()
+    var questionInputTableView = QuestionInputTableView()
     
     class var sharedInstance : ViewManager {
         struct Static {
@@ -42,15 +43,20 @@ class ViewManager: NSObject {
         nextView.frame = CGRectMake(mainBounds.width, 0, mainBounds.width, mainBounds.height)
         nextView.bringSubviewToFront(preView)
         
+        let angle = CGFloat(90.0 * M_PI / 180.0)
+        nextView.transform = CGAffineTransformMakeRotation(angle)
+
         UIView.animateWithDuration(
-            0.5,
+            0.2,
             delay: 0.0,
             options: .CurveLinear,
             animations:  {() -> Void in
-                nextView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
+                let angle = CGFloat(0.0 * M_PI / 180.0)
+                nextView.transform = CGAffineTransformMakeRotation(angle)
+                nextView.frame = CGRectMake(0.0, 0, mainBounds.width, mainBounds.height)
+
             },
             completion: {(bool: Bool) -> Void in
-                // Completion処理
             }
         )
         
@@ -58,6 +64,9 @@ class ViewManager: NSObject {
 
     func popView(#preView: UIView, nextView: UIView){
         
+        preView.hidden = false
+        nextView.hidden = false
+
         let mainBounds = UIScreen.mainScreen().bounds
         
         preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
@@ -65,14 +74,20 @@ class ViewManager: NSObject {
         nextView.sendSubviewToBack(preView)
         
         UIView.animateWithDuration(
-            0.5,
+            0.2,
             delay: 0.0,
             options: .CurveLinear,
             animations:  {() -> Void in
-                nextView.frame = CGRectMake(mainBounds.width, 0, mainBounds.width, mainBounds.height)
+                preView.frame = CGRectMake(mainBounds.width, 0, mainBounds.width, mainBounds.height)
+                let angle = CGFloat(90.0 * M_PI / 180.0)
+                preView.transform = CGAffineTransformMakeRotation(angle)
+
             },
             completion: {(bool: Bool) -> Void in
                 // Completion処理
+                let angle = CGFloat(0.0 * M_PI / 180.0)
+                preView.transform = CGAffineTransformMakeRotation(angle)
+
             }
         )
         

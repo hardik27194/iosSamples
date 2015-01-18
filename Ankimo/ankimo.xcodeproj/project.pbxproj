@@ -35,6 +35,11 @@
 		1485635C1A63A1D30019BC9C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1DE0DDABB9163207C3FAB /* libPods.a */; };
 		14AEDD4F1A63F15C000628E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AEDD4D1A63F15C000628E5 /* Default-568h@2x.png */; };
 		14AEDD501A63F15C000628E5 /* frickPointView.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AEDD4E1A63F15C000628E5 /* frickPointView.png */; };
+		14BDE5621A6B646600C46183 /* ProtoView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE55F1A6B646600C46183 /* ProtoView1.swift */; };
+		14BDE5631A6B646600C46183 /* ProtoView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5601A6B646600C46183 /* ProtoView2.swift */; };
+		14BDE5641A6B646600C46183 /* ViewMoveProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5611A6B646600C46183 /* ViewMoveProto.swift */; };
+		14BDE5661A6B69DB00C46183 /* AKMBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5651A6B69DB00C46183 /* AKMBaseView.swift */; };
+		14BDE5681A6B71E200C46183 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5671A6B71E200C46183 /* ViewManager.swift */; };
 		14FFA6921A63A3FE00B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
 		14FFA6931A63A40500B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
 		CE2379DE86C0026C16CA0142 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1DE0DDABB9163207C3FAB /* libPods.a */; };
@@ -79,6 +84,11 @@
 		148563521A63A10F0019BC9C /* AnkimoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkimoTests.swift; sourceTree = "<group>"; };
 		14AEDD4D1A63F15C000628E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		14AEDD4E1A63F15C000628E5 /* frickPointView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frickPointView.png; sourceTree = "<group>"; };
+		14BDE55F1A6B646600C46183 /* ProtoView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProtoView1.swift; path = ViewMoveProto/ProtoView1.swift; sourceTree = "<group>"; };
+		14BDE5601A6B646600C46183 /* ProtoView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProtoView2.swift; path = ViewMoveProto/ProtoView2.swift; sourceTree = "<group>"; };
+		14BDE5611A6B646600C46183 /* ViewMoveProto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewMoveProto.swift; path = ViewMoveProto/ViewMoveProto.swift; sourceTree = "<group>"; };
+		14BDE5651A6B69DB00C46183 /* AKMBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AKMBaseView.swift; path = ViewMoveProto/AKMBaseView.swift; sourceTree = "<group>"; };
+		14BDE5671A6B71E200C46183 /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewManager.swift; path = ViewMoveProto/ViewManager.swift; sourceTree = "<group>"; };
 		14FFA6911A63A3FE00B79386 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		3F39116080E14CB19988095E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F8F1DE0DDABB9163207C3FAB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +121,7 @@
 		1457FEE31A63CF7E003B012F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14BDE55E1A6B63FF00C46183 /* ViewMoveProto */,
 				1457FEE41A63CF7E003B012F /* QuestionInputView */,
 				1457FEE71A63CF7E003B012F /* QuestionView */,
 				1457FEEC1A63CF7E003B012F /* SettingView */,
@@ -232,6 +243,18 @@
 				14AEDD4E1A63F15C000628E5 /* frickPointView.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		14BDE55E1A6B63FF00C46183 /* ViewMoveProto */ = {
+			isa = PBXGroup;
+			children = (
+				14BDE5671A6B71E200C46183 /* ViewManager.swift */,
+				14BDE5651A6B69DB00C46183 /* AKMBaseView.swift */,
+				14BDE55F1A6B646600C46183 /* ProtoView1.swift */,
+				14BDE5601A6B646600C46183 /* ProtoView2.swift */,
+				14BDE5611A6B646600C46183 /* ViewMoveProto.swift */,
+			);
+			name = ViewMoveProto;
 			sourceTree = "<group>";
 		};
 		14FFA6811A63A36D00B79386 /* Model */ = {
@@ -436,8 +459,10 @@
 			files = (
 				1457FF031A63D037003B012F /* BaseApiClient.swift in Sources */,
 				1457FEEE1A63CF7E003B012F /* QuestionInputTableView.swift in Sources */,
+				14BDE5681A6B71E200C46183 /* ViewManager.swift in Sources */,
 				1457FEDB1A63AC0C003B012F /* Question.swift in Sources */,
 				1457FEE11A63ADF1003B012F /* RLMSupport.swift in Sources */,
+				14BDE5641A6B646600C46183 /* ViewMoveProto.swift in Sources */,
 				1457FEF61A63CFD0003B012F /* RootViewController.swift in Sources */,
 				1457FEF81A63CFFC003B012F /* TaskDataManager.swift in Sources */,
 				1485633D1A63A10F0019BC9C /* AppDelegate.swift in Sources */,
@@ -445,7 +470,10 @@
 				1457FEF31A63CF7E003B012F /* TouchView.swift in Sources */,
 				1457FEFA1A63D006003B012F /* Task.swift in Sources */,
 				1457FED91A63AB7C003B012F /* QuestionDataManager.swift in Sources */,
+				14BDE5621A6B646600C46183 /* ProtoView1.swift in Sources */,
+				14BDE5661A6B69DB00C46183 /* AKMBaseView.swift in Sources */,
 				1457FEF11A63CF7E003B012F /* QuestionView.swift in Sources */,
+				14BDE5631A6B646600C46183 /* ProtoView2.swift in Sources */,
 				1457FF041A63D037003B012F /* TaskApiClient.swift in Sources */,
 				1457FEF01A63CF7E003B012F /* FloorView.swift in Sources */,
 				1457FEF41A63CF7E003B012F /* SettingView.swift in Sources */,

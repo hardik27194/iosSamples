@@ -9,7 +9,7 @@
 import UIKit
 import Realm
 
-class QuestionInputTableView: UIView, UITableViewDelegate ,UITableViewDataSource {
+class QuestionInputTableView: UIView {
     
     var questions: RLMResults? = nil
     var questionDataManager = QuestionDataManager()
@@ -30,17 +30,16 @@ class QuestionInputTableView: UIView, UITableViewDelegate ,UITableViewDataSource
 
     func setupViews(){
 
-//        tableView.registerClass(testCustomViewCell.classForCoder(), forCellReuseIdentifier: "testCustomViewCell")
-
     }
 
     func dataReload(){
 
+        self.clipsToBounds = true
+        
         tblview.frame = self.frame
         tblview.delegate = self
         tblview.dataSource = self
         self.addSubview(tblview)
-
         
         questionDataManager = QuestionDataManager.sharedInstance
         questions = questionDataManager.allObjects()
@@ -49,6 +48,11 @@ class QuestionInputTableView: UIView, UITableViewDelegate ,UITableViewDataSource
         
     }
     
+}
+
+// MARK: - UITableViewDelegate -
+extension QuestionInputTableView : UITableViewDelegate ,UITableViewDataSource {
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         println(" Int(questionDataManager.allObjectCount()) : \(Int(questionDataManager.allObjectCount())) ")
         return Int(questionDataManager.allObjectCount())
@@ -63,19 +67,16 @@ class QuestionInputTableView: UIView, UITableViewDelegate ,UITableViewDataSource
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         
         cell.textLabel.text = "\(question.questionText)"
-        //        cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-        //        cell.detailTextLabel.text = "Subtitle index : \(indexPath.row)"
+        cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         return cell
-
+        
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         
     }
-    
-}
 
-//class QuestionInputTableView: UIView {
+}
 
 
 

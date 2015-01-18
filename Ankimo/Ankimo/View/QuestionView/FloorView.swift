@@ -45,6 +45,8 @@ class FloorView: UIView  {
     
     func setupViews(){
         
+        self.clipsToBounds = true
+
         self.frame = UIScreen.mainScreen().bounds
         
         var touchView = TouchView()

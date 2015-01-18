@@ -30,6 +30,10 @@ class RootViewController: UIViewController {
         var floorView = FloorView()
         self.view.addSubview(floorView)
         
+        let viewMoveProto = ViewMoveProto(frame: self.view.bounds)
+        self.view.addSubview(viewMoveProto)
+        
+        /*
         //　質問登録画面
         var rect = UIScreen.mainScreen().bounds
         rect.offset(dx: 0, dy: 0)
@@ -42,7 +46,9 @@ class RootViewController: UIViewController {
         self.view.addSubview(questionInputTableView)
         questionInputTableView.dataReload()
         
-            // ネットワークから読み込み
+        */
+        
+        // ネットワークから読み込み
         var taskDataManager = TaskDataManager()
         taskDataManager.exec()
         

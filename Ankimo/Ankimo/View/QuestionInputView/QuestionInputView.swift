@@ -55,6 +55,9 @@ class QuestionInputView: UIView {
     
     
     func setupViews(){
+        
+        self.clipsToBounds = true
+
         self.backgroundColor = UIColor.orangeColor()
 
         let rightPadding = 10.0 as CGFloat

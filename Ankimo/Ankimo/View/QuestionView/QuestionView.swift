@@ -15,7 +15,6 @@ class QuestionView: UIView {
     @IBOutlet weak var questionLabel: UILabel?
     @IBOutlet weak var answerLabel: UILabel?
     
-    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

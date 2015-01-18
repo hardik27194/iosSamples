@@ -13,6 +13,8 @@ class ViewManager: NSObject {
     var preView = UIView()
     var nextView = UIView()
     
+    var questionInputView = QuestionInputView()
+    
     class var sharedInstance : ViewManager {
         struct Static {
             static let instance : ViewManager = ViewManager()
@@ -31,6 +33,9 @@ class ViewManager: NSObject {
 
     func pushView(#preView: UIView, nextView: UIView){
 
+        preView.hidden = false
+        nextView.hidden = false
+        
         let mainBounds = UIScreen.mainScreen().bounds
 
         preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)

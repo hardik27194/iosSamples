@@ -74,6 +74,8 @@ extension QuestionInputTableView : UITableViewDelegate ,UITableViewDataSource {
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         
+        var questionInputView = ViewManager.sharedInstance.questionInputView
+        ViewManager.sharedInstance.pushView(preView: self, nextView: questionInputView)
     }
 
 }

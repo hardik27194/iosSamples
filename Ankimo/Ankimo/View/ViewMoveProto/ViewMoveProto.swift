@@ -52,7 +52,6 @@ class ViewMoveProto: UIView {
             let popTime1 = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
             dispatch_after(popTime1, dispatch_get_main_queue()){
                 ViewManager.sharedInstance.wipeOutView(preView: questionView, nextView: protoView1)
-                
 
             }
             

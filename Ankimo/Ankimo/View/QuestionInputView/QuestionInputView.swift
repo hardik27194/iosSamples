@@ -29,14 +29,22 @@ class QuestionInputView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        
     }
     
     override init() {
         super.init()
+
+    }
+    
+    override func didMoveToSuperview() {
+        ViewManager.sharedInstance.questionInputView = self
     }
 
     func initWithMode (mode: questionInputViewMode){
     
+
         if mode == questionInputViewMode.register {
             
             buttonString = NSLocalizedString("buttonStringRegister", comment: "")
@@ -50,6 +58,7 @@ class QuestionInputView: UIView {
         }
 
         setupViews()
+        
 
     }
     

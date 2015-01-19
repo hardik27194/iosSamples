@@ -47,11 +47,16 @@ class RootViewController: UIViewController {
         questionInputView.initWithMode(questionInputViewMode.edit)
         questionInputView.hidden = true
         self.view.addSubview(questionInputView)
+        
 //        ViewManager.sharedInstance.questionInputView = questionInputView
         
         // ネットワークから読み込み
 //        var taskDataManager = TaskDataManager()
 //        taskDataManager.exec()
+        
+        
+        ViewManager.sharedInstance.addView(tabIdx: 1, view: questionInputTableView)
+        ViewManager.sharedInstance.addView(tabIdx: 1, view: questionInputView)
         
     }
     

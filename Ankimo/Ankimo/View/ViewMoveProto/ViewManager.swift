@@ -16,6 +16,8 @@ class ViewManager: NSObject {
     var questionInputView = QuestionInputView()
     var questionInputTableView = QuestionInputTableView()
     
+    var tabs1: [AnyObject] = []
+    
     class var sharedInstance : ViewManager {
         struct Static {
             static let instance : ViewManager = ViewManager()
@@ -23,29 +25,81 @@ class ViewManager: NSObject {
         return Static.instance
     }
 
-    func addView(#preView: UIView, nextView: UIView){
-
-        let mainBounds = UIScreen.mainScreen().bounds
-
-        preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
-        nextView.frame = CGRectMake(mainBounds.width, 0, mainBounds.width, mainBounds.height)
-        
+    func addView(#tabIdx: Int, view: AnyObject){
+//        var views = tabs[tabIdx] as Array<AnyObject>
+//        views.append(view)
+        tabs1.append(view)
     }
 
+    func pushView(nextView: UIView){
+    }
+    
     func pushView(#preView: UIView, nextView: UIView){
-
+        
         preView.hidden = false
         nextView.hidden = false
         
         let mainBounds = UIScreen.mainScreen().bounds
-
+        
+        preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
+        nextView.frame = CGRectMake(mainBounds.width, 0, mainBounds.width, mainBounds.height)
+        nextView.bringSubviewToFront(preView)
+        
+        UIView.animateWithDuration(
+            0.2,
+            delay: 0.0,
+            options: .CurveLinear,
+            animations:  {() -> Void in
+                nextView.frame = CGRectMake(0.0, 0, mainBounds.width, mainBounds.height)
+                
+            },
+            completion: {(bool: Bool) -> Void in
+            }
+        )
+        
+    }
+    
+    func popView(#preView: UIView, nextView: UIView){
+        
+        preView.hidden = false
+        nextView.hidden = false
+        
+        let mainBounds = UIScreen.mainScreen().bounds
+        
+        preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
+        nextView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
+        nextView.sendSubviewToBack(preView)
+        
+        UIView.animateWithDuration(
+            0.2,
+            delay: 0.0,
+            options: .CurveLinear,
+            animations:  {() -> Void in
+                preView.frame = CGRectMake(mainBounds.width, 0, mainBounds.width, mainBounds.height)
+                
+            },
+            completion: {(bool: Bool) -> Void in
+                // Completion処理
+                
+            }
+        )
+        
+    }
+    
+    func pushViewRotate(#preView: UIView, nextView: UIView){
+        
+        preView.hidden = false
+        nextView.hidden = false
+        
+        let mainBounds = UIScreen.mainScreen().bounds
+        
         preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
         nextView.frame = CGRectMake(mainBounds.width, 0, mainBounds.width, mainBounds.height)
         nextView.bringSubviewToFront(preView)
         
         let angle = CGFloat(90.0 * M_PI / 180.0)
         nextView.transform = CGAffineTransformMakeRotation(angle)
-
+        
         UIView.animateWithDuration(
             0.2,
             delay: 0.0,
@@ -54,19 +108,19 @@ class ViewManager: NSObject {
                 let angle = CGFloat(0.0 * M_PI / 180.0)
                 nextView.transform = CGAffineTransformMakeRotation(angle)
                 nextView.frame = CGRectMake(0.0, 0, mainBounds.width, mainBounds.height)
-
+                
             },
             completion: {(bool: Bool) -> Void in
             }
         )
         
     }
-
-    func popView(#preView: UIView, nextView: UIView){
+    
+    func popViewRotate(#preView: UIView, nextView: UIView){
         
         preView.hidden = false
         nextView.hidden = false
-
+        
         let mainBounds = UIScreen.mainScreen().bounds
         
         preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
@@ -81,18 +135,18 @@ class ViewManager: NSObject {
                 preView.frame = CGRectMake(mainBounds.width, 0, mainBounds.width, mainBounds.height)
                 let angle = CGFloat(90.0 * M_PI / 180.0)
                 preView.transform = CGAffineTransformMakeRotation(angle)
-
+                
             },
             completion: {(bool: Bool) -> Void in
                 // Completion処理
                 let angle = CGFloat(0.0 * M_PI / 180.0)
                 preView.transform = CGAffineTransformMakeRotation(angle)
-
+                
             }
         )
         
     }
-
+    
     func wipeInView(#preView: UIView, nextView: UIView){
 
         let mainBounds = UIScreen.mainScreen().bounds

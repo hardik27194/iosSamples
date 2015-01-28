@@ -136,6 +136,9 @@ class TouchView: UIView {
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
+        ViewManager.sharedInstance.changeCurrentTab(1)
+        
+        
         if (touches.anyObject() != nil){
             
             var touch =  touches.anyObject()? as UITouch

@@ -121,6 +121,7 @@
 		1457FEE31A63CF7E003B012F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14BDE5691A6E7B0100C46183 /* TabView */,
 				14BDE55E1A6B63FF00C46183 /* ViewMoveProto */,
 				1457FEE41A63CF7E003B012F /* QuestionInputView */,
 				1457FEE71A63CF7E003B012F /* QuestionView */,
@@ -255,6 +256,13 @@
 				14BDE5611A6B646600C46183 /* ViewMoveProto.swift */,
 			);
 			name = ViewMoveProto;
+			sourceTree = "<group>";
+		};
+		14BDE5691A6E7B0100C46183 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TabView;
 			sourceTree = "<group>";
 		};
 		14FFA6811A63A36D00B79386 /* Model */ = {

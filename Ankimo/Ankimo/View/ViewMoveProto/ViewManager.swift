@@ -10,13 +10,25 @@ import UIKit
 
 class ViewManager: NSObject {
    
+    var currentTab:Int = 0
+    
+    var rootView = UIView()
     var preView = UIView()
     var nextView = UIView()
-    
     var questionInputView = QuestionInputView()
     var questionInputTableView = QuestionInputTableView()
     
-    var tabs1: [AnyObject] = []
+    typealias ViewArray = [UIView]
+    var views :ViewArray = []
+    var tabs :[ViewArray] = [[]]
+
+    var isSideBarOpen: Bool = false
+    
+    var currentView: UIView {
+        get {
+            return tabs[currentTab].last ?? UIView()
+        }
+    }
     
     class var sharedInstance : ViewManager {
         struct Static {
@@ -25,15 +37,92 @@ class ViewManager: NSObject {
         return Static.instance
     }
 
-    func addView(#tabIdx: Int, view: AnyObject){
-//        var views = tabs[tabIdx] as Array<AnyObject>
-//        views.append(view)
-        tabs1.append(view)
-    }
-
-    func pushView(nextView: UIView){
+    func selectedTabView(tabIdx: Int) -> UIView {
+        return tabs[tabIdx].last ?? UIView()
     }
     
+    /*
+    * @abstract タブを切り替える
+    */
+    func changeCurrentTab(tabIdx: Int){
+        pushViewRotate(preView: self.currentView, nextView: self.selectedTabView(tabIdx))
+        currentTab = tabIdx
+    }
+
+    /*
+    * @abstract currentView 現在のview と 次のview をセットする
+    */
+    func settingView(#preView: UIView, nextView: UIView){
+        self.preView = preView
+        self.nextView = nextView
+    }
+
+    /*
+    * @abstract フリックしたときに案内コントローラを表示する
+    */
+    func frickMoveView(#moveDistance: CGFloat){
+        // preView自身の座標が動くのでそれを加算する。
+        var posx = moveDistance + self.preView.frame.origin.x
+        self.preView.frame = CGRectMake(posx, self.preView.frame.origin.y, self.preView.frame.size.width, self.preView.frame.size.height)
+    }
+
+    /*
+    * @abstract フリックしたときに案内コントローラを表示
+    */
+    func frickMoveReturn(){
+
+        var endPointX = 0.0 as CGFloat
+        if isSideBarOpen {
+            if self.preView.frame.origin.x > UIScreen.mainScreen().bounds.size.width - 130 {
+                endPointX = UIScreen.mainScreen().bounds.size.width - 80
+            }
+            
+        } else {
+            if self.preView.frame.origin.x > 50 {
+                endPointX = UIScreen.mainScreen().bounds.size.width - 80
+            }
+        }
+        
+        UIView.animateWithDuration(
+            0.1,
+            delay: 0.0,
+            options: .CurveLinear,
+            animations:  {() -> Void in
+                self.preView.frame = CGRectMake(endPointX, self.preView.frame.origin.y, self.preView.frame.size.width, self.preView.frame.size.height)
+            },
+            completion: {(bool: Bool) -> Void in
+                self.isSideBarOpen = (self.preView.frame.origin.x > 100)
+
+            }
+        )
+
+    }
+
+    /*
+    * @abstract viewを追加する
+    */
+    func addView(view: UIView){
+        view.hidden = true
+        views.append(view) // ちょっと違う
+        tabs.insert(views, atIndex: currentTab)
+    }
+    
+    /*
+    * @abstract viewを切り替える（アニメーションなし）
+    */
+    func changeView(#preView: UIView, nextView: UIView){
+        preView.hidden = true
+        nextView.hidden = false
+        
+        let mainBounds = UIScreen.mainScreen().bounds
+        
+        preView.frame = CGRectMake(mainBounds.width, 0, mainBounds.width, mainBounds.height)
+        nextView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
+        rootView.bringSubviewToFront(nextView)
+        
+        
+    }
+
     func pushView(#preView: UIView, nextView: UIView){
         
         preView.hidden = false
@@ -43,7 +132,7 @@ class ViewManager: NSObject {
         
         preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
         nextView.frame = CGRectMake(mainBounds.width, 0, mainBounds.width, mainBounds.height)
-        nextView.bringSubviewToFront(preView)
+        rootView.bringSubviewToFront(nextView)
         
         UIView.animateWithDuration(
             0.2,
@@ -68,7 +157,7 @@ class ViewManager: NSObject {
         
         preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
         nextView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
-        nextView.sendSubviewToBack(preView)
+        rootView.bringSubviewToFront(preView)
         
         UIView.animateWithDuration(
             0.2,
@@ -95,8 +184,8 @@ class ViewManager: NSObject {
         
         preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
         nextView.frame = CGRectMake(mainBounds.width, 0, mainBounds.width, mainBounds.height)
-        nextView.bringSubviewToFront(preView)
-        
+        rootView.bringSubviewToFront(nextView)
+
         let angle = CGFloat(90.0 * M_PI / 180.0)
         nextView.transform = CGAffineTransformMakeRotation(angle)
         
@@ -107,8 +196,8 @@ class ViewManager: NSObject {
             animations:  {() -> Void in
                 let angle = CGFloat(0.0 * M_PI / 180.0)
                 nextView.transform = CGAffineTransformMakeRotation(angle)
-                nextView.frame = CGRectMake(0.0, 0, mainBounds.width, mainBounds.height)
-                
+                nextView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
+
             },
             completion: {(bool: Bool) -> Void in
             }
@@ -125,7 +214,7 @@ class ViewManager: NSObject {
         
         preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
         nextView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
-        nextView.sendSubviewToBack(preView)
+        rootView.bringSubviewToFront(nextView)
         
         UIView.animateWithDuration(
             0.2,
@@ -153,7 +242,7 @@ class ViewManager: NSObject {
         
         preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
         nextView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
-        nextView.sendSubviewToBack(preView)
+        rootView.bringSubviewToFront(nextView)
         
         nextView.transform = CGAffineTransformMakeScale(0.0, 0.0);
         UIView.animateWithDuration(
@@ -179,7 +268,7 @@ class ViewManager: NSObject {
         nextView.hidden = false
         preView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
         nextView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
-        nextView.sendSubviewToBack(preView)
+        rootView.bringSubviewToFront(nextView)
         
         preView.transform = CGAffineTransformMakeScale(1.0, 1.0);
         UIView.animateWithDuration(

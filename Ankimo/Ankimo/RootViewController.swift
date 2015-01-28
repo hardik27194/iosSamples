@@ -25,10 +25,12 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ViewManager.sharedInstance.rootView = self.view
+        
         self.view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.9)
         
         var floorView = FloorView()
-//        self.view.addSubview(floorView)
+        self.view.addSubview(floorView)
         
 //        let viewMoveProto = ViewMoveProto(frame: self.view.bounds)
 //        self.view.addSubview(viewMoveProto)
@@ -54,9 +56,18 @@ class RootViewController: UIViewController {
 //        var taskDataManager = TaskDataManager()
 //        taskDataManager.exec()
         
+        var viewManager = ViewManager.sharedInstance
         
-        ViewManager.sharedInstance.addView(tabIdx: 1, view: questionInputTableView)
-        ViewManager.sharedInstance.addView(tabIdx: 1, view: questionInputView)
+        viewManager.currentTab = 0
+        viewManager.addView(floorView)
+        
+        viewManager.currentTab = 1
+        viewManager.addView(questionInputView)
+        viewManager.addView(questionInputTableView)
+        
+        viewManager.changeCurrentTab(0)
+        
+//        self.view.insertSubview(questionInputTableView, aboveSubview: floorView)
         
     }
     

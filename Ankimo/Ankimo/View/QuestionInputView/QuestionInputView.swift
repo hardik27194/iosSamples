@@ -21,6 +21,8 @@ class QuestionInputView: UIView {
     let answerText = UITextField()
     let dispSwitch = UISwitch()
     
+    var startPoint : CGPoint = CGPointMake(0, 0)
+
     var buttonString = ""
 
     required init(coder aDecoder: NSCoder) {
@@ -136,7 +138,32 @@ class QuestionInputView: UIView {
         self.addSubview(registerButton)
         
     }
- 
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        var manager = ViewManager.sharedInstance
+        manager.settingView(preView: self, nextView: manager.questionInputTableView)
+        if (touches.anyObject() != nil){
+            var touch =  touches.anyObject()? as UITouch
+            startPoint = touches.anyObject()!.locationInView(self)
+        }
+    }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        if (touches.anyObject() != nil){
+            var touchPoint = touches.anyObject()!.locationInView(self)
+            var diffy = touchPoint.x - startPoint.x 
+            var manager = ViewManager.sharedInstance
+            manager.frickMoveView(moveDistance: diffy)
+        }
+    }
+
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        if (touches.anyObject() != nil){
+            var manager = ViewManager.sharedInstance
+            manager.frickMoveReturn()
+        }
+    }
+    
     func frameRect(frame:CGRect, x:CGFloat? ,y:CGFloat?) -> CGRect {
         var returnRect = frame
         if (x != nil){

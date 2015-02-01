@@ -1,5 +1,5 @@
 //
-//  QuestionInputTableView.swift
+//  SideMenuTableView.swift
 //  ankimo
 //
 //  Created by takeshi on 2015/01/07.
@@ -9,7 +9,7 @@
 import UIKit
 import Realm
 
-class QuestionInputTableView: BaseView {
+class SideMenuTableView: BaseView {
     
     var questions: RLMResults? = nil
     var questionDataManager = QuestionDataManager()
@@ -55,7 +55,7 @@ class QuestionInputTableView: BaseView {
 }
 
 // MARK: - UITableViewDelegate -
-extension QuestionInputTableView : UITableViewDelegate ,UITableViewDataSource {
+extension SideMenuTableView : UITableViewDelegate ,UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         println(" Int(questionDataManager.allObjectCount()) : \(Int(questionDataManager.allObjectCount())) ")

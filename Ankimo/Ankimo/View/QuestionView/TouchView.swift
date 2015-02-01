@@ -26,11 +26,9 @@ class TouchView: UIView {
         var h: CGFloat = 0.0
     }
 
-    enum state: Int {
+    enum FRICK_STATE: Int {
         case normal = 0
-        case pull
-        case release
-        case finish
+        case sideMenu
     }
     
     weak var touchViewDelegate: TouchViewDelegate?
@@ -42,7 +40,7 @@ class TouchView: UIView {
     
     var x:CGFloat = 0, y:CGFloat = 0, w:CGFloat = 0, h:CGFloat = 0
     
-    var st = state.normal
+    var frickState = FRICK_STATE.normal
     
     var startPoint : CGPoint = CGPointMake(0, 0)
     
@@ -136,68 +134,79 @@ class TouchView: UIView {
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
-        ViewManager.sharedInstance.changeCurrentTab(1)
-        
-        
         if (touches.anyObject() != nil){
-            
             var touch =  touches.anyObject()? as UITouch
-            
             if touch.view.tag == 1002 {
-                st = state.pull
+                frickState = FRICK_STATE.normal
                 startPoint = touches.anyObject()!.locationInView(self)
-            }
+                
+            } else {
+                frickState = FRICK_STATE.sideMenu
+                super.touchesBegan(touches, withEvent: event)
             
+            }
         }
-        
     }
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        
-        if (touches.anyObject() != nil){
-        
-            var touchPoint = touches.anyObject()!.locationInView(self)
-        
-            println("\(st.rawValue)")
 
-            frickPointView.center = touchPoint
-            frickCenterView.center = touchPoint
-
-            if CGRectIntersectsRect(frickCenterView.frame, moveAreaView.frame) {
-                var diffy = touchPoint.y - startPoint.y
-                touchViewDelegate?.movePoint( moveRate(diffy: diffy) )
+        if frickState == FRICK_STATE.sideMenu {
+            super.touchesMoved(touches, withEvent: event)
+            
+        } else {
+            
+            
+            if (touches.anyObject() != nil){
                 
-            } else if CGRectIntersectsRect(frickCenterView.frame, openAreaView.frame) {
-                touchViewDelegate?.enterOpenArea()
+                var touchPoint = touches.anyObject()!.locationInView(self)
+                
+                println("\(frickState.rawValue)")
+                
+                frickPointView.center = touchPoint
+                frickCenterView.center = touchPoint
+                
+                if CGRectIntersectsRect(frickCenterView.frame, moveAreaView.frame) {
+                    var diffy = touchPoint.y - startPoint.y
+                    touchViewDelegate?.movePoint( moveRate(diffy: diffy) )
+                    
+                } else if CGRectIntersectsRect(frickCenterView.frame, openAreaView.frame) {
+                    touchViewDelegate?.enterOpenArea()
+                    
+                }
                 
             }
-            
         }
-        
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         
-        if CGRectIntersectsRect(frickCenterView.frame, squareViews[0].frame) {
-            touchViewDelegate?.releaseTouchInFinishArea(0)
-            
-        } else if CGRectIntersectsRect(frickCenterView.frame, squareViews[1].frame) {
-            touchViewDelegate?.releaseTouchInFinishArea(1)
-            
-        } else if CGRectIntersectsRect(frickCenterView.frame, squareViews[2].frame) {
-            touchViewDelegate?.releaseTouchInFinishArea(2)
-            
-        } else if CGRectIntersectsRect(frickCenterView.frame, squareViews[3].frame) {
-            touchViewDelegate?.releaseTouchInFinishArea(3)
+        if frickState == FRICK_STATE.sideMenu {
+            super.touchesEnded(touches, withEvent: event)
             
         } else {
-            touchViewDelegate?.releaseTouch()
+            
+            if CGRectIntersectsRect(frickCenterView.frame, squareViews[0].frame) {
+                touchViewDelegate?.releaseTouchInFinishArea(0)
+                
+            } else if CGRectIntersectsRect(frickCenterView.frame, squareViews[1].frame) {
+                touchViewDelegate?.releaseTouchInFinishArea(1)
+                
+            } else if CGRectIntersectsRect(frickCenterView.frame, squareViews[2].frame) {
+                touchViewDelegate?.releaseTouchInFinishArea(2)
+                
+            } else if CGRectIntersectsRect(frickCenterView.frame, squareViews[3].frame) {
+                touchViewDelegate?.releaseTouchInFinishArea(3)
+                
+            } else {
+                touchViewDelegate?.releaseTouch()
+            }
+            
+            UIView.animateWithDuration(0.1, animations: {() -> Void in
+                self.frickPointView.center = CGPointMake(self.center.x, 30)
+                self.frickCenterView.center = CGPointMake(self.center.x, 30)
+            })
         }
-
-        UIView.animateWithDuration(0.1, animations: {() -> Void in
-            self.frickPointView.center = CGPointMake(self.center.x, 30)
-            self.frickCenterView.center = CGPointMake(self.center.x, 30)
-        })
+        self.frickState = FRICK_STATE.normal
         
     }
     

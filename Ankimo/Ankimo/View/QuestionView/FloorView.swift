@@ -19,12 +19,12 @@ struct customRect {
     }
 }
 
-class FloorView: UIView  {
+class FloorView: BaseView  {
     
     var cellView = UIView()
     var questionViews = Array<QuestionView>()
         
-    required init(coder aDecoder: NSCoder) {
+    required override init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

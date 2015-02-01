@@ -40,6 +40,8 @@
 		14BDE5641A6B646600C46183 /* ViewMoveProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5611A6B646600C46183 /* ViewMoveProto.swift */; };
 		14BDE5661A6B69DB00C46183 /* AKMBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5651A6B69DB00C46183 /* AKMBaseView.swift */; };
 		14BDE5681A6B71E200C46183 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5671A6B71E200C46183 /* ViewManager.swift */; };
+		14BDE56B1A7A4FF000C46183 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE56A1A7A4FF000C46183 /* BaseView.swift */; };
+		14BDE56D1A7A567500C46183 /* SideMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE56C1A7A567500C46183 /* SideMenuTableView.swift */; };
 		14FFA6921A63A3FE00B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
 		14FFA6931A63A40500B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
 		CE2379DE86C0026C16CA0142 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1DE0DDABB9163207C3FAB /* libPods.a */; };
@@ -89,6 +91,8 @@
 		14BDE5611A6B646600C46183 /* ViewMoveProto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewMoveProto.swift; path = ViewMoveProto/ViewMoveProto.swift; sourceTree = "<group>"; };
 		14BDE5651A6B69DB00C46183 /* AKMBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AKMBaseView.swift; path = ViewMoveProto/AKMBaseView.swift; sourceTree = "<group>"; };
 		14BDE5671A6B71E200C46183 /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewManager.swift; path = ViewMoveProto/ViewManager.swift; sourceTree = "<group>"; };
+		14BDE56A1A7A4FF000C46183 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		14BDE56C1A7A567500C46183 /* SideMenuTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableView.swift; sourceTree = "<group>"; };
 		14FFA6911A63A3FE00B79386 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		3F39116080E14CB19988095E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F8F1DE0DDABB9163207C3FAB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,11 +125,13 @@
 		1457FEE31A63CF7E003B012F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14BDE56C1A7A567500C46183 /* SideMenuTableView.swift */,
 				14BDE5691A6E7B0100C46183 /* TabView */,
 				14BDE55E1A6B63FF00C46183 /* ViewMoveProto */,
 				1457FEE41A63CF7E003B012F /* QuestionInputView */,
 				1457FEE71A63CF7E003B012F /* QuestionView */,
 				1457FEEC1A63CF7E003B012F /* SettingView */,
+				14BDE56A1A7A4FF000C46183 /* BaseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -466,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1457FF031A63D037003B012F /* BaseApiClient.swift in Sources */,
+				14BDE56D1A7A567500C46183 /* SideMenuTableView.swift in Sources */,
 				1457FEEE1A63CF7E003B012F /* QuestionInputTableView.swift in Sources */,
 				14BDE5681A6B71E200C46183 /* ViewManager.swift in Sources */,
 				1457FEDB1A63AC0C003B012F /* Question.swift in Sources */,
@@ -483,6 +490,7 @@
 				1457FEF11A63CF7E003B012F /* QuestionView.swift in Sources */,
 				14BDE5631A6B646600C46183 /* ProtoView2.swift in Sources */,
 				1457FF041A63D037003B012F /* TaskApiClient.swift in Sources */,
+				14BDE56B1A7A4FF000C46183 /* BaseView.swift in Sources */,
 				1457FEF01A63CF7E003B012F /* FloorView.swift in Sources */,
 				1457FEF41A63CF7E003B012F /* SettingView.swift in Sources */,
 			);

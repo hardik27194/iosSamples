@@ -39,7 +39,7 @@
 		14BDE5631A6B646600C46183 /* ProtoView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5601A6B646600C46183 /* ProtoView2.swift */; };
 		14BDE5641A6B646600C46183 /* ViewMoveProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5611A6B646600C46183 /* ViewMoveProto.swift */; };
 		14BDE5661A6B69DB00C46183 /* AKMBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5651A6B69DB00C46183 /* AKMBaseView.swift */; };
-		14BDE5681A6B71E200C46183 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5671A6B71E200C46183 /* ViewManager.swift */; };
+		14BDE5681A6B71E200C46183 /* ViewImperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE5671A6B71E200C46183 /* ViewImperator.swift */; };
 		14BDE56B1A7A4FF000C46183 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE56A1A7A4FF000C46183 /* BaseView.swift */; };
 		14BDE56D1A7A567500C46183 /* SideMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE56C1A7A567500C46183 /* SideMenuTableView.swift */; };
 		14FFA6921A63A3FE00B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
@@ -90,7 +90,7 @@
 		14BDE5601A6B646600C46183 /* ProtoView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProtoView2.swift; path = ViewMoveProto/ProtoView2.swift; sourceTree = "<group>"; };
 		14BDE5611A6B646600C46183 /* ViewMoveProto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewMoveProto.swift; path = ViewMoveProto/ViewMoveProto.swift; sourceTree = "<group>"; };
 		14BDE5651A6B69DB00C46183 /* AKMBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AKMBaseView.swift; path = ViewMoveProto/AKMBaseView.swift; sourceTree = "<group>"; };
-		14BDE5671A6B71E200C46183 /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewManager.swift; path = ViewMoveProto/ViewManager.swift; sourceTree = "<group>"; };
+		14BDE5671A6B71E200C46183 /* ViewImperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewImperator.swift; path = ViewMoveProto/ViewImperator.swift; sourceTree = "<group>"; };
 		14BDE56A1A7A4FF000C46183 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		14BDE56C1A7A567500C46183 /* SideMenuTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableView.swift; sourceTree = "<group>"; };
 		14FFA6911A63A3FE00B79386 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 		14BDE55E1A6B63FF00C46183 /* ViewMoveProto */ = {
 			isa = PBXGroup;
 			children = (
-				14BDE5671A6B71E200C46183 /* ViewManager.swift */,
+				14BDE5671A6B71E200C46183 /* ViewImperator.swift */,
 				14BDE5651A6B69DB00C46183 /* AKMBaseView.swift */,
 				14BDE55F1A6B646600C46183 /* ProtoView1.swift */,
 				14BDE5601A6B646600C46183 /* ProtoView2.swift */,
@@ -474,7 +474,7 @@
 				1457FF031A63D037003B012F /* BaseApiClient.swift in Sources */,
 				14BDE56D1A7A567500C46183 /* SideMenuTableView.swift in Sources */,
 				1457FEEE1A63CF7E003B012F /* QuestionInputTableView.swift in Sources */,
-				14BDE5681A6B71E200C46183 /* ViewManager.swift in Sources */,
+				14BDE5681A6B71E200C46183 /* ViewImperator.swift in Sources */,
 				1457FEDB1A63AC0C003B012F /* Question.swift in Sources */,
 				1457FEE11A63ADF1003B012F /* RLMSupport.swift in Sources */,
 				14BDE5641A6B646600C46183 /* ViewMoveProto.swift in Sources */,

@@ -29,7 +29,7 @@ class QuestionInputTableView: BaseView {
     }
 
     override func didMoveToSuperview() {
-        ViewManager.sharedInstance.questionInputTableView = self
+        ViewImperator.sharedInstance.questionInputTableView = self
     }
 
     func setupViews(){
@@ -77,8 +77,8 @@ extension QuestionInputTableView : UITableViewDelegate ,UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        var questionInputView = ViewManager.sharedInstance.questionInputView
-        ViewManager.sharedInstance.pushView(preView: self, nextView: questionInputView)
+        var questionInputView = ViewImperator.sharedInstance.questionInputView
+        ViewImperator.sharedInstance.pushView(preView: self, nextView: questionInputView)
     }
 
 }

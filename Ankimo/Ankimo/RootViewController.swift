@@ -25,7 +25,7 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ViewManager.sharedInstance.rootView = self.view
+        ViewImperator.sharedInstance.rootView = self.view
         
         self.view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.9)
         
@@ -50,22 +50,22 @@ class RootViewController: UIViewController {
         questionInputView.hidden = true
         self.view.addSubview(questionInputView)
         
-//        ViewManager.sharedInstance.questionInputView = questionInputView
+//        ViewImperator.sharedInstance.questionInputView = questionInputView
         
         // ネットワークから読み込み
 //        var taskDataManager = TaskDataManager()
 //        taskDataManager.exec()
         
-        var viewManager = ViewManager.sharedInstance
+        var viewImperator = ViewImperator.sharedInstance
         
-        viewManager.currentTab = 0
-        viewManager.addView(floorView)
+        viewImperator.currentTab = 0
+        viewImperator.addView(floorView)
         
-        viewManager.currentTab = 1
-        viewManager.addView(questionInputView)
-        viewManager.addView(questionInputTableView)
+        viewImperator.currentTab = 1
+        viewImperator.addView(questionInputView)
+        viewImperator.addView(questionInputTableView)
         
-        viewManager.changeCurrentTab(0)
+        viewImperator.changeCurrentTab(0)
         
 //        self.view.insertSubview(questionInputTableView, aboveSubview: floorView)
         

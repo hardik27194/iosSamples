@@ -1,5 +1,5 @@
 //
-//  ViewManager.swift
+//  ViewImperator.swift
 //  swift2
 //
 //  Created by takeshi on 2014/12/13.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewManager: NSObject {
+class ViewImperator: NSObject {
    
     var currentTab:Int = 0
     
@@ -30,9 +30,9 @@ class ViewManager: NSObject {
         }
     }
     
-    class var sharedInstance : ViewManager {
+    class var sharedInstance : ViewImperator {
         struct Static {
-            static let instance : ViewManager = ViewManager()
+            static let instance : ViewImperator = ViewImperator()
         }
         return Static.instance
     }

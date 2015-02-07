@@ -14,7 +14,7 @@ class BaseView: UIView {
 
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         var viewImperator = ViewImperator.sharedInstance
-        viewImperator.settingView(preView: self, nextView: viewImperator.questionInputTableView)
+        viewImperator.preSetupView(preView: self, nextView: viewImperator.sideMenuTableView)
         if (touches.anyObject() != nil){
             var touch =  touches.anyObject()? as UITouch
             startPoint = touches.anyObject()!.locationInView(self)
@@ -36,8 +36,5 @@ class BaseView: UIView {
             viewImperator.frickMoveReturn()
         }
     }
-    
-
-    
     
 }

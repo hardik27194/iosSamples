@@ -49,6 +49,9 @@ class RootViewController: UIViewController {
         questionInputView.initWithMode(questionInputViewMode.edit)
         questionInputView.hidden = true
         self.view.addSubview(questionInputView)
+
+        var sideMenuTableView = SideMenuTableView(frame: rect)
+        self.view.addSubview(sideMenuTableView)
         
 //        ViewImperator.sharedInstance.questionInputView = questionInputView
         
@@ -64,6 +67,9 @@ class RootViewController: UIViewController {
         viewImperator.currentTab = 1
         viewImperator.addView(questionInputView)
         viewImperator.addView(questionInputTableView)
+
+//        viewImperator.currentTab = 2
+//        viewImperator.addView(sideMenuTableView)
         
         viewImperator.changeCurrentTab(0)
         

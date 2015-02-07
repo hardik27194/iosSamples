@@ -9,11 +9,24 @@
 import UIKit
 import Realm
 
+class CustomTableView: UITableView {
+
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        userInteractionEnabled = false
+        println("tableview touch began ---")
+
+    }
+
+//    override func scrollViewDidScroll(
+
+    
+}
+
 class QuestionInputTableView: BaseView {
     
     var questions: RLMResults? = nil
     var questionDataManager = QuestionDataManager()
-    var tblview = UITableView()
+    var tblview = CustomTableView()
 
     required override init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,6 +46,7 @@ class QuestionInputTableView: BaseView {
     }
 
     func setupViews(){
+        self.backgroundColor = UIColor.grayColor()
 
     }
 
@@ -40,7 +54,8 @@ class QuestionInputTableView: BaseView {
 
         self.clipsToBounds = true
         
-        tblview.frame = self.frame
+        tblview.delaysContentTouches = false
+        tblview.frame = CGRectMake( 100 , 100 , 100,100)
         tblview.delegate = self
         tblview.dataSource = self
         self.addSubview(tblview)

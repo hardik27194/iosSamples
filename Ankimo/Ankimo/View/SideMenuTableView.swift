@@ -11,9 +11,8 @@ import Realm
 
 class SideMenuTableView: BaseView {
     
-    var questions: RLMResults? = nil
-    var questionDataManager = QuestionDataManager()
     var tblview = UITableView()
+    var sideMenus: [String] = []
 
     required override init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -27,58 +26,49 @@ class SideMenuTableView: BaseView {
     override init() {
         super.init()
     }
-
+    
     override func didMoveToSuperview() {
-//        ViewImperator.sharedInstance.questionInputTableView = self
+        ViewImperator.sharedInstance.sideMenuTableView = self
     }
 
     func setupViews(){
 
-    }
-
-    func dataReload(){
-
-        self.clipsToBounds = true
+        self.sideMenus.append("n/a")
+        self.sideMenus.append("テスト")
+        self.sideMenus.append("テスト入力")
+        self.sideMenus.append("設定")
         
         tblview.frame = self.frame
         tblview.delegate = self
         tblview.dataSource = self
-        self.addSubview(tblview)
-        
-        questionDataManager = QuestionDataManager.sharedInstance
-        questions = questionDataManager.allObjects()
-        
+        addSubview(tblview)
         tblview.reloadData()
         
     }
-    
+
 }
 
 // MARK: - UITableViewDelegate -
 extension SideMenuTableView : UITableViewDelegate ,UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println(" Int(questionDataManager.allObjectCount()) : \(Int(questionDataManager.allObjectCount())) ")
-        return Int(questionDataManager.allObjectCount())
+        return self.sideMenus.count
     }
     
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let manager = QuestionDataManager.sharedInstance
-        let question = manager.objectAtIndex(indexPath.row)
-        
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        
-        cell.textLabel.text = "\(question.questionText)"
-        cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        cell.textLabel.text = "\(self.sideMenus[indexPath.row])"
+        cell.contentView.backgroundColor = UIColor.grayColor()
         return cell
-        
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        var questionInputView = ViewImperator.sharedInstance.questionInputView
-        ViewImperator.sharedInstance.pushView(preView: self, nextView: questionInputView)
+        println("touch index row \(indexPath.row)" )
+        
+        var viewImperator = ViewImperator.sharedInstance
+        viewImperator.changeCurrentTab(indexPath.row-1)
+        viewImperator.frickMoveClose()
+        
     }
 
 }

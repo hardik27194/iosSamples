@@ -17,19 +17,14 @@ class ViewImperator: NSObject {
     var nextView = UIView()
     var questionInputView = QuestionInputView()
     var questionInputTableView = QuestionInputTableView()
+    var sideMenuTableView = SideMenuTableView()
     
     typealias ViewArray = [UIView]
     var views :ViewArray = []
     var tabs :[ViewArray] = [[]]
 
     var isSideBarOpen: Bool = false
-    
-    var currentView: UIView {
-        get {
-            return tabs[currentTab].last ?? UIView()
-        }
-    }
-    
+
     class var sharedInstance : ViewImperator {
         struct Static {
             static let instance : ViewImperator = ViewImperator()
@@ -37,6 +32,13 @@ class ViewImperator: NSObject {
         return Static.instance
     }
 
+    var currentView: UIView {
+        get {
+            return tabs[currentTab].last ?? UIView()
+        }
+    }
+    
+    // MARK: タブ関連
     func selectedTabView(tabIdx: Int) -> UIView {
         return tabs[tabIdx].last ?? UIView()
     }
@@ -45,20 +47,34 @@ class ViewImperator: NSObject {
     * @abstract タブを切り替える
     */
     func changeCurrentTab(tabIdx: Int){
-        pushViewRotate(preView: self.currentView, nextView: self.selectedTabView(tabIdx))
+        // 現在のview
+        self.currentView.hidden = true
+        var rect = self.currentView.frame
+        
+        rootView.bringSubviewToFront(self.selectedTabView(tabIdx))
         currentTab = tabIdx
+        
+        // タブ切り替え後の新しいview
+        self.currentView.hidden = false
+        self.currentView.frame = rect
+        self.preView = self.currentView
+        self.frickMoveClose()
     }
 
     /*
     * @abstract currentView 現在のview と 次のview をセットする
     */
-    func settingView(#preView: UIView, nextView: UIView){
+    func preSetupView(#preView: UIView, nextView: UIView){
         self.preView = preView
         self.nextView = nextView
+        rootView.bringSubviewToFront(nextView)
+        rootView.bringSubviewToFront(preView)
+
     }
 
+    // MARK: 横フリック　サイドメニュー用
     /*
-    * @abstract フリックしたときに案内コントローラを表示する
+    * @abstract フリックしたときにサイドメニューを表示する
     */
     func frickMoveView(#moveDistance: CGFloat){
         // preView自身の座標が動くのでそれを加算する。
@@ -98,6 +114,26 @@ class ViewImperator: NSObject {
 
     }
 
+    // MARK: 閉じる
+    /*
+    * @abstract フリックしたときに案内コントローラを閉じる
+    */
+    func frickMoveClose(){
+        var endPointX = 0.0 as CGFloat
+        UIView.animateWithDuration(
+            0.1,
+            delay: 0.0,
+            options: .CurveLinear,
+            animations:  {() -> Void in
+                self.preView.frame = CGRectMake(endPointX, self.preView.frame.origin.y, self.preView.frame.size.width, self.preView.frame.size.height)
+            },
+            completion: {(bool: Bool) -> Void in
+                self.isSideBarOpen = (self.preView.frame.origin.x > 100)
+            }
+        )
+    }
+    
+    // MARK: 画面遷移関連
     /*
     * @abstract viewを追加する
     */

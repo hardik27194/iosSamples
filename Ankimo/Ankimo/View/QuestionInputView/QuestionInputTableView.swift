@@ -28,9 +28,6 @@ class QuestionInputTableView: BaseView {
         super.init()
     }
 
-    override func didMoveToSuperview() {
-        ViewImperator.sharedInstance.questionInputTableView = self
-    }
 
     func setupViews(){
         self.backgroundColor = UIColor.grayColor()
@@ -74,15 +71,15 @@ extension QuestionInputTableView : UITableViewDelegate ,UITableViewDataSource {
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         
-        cell.textLabel.text = "\(question.questionText)"
+        cell.textLabel?.text = "\(question.questionText)"
         cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         return cell
         
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        var questionInputView = ViewImperator.sharedInstance.questionInputView
-        ViewImperator.sharedInstance.pushView(preView: self, nextView: questionInputView)
+//        var questionInputView = ViewImperator.sharedInstance.questionInputView
+//        ViewImperator.sharedInstance.pushView(preView: self, nextView: questionInputView)
     }
 
 }

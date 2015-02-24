@@ -24,8 +24,6 @@ class SettingView: UIView {
         
         self.frame = UIScreen.mainScreen().bounds
         
-//        makeData()
-//        setupViews()
         
     }
 

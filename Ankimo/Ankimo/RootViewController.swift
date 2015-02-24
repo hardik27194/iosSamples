@@ -10,6 +10,11 @@ import UIKit
 
 class RootViewController: UIViewController {
 
+    
+    typealias anViewArray = [UIView]
+    var anViews: anViewArray = []
+    var anTabs: [NSInteger: anViewArray] = [:]
+    
     override convenience init(){
         self.init(nibName:nil , bundle:nil)
     }
@@ -25,22 +30,22 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ViewImperator.sharedInstance.rootView = self.view
-        
         self.view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.9)
         
+        
+        let sideMenuTableView = SideMenuTableView(frame: UIScreen.mainScreen().bounds)
+        sideMenuTableView.delegate = self
+        self.view.addSubview(sideMenuTableView)
+        
+        // 設問view
         var floorView = FloorView()
-        self.view.addSubview(floorView)
+        addView(view:floorView, tabNum: 0)
         
-//        let viewMoveProto = ViewMoveProto(frame: self.view.bounds)
-//        self.view.addSubview(viewMoveProto)
-        
-        //　質問リスト
+        //　question編集選択リスト画面
         let questionInputTableView = QuestionInputTableView(frame: UIScreen.mainScreen().bounds)
-        self.view.addSubview(questionInputTableView)
         questionInputTableView.frame = UIScreen.mainScreen().bounds
         questionInputTableView.dataReload()
-
+        addView(view: questionInputTableView, tabNum: 1)
 
         //　質問登録画面
         var rect = UIScreen.mainScreen().bounds
@@ -48,35 +53,57 @@ class RootViewController: UIViewController {
         var questionInputView = QuestionInputView(frame: rect)
         questionInputView.initWithMode(questionInputViewMode.edit)
         questionInputView.hidden = true
-        self.view.addSubview(questionInputView)
+        addView(view: questionInputView, tabNum: 1)
 
-        var sideMenuTableView = SideMenuTableView(frame: rect)
-        self.view.addSubview(sideMenuTableView)
-        
-//        ViewImperator.sharedInstance.questionInputView = questionInputView
-        
-        // ネットワークから読み込み
-//        var taskDataManager = TaskDataManager()
-//        taskDataManager.exec()
-        
-        var viewImperator = ViewImperator.sharedInstance
-        
-        viewImperator.currentTab = 0
-        viewImperator.addView(floorView)
-        
-        viewImperator.currentTab = 1
-        viewImperator.addView(questionInputView)
-        viewImperator.addView(questionInputTableView)
-
-//        viewImperator.currentTab = 2
-//        viewImperator.addView(sideMenuTableView)
-        
-        viewImperator.changeCurrentTab(0)
-        
-//        self.view.insertSubview(questionInputTableView, aboveSubview: floorView)
+        addViewMove().exec(preView1: floorView, rootViewController: self)
+//        pushViewMove().exec(preView1: questionInputTableView, nextView1: floorView, rootViewController: self)
+//        self.view.addSubview(cview)
         
     }
     
+    // MARK: 画面遷移関連
+    /*
+    * @abstract viewを追加する
+    */
+    func addView(#view: UIView, tabNum: NSInteger){
+
+        if anTabs[tabNum] == nil {
+            anTabs[tabNum] = []
+        }
+        
+        anTabs[tabNum]?.append(view)
+        
+        println("-------------------")
+        println(" tabNum \(tabNum)  count \(anTabs.count) anTabs \(anTabs[tabNum]?.count)")
+        println("-------------------")
+        
+    }
+
+    
+}
+
+extension RootViewController: SideMenuTableViewDelegate{
+
+    func selectRow(row: NSInteger) {
+
+        println("selected row \(row) ")
+
+        
+        var views1 = anTabs[row] as anViewArray?
+        var view = views1![0] as UIView
+
+        var views2 = anTabs[0] as anViewArray?
+        var view2 = views2![0] as UIView
+
+
+//        var views2 = anTabs[1]
+//        var view2 = views2![0]
+
+        
+        ChangeCellTrans().exec(preView: view2, nextView: view, rootViewController: self)
+        
+    }
 
 }
+
 

@@ -8,6 +8,15 @@
 
 import UIKit
 
+
+class addViewMove {
+    
+    func exec(#preView1:UIView, rootViewController:RootViewController){
+//        rootViewController.sideMenuTableView.hidden = true
+        rootViewController.view.addSubview(preView1)
+    }
+}
+
 class ViewImperator: NSObject {
    
     var currentTab:Int = 0
@@ -15,6 +24,13 @@ class ViewImperator: NSObject {
     var rootView = UIView()
     var preView = UIView()
     var nextView = UIView()
+    
+    let mainBounds = UIScreen.mainScreen().bounds
+    let viewRect = CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, UIScreen.mainScreen().bounds.size.height)
+    
+//    var upperView = UIView()
+//    var lowerView = UIView()
+    
     var questionInputView = QuestionInputView()
     var questionInputTableView = QuestionInputTableView()
     var sideMenuTableView = SideMenuTableView()
@@ -159,6 +175,15 @@ class ViewImperator: NSObject {
         
     }
 
+    //sdf
+    func pushView2(#preView1: UIView, nextView1: UIView){
+//        var psm = popViewMove(preView1: preView1, nextView1: nextView1, rootView: rootView)
+//        psm.exec()
+    }
+    
+    
+    
+    
     func pushView(#preView: UIView, nextView: UIView){
         
         preView.hidden = false
@@ -323,3 +348,6 @@ class ViewImperator: NSObject {
     }
 
 }
+
+
+

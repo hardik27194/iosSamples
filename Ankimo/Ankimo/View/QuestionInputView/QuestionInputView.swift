@@ -39,10 +39,6 @@ class QuestionInputView: BaseView {
 
     }
     
-    override func didMoveToSuperview() {
-        ViewImperator.sharedInstance.questionInputView = self
-    }
-
     func initWithMode (mode: questionInputViewMode){
     
 
@@ -168,8 +164,9 @@ class QuestionInputView: BaseView {
         questionText.text = ""
         answerText.text = ""
         
-        var questionInputTableView = ViewImperator.sharedInstance.questionInputTableView
-        ViewImperator.sharedInstance.popView(preView: self, nextView: questionInputTableView)
+//        var questionInputTableView = ViewImperator.sharedInstance.questionInputTableView
+////        ViewImperator.sharedInstance.popView(preView: self, nextView: questionInputTableView)
+//        ViewImperator.sharedInstance.pushView2(preView1: self, nextView1: questionInputTableView)
 
     }
     

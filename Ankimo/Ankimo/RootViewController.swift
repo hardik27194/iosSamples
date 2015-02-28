@@ -15,7 +15,7 @@ class RootViewController: UIViewController {
     var anTabs: [NSInteger: anViewArray] = [:]
 
     var currentView = UIView()
-    var currentTab: Int = 0
+    var currentTabNum: Int = 0
     
     override convenience init(){
         self.init(nibName:nil , bundle:nil)
@@ -41,13 +41,15 @@ class RootViewController: UIViewController {
         
         // 設問view
         var floorView = FloorView()
-        addView(view:floorView, tabNum: 0)
         
         //　質問登録画面
         var rect = UIScreen.mainScreen().bounds
         rect.offset(dx: 0, dy: 0)
         var questionInputView = QuestionInputView(frame: rect)
         questionInputView.initWithMode(questionInputViewMode.edit)
+        questionInputView.callback = {
+            self.popView()
+        }
         questionInputView.hidden = true
         
         //　question編集選択リスト画面
@@ -57,6 +59,9 @@ class RootViewController: UIViewController {
             println("row  \(row)")
             self.pushView(view: questionInputView)
         }
+
+        // タブに登録
+        addView(view:floorView, tabNum: 0)
         addView(view: questionInputTableView, tabNum: 1)
 
         // 画面表示
@@ -76,10 +81,17 @@ class RootViewController: UIViewController {
     }
     
     func pushView(#view: UIView){
-        addView(view: view, tabNum: self.currentTab)
+        addView(view: view, tabNum: self.currentTabNum)
         PushViewTrans().exec(preView1: currentView, nextView1: view, rootViewController:self)
     }
-    
+
+    func popView(){
+        
+        var currentView = self.anTabs[self.currentTabNum]?.last as UIView!
+        self.anTabs[self.currentTabNum]?.removeLast()
+        let view = self.anTabs[self.currentTabNum]?.last as UIView!
+        PopViewTrans().exec(preView1: currentView, nextView1: view, rootViewController:self)
+    }
 }
 
 // MARK: SideMenuTableViewDelegate
@@ -87,9 +99,7 @@ extension RootViewController: SideMenuTableViewDelegate {
 
     func selectRow(row: NSInteger) {
 
-        println("selected row \(row) ")
-        
-        self.currentTab = row
+        self.currentTabNum = row
         
         var selectedTabsViews = self.anTabs[row]! as anViewArray
         var selectedTabsView = selectedTabsViews.last! as UIView

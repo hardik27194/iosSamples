@@ -21,17 +21,16 @@ class QuestionInputView: BaseView {
     let answerText = UITextField()
     let dispSwitch = UISwitch()
     
-    
     var buttonString = ""
-
+    
+    var callback: (()->())? = nil
+    
     required override init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        
     }
     
     override init() {
@@ -40,8 +39,7 @@ class QuestionInputView: BaseView {
     }
     
     func initWithMode (mode: questionInputViewMode){
-    
-
+        
         if mode == questionInputViewMode.register {
             
             buttonString = NSLocalizedString("buttonStringRegister", comment: "")
@@ -55,7 +53,6 @@ class QuestionInputView: BaseView {
         }
 
         setupViews()
-        
 
     }
     
@@ -129,9 +126,21 @@ class QuestionInputView: BaseView {
         registerButton.layer.cornerRadius = 5.0
         registerButton.setTitle(buttonString, forState: UIControlState.Normal)
         registerButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        registerButton.addTarget(self, action: "registerButtonPush", forControlEvents: UIControlEvents.TouchUpInside)
+        registerButton.addTarget(self, action: "pushRegisterButton", forControlEvents: UIControlEvents.TouchUpInside)
         self.addSubview(registerButton)
-        
+
+        // return button
+        let returnButton = UIButton()
+        let returnButtonY = CGRectGetMaxY(registerButton.frame) + verticalPadding
+        let returnButtonW = CGRectGetWidth(self.frame) - leftPadding - rightPadding
+        returnButton.frame = CGRectMake(leftPadding, returnButtonY, returnButtonW, textHeight * 1.5)
+        returnButton.backgroundColor = UIColor(red: 0.8, green: 1, blue: 1, alpha: 1)
+        returnButton.layer.cornerRadius = 5.0
+        returnButton.setTitle("戻る", forState: UIControlState.Normal)
+        returnButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        returnButton.addTarget(self, action: "pushReturnButton", forControlEvents: UIControlEvents.TouchUpInside)
+        self.addSubview(returnButton)
+
     }
     
     func frameRect(frame:CGRect, x:CGFloat? ,y:CGFloat?) -> CGRect {
@@ -146,7 +155,7 @@ class QuestionInputView: BaseView {
         return returnRect
     }
     
-    func registerButtonPush(){
+    func pushRegisterButton(){
 
         let manager = QuestionDataManager.sharedInstance
     
@@ -164,10 +173,10 @@ class QuestionInputView: BaseView {
         questionText.text = ""
         answerText.text = ""
         
-//        var questionInputTableView = ViewImperator.sharedInstance.questionInputTableView
-////        ViewImperator.sharedInstance.popView(preView: self, nextView: questionInputTableView)
-//        ViewImperator.sharedInstance.pushView2(preView1: self, nextView1: questionInputTableView)
-
+    }
+    
+    func pushReturnButton(){
+        self.callback?()
     }
     
 }

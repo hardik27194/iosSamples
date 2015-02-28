@@ -36,6 +36,7 @@
 		148563471A63A10F0019BC9C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 148563451A63A10F0019BC9C /* LaunchScreen.xib */; };
 		148563531A63A10F0019BC9C /* AnkimoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148563521A63A10F0019BC9C /* AnkimoTests.swift */; };
 		1485635C1A63A1D30019BC9C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1DE0DDABB9163207C3FAB /* libPods.a */; };
+		14860F521AA2221C00B379F8 /* PopViewTrans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14860F511AA2221C00B379F8 /* PopViewTrans.swift */; };
 		14AEDD4F1A63F15C000628E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AEDD4D1A63F15C000628E5 /* Default-568h@2x.png */; };
 		14AEDD501A63F15C000628E5 /* frickPointView.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AEDD4E1A63F15C000628E5 /* frickPointView.png */; };
 		14BDE56B1A7A4FF000C46183 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDE56A1A7A4FF000C46183 /* BaseView.swift */; };
@@ -85,6 +86,7 @@
 		1485634C1A63A10F0019BC9C /* AnkimoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnkimoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		148563511A63A10F0019BC9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		148563521A63A10F0019BC9C /* AnkimoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkimoTests.swift; sourceTree = "<group>"; };
+		14860F511AA2221C00B379F8 /* PopViewTrans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopViewTrans.swift; path = ViewTrans/PopViewTrans.swift; sourceTree = "<group>"; };
 		14AEDD4D1A63F15C000628E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		14AEDD4E1A63F15C000628E5 /* frickPointView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frickPointView.png; sourceTree = "<group>"; };
 		14BDE56A1A7A4FF000C46183 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		14340E511A9CA51E008D9803 /* ViewTrans */ = {
 			isa = PBXGroup;
 			children = (
+				14860F511AA2221C00B379F8 /* PopViewTrans.swift */,
 				14340E561A9CA6EA008D9803 /* AddViewMove.swift */,
 				14340E541A9CA5D7008D9803 /* PushViewTrans.swift */,
 				14340E521A9CA593008D9803 /* ChangeCellTrans.swift */,
@@ -483,6 +486,7 @@
 				14340E551A9CA5D7008D9803 /* PushViewTrans.swift in Sources */,
 				1457FEF11A63CF7E003B012F /* QuestionView.swift in Sources */,
 				1457FF041A63D037003B012F /* TaskApiClient.swift in Sources */,
+				14860F521AA2221C00B379F8 /* PopViewTrans.swift in Sources */,
 				14BDE56B1A7A4FF000C46183 /* BaseView.swift in Sources */,
 				1457FEF01A63CF7E003B012F /* FloorView.swift in Sources */,
 				1457FEF41A63CF7E003B012F /* SettingView.swift in Sources */,

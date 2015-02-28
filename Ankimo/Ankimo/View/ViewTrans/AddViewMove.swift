@@ -11,9 +11,11 @@ import UIKit
 
 class addViewMove {
     
-    func exec(#preView1:UIView, rootViewController:RootViewController){
-        rootViewController.view.addSubview(preView1)
+    func exec(#addView:UIView, rootViewController:RootViewController){
+        rootViewController.view.addSubview(addView)
+        rootViewController.currentView = addView
     }
+    
 }
 
 

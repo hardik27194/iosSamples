@@ -20,34 +20,8 @@ class QuestionDataManager: NSObject {
     }
     
     func objectAtIndex(idx: Int) -> Question {
-        
-        
-//        let q = Question.objectsWhere("id = \(idx)")
-//        
-//        let q1: AnyObject! = Question.objectsWhere("id = \(idx)").firstObject()
-//        
-//        let q2 = Question.objectsWhere("id = \(idx)").firstObject() as? Question
-
         let questions =  Question.objectsWhere("id = %d", idx)
-  
-//        for question in questions {
-//        
-//            let aa = (question as Question).questionText
-//            
-//            println("jkjk")
-//        }
-//        
-        
         let question = (questions.firstObject() as Question)
-
-            println("jkjk")
-        
-//        for (var question in questions){
-//
-//            println("a2")
-//        
-//        }
-        
         return question
     }
     

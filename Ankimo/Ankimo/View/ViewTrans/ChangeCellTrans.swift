@@ -10,32 +10,29 @@ import UIKit
 
 class ChangeCellTrans {
     
-    func exec(#preView:UIView, nextView:UIView, rootViewController:RootViewController){
+    func exec(#view:UIView, startPositionX: CGFloat, rootViewController:RootViewController){
 
-        preView.hidden = true
-        nextView.hidden = false
-        
-        let posX = preView.frame.origin.x
+        view.hidden = false
         
         let mainBounds = UIScreen.mainScreen().bounds
-        var upperView = UIView(frame: CGRectMake(posX, 0, mainBounds.width, mainBounds.height))
+        var moveView = UIView(frame: CGRectMake(startPositionX, 0, mainBounds.width, mainBounds.height))
         
-        nextView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
+        view.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
         
-        upperView.addSubview(nextView)
+        moveView.addSubview(view)
         
-        rootViewController.view.addSubview(upperView)
+        rootViewController.view.addSubview(moveView)
         
         UIView.animateWithDuration(
-            1.2,
+            0.1,
             delay: 0.0,
             options: .CurveLinear,
             animations:  {() -> Void in
-                upperView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
+                moveView.frame = CGRectMake(0, 0, mainBounds.width, mainBounds.height)
             },
             completion: {(bool: Bool) -> Void in
-                upperView.removeFromSuperview()
-                rootViewController.view.addSubview(nextView)
+                moveView.removeFromSuperview()
+                rootViewController.view.addSubview(view)
                 
             }
         )

@@ -10,10 +10,12 @@ import UIKit
 
 class RootViewController: UIViewController {
 
-    
     typealias anViewArray = [UIView]
     var anViews: anViewArray = []
     var anTabs: [NSInteger: anViewArray] = [:]
+
+    var currentView = UIView()
+    var currentTab: Int = 0
     
     override convenience init(){
         self.init(nibName:nil , bundle:nil)
@@ -41,23 +43,24 @@ class RootViewController: UIViewController {
         var floorView = FloorView()
         addView(view:floorView, tabNum: 0)
         
-        //　question編集選択リスト画面
-        let questionInputTableView = QuestionInputTableView(frame: UIScreen.mainScreen().bounds)
-        questionInputTableView.frame = UIScreen.mainScreen().bounds
-        questionInputTableView.dataReload()
-        addView(view: questionInputTableView, tabNum: 1)
-
         //　質問登録画面
         var rect = UIScreen.mainScreen().bounds
         rect.offset(dx: 0, dy: 0)
         var questionInputView = QuestionInputView(frame: rect)
         questionInputView.initWithMode(questionInputViewMode.edit)
         questionInputView.hidden = true
-        addView(view: questionInputView, tabNum: 1)
+        
+        //　question編集選択リスト画面
+        let questionInputTableView = QuestionInputTableView(frame: UIScreen.mainScreen().bounds)
+        questionInputTableView.dataReload()
+        questionInputTableView.callback = {(row:Int) -> () in
+            println("row  \(row)")
+            self.pushView(view: questionInputView)
+        }
+        addView(view: questionInputTableView, tabNum: 1)
 
-        addViewMove().exec(preView1: floorView, rootViewController: self)
-//        pushViewMove().exec(preView1: questionInputTableView, nextView1: floorView, rootViewController: self)
-//        self.view.addSubview(cview)
+        // 画面表示
+        addViewMove().exec(addView: floorView, rootViewController: self)
         
     }
     
@@ -66,41 +69,34 @@ class RootViewController: UIViewController {
     * @abstract viewを追加する
     */
     func addView(#view: UIView, tabNum: NSInteger){
-
         if anTabs[tabNum] == nil {
             anTabs[tabNum] = []
         }
-        
-        anTabs[tabNum]?.append(view)
-        
-        println("-------------------")
-        println(" tabNum \(tabNum)  count \(anTabs.count) anTabs \(anTabs[tabNum]?.count)")
-        println("-------------------")
-        
+        self.anTabs[tabNum]?.append(view)
     }
-
+    
+    func pushView(#view: UIView){
+        addView(view: view, tabNum: self.currentTab)
+        PushViewTrans().exec(preView1: currentView, nextView1: view, rootViewController:self)
+    }
     
 }
 
-extension RootViewController: SideMenuTableViewDelegate{
+// MARK: SideMenuTableViewDelegate
+extension RootViewController: SideMenuTableViewDelegate {
 
     func selectRow(row: NSInteger) {
 
         println("selected row \(row) ")
-
         
-        var views1 = anTabs[row] as anViewArray?
-        var view = views1![0] as UIView
-
-        var views2 = anTabs[0] as anViewArray?
-        var view2 = views2![0] as UIView
-
-
-//        var views2 = anTabs[1]
-//        var view2 = views2![0]
-
+        self.currentTab = row
         
-        ChangeCellTrans().exec(preView: view2, nextView: view, rootViewController: self)
+        var selectedTabsViews = self.anTabs[row]! as anViewArray
+        var selectedTabsView = selectedTabsViews.last! as UIView
+        
+        let posX = self.currentView.frame.origin.x
+        ChangeCellTrans().exec(view: selectedTabsView, startPositionX: posX , rootViewController: self)
+        currentView = selectedTabsView
         
     }
 

@@ -14,6 +14,7 @@ class QuestionInputTableView: BaseView {
     var questions: RLMResults? = nil
     var questionDataManager = QuestionDataManager()
     var tblview = UITableView()
+    var callback: ((row: Int)->())? = nil
 
     required override init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -78,8 +79,7 @@ extension QuestionInputTableView : UITableViewDelegate ,UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-//        var questionInputView = ViewImperator.sharedInstance.questionInputView
-//        ViewImperator.sharedInstance.pushView(preView: self, nextView: questionInputView)
+        self.callback?(row: indexPath.row)
     }
 
 }

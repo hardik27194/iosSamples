@@ -12,8 +12,6 @@ class PushViewTrans {
     
     func exec(#preView1:UIView, nextView1:UIView, rootViewController:RootViewController){
         
-        //        rootViewController.sideMenuTableView.hidden = true
-        
         preView1.hidden = false
         nextView1.hidden = false
         
@@ -31,7 +29,7 @@ class PushViewTrans {
         rootViewController.view.addSubview(upperView)
         
         UIView.animateWithDuration(
-            1.2,
+            0.1,
             delay: 0.0,
             options: .CurveLinear,
             animations:  {() -> Void in

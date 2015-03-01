@@ -17,6 +17,9 @@ class QuestionInputView: BaseView {
 
     var mode = questionInputViewMode.register
     
+    var question: Question? = nil
+    
+    let noLabel = UILabel()
     let questionText = UITextField()
     let answerText = UITextField()
     let dispSwitch = UISwitch()
@@ -68,11 +71,32 @@ class QuestionInputView: BaseView {
         let textHeight = 30.0 as CGFloat
         let verticalPadding = 20.0 as CGFloat
         let titleWidth = 100.0 as CGFloat
+
+        var x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat = 0
+        
+        // No Label
+        x = leftPadding
+        y = 50.0 as CGFloat
+        w = titleWidth
+        h = textHeight
+        let noTitleLabel = UILabel()
+        noTitleLabel.frame = CGRectMake(x, y, w, h)
+        noTitleLabel.text = "No"
+        self.addSubview(noTitleLabel)
+        
+        // No Text
+        x = CGRectGetMaxX(noTitleLabel.frame)
+        y = CGRectGetMinY(noTitleLabel.frame)
+        w = self.bounds.width - rightPadding - CGRectGetMaxX(noTitleLabel.frame)
+        noLabel.frame = CGRectMake(x, y, w, h)
+        self.addSubview(noLabel)
+
+        noLabel.text = "nolabel"//sdf
         
         // Question Label
-        let questionLabelY = 50.0 as CGFloat
+        y = CGRectGetMaxY(noLabel.frame)
         let questionLabel = UILabel()
-        var questionLabelRect = customRect(x:leftPadding, y:questionLabelY, w:titleWidth, h:textHeight)
+        var questionLabelRect = customRect(x:leftPadding, y:y, w:titleWidth, h:textHeight)
         questionLabel.frame = questionLabelRect.rect()
         questionLabel.text = "問い"
         self.addSubview(questionLabel)
@@ -155,20 +179,33 @@ class QuestionInputView: BaseView {
         return returnRect
     }
     
+    func setupTextField(no: Int){
+
+        let manager = QuestionDataManager.sharedInstance
+        question = manager.find(no)
+
+        if question != nil {
+            noLabel.text = "\(question!.id)"
+        }
+        questionText.text = question?.questionText
+        answerText.text = question?.answerText
+        
+    }
+    
     func pushRegisterButton(){
 
         let manager = QuestionDataManager.sharedInstance
     
-        var maxid = manager.maxId()
+//        var maxid = manager.maxId()
         
-        var question = Question()
-        question.questionText = questionText.text
-        question.answerText = answerText.text
-        question.createDate = NSDate()
-        question.modifyDate = NSDate()
-        question.id = maxid + 1
+        var chengedQuestion = Question()
+        chengedQuestion.questionText = questionText.text
+        chengedQuestion.answerText = answerText.text
+        chengedQuestion.createDate = NSDate()
+        chengedQuestion.modifyDate = NSDate()
+        chengedQuestion.id = self.question!.id
         
-        manager.registQuestion(question)
+        manager.registQuestion(chengedQuestion)
      
         questionText.text = ""
         answerText.text = ""

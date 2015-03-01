@@ -37,6 +37,9 @@ class QuestionInputTableView: BaseView {
 
     func dataReload(){
 
+        questionDataManager = QuestionDataManager.sharedInstance
+        questions = questionDataManager.allObjects()
+        
         self.clipsToBounds = true
         
         var bounds = UIScreen.mainScreen().bounds
@@ -46,9 +49,6 @@ class QuestionInputTableView: BaseView {
         tblview.delegate = self
         tblview.dataSource = self
         self.addSubview(tblview)
-        
-        questionDataManager = QuestionDataManager.sharedInstance
-        questions = questionDataManager.allObjects()
         
         tblview.reloadData()
         
@@ -61,14 +61,17 @@ extension QuestionInputTableView : UITableViewDelegate ,UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         println(" Int(questionDataManager.allObjectCount()) : \(Int(questionDataManager.allObjectCount())) ")
-        return Int(questionDataManager.allObjectCount())
+        
+        var cnt = Int(self.questions!.count)
+        return cnt
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let manager = QuestionDataManager.sharedInstance
-        let question = manager.objectAtIndex(indexPath.row)
+        var row = UInt(indexPath.row)
+        
+        let question:Question = questions?.objectAtIndex(row) as Question
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         

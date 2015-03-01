@@ -27,8 +27,8 @@ class QuestionDataManager: NSObject {
     
     func allObjects () -> RLMResults {
         println("realm.defaultRealmPath  \(RLMRealm.defaultRealmPath()) ")
-        let questions = Question.allObjects()
-        return Question.allObjects()
+        let questions = Question.objectsWhere("dispFlg = true")
+        return Question.objectsWhere("dispFlg = true")
     }
     
     func maxId() -> Int {
@@ -84,6 +84,7 @@ class QuestionDataManager: NSObject {
         question.id = 1
         question.questionText = "I'm fine, thank you,\" she answered."
         question.answerText = "元気です, ありがとう」と彼女は答えた."
+        question.dispFlg = true
         questions.append(question)
         
         question = Question()

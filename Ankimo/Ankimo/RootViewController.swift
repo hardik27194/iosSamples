@@ -33,30 +33,30 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.9)
-        
-        
+                
         let sideMenuTableView = SideMenuTableView(frame: UIScreen.mainScreen().bounds)
         sideMenuTableView.delegate = self
         self.view.addSubview(sideMenuTableView)
         
         // 設問view
         var floorView = FloorView()
+        var questionInputView = QuestionInputView(frame: UIScreen.mainScreen().bounds)
+        let questionInputTableView = QuestionInputTableView(frame: UIScreen.mainScreen().bounds)
         
         //　質問登録画面
-        var rect = UIScreen.mainScreen().bounds
-        rect.offset(dx: 0, dy: 0)
-        var questionInputView = QuestionInputView(frame: rect)
         questionInputView.initWithMode(questionInputViewMode.edit)
         questionInputView.callback = {
             self.popView()
+            questionInputTableView.dataReload()
         }
         questionInputView.hidden = true
         
         //　question編集選択リスト画面
-        let questionInputTableView = QuestionInputTableView(frame: UIScreen.mainScreen().bounds)
         questionInputTableView.dataReload()
         questionInputTableView.callback = {(row:Int) -> () in
             println("row  \(row)")
+            
+            questionInputView.setupTextField(row)
             self.pushView(view: questionInputView)
         }
 

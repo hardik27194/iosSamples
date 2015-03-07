@@ -69,8 +69,7 @@ extension QuestionInputTableView : UITableViewDelegate ,UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var row = UInt(indexPath.row)
-        
+        let row = UInt(indexPath.row)
         let question:Question = questions?.objectAtIndex(row) as Question
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")

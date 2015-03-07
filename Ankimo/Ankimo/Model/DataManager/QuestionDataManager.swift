@@ -26,8 +26,8 @@ class QuestionDataManager: NSObject {
     }
     
     func allObjects () -> RLMResults {
-        println("realm.defaultRealmPath  \(RLMRealm.defaultRealmPath()) ")
-        let questions = Question.objectsWhere("dispFlg = true")
+        //println("realm.defaultRealmPath  \(RLMRealm.defaultRealmPath()) ")
+        //let questions = Question.objectsWhere("dispFlg = true")
         return Question.objectsWhere("dispFlg = true")
     }
     
@@ -78,6 +78,7 @@ class QuestionDataManager: NSObject {
         question.id = 0
         question.questionText = "She answered (me) that she would be happy to come"
         question.answerText = "彼女は喜んでお伺いしますと(私に)返事をよこした."
+        question.dispFlg = true
         questions.append(question)
         
         question = Question()
@@ -91,24 +92,28 @@ class QuestionDataManager: NSObject {
         question.id = 2
         question.questionText = "He didn't answer a word (to me). "
         question.answerText = "彼は(私に)ひと言も答えなかった."
+        question.dispFlg = true
         questions.append(question)
         
         question = Question()
         question.id = 3
         question.questionText = "I phoned but nobody answered."
         question.answerText = " 電話をかけたがだれも出なかった."
+        question.dispFlg = true
         questions.append(question)
         
         question = Question()
         question.id = 4
         question.questionText = "A newspaper answered for a tablecloth."
         question.answerText = " 新聞紙 1 枚でテーブルクロスの代わりになった."
+        question.dispFlg = true
         questions.append(question)
         
         question = Question()
         question.id = 5
         question.questionText = "Her answer to my greeting was a smile."
         question.answerText = " 私のあいさつに答えて彼女はにっこり笑った."
+        question.dispFlg = true
         questions.append(question)
         
         /*

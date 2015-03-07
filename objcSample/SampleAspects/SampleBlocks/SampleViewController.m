@@ -6,20 +6,26 @@
 //  Copyright (c) 2014年 jp.co.sakura.charorin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SampleViewController.h"
+#import "sample1View.h"
 
-
-@interface ViewController ()
+@interface SampleViewController ()
 
 @end
 
-@implementation ViewController
+@implementation SampleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor colorWithRed:0.6 green:1 blue:1 alpha:0.2];
 
+    
+    sample1View* sample1 = [[sample1View alloc] init];
+    sample1.frame = CGRectMake(100,100,100,100);
+    sample1.backgroundColor = [UIColor colorWithRed:1 green:1 blue:0 alpha:0.1];
+    
+    [self.view addSubview:sample1];
     
     
 }

@@ -21,49 +21,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSError *error = nil;
-    [UIViewController aspect_hookSelector:@selector(viewWillAppear:)
-                              withOptions:AspectPositionBefore
-                               usingBlock:^(id<AspectInfo> aspectInfo, BOOL animated){
-                               
-                                   UIViewController *vc = [aspectInfo instance];
-                                   NSArray *args = [aspectInfo arguments];
-                                   
-                                   NSLog(@"viewWillAppearが呼ばれる前にインターセプト");
-                                   NSLog(@"呼ばれたインスタンス:%@", vc);
-                                   NSLog(@"呼ばれたメソッドの引数の数:%ld", [args count]);
-                                   NSLog(@"配列の中身はボクシングされている:%@", [[args firstObject] class]);
-                                   NSLog(@"引数が分かっていれば直接ブロックの引数でも取得可能:%@", animated ? @"YES":@"NO");
-                               
-                               }
-                                    error:&error];
-    
-    [sample1View aspect_hookSelector:@selector(setupSubviews)
-                         withOptions:AspectPositionBefore
-                          usingBlock:^(id<AspectInfo> aspectInfo, BOOL animated){
-
-                              UIView *vc = [aspectInfo instance];
-                              NSArray *args = [aspectInfo arguments];
-
-                              NSLog(@"呼ばれたインスタンス:%@", vc);
-                              NSLog(@"呼ばれたメソッドの引数の数:%ld", [args count]);
-                              NSLog(@"配列の中身はボクシングされている:%@", [[args firstObject] class]);
-                              NSLog(@"引数が分かっていれば直接ブロックの引数でも取得可能:%@", animated ? @"YES":@"NO");
-                              
-                          }
-                               error:&error];
-    
-    
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UINavigationController *naviCon = [[UINavigationController alloc] init];
     self.window.rootViewController = naviCon;
     SampleViewController* vc = [[SampleViewController alloc] initWithNibName:nil bundle:nil];
     [naviCon pushViewController:vc animated:NO];
     [self.window makeKeyAndVisible];
-    
-    
-    
     
     // Override point for customization after application launch.
     return YES;

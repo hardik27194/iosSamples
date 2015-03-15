@@ -24,6 +24,7 @@
     sample1View* sample1 = [[sample1View alloc] init];
     sample1.frame = CGRectMake(100,100,100,100);
     sample1.backgroundColor = [UIColor colorWithRed:1 green:1 blue:0 alpha:0.1];
+    [sample1 setupSubviews];
     
     [self.view addSubview:sample1];
     

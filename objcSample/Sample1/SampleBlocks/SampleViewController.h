@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIImageView+Action.h"
 
 
 @interface SampleViewController : UIViewController

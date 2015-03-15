@@ -8,6 +8,8 @@
 
 #import "SampleViewController.h"
 #import "sample1View.h"
+#import "UIImageView+Action.h"
+
 
 @interface SampleViewController ()
 
@@ -27,19 +29,22 @@
 //    [sample1 setupSubviews];
 //    [self.view addSubview:sample1];
     
-    UIImage *img = [self imageWithColor:[UIColor redColor]];
+//    UIImage *img = [self imageWithColor:[UIColor redColor]];
+
+    UIImage *img = [UIImage imageNamed:@"apple-touch-icon-114x114"];
     
     UIImageView *iv = [[UIImageView alloc] initWithImage:img];
-    [self.view addSubview:iv];
+    iv.center = CGPointMake(200, 200);
     [iv setImageViewPressedBlock:^(){
         
+        NSLog(@"test dayo-nn");
+        NSLog(@"test dayo-nn");
+        NSLog(@"test dayo-nn");
         NSLog(@"test dayo-nn");
         
     }];
     
-
-    
-    
+    [self.view addSubview:iv];
     
     
 }

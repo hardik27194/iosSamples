@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1400F1061AAB1F0600405B51 /* sample1View.m in Sources */ = {isa = PBXBuildFile; fileRef = 1400F1051AAB1F0600405B51 /* sample1View.m */; };
 		1400F1091AB5841D00405B51 /* UIImageView+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 1400F1081AB5841D00405B51 /* UIImageView+Action.m */; };
+		1400F10B1AB5B00700405B51 /* apple-touch-icon-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1400F10A1AB5B00700405B51 /* apple-touch-icon-114x114.png */; };
 		7275B7941A11A33F0033F85A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7275B7931A11A33F0033F85A /* main.m */; };
 		7275B7971A11A33F0033F85A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7275B7961A11A33F0033F85A /* AppDelegate.m */; };
 		7275B79A1A11A33F0033F85A /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7275B7991A11A33F0033F85A /* SampleViewController.m */; };
@@ -35,6 +36,7 @@
 		1400F1051AAB1F0600405B51 /* sample1View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sample1View.m; sourceTree = "<group>"; };
 		1400F1071AB5841D00405B51 /* UIImageView+Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Action.h"; sourceTree = "<group>"; };
 		1400F1081AB5841D00405B51 /* UIImageView+Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Action.m"; sourceTree = "<group>"; };
+		1400F10A1AB5B00700405B51 /* apple-touch-icon-114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "apple-touch-icon-114x114.png"; path = "SampleBlocks/apple-touch-icon-114x114.png"; sourceTree = "<group>"; };
 		49440297E1C6A1CE1A00A510 /* libPods-SampleBlocks.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleBlocks.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6189351504EC362CA7D6E40E /* Pods-SampleBlocks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleBlocks.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleBlocks/Pods-SampleBlocks.release.xcconfig"; sourceTree = "<group>"; };
 		7275B78E1A11A33F0033F85A /* SampleBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1400F10C1AB5B01100405B51 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1400F10A1AB5B00700405B51 /* apple-touch-icon-114x114.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		4D108EE7EA17D5195DC44ACB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		7275B7851A11A33F0033F85A = {
 			isa = PBXGroup;
 			children = (
+				1400F10C1AB5B01100405B51 /* Resources */,
 				7275B7901A11A33F0033F85A /* SampleBlocks */,
 				7275B7AA1A11A33F0033F85A /* SampleBlocksTests */,
 				7275B78F1A11A33F0033F85A /* Products */,
@@ -239,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1400F10B1AB5B00700405B51 /* apple-touch-icon-114x114.png in Resources */,
 				7275B79F1A11A33F0033F85A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

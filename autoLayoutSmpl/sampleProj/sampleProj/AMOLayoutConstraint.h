@@ -1,56 +1,77 @@
 //
 //  AMOLayoutConstraint.h
-//  sampleProj
+//  AMoAd
 //
-//  Created by 島田 武史 on 2015/06/12.
-//  Copyright (c) 2015年 島田 武史. All rights reserved.
+//  Created by AMoAd on 2015/06/12.
 //
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM (NSInteger, VerticalAlign) {
-    VerticalAlignTop = 0,
-    VerticalAlignCenter,
-    VerticalAlignBottom,
-};
-
-typedef NS_ENUM(NSInteger, HorizontalAlign) {
-    HorizontalAlignLeft = 0,
-    HorizontalAlignCenter,
-    HorizontalAlignRight,
+typedef NS_ENUM (NSInteger, AMOVerticalAlign) {
+    AMOVerticalAlignTop = 0,
+    AMOVerticalAlignCenter,
+    AMOVerticalAlignBottom,
 };
 
 
+typedef NS_ENUM(NSInteger, AMOHorizontalAlign) {
+    AMOHorizontalAlignLeft = 0,
+    AMOHorizontalAlignCenter,
+    AMOHorizontalAlignRight,
+};
 
 
 @interface AMOLayoutConstraint : NSLayoutConstraint
 
-// alignで指定
+/*
+ * @abstract 水平方向、垂直方向で指定
+ * @param baseView 元のview
+ * @param targetView 広告のview
+ * @param adViewSize 広告のサイズ
+ * @param isAdjust サイズの横幅をFitさせるか
+ * @param horizontalAlign 水平方向 左寄せ、中央寄せ、右寄せ
+ * @param verticalAlign 垂直方向　上寄せ、中央寄せ、下寄せ
+ * @return 制約のリスト
+ */
 -(NSArray *)constraintsWithBaseView:(UIView *)baseView
                          targetView:(UIView *)targetView
                          adViewSize:(CGSize)adViewSize
                            isAdjust:(BOOL)isAdjust
-                    horizontalAlign:(HorizontalAlign)horizontalAlign
-                      verticalAlign:(VerticalAlign)verticalAlign;
+                    horizontalAlign:(AMOHorizontalAlign)horizontalAlign
+                      verticalAlign:(AMOVerticalAlign)verticalAlign;
 
-
-// x,y座標で指定
+/*
+ * @abstract x,y座標で指定
+ * @param baseView 元のview
+ * @param targetView 広告のview
+ * @param adViewSize 広告のサイズ
+ * @return 制約のリスト
+ */
 -(NSArray *)constraintsWithBaseView:(UIView *)baseView
                          targetView:(UIView *)targetView
                          adViewSize:(CGSize)adViewSize
                        adViewOrigin:(CGPoint)adViewOrigin;
 
-
-// 他(xibなど）で制約を与えている場合はその制約を生かす。
-// しかし　幅だけは　制約をかける
+/*
+ * @abstract 他(xibなど）で制約を与えている場合に仕様する。
+ * @discription サイズの制約は内部で上書きする
+ * @param baseView 元のview
+ * @param targetView 広告のview
+ * @param adViewSize 広告のサイズ
+ * @param isAdjust サイズの横幅をFitさせるか
+ * @return 制約のリスト
+ */
 -(NSArray *)constraintsWithBaseView:(UIView *)baseView
                          targetView:(UIView *)targetView
                          adViewSize:(CGSize)adViewSize
                            isAdjust:(BOOL)isAdjust;
 
-
-// 制約を削除  AMOLayoutConstraint の制約だけ削除
+// 制約を削除 AMOLayoutConstraint の制約だけ削除
+/*
+ * @abstract 制約を削除
+ * @discription 当クラス（AMOLayoutConstraint）で作成された制約だけ削除する
+ * @param baseView 元のview
+ */
 -(void)removeConstraints:(UIView *)baseView;
-
 
 @end

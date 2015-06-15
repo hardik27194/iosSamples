@@ -46,8 +46,8 @@
                              targetView:childView
                              adViewSize:CGSizeMake(320, 50)
                                isAdjust:YES
-                        horizontalAlign:HorizontalAlignCenter
-                          verticalAlign:VerticalAlignBottom];
+                        horizontalAlign:AMOHorizontalAlignCenter
+                          verticalAlign:AMOVerticalAlignBottom];
 
     // 座標
     NSArray* constraints2 =

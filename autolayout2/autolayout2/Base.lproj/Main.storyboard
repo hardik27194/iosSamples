@@ -20,9 +20,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kly-GG-vF2" userLabel="childView">
-                                        <rect key="frame" x="0.0" y="590" width="600" height="10"/>
+                                        <rect key="frame" x="295" y="590" width="10" height="10"/>
                                         <color key="backgroundColor" red="0.69968345484296535" green="0.81942190689651984" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="5NP-ID-HN2"/>
                                             <constraint firstAttribute="height" constant="10" id="JQ8-Kv-oka"/>
                                         </constraints>
                                     </view>
@@ -31,7 +32,6 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Kly-GG-vF2" secondAttribute="bottom" id="beE-NI-Zl5"/>
                                     <constraint firstAttribute="centerX" secondItem="Kly-GG-vF2" secondAttribute="centerX" id="e37-BJ-Qak"/>
-                                    <constraint firstItem="Kly-GG-vF2" firstAttribute="leading" secondItem="pHF-XU-ghZ" secondAttribute="leading" priority="750" id="eWq-Ed-GP3"/>
                                 </constraints>
                             </view>
                         </subviews>

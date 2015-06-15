@@ -38,7 +38,7 @@
     [constraint constraintsWithBaseView:self.baseView
                              targetView:self.childView
                              adViewSize:CGSizeMake(320, 50)
-                               isAdjust:NO];
+                               isAdjust:YES];
 
     
     

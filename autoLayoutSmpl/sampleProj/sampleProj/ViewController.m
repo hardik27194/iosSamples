@@ -28,13 +28,53 @@
 
     self.childView = childView;
     
-    [self temp1];
+    //[self temp1];
+
+    NSArray* constraints = [self temp2WithBaseView:self.view view:childView];
+    [self.view addConstraints:constraints];
     
 }
 
 
 #pragma mark -- parts
+-(NSArray *)temp2WithBaseView:(UIView *)baseView view:(UIView *)view {
 
+    NSArray* constraints =
+    @[
+      
+      [NSLayoutConstraint constraintWithItem:view
+                                   attribute:NSLayoutAttributeLeft
+                                   relatedBy:NSLayoutRelationEqual
+                                      toItem:baseView
+                                   attribute:NSLayoutAttributeLeft
+                                  multiplier:1.f constant:50.0f],
+      
+      [NSLayoutConstraint constraintWithItem:view
+                                   attribute:NSLayoutAttributeRight
+                                   relatedBy:NSLayoutRelationEqual
+                                      toItem:baseView
+                                   attribute:NSLayoutAttributeRight
+                                  multiplier:1.f constant:-50.0f],
+      
+      [NSLayoutConstraint constraintWithItem:view
+                                   attribute:NSLayoutAttributeHeight
+                                   relatedBy:NSLayoutRelationEqual
+                                      toItem:nil
+                                   attribute:NSLayoutAttributeNotAnAttribute
+                                  multiplier:1.f constant:50.0f],
+      
+      [NSLayoutConstraint constraintWithItem:view
+                                   attribute:NSLayoutAttributeBottom
+                                   relatedBy:NSLayoutRelationEqual
+                                      toItem:baseView
+                                   attribute:NSLayoutAttributeBottom
+                                  multiplier:1.f constant:0.0f]
+      ];
+
+    
+    return constraints;
+
+}
 
 
 
@@ -45,12 +85,13 @@
     
     NSArray* constraints =
     @[
+      
       [NSLayoutConstraint constraintWithItem:self.childView
                                    attribute:NSLayoutAttributeLeft
                                    relatedBy:NSLayoutRelationEqual
                                       toItem:self.view
                                    attribute:NSLayoutAttributeLeft
-                                  multiplier:1.f constant:50.0f],
+                                    multiplier:1.f constant:50.0f],
       
       [NSLayoutConstraint constraintWithItem:self.childView
                                    attribute:NSLayoutAttributeRight

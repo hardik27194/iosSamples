@@ -19,41 +19,54 @@
 - (void)viewDidLoad {
     
     self.view.backgroundColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:0.3];
-
-    
     
     CGRect childFrame = CGRectMake(10, 200, 200, 50);
     UIView* childView = [[UIView alloc] initWithFrame:childFrame];
     childView.translatesAutoresizingMaskIntoConstraints = NO;
     childView.backgroundColor = [UIColor yellowColor];
-    
     [self.view addSubview:childView];
+
+    self.childView = childView;
+    
+    [self temp1];
+    
+}
+
+
+#pragma mark -- parts
+
+
+
+
+
+#pragma mark -- parts
+-(void)temp1 {
 
     
     NSArray* constraints =
     @[
-      [NSLayoutConstraint constraintWithItem:childView
+      [NSLayoutConstraint constraintWithItem:self.childView
                                    attribute:NSLayoutAttributeLeft
                                    relatedBy:NSLayoutRelationEqual
                                       toItem:self.view
                                    attribute:NSLayoutAttributeLeft
                                   multiplier:1.f constant:50.0f],
       
-      [NSLayoutConstraint constraintWithItem:childView
+      [NSLayoutConstraint constraintWithItem:self.childView
                                    attribute:NSLayoutAttributeRight
                                    relatedBy:NSLayoutRelationEqual
                                       toItem:self.view
                                    attribute:NSLayoutAttributeRight
                                   multiplier:1.f constant:-50.0f],
       
-      [NSLayoutConstraint constraintWithItem:childView
+      [NSLayoutConstraint constraintWithItem:self.childView
                                    attribute:NSLayoutAttributeTop
                                    relatedBy:NSLayoutRelationEqual
                                       toItem:self.view
                                    attribute:NSLayoutAttributeTop
                                   multiplier:1.f constant:150.0f],
       
-      [NSLayoutConstraint constraintWithItem:childView
+      [NSLayoutConstraint constraintWithItem:self.childView
                                    attribute:NSLayoutAttributeBottom
                                    relatedBy:NSLayoutRelationEqual
                                       toItem:self.view
@@ -64,12 +77,12 @@
     
     NSArray* constraints2 =
     @[
-      [AMOLayoutConstraint constraintWithItem:childView
-                                   attribute:NSLayoutAttributeBottom
-                                   relatedBy:NSLayoutRelationEqual
-                                      toItem:self.view
-                                   attribute:NSLayoutAttributeBottom
-                                  multiplier:1.f constant:-250.0f]
+      [AMOLayoutConstraint constraintWithItem:self.childView
+                                    attribute:NSLayoutAttributeBottom
+                                    relatedBy:NSLayoutRelationEqual
+                                       toItem:self.view
+                                    attribute:NSLayoutAttributeBottom
+                                   multiplier:1.f constant:-250.0f]
       ];
     
     for (NSLayoutConstraint* constraint in constraints){
@@ -79,15 +92,15 @@
     for (NSLayoutConstraint* constraint in constraints2){
         constraint.priority = UILayoutPriorityDefaultLow;
     }
-
+    
     NSLayoutConstraint* constraint3 = [[NSLayoutConstraint alloc] init];
     constraint3.priority = UILayoutPriorityFittingSizeLevel;
     
     
     
     [self.view addConstraints:constraints2];
-//    [self.view addConstraints:constraints];
-
+    //    [self.view addConstraints:constraints];
+    
     for (NSLayoutConstraint* constraint in self.view.constraints){
         NSLog(@" priority %f " , constraint.priority );
         if ([constraint isKindOfClass:[AMOLayoutConstraint class]]) {
@@ -95,10 +108,7 @@
             
         }
     }
-
     
-    
-    self.childView = childView;
     
     UIButton* button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     CGRect buttonRect = CGRectMake(100, 100, 100, 30);
@@ -110,14 +120,15 @@
     
     NSInteger cnt = [self.view.constraints count];
     NSLog(@" cnt %ld", cnt );
-
+    
     [self showConstraintDataWithConstrains:self.view.constraints];
     
     
     NSLog(@"stop ");
-    
-}
 
+    
+
+}
 
 -(void)hoge {
     

@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
     = [self constraintsWithBaseView:self.view
                          targetView:childView
                       verticalAlign:VerticalAlignBottom
-                    horizontalAlign:HorizontalAlignCenter];
+                    horizontalAlign:HorizontalAlignLeft];
     [self.view addConstraints:constraints];
     
 }
@@ -54,14 +54,18 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
 
 
 #pragma mark -- parts
-//-(NSArray *)constraintsWithBaseView:(UIView *)baseView
-//                         targetView:(UIView *)targetView
-//                      verticalAlign:(VerticalAlign)verticalAlign
-//                    horizontalAlign:(HorizontalAlign)horizontalAlign
-//{
-//    return nil;
-//}
-//
+-(NSArray *)constraintsWithBaseView:(UIView *)baseView
+                         targetView:(UIView *)targetView
+                      verticalAlign:(VerticalAlign)verticalAlign
+                    horizontalAlign:(HorizontalAlign)horizontalAlign
+{
+    return [self constraintsWithBaseView:baseView
+                              targetView:targetView
+                           verticalAlign:verticalAlign
+                         horizontalAlign:horizontalAlign
+                                isAdjust:YES];
+}
+
 
 -(NSArray *)constraintsWithBaseView:(UIView *)baseView
                                targetView:(UIView *)targetView
@@ -72,9 +76,7 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
 
     NSMutableArray* constraints = [@[] mutableCopy];
     
-    
-    
-    
+    CGFloat shortSide = [self shortSideScreenBounds];
     
     // 横幅（固定）
     [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
@@ -82,7 +84,8 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                                                         relatedBy:NSLayoutRelationEqual
                                                            toItem:nil
                                                         attribute:NSLayoutAttributeNotAnAttribute
-                                                       multiplier:1.f constant:250.0f]];
+                                                       multiplier:1.f
+                                                         constant:shortSide]];
 
     // 高さ
     [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
@@ -154,7 +157,17 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
 }
 
 
-
+/* 
+ * @abstract screenのサイズで縦横短いほうの値を返す
+ * @discussion adjust = YES のとき, 短い辺に合わせる。
+    landscape にしたときに大きくなりすぎないようにする。
+    iOS7とiOS8でboundsの挙動が違うのでシンプルに短いほうを取るようにする。
+    http://iti.hatenablog.jp/entry/2014/09/19/113940
+ */
+-(CGFloat)shortSideScreenBounds {
+    CGSize size = [[UIScreen mainScreen] bounds].size;
+    return ( size.width < size.height ) ? size.width : size.height;
+}
 
 #pragma mark -- parts
 -(void)temp1 {

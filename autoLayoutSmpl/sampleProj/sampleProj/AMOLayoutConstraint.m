@@ -73,6 +73,7 @@
                                   y:(CGFloat)posY
 {
     
+    // 既存制約の優先度をLowにする
     NSMutableArray* constraints = [@[] mutableCopy];
     
     // 横幅（固定）
@@ -162,7 +163,6 @@
         constraint.priority = UILayoutPriorityDefaultHigh;
     }
 
-    
     return constraints;
     
 }
@@ -173,10 +173,13 @@
                            isAdjust:(BOOL)isAdjust
 {
 
-    // 既存制約の優先度をLowにする
-    for (NSLayoutConstraint* constraint in baseView.constraints) {
-        constraint.priority = UILayoutPriorityDefaultLow;
-    }
+//    // 既存制約の優先度をLowにする
+//    for (NSLayoutConstraint* constraint in baseView.constraints) {
+//        constraint.priority = UILayoutPriorityDefaultLow;
+//    }
+    
+    [self removeConstraints:baseView];
+    
 
     float adViewWidth = adViewSize.width;
     float adViewHeight = adViewSize.height;
@@ -205,7 +208,7 @@
 
     // 追加する制約の優先度をHighにする
     for (NSLayoutConstraint* constraint in constraints) {
-        constraint.priority = UILayoutPriorityDefaultHigh;
+        constraint.priority = UILayoutPriorityRequired;
     }
 
     return constraints;

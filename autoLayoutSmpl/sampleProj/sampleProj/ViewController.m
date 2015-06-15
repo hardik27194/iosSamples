@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
     = [self constraintsWithBaseView:self.view
                          targetView:childView
                       verticalAlign:VerticalAlignBottom
-                    horizontalAlign:HorizontalAlignLeft];
+                    horizontalAlign:HorizontalAlignCenter];
     [self.view addConstraints:constraints];
     
 }
@@ -63,7 +63,10 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                               targetView:targetView
                            verticalAlign:verticalAlign
                          horizontalAlign:horizontalAlign
-                                isAdjust:YES];
+                                isAdjust:NO
+                             adViewWidth:320
+                            adViewHeight:50
+            ];
 }
 
 
@@ -71,12 +74,16 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                                targetView:(UIView *)targetView
                       verticalAlign:(VerticalAlign)verticalAlign
                       horizontalAlign:(HorizontalAlign)horizontalAlign
-                             isAdjust:(BOOL)isAdjust
+                           isAdjust:(BOOL)isAdjust
+                        adViewWidth:(CGFloat)adViewWidth
+                        adViewHeight:(CGFloat)adViewHeight
 {
 
     NSMutableArray* constraints = [@[] mutableCopy];
     
     CGFloat shortSide = [self shortSideScreenBounds];
+    
+    CGFloat viewWidth = isAdjust ? shortSide : adViewWidth;
     
     // 横幅（固定）
     [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
@@ -85,15 +92,15 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                                                            toItem:nil
                                                         attribute:NSLayoutAttributeNotAnAttribute
                                                        multiplier:1.f
-                                                         constant:shortSide]];
+                                                         constant:viewWidth]];
 
-    // 高さ
+    // 高さ （アスペクト(縦横)比で指定）
     [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
                                                         attribute:NSLayoutAttributeHeight
                                                         relatedBy:NSLayoutRelationEqual
                                                            toItem:targetView
                                                         attribute:NSLayoutAttributeWidth
-                                                       multiplier:50.0/320.0
+                                                       multiplier:adViewHeight / adViewWidth
                                                          constant:0.0f]];
     
     if( horizontalAlign == HorizontalAlignLeft ) {

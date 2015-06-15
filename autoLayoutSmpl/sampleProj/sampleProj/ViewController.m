@@ -9,6 +9,18 @@
 #import "ViewController.h"
 #import "AMOLayoutConstraint.h"
 
+typedef NS_ENUM (NSInteger, VerticalAlign) {
+    VerticalAlignTop = 0,
+    VerticalAlignCenter,
+    VerticalAlignBottom,
+};
+
+typedef NS_ENUM(NSInteger, HorizontalAlign) {
+    HorizontalAlignLeft = 0,
+    HorizontalAlignCenter,
+    HorizontalAlignRight,
+};
+
 @interface ViewController ()
 @property (nonatomic, strong) UIView* childView;
 @property (nonatomic, copy) NSMutableArray* constraints;
@@ -27,50 +39,115 @@
     [self.view addSubview:childView];
 
     self.childView = childView;
-    
-    //[self temp1];
 
-    NSArray* constraints = [self temp2WithBaseView:self.view view:childView];
+    NSArray* constraints
+    = [self constraintsWithBaseView:self.view
+                         targetView:childView
+                      verticalAlign:VerticalAlignBottom
+                    horizontalAlign:HorizontalAlignCenter];
     [self.view addConstraints:constraints];
     
 }
 
 
+
+
+
 #pragma mark -- parts
--(NSArray *)temp2WithBaseView:(UIView *)baseView view:(UIView *)view {
+//-(NSArray *)constraintsWithBaseView:(UIView *)baseView
+//                         targetView:(UIView *)targetView
+//                      verticalAlign:(VerticalAlign)verticalAlign
+//                    horizontalAlign:(HorizontalAlign)horizontalAlign
+//{
+//    return nil;
+//}
+//
 
-    NSArray* constraints =
-    @[
-      
-      [NSLayoutConstraint constraintWithItem:view
-                                   attribute:NSLayoutAttributeLeft
-                                   relatedBy:NSLayoutRelationEqual
-                                      toItem:baseView
-                                   attribute:NSLayoutAttributeLeft
-                                  multiplier:1.f constant:50.0f],
-      
-      [NSLayoutConstraint constraintWithItem:view
-                                   attribute:NSLayoutAttributeRight
-                                   relatedBy:NSLayoutRelationEqual
-                                      toItem:baseView
-                                   attribute:NSLayoutAttributeRight
-                                  multiplier:1.f constant:-50.0f],
-      
-      [NSLayoutConstraint constraintWithItem:view
-                                   attribute:NSLayoutAttributeHeight
-                                   relatedBy:NSLayoutRelationEqual
-                                      toItem:nil
-                                   attribute:NSLayoutAttributeNotAnAttribute
-                                  multiplier:1.f constant:50.0f],
-      
-      [NSLayoutConstraint constraintWithItem:view
-                                   attribute:NSLayoutAttributeBottom
-                                   relatedBy:NSLayoutRelationEqual
-                                      toItem:baseView
-                                   attribute:NSLayoutAttributeBottom
-                                  multiplier:1.f constant:0.0f]
-      ];
+-(NSArray *)constraintsWithBaseView:(UIView *)baseView
+                               targetView:(UIView *)targetView
+                      verticalAlign:(VerticalAlign)verticalAlign
+                      horizontalAlign:(HorizontalAlign)horizontalAlign
+                             isAdjust:(BOOL)isAdjust
+{
 
+    NSMutableArray* constraints = [@[] mutableCopy];
+    
+    
+    
+    
+    
+    // 横幅（固定）
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
+                                                        attribute:NSLayoutAttributeWidth
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:nil
+                                                        attribute:NSLayoutAttributeNotAnAttribute
+                                                       multiplier:1.f constant:250.0f]];
+
+    // 高さ
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
+                                                        attribute:NSLayoutAttributeHeight
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:targetView
+                                                        attribute:NSLayoutAttributeWidth
+                                                       multiplier:50.0/320.0
+                                                         constant:0.0f]];
+    
+    if( horizontalAlign == HorizontalAlignLeft ) {
+        // 左寄せ
+        [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
+                                                            attribute:NSLayoutAttributeLeft
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:baseView
+                                                            attribute:NSLayoutAttributeLeft
+                                                           multiplier:1.f constant:0.0f]];
+    } else if( horizontalAlign == HorizontalAlignRight ) {
+        // 右寄せ
+        [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
+                                                            attribute:NSLayoutAttributeRight
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:baseView
+                                                            attribute:NSLayoutAttributeRight
+                                                           multiplier:1.f constant:0.0f]];
+    } else {
+        //　中央寄せ
+        [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
+                                                            attribute:NSLayoutAttributeCenterX
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:baseView
+                                                            attribute:NSLayoutAttributeCenterX
+                                                           multiplier:1.f constant:0.0f]];
+        
+    }
+    
+    if (verticalAlign == VerticalAlignTop) {
+        // 上寄せ
+        [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
+                                                            attribute:NSLayoutAttributeTop
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:baseView
+                                                            attribute:NSLayoutAttributeTop
+                                                           multiplier:1.f constant:0.0f]];
+        
+    } else if (verticalAlign == VerticalAlignCenter) {
+        // 中央寄せ
+        [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
+                                                            attribute:NSLayoutAttributeCenterY
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:baseView
+                                                            attribute:NSLayoutAttributeCenterY
+                                                           multiplier:1.f constant:0.0f]];
+        
+    } else {
+        // 下寄せ
+        [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
+                                                            attribute:NSLayoutAttributeBottom
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:baseView
+                                                            attribute:NSLayoutAttributeBottom
+                                                           multiplier:1.f constant:0.0f]];
+
+    }
     
     return constraints;
 

@@ -49,6 +49,18 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
     
 }
 
+#pragma mark -- accessor method
+/*
+ * @abstract screenのサイズで縦横短いほうの値を返す
+ * @discussion adjust = YES のとき, 短い辺に合わせる。
+ landscape にしたときに大きくなりすぎないようにする。
+ iOS7とiOS8でboundsの挙動が違うのでシンプルに短いほうを取るようにした。
+ http://iti.hatenablog.jp/entry/2014/09/19/113940
+ */
+-(CGFloat)shortSideScreenBounds {
+    CGSize size = [[UIScreen mainScreen] bounds].size;
+    return ( size.width < size.height ) ? size.width : size.height;
+}
 
 
 
@@ -66,26 +78,26 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                                 isAdjust:NO
                              adViewWidth:320
                             adViewHeight:50
+                                       x:0
+                                       y:0
             ];
 }
 
-
 -(NSArray *)constraintsWithBaseView:(UIView *)baseView
-                               targetView:(UIView *)targetView
+                         targetView:(UIView *)targetView
                       verticalAlign:(VerticalAlign)verticalAlign
-                      horizontalAlign:(HorizontalAlign)horizontalAlign
+                    horizontalAlign:(HorizontalAlign)horizontalAlign
                            isAdjust:(BOOL)isAdjust
                         adViewWidth:(CGFloat)adViewWidth
-                        adViewHeight:(CGFloat)adViewHeight
+                       adViewHeight:(CGFloat)adViewHeight
+                       x:(CGFloat)posX
+                       y:(CGFloat)posY
 {
 
     NSMutableArray* constraints = [@[] mutableCopy];
     
-    CGFloat shortSide = [self shortSideScreenBounds];
-    
-    CGFloat viewWidth = isAdjust ? shortSide : adViewWidth;
-    
     // 横幅（固定）
+    CGFloat viewWidth = isAdjust ? self.shortSideScreenBounds : adViewWidth;
     [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
                                                         attribute:NSLayoutAttributeWidth
                                                         relatedBy:NSLayoutRelationEqual
@@ -103,6 +115,7 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                                                        multiplier:adViewHeight / adViewWidth
                                                          constant:0.0f]];
     
+    // 横方向 align
     if( horizontalAlign == HorizontalAlignLeft ) {
         // 左寄せ
         [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
@@ -110,7 +123,8 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView
                                                             attribute:NSLayoutAttributeLeft
-                                                           multiplier:1.f constant:0.0f]];
+                                                           multiplier:1.f
+                                                             constant:posX]];
     } else if( horizontalAlign == HorizontalAlignRight ) {
         // 右寄せ
         [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
@@ -118,7 +132,8 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView
                                                             attribute:NSLayoutAttributeRight
-                                                           multiplier:1.f constant:0.0f]];
+                                                           multiplier:1.f
+                                                             constant:posX]];
     } else {
         //　中央寄せ
         [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
@@ -126,10 +141,12 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView
                                                             attribute:NSLayoutAttributeCenterX
-                                                           multiplier:1.f constant:0.0f]];
+                                                           multiplier:1.f
+                                                             constant:posX]];
         
     }
     
+    // 縦方向 align
     if (verticalAlign == VerticalAlignTop) {
         // 上寄せ
         [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
@@ -137,7 +154,8 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView
                                                             attribute:NSLayoutAttributeTop
-                                                           multiplier:1.f constant:0.0f]];
+                                                           multiplier:1.f
+                                                             constant:posY]];
         
     } else if (verticalAlign == VerticalAlignCenter) {
         // 中央寄せ
@@ -146,7 +164,8 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView
                                                             attribute:NSLayoutAttributeCenterY
-                                                           multiplier:1.f constant:0.0f]];
+                                                           multiplier:1.f
+                                                             constant:posY]];
         
     } else {
         // 下寄せ
@@ -155,7 +174,8 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView
                                                             attribute:NSLayoutAttributeBottom
-                                                           multiplier:1.f constant:0.0f]];
+                                                           multiplier:1.f
+                                                             constant:posY]];
 
     }
     
@@ -164,17 +184,6 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
 }
 
 
-/* 
- * @abstract screenのサイズで縦横短いほうの値を返す
- * @discussion adjust = YES のとき, 短い辺に合わせる。
-    landscape にしたときに大きくなりすぎないようにする。
-    iOS7とiOS8でboundsの挙動が違うのでシンプルに短いほうを取るようにする。
-    http://iti.hatenablog.jp/entry/2014/09/19/113940
- */
--(CGFloat)shortSideScreenBounds {
-    CGSize size = [[UIScreen mainScreen] bounds].size;
-    return ( size.width < size.height ) ? size.width : size.height;
-}
 
 #pragma mark -- parts
 -(void)temp1 {

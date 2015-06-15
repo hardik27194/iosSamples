@@ -14,6 +14,7 @@
 		F6EE642A1B2E7A170057976A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6EE64291B2E7A170057976A /* Images.xcassets */; };
 		F6EE642D1B2E7A170057976A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EE642B1B2E7A170057976A /* LaunchScreen.xib */; };
 		F6EE64391B2E7A170057976A /* autolayout2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE64381B2E7A170057976A /* autolayout2Tests.m */; };
+		F6EE64461B2EE15B0057976A /* AMOLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE64451B2EE15B0057976A /* AMOLayoutConstraint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		F6EE64321B2E7A170057976A /* autolayout2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = autolayout2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6EE64371B2E7A170057976A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6EE64381B2E7A170057976A /* autolayout2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = autolayout2Tests.m; sourceTree = "<group>"; };
+		F6EE64441B2EE15B0057976A /* AMOLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMOLayoutConstraint.h; sourceTree = "<group>"; };
+		F6EE64451B2EE15B0057976A /* AMOLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMOLayoutConstraint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 		F6EE641B1B2E7A170057976A /* autolayout2 */ = {
 			isa = PBXGroup;
 			children = (
+				F6EE64441B2EE15B0057976A /* AMOLayoutConstraint.h */,
+				F6EE64451B2EE15B0057976A /* AMOLayoutConstraint.m */,
 				F6EE64201B2E7A170057976A /* AppDelegate.h */,
 				F6EE64211B2E7A170057976A /* AppDelegate.m */,
 				F6EE64231B2E7A170057976A /* ViewController.h */,
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6EE64461B2EE15B0057976A /* AMOLayoutConstraint.m in Sources */,
 				F6EE64251B2E7A170057976A /* ViewController.m in Sources */,
 				F6EE64221B2E7A170057976A /* AppDelegate.m in Sources */,
 				F6EE641F1B2E7A170057976A /* main.m in Sources */,
@@ -418,6 +424,7 @@
 				F6EE643E1B2E7A170057976A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6EE643F1B2E7A170057976A /* Build configuration list for PBXNativeTarget "autolayout2Tests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +433,7 @@
 				F6EE64411B2E7A170057976A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

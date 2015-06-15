@@ -7,17 +7,49 @@
 //
 
 #import "ViewController.h"
+#import "AMOLayoutConstraint.h"
 
 @interface ViewController ()
-
+@property (nonatomic, weak) IBOutlet UIView* baseView;
+@property (nonatomic, weak) IBOutlet UIView* childView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+
+    AMOLayoutConstraint * constraint = [[AMOLayoutConstraint alloc] init];
+
+    NSArray* constraints =
+    [constraint constraintsWithBaseView:self.baseView
+                             targetView:self.childView
+                             adViewSize:CGSizeMake(320, 50)
+                               isAdjust:YES
+                        horizontalAlign:HorizontalAlignCenter
+                          verticalAlign:VerticalAlignBottom];
+
+    
+
+    NSArray* constraints2 =
+    [constraint constraintsWithBaseView:self.baseView
+                             targetView:self.childView
+                             adViewSize:CGSizeMake(320, 50)
+                               isAdjust:YES];
+
+    
+    
+    [self.baseView addConstraints:constraints2];
+
+    
+    NSLog(@" %@ ", self.baseView.constraints);
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

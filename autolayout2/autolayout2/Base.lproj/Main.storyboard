@@ -21,50 +21,28 @@
                                 <rect key="frame" x="26" y="30" width="548" height="560"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kly-GG-vF2">
-                                        <rect key="frame" x="50" y="123" width="200" height="437"/>
+                                        <rect key="frame" x="50" y="460" width="448" height="100"/>
                                         <color key="backgroundColor" red="0.69968345484296535" green="0.81942190689651984" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="GZX-F8-mNs"/>
+                                            <constraint firstAttribute="height" constant="100" id="XBh-WC-HzG"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.93428593772359803" blue="0.77491587775773785" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Kly-GG-vF2" secondAttribute="bottom" id="6YL-ZK-BEy"/>
-                                    <constraint firstItem="Kly-GG-vF2" firstAttribute="top" secondItem="pHF-XU-ghZ" secondAttribute="top" constant="123" id="8kW-Mv-kws"/>
-                                    <constraint firstAttribute="trailing" secondItem="Kly-GG-vF2" secondAttribute="trailing" constant="50" id="FVe-uJ-nwq"/>
-                                    <constraint firstItem="Kly-GG-vF2" firstAttribute="top" secondItem="pHF-XU-ghZ" secondAttribute="top" constant="123" id="JMm-tv-jn9"/>
-                                    <constraint firstItem="Kly-GG-vF2" firstAttribute="leading" secondItem="pHF-XU-ghZ" secondAttribute="leading" constant="50" id="Mqw-ya-xum"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kly-GG-vF2" secondAttribute="trailing" constant="50" id="Mrx-FL-zj5"/>
                                     <constraint firstAttribute="bottom" secondItem="Kly-GG-vF2" secondAttribute="bottom" id="lMp-pQ-bmk"/>
                                     <constraint firstItem="Kly-GG-vF2" firstAttribute="leading" secondItem="pHF-XU-ghZ" secondAttribute="leading" constant="50" id="svA-BE-rFc"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6YL-ZK-BEy"/>
-                                        <exclude reference="FVe-uJ-nwq"/>
-                                        <exclude reference="JMm-tv-jn9"/>
-                                        <exclude reference="Mqw-ya-xum"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pHF-XU-ghZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="DDG-sn-yKb"/>
                             <constraint firstItem="pHF-XU-ghZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="MoQ-sM-QHH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pHF-XU-ghZ" secondAttribute="bottom" constant="10" id="Pk5-JQ-0Sk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pHF-XU-ghZ" secondAttribute="trailing" constant="10" id="VOV-TL-GVL"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pHF-XU-ghZ" secondAttribute="bottom" constant="94" id="Waa-Uk-Nsi"/>
-                            <constraint firstItem="pHF-XU-ghZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="21" id="XKh-ct-yIu"/>
                             <constraint firstItem="pHF-XU-ghZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="wmf-ei-L4c"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="DDG-sn-yKb"/>
-                                <exclude reference="XKh-ct-yIu"/>
-                                <exclude reference="Waa-Uk-Nsi"/>
-                            </mask>
-                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

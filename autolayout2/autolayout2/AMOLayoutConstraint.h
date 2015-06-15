@@ -20,9 +20,6 @@ typedef NS_ENUM(NSInteger, HorizontalAlign) {
     HorizontalAlignRight,
 };
 
-
-
-
 @interface AMOLayoutConstraint : NSLayoutConstraint
 
 // alignで指定

@@ -14,6 +14,7 @@
 		F68A73231B270E1E0073A611 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F68A73211B270E1E0073A611 /* LaunchScreen.xib */; };
 		F68A732F1B270E1E0073A611 /* sampleProjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A732E1B270E1E0073A611 /* sampleProjTests.m */; };
 		F6EE640F1B2AC5A40057976A /* AMoAdLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE640E1B2AC5A40057976A /* AMoAdLayoutConstraint.m */; };
+		F6EE644C1B2FB1120057976A /* AMoAdLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE644B1B2FB1120057976A /* AMoAdLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		F68A732E1B270E1E0073A611 /* sampleProjTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sampleProjTests.m; sourceTree = "<group>"; };
 		F6EE640D1B2AC5A40057976A /* AMoAdLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdLayoutConstraint.h; sourceTree = "<group>"; };
 		F6EE640E1B2AC5A40057976A /* AMoAdLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMoAdLayoutConstraint.m; sourceTree = "<group>"; };
+		F6EE644A1B2FB1120057976A /* AMoAdLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdLayout.h; sourceTree = "<group>"; };
+		F6EE644B1B2FB1120057976A /* AMoAdLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMoAdLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				F68A73121B270E1E0073A611 /* Supporting Files */,
 				F6EE640D1B2AC5A40057976A /* AMoAdLayoutConstraint.h */,
 				F6EE640E1B2AC5A40057976A /* AMoAdLayoutConstraint.m */,
+				F6EE644A1B2FB1120057976A /* AMoAdLayout.h */,
+				F6EE644B1B2FB1120057976A /* AMoAdLayout.m */,
 			);
 			path = sampleProj;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6EE644C1B2FB1120057976A /* AMoAdLayout.m in Sources */,
 				F6EE640F1B2AC5A40057976A /* AMoAdLayoutConstraint.m in Sources */,
 				F68A731B1B270E1E0073A611 /* ViewController.m in Sources */,
 				F68A73181B270E1E0073A611 /* AppDelegate.m in Sources */,

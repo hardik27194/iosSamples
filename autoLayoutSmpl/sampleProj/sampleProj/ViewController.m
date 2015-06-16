@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "AMoAdLayoutConstraint.h"
+#import "AMoAdLayout.h"
 
 
 @interface ViewController ()
@@ -38,7 +38,7 @@
 
     self.childView = childView;
 
-    AMoAdLayoutConstraint * constraint = [[AMoAdLayoutConstraint alloc] init];
+    AMoAdLayout* constraint = [[AMoAdLayout alloc] init];
 
     // align
     NSArray* constraints =
@@ -62,7 +62,7 @@
 }
 
 -(void)removeCon {
-    AMoAdLayoutConstraint * constraint = [[AMoAdLayoutConstraint alloc] init];
+    AMoAdLayout * constraint = [[AMoAdLayout alloc] init];
     [constraint removeConstraints:self.view];
 }
 

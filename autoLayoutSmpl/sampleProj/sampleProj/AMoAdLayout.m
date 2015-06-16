@@ -10,106 +10,65 @@
 
 @implementation AMoAdLayout
 
-#pragma mark -- accessor method
-/*!
- @abstract screenのサイズで縦横短いほうの値を返す
- @discussion adjust = YES のとき, 短い辺に合わせる。
-   landscape にしたときに大きくなりすぎないようにする。
-   iOS7とiOS8でboundsの挙動が違うのでシンプルに短いほうを取るようにした。
-   http://iti.hatenablog.jp/entry/2014/09/19/113940
- */
--(CGFloat)shortSideScreenBounds {
-    CGSize size = [[UIScreen mainScreen] bounds].size;
-    return ( size.width < size.height ) ? size.width : size.height;
-}
-
-
 #pragma mark -- public method
--(NSArray *)constraintsWithBaseView:(UIView *)baseView
-                         targetView:(UIView *)targetView
-                         adViewSize:(CGSize)adViewSize
-                           isAdjust:(BOOL)isAdjust
-                    horizontalAlign:(AMoAdHorizontalAlign)horizontalAlign
-                      verticalAlign:(AMoAdVerticalAlign)verticalAlign
-{
-    return [self constraintsWithBaseView:baseView
-                              targetView:targetView
-                         horizontalAlign:horizontalAlign
-                           verticalAlign:verticalAlign
-                                isAdjust:isAdjust
-                             adViewWidth:adViewSize.width
-                            adViewHeight:adViewSize.height
-                                       x:0
-                                       y:0
-            ];
-}
-
--(NSArray *)constraintsWithBaseView:(UIView *)baseView
-                         targetView:(UIView *)targetView
-                         adViewSize:(CGSize)adViewSize
-                       adViewOrigin:(CGPoint)adViewOrigin
-{
-    return [self constraintsWithBaseView:baseView
-                              targetView:targetView
-                         horizontalAlign:AMoAdHorizontalAlignLeft
-                           verticalAlign:AMoAdVerticalAlignTop
-                                isAdjust:NO
-                             adViewWidth:adViewSize.width
-                            adViewHeight:adViewSize.height
-                                       x:adViewOrigin.x
-                                       y:adViewOrigin.y
-            ];
-}
-
--(NSArray *)constraintsWithBaseView:(UIView *)baseView
-                         targetView:(UIView *)targetView
-                         adViewSize:(CGSize)adViewSize
-                           isAdjust:(BOOL)isAdjust
+-(id)initWithBaseView:(UIView *)baseView
+                     targetView:(UIView *)targetView
+                     adViewSize:(CGSize)adViewSize
+                       isAdjust:(BOOL)isAdjust
+                horizontalAlign:(AMoAdHorizontalAlign)horizontalAlign
+                  verticalAlign:(AMoAdVerticalAlign)verticalAlign
 {
     
-    //    // 既存制約の優先度をLowにする
-    //    for (NSLayoutConstraint* constraint in baseView.constraints) {
-    //        constraint.priority = UILayoutPriorityDefaultLow;
-    //    }
-    
-    [self removeConstraints:baseView];
-    
-    
-    float adViewWidth = adViewSize.width;
-    float adViewHeight = adViewSize.height;
-    
-    NSMutableArray* constraints = [@[] mutableCopy];
-    
-    // 横幅（固定）
-    CGFloat viewWidth = isAdjust ? self.shortSideScreenBounds : adViewWidth;
-    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
-                                                           attribute:NSLayoutAttributeWidth
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:nil
-                                                           attribute:NSLayoutAttributeNotAnAttribute
-                                                          multiplier:1.f
-                                                            constant:viewWidth]];
-    
-    // 高さ （アスペクト(縦横)比で指定）
-    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
-                                                           attribute:NSLayoutAttributeHeight
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:targetView
-                                                           attribute:NSLayoutAttributeWidth
-                                                          multiplier:adViewHeight / adViewWidth
-                                                            constant:0.0f]];
-    
-    
-    // 追加する制約の優先度をHighにする
-    for (NSLayoutConstraint* constraint in constraints) {
-        constraint.priority = UILayoutPriorityRequired;
+    if (self = [super init]) {
+        self.constraints = [self constraintsWithBaseView:baseView
+                                              targetView:targetView
+                                         horizontalAlign:horizontalAlign
+                                           verticalAlign:verticalAlign
+                                                isAdjust:isAdjust
+                                             adViewWidth:adViewSize.width
+                                            adViewHeight:adViewSize.height
+                                                       x:0
+                                                       y:0];
     }
-    
-    return constraints;
+    return self;
+
+}
+
+-(instancetype)initWithBaseView:(UIView *)baseView
+                     targetView:(UIView *)targetView
+                     adViewSize:(CGSize)adViewSize
+                   adViewOrigin:(CGPoint)adViewOrigin
+{
+    if (self = [super init]) {
+        self.constraints =  [self constraintsWithBaseView:baseView
+                                               targetView:targetView
+                                          horizontalAlign:AMoAdHorizontalAlignLeft
+                                            verticalAlign:AMoAdVerticalAlignTop
+                                                 isAdjust:NO
+                                              adViewWidth:adViewSize.width
+                                             adViewHeight:adViewSize.height
+                                                        x:adViewOrigin.x
+                                                        y:adViewOrigin.y];
+    }
+    return self;
     
 }
 
--(void)removeConstraints:(UIView *)baseView {
+-(instancetype)initWithBaseView:(UIView *)baseView
+                         targetView:(UIView *)targetView
+                         adViewSize:(CGSize)adViewSize
+                           isAdjust:(BOOL)isAdjust
+{
+    if (self = [super init]) {
+        self.constraints =  [self constraintsWithBaseView:baseView
+                                               targetView:targetView
+                                               adViewSize:adViewSize
+                                                 isAdjust:isAdjust];
+    }
+    return self;
+}
+
++(void)removeConstraintsWithView:(UIView *)baseView {
     for (id constraint in baseView.constraints) {
         if ([constraint isKindOfClass:[AMoAdLayoutConstraint class]]) {
             [baseView removeConstraint:constraint];
@@ -221,6 +180,66 @@
     
     return constraints;
     
+}
+
+-(NSArray *)constraintsWithBaseView:(UIView *)baseView
+                         targetView:(UIView *)targetView
+                         adViewSize:(CGSize)adViewSize
+                           isAdjust:(BOOL)isAdjust
+{
+    
+    //    // 既存制約の優先度をLowにする
+    //    for (NSLayoutConstraint* constraint in baseView.constraints) {
+    //        constraint.priority = UILayoutPriorityDefaultLow;
+    //    }
+    
+    [AMoAdLayout removeConstraintsWithView:baseView];
+    
+    float adViewWidth = adViewSize.width;
+    float adViewHeight = adViewSize.height;
+    
+    NSMutableArray* constraints = [@[] mutableCopy];
+    
+    // 横幅（固定）
+    CGFloat viewWidth = isAdjust ? self.shortSideScreenBounds : adViewWidth;
+    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
+                                                           attribute:NSLayoutAttributeWidth
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:nil
+                                                           attribute:NSLayoutAttributeNotAnAttribute
+                                                          multiplier:1.f
+                                                            constant:viewWidth]];
+    
+    // 高さ （アスペクト(縦横)比で指定）
+    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
+                                                           attribute:NSLayoutAttributeHeight
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:targetView
+                                                           attribute:NSLayoutAttributeWidth
+                                                          multiplier:adViewHeight / adViewWidth
+                                                            constant:0.0f]];
+    
+    
+    // 追加する制約の優先度をHighにする
+    for (NSLayoutConstraint* constraint in constraints) {
+        constraint.priority = UILayoutPriorityRequired;
+    }
+    
+    return constraints;
+    
+}
+
+#pragma mark -- accessor method
+/*!
+ @abstract screenのサイズで縦横短いほうの値を返す
+ @discussion adjust = YES のとき, 短い辺に合わせる。
+ landscape にしたときに大きくなりすぎないようにする。
+ iOS7とiOS8でboundsの挙動が違うのでシンプルに短いほうを取るようにした。
+ http://iti.hatenablog.jp/entry/2014/09/19/113940
+ */
+-(CGFloat)shortSideScreenBounds {
+    CGSize size = [[UIScreen mainScreen] bounds].size;
+    return ( size.width < size.height ) ? size.width : size.height;
 }
 
 @end

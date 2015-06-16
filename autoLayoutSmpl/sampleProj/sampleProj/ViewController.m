@@ -25,7 +25,7 @@
     CGRect buttonRect = CGRectMake(100, 100, 100, 30);
     button.frame = buttonRect;
     [button setTitle:@"but" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(removeCon) forControlEvents:UIControlEventTouchDown];
+    [button addTarget:self action:@selector(removeConstraint) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:button];
 
     
@@ -38,32 +38,29 @@
 
     self.childView = childView;
 
-    AMoAdLayout* constraint = [[AMoAdLayout alloc] init];
-
-    // align
-    NSArray* constraints =
-    [constraint constraintsWithBaseView:self.view
-                             targetView:childView
-                             adViewSize:CGSizeMake(320, 50)
-                               isAdjust:YES
-                        horizontalAlign:AMoAdHorizontalAlignCenter
-                          verticalAlign:AMoAdVerticalAlignBottom];
-
-    // 座標
-    NSArray* constraints2 =
-    [constraint constraintsWithBaseView:self.view
-                             targetView:childView
-                             adViewSize:CGSizeMake(320, 50)
-                           adViewOrigin:CGPointMake(100, 100)];
+//    AMoAdLayout* constraint = [[AMoAdLayout alloc] init];
     
+    AMoAdLayout* layout =
+    [[AMoAdLayout alloc] initWithBaseView:self.view
+                               targetView:childView
+                               adViewSize:CGSizeMake(320, 50)
+                                 isAdjust:YES
+                          horizontalAlign:AMoAdHorizontalAlignCenter
+                            verticalAlign:AMoAdVerticalAlignBottom];
+    // 座標
+    AMoAdLayout* layout2 =
+    [[AMoAdLayout alloc] initWithBaseView:self.view
+                               targetView:childView
+                               adViewSize:CGSizeMake(320, 50)
+                             adViewOrigin:CGPointMake(100, 100)];
+
     // 制約追加
-    [self.view addConstraints:constraints];
+    [self.view addConstraints:layout.constraints];
     
 }
 
--(void)removeCon {
-    AMoAdLayout * constraint = [[AMoAdLayout alloc] init];
-    [constraint removeConstraints:self.view];
+-(void)removeConstraint {
+    [AMoAdLayout removeConstraintsWithView:self.view];
 }
 
 

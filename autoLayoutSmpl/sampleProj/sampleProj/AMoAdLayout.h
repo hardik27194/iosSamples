@@ -28,6 +28,13 @@ typedef NS_ENUM(NSInteger, AMoAdHorizontalAlign) {
  */
 @interface AMoAdLayout : NSObject
 
+@property (nonatomic, copy) NSArray* constraints;
+
+/*!
+ @abstract init を使うとコンパイルエラー
+ */
+- (id)init __attribute__((unavailable("init is not available")));
+
 /*!
  @abstract 水平方向、垂直方向で指定
  @param baseView 元のview
@@ -38,12 +45,12 @@ typedef NS_ENUM(NSInteger, AMoAdHorizontalAlign) {
  @param verticalAlign 垂直方向　上寄せ、中央寄せ、下寄せ
  @return 制約のリスト
  */
--(NSArray *)constraintsWithBaseView:(UIView *)baseView
-                         targetView:(UIView *)targetView
-                         adViewSize:(CGSize)adViewSize
-                           isAdjust:(BOOL)isAdjust
-                    horizontalAlign:(AMoAdHorizontalAlign)horizontalAlign
-                      verticalAlign:(AMoAdVerticalAlign)verticalAlign;
+-(id)initWithBaseView:(UIView *)baseView
+                     targetView:(UIView *)targetView
+                     adViewSize:(CGSize)adViewSize
+                       isAdjust:(BOOL)isAdjust
+                horizontalAlign:(AMoAdHorizontalAlign)horizontalAlign
+                  verticalAlign:(AMoAdVerticalAlign)verticalAlign;
 
 /*!
  @abstract x,y座標で指定
@@ -52,10 +59,10 @@ typedef NS_ENUM(NSInteger, AMoAdHorizontalAlign) {
  @param adViewSize 広告のサイズ
  @return 制約のリスト
  */
--(NSArray *)constraintsWithBaseView:(UIView *)baseView
-                         targetView:(UIView *)targetView
-                         adViewSize:(CGSize)adViewSize
-                       adViewOrigin:(CGPoint)adViewOrigin;
+-(instancetype)initWithBaseView:(UIView *)baseView
+                     targetView:(UIView *)targetView
+                     adViewSize:(CGSize)adViewSize
+                   adViewOrigin:(CGPoint)adViewOrigin;
 
 /*!
  @abstract 他(xibなど）で制約を与えている場合に仕様する。
@@ -66,17 +73,17 @@ typedef NS_ENUM(NSInteger, AMoAdHorizontalAlign) {
  @param isAdjust サイズの横幅をFitさせるか
  @return 制約のリスト
  */
--(NSArray *)constraintsWithBaseView:(UIView *)baseView
-                         targetView:(UIView *)targetView
-                         adViewSize:(CGSize)adViewSize
-                           isAdjust:(BOOL)isAdjust;
+-(instancetype)initWithBaseView:(UIView *)baseView
+                  targetView:(UIView *)targetView
+                  adViewSize:(CGSize)adViewSize
+                    isAdjust:(BOOL)isAdjust;
 
 /*!
  @abstract 制約を削除
  @discussion 当クラス（AMoAdLayoutConstraint）で作成された制約だけ削除する
  @param baseView 元のview
  */
--(void)removeConstraints:(UIView *)baseView;
++(void)removeConstraintsWithView:(UIView *)baseView;
 
 
 @end

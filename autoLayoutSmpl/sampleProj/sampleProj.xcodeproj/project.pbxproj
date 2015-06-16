@@ -13,7 +13,7 @@
 		F68A73201B270E1E0073A611 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F68A731F1B270E1E0073A611 /* Images.xcassets */; };
 		F68A73231B270E1E0073A611 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F68A73211B270E1E0073A611 /* LaunchScreen.xib */; };
 		F68A732F1B270E1E0073A611 /* sampleProjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A732E1B270E1E0073A611 /* sampleProjTests.m */; };
-		F6EE640F1B2AC5A40057976A /* AMOLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE640E1B2AC5A40057976A /* AMOLayoutConstraint.m */; };
+		F6EE640F1B2AC5A40057976A /* AMoAdLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE640E1B2AC5A40057976A /* AMoAdLayoutConstraint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,8 @@
 		F68A73281B270E1E0073A611 /* sampleProjTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleProjTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68A732D1B270E1E0073A611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F68A732E1B270E1E0073A611 /* sampleProjTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sampleProjTests.m; sourceTree = "<group>"; };
-		F6EE640D1B2AC5A40057976A /* AMOLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMOLayoutConstraint.h; sourceTree = "<group>"; };
-		F6EE640E1B2AC5A40057976A /* AMOLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMOLayoutConstraint.m; sourceTree = "<group>"; };
+		F6EE640D1B2AC5A40057976A /* AMoAdLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdLayoutConstraint.h; sourceTree = "<group>"; };
+		F6EE640E1B2AC5A40057976A /* AMoAdLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMoAdLayoutConstraint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +89,8 @@
 				F68A731F1B270E1E0073A611 /* Images.xcassets */,
 				F68A73211B270E1E0073A611 /* LaunchScreen.xib */,
 				F68A73121B270E1E0073A611 /* Supporting Files */,
-				F6EE640D1B2AC5A40057976A /* AMOLayoutConstraint.h */,
-				F6EE640E1B2AC5A40057976A /* AMOLayoutConstraint.m */,
+				F6EE640D1B2AC5A40057976A /* AMoAdLayoutConstraint.h */,
+				F6EE640E1B2AC5A40057976A /* AMoAdLayoutConstraint.m */,
 			);
 			path = sampleProj;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6EE640F1B2AC5A40057976A /* AMOLayoutConstraint.m in Sources */,
+				F6EE640F1B2AC5A40057976A /* AMoAdLayoutConstraint.m in Sources */,
 				F68A731B1B270E1E0073A611 /* ViewController.m in Sources */,
 				F68A73181B270E1E0073A611 /* AppDelegate.m in Sources */,
 				F68A73151B270E1E0073A611 /* main.m in Sources */,

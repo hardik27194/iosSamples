@@ -1,13 +1,13 @@
 //
-//  AMOLayoutConstraint.h
+//  AMoAdLayoutConstraint.h
 //  AMoAd
 //
 //  Created by AMoAd on 2015/06/12.
 //
 
-#import "AMOLayoutConstraint.h"
+#import "AMoAdLayoutConstraint.h"
 
-@implementation AMOLayoutConstraint
+@implementation AMoAdLayoutConstraint
 
 #pragma mark -- accessor method
 /*
@@ -28,8 +28,8 @@
                          targetView:(UIView *)targetView
                          adViewSize:(CGSize)adViewSize
                            isAdjust:(BOOL)isAdjust
-                    horizontalAlign:(AMOHorizontalAlign)horizontalAlign
-                      verticalAlign:(AMOVerticalAlign)verticalAlign
+                    horizontalAlign:(AMoAdHorizontalAlign)horizontalAlign
+                      verticalAlign:(AMoAdVerticalAlign)verticalAlign
 {
     return [self constraintsWithBaseView:baseView
                               targetView:targetView
@@ -50,8 +50,8 @@
 {
     return [self constraintsWithBaseView:baseView
                               targetView:targetView
-                         horizontalAlign:AMOHorizontalAlignLeft
-                           verticalAlign:AMOVerticalAlignTop
+                         horizontalAlign:AMoAdHorizontalAlignLeft
+                           verticalAlign:AMoAdVerticalAlignTop
                                 isAdjust:NO
                              adViewWidth:adViewSize.width
                             adViewHeight:adViewSize.height
@@ -81,7 +81,7 @@
     
     // 横幅（固定）
     CGFloat viewWidth = isAdjust ? self.shortSideScreenBounds : adViewWidth;
-    [constraints addObject:[AMOLayoutConstraint constraintWithItem:targetView
+    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
                                                          attribute:NSLayoutAttributeWidth
                                                          relatedBy:NSLayoutRelationEqual
                                                             toItem:nil
@@ -90,7 +90,7 @@
                                                           constant:viewWidth]];
     
     // 高さ （アスペクト(縦横)比で指定）
-    [constraints addObject:[AMOLayoutConstraint constraintWithItem:targetView
+    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
                                                          attribute:NSLayoutAttributeHeight
                                                          relatedBy:NSLayoutRelationEqual
                                                             toItem:targetView
@@ -110,7 +110,7 @@
 
 -(void)removeConstraints:(UIView *)baseView {
     for (id constraint in baseView.constraints) {
-        if ([constraint isKindOfClass:[AMOLayoutConstraint class]]) {
+        if ([constraint isKindOfClass:[AMoAdLayoutConstraint class]]) {
             [baseView removeConstraint:constraint];
         }
     }
@@ -119,8 +119,8 @@
 #pragma mark -- private method
 -(NSArray *)constraintsWithBaseView:(UIView *)baseView
                          targetView:(UIView *)targetView
-                    horizontalAlign:(AMOHorizontalAlign)horizontalAlign
-                      verticalAlign:(AMOVerticalAlign)verticalAlign
+                    horizontalAlign:(AMoAdHorizontalAlign)horizontalAlign
+                      verticalAlign:(AMoAdVerticalAlign)verticalAlign
                            isAdjust:(BOOL)isAdjust
                         adViewWidth:(CGFloat)adViewWidth
                        adViewHeight:(CGFloat)adViewHeight
@@ -133,7 +133,7 @@
     
     // 横幅（固定）
     CGFloat viewWidth = isAdjust ? self.shortSideScreenBounds : adViewWidth;
-    [constraints addObject:[AMOLayoutConstraint constraintWithItem:targetView
+    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
                                                          attribute:NSLayoutAttributeWidth
                                                          relatedBy:NSLayoutRelationEqual
                                                             toItem:nil
@@ -142,7 +142,7 @@
                                                           constant:viewWidth]];
     
     // 高さ （アスペクト(縦横)比で指定）
-    [constraints addObject:[AMOLayoutConstraint constraintWithItem:targetView
+    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
                                                         attribute:NSLayoutAttributeHeight
                                                         relatedBy:NSLayoutRelationEqual
                                                            toItem:targetView
@@ -151,18 +151,18 @@
                                                          constant:0.0f]];
     
     // 横方向 align
-    if( horizontalAlign == AMOHorizontalAlignLeft ) {
+    if( horizontalAlign == AMoAdHorizontalAlignLeft ) {
         // 左寄せ
-        [constraints addObject:[AMOLayoutConstraint constraintWithItem:targetView
+        [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
                                                             attribute:NSLayoutAttributeLeft
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView
                                                             attribute:NSLayoutAttributeLeft
                                                            multiplier:1.f
                                                              constant:posX]];
-    } else if( horizontalAlign == AMOHorizontalAlignRight ) {
+    } else if( horizontalAlign == AMoAdHorizontalAlignRight ) {
         // 右寄せ
-        [constraints addObject:[AMOLayoutConstraint constraintWithItem:targetView
+        [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
                                                             attribute:NSLayoutAttributeRight
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView
@@ -171,7 +171,7 @@
                                                              constant:posX]];
     } else {
         //　中央寄せ
-        [constraints addObject:[AMOLayoutConstraint constraintWithItem:targetView
+        [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
                                                             attribute:NSLayoutAttributeCenterX
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView
@@ -182,9 +182,9 @@
     }
     
     // 縦方向 align
-    if (verticalAlign == AMOVerticalAlignTop) {
+    if (verticalAlign == AMoAdVerticalAlignTop) {
         // 上寄せ
-        [constraints addObject:[AMOLayoutConstraint constraintWithItem:targetView
+        [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
                                                             attribute:NSLayoutAttributeTop
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView
@@ -192,9 +192,9 @@
                                                            multiplier:1.f
                                                              constant:posY]];
         
-    } else if (verticalAlign == AMOVerticalAlignCenter) {
+    } else if (verticalAlign == AMoAdVerticalAlignCenter) {
         // 中央寄せ
-        [constraints addObject:[AMOLayoutConstraint constraintWithItem:targetView
+        [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
                                                             attribute:NSLayoutAttributeCenterY
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView
@@ -204,7 +204,7 @@
         
     } else {
         // 下寄せ
-        [constraints addObject:[AMOLayoutConstraint constraintWithItem:targetView
+        [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
                                                             attribute:NSLayoutAttributeBottom
                                                             relatedBy:NSLayoutRelationEqual
                                                                toItem:baseView

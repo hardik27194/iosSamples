@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "AMOLayoutConstraint.h"
+#import "AMoAdLayoutConstraint.h"
 
 
 @interface ViewController ()
@@ -38,7 +38,7 @@
 
     self.childView = childView;
 
-    AMOLayoutConstraint * constraint = [[AMOLayoutConstraint alloc] init];
+    AMoAdLayoutConstraint * constraint = [[AMoAdLayoutConstraint alloc] init];
 
     // align
     NSArray* constraints =
@@ -46,8 +46,8 @@
                              targetView:childView
                              adViewSize:CGSizeMake(320, 50)
                                isAdjust:YES
-                        horizontalAlign:AMOHorizontalAlignCenter
-                          verticalAlign:AMOVerticalAlignBottom];
+                        horizontalAlign:AMoAdHorizontalAlignCenter
+                          verticalAlign:AMoAdVerticalAlignBottom];
 
     // 座標
     NSArray* constraints2 =
@@ -62,7 +62,7 @@
 }
 
 -(void)removeCon {
-    AMOLayoutConstraint * constraint = [[AMOLayoutConstraint alloc] init];
+    AMoAdLayoutConstraint * constraint = [[AMoAdLayoutConstraint alloc] init];
     [constraint removeConstraints:self.view];
 }
 

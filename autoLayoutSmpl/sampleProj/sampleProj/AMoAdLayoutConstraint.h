@@ -1,5 +1,5 @@
 //
-//  AMOLayoutConstraint.h
+//  AMoAdLayoutConstraint.h
 //  AMoAd
 //
 //  Created by AMoAd on 2015/06/12.
@@ -7,21 +7,21 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM (NSInteger, AMOVerticalAlign) {
-    AMOVerticalAlignTop = 0,
-    AMOVerticalAlignCenter,
-    AMOVerticalAlignBottom,
+typedef NS_ENUM (NSInteger, AMoAdVerticalAlign) {
+    AMoAdVerticalAlignTop = 0,
+    AMoAdVerticalAlignCenter,
+    AMoAdVerticalAlignBottom,
 };
 
 
-typedef NS_ENUM(NSInteger, AMOHorizontalAlign) {
-    AMOHorizontalAlignLeft = 0,
-    AMOHorizontalAlignCenter,
-    AMOHorizontalAlignRight,
+typedef NS_ENUM(NSInteger, AMoAdHorizontalAlign) {
+    AMoAdHorizontalAlignLeft = 0,
+    AMoAdHorizontalAlignCenter,
+    AMoAdHorizontalAlignRight,
 };
 
 
-@interface AMOLayoutConstraint : NSLayoutConstraint
+@interface AMoAdLayoutConstraint : NSLayoutConstraint
 
 /*
  * @abstract 水平方向、垂直方向で指定
@@ -37,8 +37,8 @@ typedef NS_ENUM(NSInteger, AMOHorizontalAlign) {
                          targetView:(UIView *)targetView
                          adViewSize:(CGSize)adViewSize
                            isAdjust:(BOOL)isAdjust
-                    horizontalAlign:(AMOHorizontalAlign)horizontalAlign
-                      verticalAlign:(AMOVerticalAlign)verticalAlign;
+                    horizontalAlign:(AMoAdHorizontalAlign)horizontalAlign
+                      verticalAlign:(AMoAdVerticalAlign)verticalAlign;
 
 /*
  * @abstract x,y座標で指定
@@ -69,7 +69,7 @@ typedef NS_ENUM(NSInteger, AMOHorizontalAlign) {
 // 制約を削除 AMOLayoutConstraint の制約だけ削除
 /*
  * @abstract 制約を削除
- * @discription 当クラス（AMOLayoutConstraint）で作成された制約だけ削除する
+ * @discription 当クラス（AMoAdLayoutConstraint）で作成された制約だけ削除する
  * @param baseView 元のview
  */
 -(void)removeConstraints:(UIView *)baseView;

@@ -31,11 +31,6 @@ typedef NS_ENUM(NSInteger, AMoAdHorizontalAlign) {
 @property (nonatomic, copy) NSArray* constraints;
 
 /*!
- @abstract init を使うとコンパイルエラー
- */
-- (id)init __attribute__((unavailable("init is not available")));
-
-/*!
  @abstract 水平方向、垂直方向で指定
  @param baseView 元のview
  @param targetView 広告のview
@@ -84,6 +79,11 @@ typedef NS_ENUM(NSInteger, AMoAdHorizontalAlign) {
  @param baseView 元のview
  */
 +(void)removeConstraintsWithView:(UIView *)baseView;
+
+
+
+-(NSArray *)adjustConstraintsWithBaseView:(UIView *)baseView
+                               targetView:(UIView *)targetView;
 
 
 @end

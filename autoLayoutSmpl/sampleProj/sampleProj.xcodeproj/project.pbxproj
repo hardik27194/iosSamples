@@ -15,6 +15,9 @@
 		F68A732F1B270E1E0073A611 /* sampleProjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F68A732E1B270E1E0073A611 /* sampleProjTests.m */; };
 		F6EE640F1B2AC5A40057976A /* AMoAdLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE640E1B2AC5A40057976A /* AMoAdLayoutConstraint.m */; };
 		F6EE644C1B2FB1120057976A /* AMoAdLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE644B1B2FB1120057976A /* AMoAdLayout.m */; };
+		F6EE64571B2FEEC60057976A /* AMoAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE64561B2FEEC60057976A /* AMoAdView.m */; };
+		F6EE645A1B2FEFB50057976A /* AMoAdFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE64591B2FEFB50057976A /* AMoAdFrame.m */; };
+		F6EE645D1B2FF0950057976A /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EE645C1B2FF0950057976A /* ContentView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,12 @@
 		F6EE640E1B2AC5A40057976A /* AMoAdLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMoAdLayoutConstraint.m; sourceTree = "<group>"; };
 		F6EE644A1B2FB1120057976A /* AMoAdLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdLayout.h; sourceTree = "<group>"; };
 		F6EE644B1B2FB1120057976A /* AMoAdLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMoAdLayout.m; sourceTree = "<group>"; };
+		F6EE64551B2FEEC60057976A /* AMoAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdView.h; sourceTree = "<group>"; };
+		F6EE64561B2FEEC60057976A /* AMoAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMoAdView.m; sourceTree = "<group>"; };
+		F6EE64581B2FEFB50057976A /* AMoAdFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdFrame.h; sourceTree = "<group>"; };
+		F6EE64591B2FEFB50057976A /* AMoAdFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMoAdFrame.m; sourceTree = "<group>"; };
+		F6EE645B1B2FF0950057976A /* ContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentView.h; sourceTree = "<group>"; };
+		F6EE645C1B2FF0950057976A /* ContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,12 @@
 				F6EE640E1B2AC5A40057976A /* AMoAdLayoutConstraint.m */,
 				F6EE644A1B2FB1120057976A /* AMoAdLayout.h */,
 				F6EE644B1B2FB1120057976A /* AMoAdLayout.m */,
+				F6EE64551B2FEEC60057976A /* AMoAdView.h */,
+				F6EE64561B2FEEC60057976A /* AMoAdView.m */,
+				F6EE64581B2FEFB50057976A /* AMoAdFrame.h */,
+				F6EE64591B2FEFB50057976A /* AMoAdFrame.m */,
+				F6EE645B1B2FF0950057976A /* ContentView.h */,
+				F6EE645C1B2FF0950057976A /* ContentView.m */,
 			);
 			path = sampleProj;
 			sourceTree = "<group>";
@@ -230,6 +245,9 @@
 				F68A731B1B270E1E0073A611 /* ViewController.m in Sources */,
 				F68A73181B270E1E0073A611 /* AppDelegate.m in Sources */,
 				F68A73151B270E1E0073A611 /* main.m in Sources */,
+				F6EE64571B2FEEC60057976A /* AMoAdView.m in Sources */,
+				F6EE645D1B2FF0950057976A /* ContentView.m in Sources */,
+				F6EE645A1B2FEFB50057976A /* AMoAdFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

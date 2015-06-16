@@ -7,12 +7,16 @@
 //
 
 #import "ViewController.h"
-#import "AMoAdLayout.h"
-
+#import "AMoAdView.h"
+#import "AMoAdFrame.h"
+#import "contentView.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) UIView* childView;
 @property (nonatomic, copy) NSMutableArray* constraints;
+@property (nonatomic, strong) AMoAdView *amoAdView;
+
+
 @end
 
 @implementation ViewController
@@ -25,38 +29,25 @@
     CGRect buttonRect = CGRectMake(100, 100, 100, 30);
     button.frame = buttonRect;
     [button setTitle:@"but" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(removeConstraint) forControlEvents:UIControlEventTouchDown];
+    [button addTarget:self action:@selector(addcon) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:button];
 
     
+    CGRect frame = CGRectMake(10, 200, 200, 50);
+    self.amoAdView = [[AMoAdView alloc] initWithFrame:frame];
+    self.amoAdView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.amoAdView];
     
-    CGRect childFrame = CGRectMake(10, 200, 200, 50);
-    UIView* childView = [[UIView alloc] initWithFrame:childFrame];
-    childView.translatesAutoresizingMaskIntoConstraints = NO;
-    childView.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:childView];
-
-    self.childView = childView;
-
-//    AMoAdLayout* constraint = [[AMoAdLayout alloc] init];
     
-    AMoAdLayout* layout =
-    [[AMoAdLayout alloc] initWithBaseView:self.view
-                               targetView:childView
-                               adViewSize:CGSizeMake(320, 50)
-                                 isAdjust:YES
-                          horizontalAlign:AMoAdHorizontalAlignCenter
-                            verticalAlign:AMoAdVerticalAlignBottom];
-    // 座標
-    AMoAdLayout* layout2 =
-    [[AMoAdLayout alloc] initWithBaseView:self.view
-                               targetView:childView
-                               adViewSize:CGSizeMake(320, 50)
-                             adViewOrigin:CGPointMake(100, 100)];
 
-    // 制約追加
-    [self.view addConstraints:layout.constraints];
-    
+}
+
+
+-(void)addcon
+{
+
+    [self.amoAdView temp1];
+
 }
 
 -(void)removeConstraint {

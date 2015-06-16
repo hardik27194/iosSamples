@@ -76,6 +76,45 @@
     }
 }
 
+-(NSArray *)adjustConstraintsWithBaseView:(UIView *)baseView
+                               targetView:(UIView *)targetView
+{
+    NSMutableArray* constraints = [@[] mutableCopy];
+    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
+                                                           attribute:NSLayoutAttributeLeft
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:baseView
+                                                           attribute:NSLayoutAttributeLeft
+                                                          multiplier:1.f
+                                                            constant:0]];
+    
+    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
+                                                           attribute:NSLayoutAttributeRight
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:baseView
+                                                           attribute:NSLayoutAttributeRight
+                                                          multiplier:1.f
+                                                            constant:0]];
+    
+    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
+                                                           attribute:NSLayoutAttributeTop
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:baseView
+                                                           attribute:NSLayoutAttributeTop
+                                                          multiplier:1.f
+                                                            constant:0]];
+
+    [constraints addObject:[AMoAdLayoutConstraint constraintWithItem:targetView
+                                                           attribute:NSLayoutAttributeBottom
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:baseView
+                                                           attribute:NSLayoutAttributeBottom
+                                                          multiplier:1.f
+                                                            constant:0]];
+    return constraints;
+
+}
+
 #pragma mark -- private method
 -(NSArray *)constraintsWithBaseView:(UIView *)baseView
                          targetView:(UIView *)targetView
@@ -88,7 +127,7 @@
                                   y:(CGFloat)posY
 {
     
-    // 既存制約の優先度をLowにする
+
     NSMutableArray* constraints = [@[] mutableCopy];
     
     // 横幅（固定）

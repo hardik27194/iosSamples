@@ -10,12 +10,12 @@
 @implementation AMoAdLayoutConstraint
 
 #pragma mark -- accessor method
-/*
- * @abstract screenのサイズで縦横短いほうの値を返す
- * @discussion adjust = YES のとき, 短い辺に合わせる。
- landscape にしたときに大きくなりすぎないようにする。
- iOS7とiOS8でboundsの挙動が違うのでシンプルに短いほうを取るようにした。
- http://iti.hatenablog.jp/entry/2014/09/19/113940
+/*!
+ @abstract screenのサイズで縦横短いほうの値を返す
+ @discussion adjust = YES のとき, 短い辺に合わせる。
+   landscape にしたときに大きくなりすぎないようにする。
+   iOS7とiOS8でboundsの挙動が違うのでシンプルに短いほうを取るようにした。
+   http://iti.hatenablog.jp/entry/2014/09/19/113940
  */
 -(CGFloat)shortSideScreenBounds {
     CGSize size = [[UIScreen mainScreen] bounds].size;

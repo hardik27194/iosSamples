@@ -1,4 +1,4 @@
-[//
+//
 //  AMoAdView.m
 //  sampleProj
 //
@@ -8,6 +8,7 @@
 
 #import "AMoAdView.h"
 #import "AMoAdFrame.h"
+#import "AMoAdLayout.h"
 
 @interface AMoAdView ()
 @property (nonatomic, strong) AMoAdFrame *amoadFrame;

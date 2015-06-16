@@ -8,15 +8,11 @@
 
 #import "ViewController.h"
 #import "AMoAdView.h"
-#import "AMoAdFrame.h"
-#import "contentView.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) UIView* childView;
 @property (nonatomic, copy) NSMutableArray* constraints;
 @property (nonatomic, strong) AMoAdView *amoAdView;
-
-
 @end
 
 @implementation ViewController
@@ -41,19 +37,6 @@
     
 
 }
-
-
--(void)addcon
-{
-
-    [self.amoAdView temp1];
-
-}
-
--(void)removeConstraint {
-    [AMoAdLayout removeConstraintsWithView:self.view];
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

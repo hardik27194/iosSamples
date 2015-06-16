@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,50 +17,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pHF-XU-ghZ" userLabel="baseView">
-                                <rect key="frame" x="16" y="58" width="568" height="600"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHF-XU-ghZ" userLabel="baseView">
+                                <rect key="frame" x="16" y="20" width="568" height="580"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kly-GG-vF2" userLabel="AMoAdView">
-                                        <rect key="frame" x="10" y="10" width="380" height="160"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kly-GG-vF2" userLabel="AMoAdView">
+                                        <rect key="frame" x="14" y="100" width="380" height="160"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nM-wF-b9F" userLabel="AMoAdFrame">
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nM-wF-b9F" userLabel="AMoAdFrame">
                                                 <rect key="frame" x="10" y="10" width="360" height="140"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mGI-Ok-Dyf" userLabel="contentView">
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mGI-Ok-Dyf" userLabel="contentView">
                                                         <rect key="frame" x="20" y="20" width="320" height="100"/>
                                                         <color key="backgroundColor" red="0.91972998719769872" green="0.54193883321545921" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="320" id="2Em-cL-0Vl"/>
-                                                            <constraint firstAttribute="height" constant="100" id="FRy-PC-s56"/>
-                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.57694642535016893" green="1" blue="0.81415014642848571" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="mGI-Ok-Dyf" secondAttribute="bottom" constant="20" id="cpQ-XO-72Q"/>
-                                                    <constraint firstItem="mGI-Ok-Dyf" firstAttribute="top" secondItem="6nM-wF-b9F" secondAttribute="top" constant="20" id="pJI-ke-423"/>
-                                                    <constraint firstAttribute="trailing" secondItem="mGI-Ok-Dyf" secondAttribute="trailing" constant="20" id="rDO-kI-vtL"/>
-                                                    <constraint firstItem="mGI-Ok-Dyf" firstAttribute="leading" secondItem="6nM-wF-b9F" secondAttribute="leading" constant="20" id="saG-GJ-9zy"/>
-                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.69968345484296535" green="0.81942190689651984" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="6nM-wF-b9F" secondAttribute="bottom" constant="10" id="TM1-TK-Qd3"/>
-                                            <constraint firstItem="6nM-wF-b9F" firstAttribute="top" secondItem="Kly-GG-vF2" secondAttribute="top" constant="10" id="Xxt-sq-iBN"/>
-                                            <constraint firstItem="6nM-wF-b9F" firstAttribute="leading" secondItem="Kly-GG-vF2" secondAttribute="leading" constant="10" id="f1o-1t-xcs"/>
-                                            <constraint firstAttribute="trailing" secondItem="6nM-wF-b9F" secondAttribute="trailing" constant="10" id="omF-Yp-3sk"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.93428593772359803" blue="0.77491587775773785" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pHF-XU-ghZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8Mi-AM-jhQ"/>
+                            <constraint firstItem="pHF-XU-ghZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="MoH-en-fSw"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="pHF-XU-ghZ" secondAttribute="bottom" id="XHG-C7-oFc"/>
+                            <constraint firstItem="pHF-XU-ghZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iw4-Jl-Zro"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="baseView" destination="pHF-XU-ghZ" id="r28-sA-Aiw"/>
-                        <outlet property="childView" destination="Kly-GG-vF2" id="j4J-uq-vhu"/>
+                        <outlet property="AMoAdFrame" destination="6nM-wF-b9F" id="q9a-XK-NIt"/>
+                        <outlet property="AMoAdView" destination="Kly-GG-vF2" id="7dV-b6-LRy"/>
+                        <outlet property="baseView" destination="pHF-XU-ghZ" id="h72-FS-o77"/>
+                        <outlet property="contentView" destination="mGI-Ok-Dyf" id="emZ-Y4-7Sd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

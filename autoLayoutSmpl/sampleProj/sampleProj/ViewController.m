@@ -38,11 +38,11 @@
 
     self.childView = childView;
 
-    AMoAdLayout* constraint = [[AMoAdLayout alloc] init];
+    AMoAdLayout* layout = [[AMoAdLayout alloc] init];
 
     // align
     NSArray* constraints =
-    [constraint constraintsWithBaseView:self.view
+    [layout constraintsWithBaseView:self.view
                              targetView:childView
                              adViewSize:CGSizeMake(320, 50)
                                isAdjust:YES
@@ -51,7 +51,7 @@
 
     // 座標
     NSArray* constraints2 =
-    [constraint constraintsWithBaseView:self.view
+    [layout constraintsWithBaseView:self.view
                              targetView:childView
                              adViewSize:CGSizeMake(320, 50)
                            adViewOrigin:CGPointMake(100, 100)];

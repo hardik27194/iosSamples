@@ -28,52 +28,27 @@
 - (void)viewDidAppear:(BOOL)animated {
 
     
-//    [self adjust:self.view targetView:self.baseView];
+    UIView *baseView = [[UIView alloc] initWithFrame:CGRectZero];
+    baseView.backgroundColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:0.2];
+    baseView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:baseView];
+    [self adjustWithBaseView:self.view targetView:baseView];
     
     
-    self.baseView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.AMoAdView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    CGFloat padding = 10;
-
-    NSMutableArray *constraints = [@[] mutableCopy];
-    
-    [constraints addObject:[NSLayoutConstraint constraintWithItem:self.AMoAdView
-                                                        attribute:NSLayoutAttributeLeading
-                                                        relatedBy:NSLayoutRelationEqual
-                                                           toItem:self.baseView
-                                                        attribute:NSLayoutAttributeLeading
-                                                       multiplier:1.f
-                                                         constant:padding]];
-
-    [constraints addObject:[NSLayoutConstraint constraintWithItem:self.baseView
-                                                        attribute:NSLayoutAttributeBottom
-                                                        relatedBy:NSLayoutRelationEqual
-                                                           toItem:self.AMoAdView
-                                                        attribute:NSLayoutAttributeBottom
-                                                       multiplier:1.f
-                                                         constant:padding]];
-
-    
-    [constraints addObject:[NSLayoutConstraint constraintWithItem:self.baseView
-                                                        attribute:NSLayoutAttributeTrailing
-                                                        relatedBy:NSLayoutRelationEqual
-                                                           toItem:self.AMoAdView
-                                                        attribute:NSLayoutAttributeTrailing
-                                                       multiplier:1.f
-                                                         constant:padding]];
-    
-    [constraints addObject:[NSLayoutConstraint constraintWithItem:self.AMoAdView
-                                                        attribute:NSLayoutAttributeTop
-                                                        relatedBy:NSLayoutRelationEqual
-                                                           toItem:self.baseView
-                                                        attribute:NSLayoutAttributeTop
-                                                       multiplier:1.f
-                                                         constant:padding]];
+    UIView *amoadView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 200, 200)];
+//    UIView *amoadView = [[UIView alloc] initWithFrame:CGRectZero];
+    amoadView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:0.2];
+    amoadView.translatesAutoresizingMaskIntoConstraints = NO;
+    [baseView addSubview:amoadView];
+//    [self adjustWithBaseView:baseView targetView:amoadView];
     
     
-    [self.baseView addConstraints:constraints];
-
+    UIView *amoadFrame = [[UIView alloc] initWithFrame:CGRectZero];
+    amoadFrame.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.2];
+    amoadFrame.translatesAutoresizingMaskIntoConstraints = NO;
+    [amoadView addSubview:amoadFrame];
+    [self adjustWithBaseView:amoadView targetView:amoadFrame];
+    
     
 
 //    [self adjust:self.baseView targetView:self.AMoAdView];
@@ -113,7 +88,7 @@
 }
 
 
--(void)adjust:(UIView*)baseView targetView:(UIView*)targetView {
+-(void)adjustWithBaseView:(UIView*)baseView targetView:(UIView*)targetView {
 
     CGFloat padding = 10;
     
@@ -133,7 +108,7 @@
                                                             toItem:baseView
                                                          attribute:NSLayoutAttributeTrailing
                                                         multiplier:1.f
-                                                          constant:padding]];
+                                                          constant:-padding]];
 
     [constraints addObject:[NSLayoutConstraint constraintWithItem:targetView
                                                          attribute:NSLayoutAttributeTop
@@ -149,7 +124,7 @@
                                                             toItem:baseView
                                                          attribute:NSLayoutAttributeBottom
                                                         multiplier:1.f
-                                                          constant:padding]];
+                                                          constant:-padding]];
 
     [baseView addConstraints:constraints];
     
@@ -160,6 +135,52 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)test
+{
+
+    
+    CGFloat padding = 10;
+    
+    NSMutableArray *constraints = [@[] mutableCopy];
+    
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:self.view
+                                                        attribute:NSLayoutAttributeLeading
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:self.baseView
+                                                        attribute:NSLayoutAttributeLeading
+                                                       multiplier:1.f
+                                                         constant:padding]];
+    
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:self.baseView
+                                                        attribute:NSLayoutAttributeBottom
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:self.AMoAdView
+                                                        attribute:NSLayoutAttributeBottom
+                                                       multiplier:1.f
+                                                         constant:padding]];
+    
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:self.baseView
+                                                        attribute:NSLayoutAttributeTrailing
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:self.AMoAdView
+                                                        attribute:NSLayoutAttributeTrailing
+                                                       multiplier:1.f
+                                                         constant:padding]];
+    
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:self.AMoAdView
+                                                        attribute:NSLayoutAttributeTop
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:self.baseView
+                                                        attribute:NSLayoutAttributeTop
+                                                       multiplier:1.f
+                                                         constant:padding]];
+    
+    
+    [self.baseView addConstraints:constraints];
+    
+
 }
 
 @end

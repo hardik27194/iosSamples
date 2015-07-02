@@ -17,7 +17,10 @@
 //  [self bar];
 
   [NSThread detachNewThreadSelector:@selector(foo) toTarget:self withObject:nil];
+  [NSThread setThreadPriority:0.2];
+
   [NSThread detachNewThreadSelector:@selector(bar) toTarget:self withObject:nil];
+  [NSThread setThreadPriority:0.9];
 
 }
 
@@ -27,6 +30,7 @@
       NSLog(@"foo %ld",i);
     }
   }
+  [NSThread exit];
 }
 
 -(void)bar {
@@ -35,6 +39,7 @@
       NSLog(@"bar %ld",i);
     }
   }
+  [NSThread exit];
 }
 
 

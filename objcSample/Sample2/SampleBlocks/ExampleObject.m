@@ -15,6 +15,11 @@
 @implementation SampleClass
 -(void)sampleMethod
 {
+
+
+    NSString *methodName = NSStringFromSelector(_cmd);
+    NSLog(@"  methodName:%@" , methodName);
+    
     NSLog(@"exec methodA");
 }
 @end
@@ -22,9 +27,14 @@
 @implementation ExampleObject
 -(void)exec
 {
+    
     id obj = [SampleClass new];
     SEL method = @selector(sampleMethod);
     IMP func = [obj methodForSelector:method];
     func();
+
+    NSString *methodName = NSStringFromSelector(_cmd);
+    NSLog(@"  methodName:%@" , methodName);
+
 }
 @end

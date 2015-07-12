@@ -10,12 +10,34 @@
 
 @implementation SampleManager
 
-- (void)execute:(DataObject *)DO
+
++ (SampleManager*)sharedInstance
+{
+    
+    static SampleManager* sharedInstance;
+    static dispatch_once_t once;
+    dispatch_once( &once, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    
+    return sharedInstance;
+}
+
+-(void)execute1
 {
 
-    NSLog(@"  ^ ^  ");
+    [self execute2];
+    
+    
+}
+
+-(void)execute2
+{
+
+    NSLog(@"ghjK");
     
 
 }
 
 @end
+

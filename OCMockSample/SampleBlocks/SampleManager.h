@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DataObject.h"
 
 @interface SampleManager : NSObject
-- (void)execute:(DataObject *)DO;
++ (SampleManager*)sharedInstance;
+-(void)execute1;
 @end

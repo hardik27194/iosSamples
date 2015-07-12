@@ -1,1 +1,0 @@
-PODS_SWIFT__FXKEYCHAIN_OTHER_LDFLAGS = -framework "Security"

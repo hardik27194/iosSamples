@@ -1,0 +1,15 @@
+PODS:
+  - OCMock (2.0.1)
+  - Realm (0.93.1):
+    - Realm/Headers (= 0.93.1)
+  - Realm/Headers (0.93.1)
+
+DEPENDENCIES:
+  - OCMock (~> 2.0.1)
+  - Realm
+
+SPEC CHECKSUMS:
+  OCMock: 7a839b55abfb78e8ec3bf6eaa3cdcc567ac71d2a
+  Realm: 694b93846a0772c904f9e0cc3559d1bc856d931e
+
+COCOAPODS: 0.35.0

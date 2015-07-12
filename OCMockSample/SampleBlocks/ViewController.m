@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "DataObject.h"
 #import "SampleManager.h"
 
 @interface ViewController ()
@@ -21,13 +20,7 @@
 
     self.view.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:0.2];
 
-    DataObject *DO = [[DataObject alloc] init];
-    DO.UserId = @"user1";
-    DO.Password = @"password";
-    
 
-    SampleManager *SM = [[SampleManager alloc] init];
-    [SM execute:DO];
     
     
 }

@@ -1,0 +1,625 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14090BF11B4AADDF008742E4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14090BF01B4AADDF008742E4 /* FirstViewController.swift */; };
+		14574FB51B52206500C17F78 /* MenuIcon1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14574FB41B52206500C17F78 /* MenuIcon1.jpg */; };
+		1457FED61A63AB49003B012F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1457FED51A63AB49003B012F /* libc++.dylib */; };
+		1457FED71A63AB54003B012F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1457FED51A63AB49003B012F /* libc++.dylib */; };
+		1457FEDD1A63AC17003B012F /* QuestionDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1457FEDC1A63AC17003B012F /* QuestionDataManagerTest.swift */; };
+		1457FF031A63D037003B012F /* BaseApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1457FF011A63D037003B012F /* BaseApiClient.swift */; };
+		1485633D1A63A10F0019BC9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485633C1A63A10F0019BC9C /* AppDelegate.swift */; };
+		148563441A63A10F0019BC9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148563431A63A10F0019BC9C /* Images.xcassets */; };
+		148563471A63A10F0019BC9C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 148563451A63A10F0019BC9C /* LaunchScreen.xib */; };
+		148563531A63A10F0019BC9C /* AnkimoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148563521A63A10F0019BC9C /* AnkimoTests.swift */; };
+		1485635C1A63A1D30019BC9C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1DE0DDABB9163207C3FAB /* libPods.a */; };
+		14AEDD4F1A63F15C000628E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AEDD4D1A63F15C000628E5 /* Default-568h@2x.png */; };
+		14AEDD501A63F15C000628E5 /* frickPointView.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AEDD4E1A63F15C000628E5 /* frickPointView.png */; };
+		14C196F01B4BF3D30094479A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196EF1B4BF3D30094479A /* SecondViewController.swift */; };
+		14C196F31B4BF6EC0094479A /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196F11B4BF6EC0094479A /* ItemView.swift */; };
+		14C196F71B4C11200094479A /* ItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196F51B4C11200094479A /* ItemView2.swift */; };
+		14C196F81B4C11200094479A /* ItemView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C196F61B4C11200094479A /* ItemView2.xib */; };
+		14C196FA1B4CD0FB0094479A /* ItemView3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C196F91B4CD0FB0094479A /* ItemView3.xib */; };
+		14C196FC1B4CD1230094479A /* ItemView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196FB1B4CD1230094479A /* ItemView3.swift */; };
+		14C196FE1B4D392B0094479A /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C196FD1B4D392B0094479A /* FirstViewController.xib */; };
+		14FFA6921A63A3FE00B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
+		14FFA6931A63A40500B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
+		CE2379DE86C0026C16CA0142 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1DE0DDABB9163207C3FAB /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1485634D1A63A10F0019BC9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1485632F1A63A10F0019BC9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 148563361A63A10F0019BC9C;
+			remoteInfo = Ankimo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AD038D8F8115D2A465B591E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		14090BF01B4AADDF008742E4 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Ankimo/FirstViewController.swift; sourceTree = SOURCE_ROOT; };
+		1448786B1B51471C006E7233 /* Ankimo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ankimo-Bridging-Header.h"; sourceTree = "<group>"; };
+		14574FB41B52206500C17F78 /* MenuIcon1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MenuIcon1.jpg; sourceTree = "<group>"; };
+		1457FED51A63AB49003B012F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		1457FEDC1A63AC17003B012F /* QuestionDataManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDataManagerTest.swift; sourceTree = "<group>"; };
+		1457FF011A63D037003B012F /* BaseApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseApiClient.swift; sourceTree = "<group>"; };
+		148563371A63A10F0019BC9C /* Ankimo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ankimo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1485633B1A63A10F0019BC9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1485633C1A63A10F0019BC9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		148563431A63A10F0019BC9C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		148563461A63A10F0019BC9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1485634C1A63A10F0019BC9C /* AnkimoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnkimoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		148563511A63A10F0019BC9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		148563521A63A10F0019BC9C /* AnkimoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkimoTests.swift; sourceTree = "<group>"; };
+		14AEDD4D1A63F15C000628E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		14AEDD4E1A63F15C000628E5 /* frickPointView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frickPointView.png; sourceTree = "<group>"; };
+		14C196EF1B4BF3D30094479A /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		14C196F11B4BF6EC0094479A /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		14C196F51B4C11200094479A /* ItemView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView2.swift; sourceTree = "<group>"; };
+		14C196F61B4C11200094479A /* ItemView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemView2.xib; sourceTree = "<group>"; };
+		14C196F91B4CD0FB0094479A /* ItemView3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemView3.xib; sourceTree = "<group>"; };
+		14C196FB1B4CD1230094479A /* ItemView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView3.swift; sourceTree = "<group>"; };
+		14C196FD1B4D392B0094479A /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		14FFA6911A63A3FE00B79386 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		3F39116080E14CB19988095E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F8F1DE0DDABB9163207C3FAB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		148563341A63A10F0019BC9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1457FED61A63AB49003B012F /* libc++.dylib in Frameworks */,
+				14FFA6921A63A3FE00B79386 /* Realm.framework in Frameworks */,
+				CE2379DE86C0026C16CA0142 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		148563491A63A10F0019BC9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14FFA6931A63A40500B79386 /* Realm.framework in Frameworks */,
+				1457FED71A63AB54003B012F /* libc++.dylib in Frameworks */,
+				1485635C1A63A1D30019BC9C /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1457FEE31A63CF7E003B012F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14C196F11B4BF6EC0094479A /* ItemView.swift */,
+				14C196F51B4C11200094479A /* ItemView2.swift */,
+				14C196F61B4C11200094479A /* ItemView2.xib */,
+				14C196F91B4CD0FB0094479A /* ItemView3.xib */,
+				14C196FB1B4CD1230094479A /* ItemView3.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1457FF001A63D037003B012F /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				1457FF011A63D037003B012F /* BaseApiClient.swift */,
+			);
+			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		1485632E1A63A10F0019BC9C = {
+			isa = PBXGroup;
+			children = (
+				148563391A63A10F0019BC9C /* Ankimo */,
+				1485634F1A63A10F0019BC9C /* AnkimoTests */,
+				148563381A63A10F0019BC9C /* Products */,
+				D1059097D429ABF3E24C8A81 /* Pods */,
+				757BAE67E17B5EB7BEBE1927 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		148563381A63A10F0019BC9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				148563371A63A10F0019BC9C /* Ankimo.app */,
+				1485634C1A63A10F0019BC9C /* AnkimoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		148563391A63A10F0019BC9C /* Ankimo */ = {
+			isa = PBXGroup;
+			children = (
+				14C196EF1B4BF3D30094479A /* SecondViewController.swift */,
+				14090BF01B4AADDF008742E4 /* FirstViewController.swift */,
+				14C196FD1B4D392B0094479A /* FirstViewController.xib */,
+				1485633C1A63A10F0019BC9C /* AppDelegate.swift */,
+				148563431A63A10F0019BC9C /* Images.xcassets */,
+				148563451A63A10F0019BC9C /* LaunchScreen.xib */,
+				14FFA6851A63A38000B79386 /* Model */,
+				14AEDD4B1A63F15C000628E5 /* Resources */,
+				1485633A1A63A10F0019BC9C /* Supporting Files */,
+				1457FEE31A63CF7E003B012F /* View */,
+				1448786B1B51471C006E7233 /* Ankimo-Bridging-Header.h */,
+			);
+			path = Ankimo;
+			sourceTree = "<group>";
+		};
+		1485633A1A63A10F0019BC9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1485633B1A63A10F0019BC9C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1485634F1A63A10F0019BC9C /* AnkimoTests */ = {
+			isa = PBXGroup;
+			children = (
+				14FFA6811A63A36D00B79386 /* Model */,
+				148563521A63A10F0019BC9C /* AnkimoTests.swift */,
+				148563501A63A10F0019BC9C /* Supporting Files */,
+			);
+			path = AnkimoTests;
+			sourceTree = "<group>";
+		};
+		148563501A63A10F0019BC9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				148563511A63A10F0019BC9C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14AEDD4B1A63F15C000628E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14AEDD4C1A63F15C000628E5 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		14AEDD4C1A63F15C000628E5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				14574FB41B52206500C17F78 /* MenuIcon1.jpg */,
+				14AEDD4D1A63F15C000628E5 /* Default-568h@2x.png */,
+				14AEDD4E1A63F15C000628E5 /* frickPointView.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		14FFA6811A63A36D00B79386 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14FFA6821A63A36D00B79386 /* DataManager */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14FFA6821A63A36D00B79386 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				1457FEDC1A63AC17003B012F /* QuestionDataManagerTest.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		14FFA6851A63A38000B79386 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1457FF001A63D037003B012F /* ApiClient */,
+				14FFA6861A63A38000B79386 /* DataManager */,
+				14FFA6891A63A38000B79386 /* DataObject */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14FFA6861A63A38000B79386 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		14FFA6891A63A38000B79386 /* DataObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataObject;
+			sourceTree = "<group>";
+		};
+		757BAE67E17B5EB7BEBE1927 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1457FED51A63AB49003B012F /* libc++.dylib */,
+				14FFA6911A63A3FE00B79386 /* Realm.framework */,
+				F8F1DE0DDABB9163207C3FAB /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1059097D429ABF3E24C8A81 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0AD038D8F8115D2A465B591E /* Pods.debug.xcconfig */,
+				3F39116080E14CB19988095E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		148563361A63A10F0019BC9C /* Ankimo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 148563561A63A10F0019BC9C /* Build configuration list for PBXNativeTarget "Ankimo" */;
+			buildPhases = (
+				41B664211EC9B68481FD646F /* Check Pods Manifest.lock */,
+				148563331A63A10F0019BC9C /* Sources */,
+				148563341A63A10F0019BC9C /* Frameworks */,
+				148563351A63A10F0019BC9C /* Resources */,
+				A3301C9C93BCCC73455D0215 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ankimo;
+			productName = Ankimo;
+			productReference = 148563371A63A10F0019BC9C /* Ankimo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1485634B1A63A10F0019BC9C /* AnkimoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 148563591A63A10F0019BC9C /* Build configuration list for PBXNativeTarget "AnkimoTests" */;
+			buildPhases = (
+				148563481A63A10F0019BC9C /* Sources */,
+				148563491A63A10F0019BC9C /* Frameworks */,
+				1485634A1A63A10F0019BC9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1485634E1A63A10F0019BC9C /* PBXTargetDependency */,
+			);
+			name = AnkimoTests;
+			productName = AnkimoTests;
+			productReference = 1485634C1A63A10F0019BC9C /* AnkimoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1485632F1A63A10F0019BC9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = takeshi;
+				TargetAttributes = {
+					148563361A63A10F0019BC9C = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = CZ785DAQVX;
+					};
+					1485634B1A63A10F0019BC9C = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 148563361A63A10F0019BC9C;
+					};
+				};
+			};
+			buildConfigurationList = 148563321A63A10F0019BC9C /* Build configuration list for PBXProject "Ankimo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1485632E1A63A10F0019BC9C;
+			productRefGroup = 148563381A63A10F0019BC9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				148563361A63A10F0019BC9C /* Ankimo */,
+				1485634B1A63A10F0019BC9C /* AnkimoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		148563351A63A10F0019BC9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C196F81B4C11200094479A /* ItemView2.xib in Resources */,
+				14AEDD501A63F15C000628E5 /* frickPointView.png in Resources */,
+				148563471A63A10F0019BC9C /* LaunchScreen.xib in Resources */,
+				14574FB51B52206500C17F78 /* MenuIcon1.jpg in Resources */,
+				14AEDD4F1A63F15C000628E5 /* Default-568h@2x.png in Resources */,
+				148563441A63A10F0019BC9C /* Images.xcassets in Resources */,
+				14C196FE1B4D392B0094479A /* FirstViewController.xib in Resources */,
+				14C196FA1B4CD0FB0094479A /* ItemView3.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1485634A1A63A10F0019BC9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41B664211EC9B68481FD646F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A3301C9C93BCCC73455D0215 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		148563331A63A10F0019BC9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14C196F71B4C11200094479A /* ItemView2.swift in Sources */,
+				14C196FC1B4CD1230094479A /* ItemView3.swift in Sources */,
+				14C196F01B4BF3D30094479A /* SecondViewController.swift in Sources */,
+				14090BF11B4AADDF008742E4 /* FirstViewController.swift in Sources */,
+				1457FF031A63D037003B012F /* BaseApiClient.swift in Sources */,
+				14C196F31B4BF6EC0094479A /* ItemView.swift in Sources */,
+				1485633D1A63A10F0019BC9C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		148563481A63A10F0019BC9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				148563531A63A10F0019BC9C /* AnkimoTests.swift in Sources */,
+				1457FEDD1A63AC17003B012F /* QuestionDataManagerTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1485634E1A63A10F0019BC9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 148563361A63A10F0019BC9C /* Ankimo */;
+			targetProxy = 1485634D1A63A10F0019BC9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		148563451A63A10F0019BC9C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				148563461A63A10F0019BC9C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		148563541A63A10F0019BC9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		148563551A63A10F0019BC9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		148563571A63A10F0019BC9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AD038D8F8115D2A465B591E /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Ankimo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ankimo/Ankimo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		148563581A63A10F0019BC9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F39116080E14CB19988095E /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Ankimo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ankimo/Ankimo-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		1485635A1A63A10F0019BC9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AD038D8F8115D2A465B591E /* Pods.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AnkimoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ankimo.app/Ankimo";
+			};
+			name = Debug;
+		};
+		1485635B1A63A10F0019BC9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F39116080E14CB19988095E /* Pods.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = AnkimoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ankimo.app/Ankimo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		148563321A63A10F0019BC9C /* Build configuration list for PBXProject "Ankimo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				148563541A63A10F0019BC9C /* Debug */,
+				148563551A63A10F0019BC9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		148563561A63A10F0019BC9C /* Build configuration list for PBXNativeTarget "Ankimo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				148563571A63A10F0019BC9C /* Debug */,
+				148563581A63A10F0019BC9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		148563591A63A10F0019BC9C /* Build configuration list for PBXNativeTarget "AnkimoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1485635A1A63A10F0019BC9C /* Debug */,
+				1485635B1A63A10F0019BC9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1485632F1A63A10F0019BC9C /* Project object */;
+}

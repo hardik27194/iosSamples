@@ -18,14 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+
+        
         
         let viewCon1 = FirstViewController(nibName: "FirstViewController", bundle: nil)
         let viewCon2 = SecondViewController();
 
         viewCon1.tabBarItem = UITabBarItem(title: "viewCon1", image: nil, selectedImage: nil)
         viewCon2.tabBarItem = UITabBarItem(title: "viewCon2", image: nil, selectedImage: nil)
+
         
-        let tabs = NSArray(objects: viewCon1, viewCon2)
+        let naviCon = UINavigationController(rootViewController: viewCon1)
+
+        
+
+        
+        
+        let tabs = NSArray(objects: naviCon, viewCon2)
 
         let tabBarController = UITabBarController();
         tabBarController.setViewControllers(tabs as [AnyObject], animated: false)

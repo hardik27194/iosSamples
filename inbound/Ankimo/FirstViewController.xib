@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController" customModule="Ankimo" customModuleProvider="target">
             <connections>
+                <outlet property="scrollView" destination="ZYQ-Gq-cx2" id="aK8-s0-k1i"/>
                 <outlet property="view" destination="iN0-l3-epB" id="b5D-J2-Xct"/>
             </connections>
         </placeholder>
@@ -14,55 +15,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxu-eL-Fbf" userLabel="RegionView">
-                    <rect key="frame" x="10" y="10" width="100" height="50"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5q-gh-XHh">
-                            <rect key="frame" x="2" y="2" width="96" height="46"/>
-                            <state key="normal" title="地域">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="100" id="0mS-nk-J3B"/>
-                        <constraint firstAttribute="trailing" secondItem="n5q-gh-XHh" secondAttribute="trailing" constant="2" id="1pC-4H-5RZ"/>
-                        <constraint firstItem="n5q-gh-XHh" firstAttribute="top" secondItem="pxu-eL-Fbf" secondAttribute="top" constant="2" id="CKR-db-V9i"/>
-                        <constraint firstAttribute="height" constant="50" id="Q6k-eF-9sU"/>
-                        <constraint firstItem="n5q-gh-XHh" firstAttribute="leading" secondItem="pxu-eL-Fbf" secondAttribute="leading" constant="2" id="Y7u-bR-H8e"/>
-                        <constraint firstAttribute="bottom" secondItem="n5q-gh-XHh" secondAttribute="bottom" constant="2" id="lUp-TS-awE"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UyA-xp-TGo" userLabel="Logo">
-                    <rect key="frame" x="131" y="10" width="100" height="50"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88E-g0-3Ru">
-                            <rect key="frame" x="29" y="15" width="39" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XC7-eE-580" userLabel="Search">
-                    <rect key="frame" x="262" y="10" width="100" height="50"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmG-y0-Xdz">
-                            <rect key="frame" x="27" y="10" width="46" height="30"/>
-                            <state key="normal" title="search">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYQ-Gq-cx2">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.99645268220000005" green="1" blue="0.37260584349999998" alpha="1" colorSpace="calibratedRGB"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="0.63161859709805901" green="1" blue="0.88382970793472793" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="pxu-eL-Fbf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Tj2-IB-s0C"/>
-                <constraint firstItem="pxu-eL-Fbf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="qYe-vg-87S"/>
+                <constraint firstItem="ZYQ-Gq-cx2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LkO-Oz-XOZ"/>
+                <constraint firstAttribute="bottom" secondItem="ZYQ-Gq-cx2" secondAttribute="bottom" id="Qlw-9o-mQW"/>
+                <constraint firstItem="ZYQ-Gq-cx2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ta0-Ex-zBc"/>
+                <constraint firstAttribute="trailing" secondItem="ZYQ-Gq-cx2" secondAttribute="trailing" id="wfn-Q0-FrP"/>
             </constraints>
             <point key="canvasLocation" x="164" y="208"/>
         </view>

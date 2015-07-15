@@ -11,12 +11,12 @@ import UIKit
 class ItemView3: UIView {
 
     
-    override func awakeFromNib() {
-        NSLog("awake from nib ")
-    }
-
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     
     

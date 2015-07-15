@@ -21,12 +21,7 @@
 		14AEDD4F1A63F15C000628E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AEDD4D1A63F15C000628E5 /* Default-568h@2x.png */; };
 		14AEDD501A63F15C000628E5 /* frickPointView.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AEDD4E1A63F15C000628E5 /* frickPointView.png */; };
 		14C196F01B4BF3D30094479A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196EF1B4BF3D30094479A /* SecondViewController.swift */; };
-		14C196F31B4BF6EC0094479A /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196F11B4BF6EC0094479A /* ItemView.swift */; };
-		14C196F71B4C11200094479A /* ItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196F51B4C11200094479A /* ItemView2.swift */; };
-		14C196F81B4C11200094479A /* ItemView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C196F61B4C11200094479A /* ItemView2.xib */; };
-		14C196FA1B4CD0FB0094479A /* ItemView3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C196F91B4CD0FB0094479A /* ItemView3.xib */; };
 		14C196FC1B4CD1230094479A /* ItemView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196FB1B4CD1230094479A /* ItemView3.swift */; };
-		14C196FE1B4D392B0094479A /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C196FD1B4D392B0094479A /* FirstViewController.xib */; };
 		14FFA6921A63A3FE00B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
 		14FFA6931A63A40500B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
 		CE2379DE86C0026C16CA0142 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1DE0DDABB9163207C3FAB /* libPods.a */; };
@@ -61,12 +56,7 @@
 		14AEDD4D1A63F15C000628E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		14AEDD4E1A63F15C000628E5 /* frickPointView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frickPointView.png; sourceTree = "<group>"; };
 		14C196EF1B4BF3D30094479A /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		14C196F11B4BF6EC0094479A /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
-		14C196F51B4C11200094479A /* ItemView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView2.swift; sourceTree = "<group>"; };
-		14C196F61B4C11200094479A /* ItemView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemView2.xib; sourceTree = "<group>"; };
-		14C196F91B4CD0FB0094479A /* ItemView3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemView3.xib; sourceTree = "<group>"; };
 		14C196FB1B4CD1230094479A /* ItemView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView3.swift; sourceTree = "<group>"; };
-		14C196FD1B4D392B0094479A /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
 		14FFA6911A63A3FE00B79386 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		3F39116080E14CB19988095E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F8F1DE0DDABB9163207C3FAB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,10 +89,6 @@
 		1457FEE31A63CF7E003B012F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				14C196F11B4BF6EC0094479A /* ItemView.swift */,
-				14C196F51B4C11200094479A /* ItemView2.swift */,
-				14C196F61B4C11200094479A /* ItemView2.xib */,
-				14C196F91B4CD0FB0094479A /* ItemView3.xib */,
 				14C196FB1B4CD1230094479A /* ItemView3.swift */,
 			);
 			path = View;
@@ -141,7 +127,6 @@
 			children = (
 				14C196EF1B4BF3D30094479A /* SecondViewController.swift */,
 				14090BF01B4AADDF008742E4 /* FirstViewController.swift */,
-				14C196FD1B4D392B0094479A /* FirstViewController.xib */,
 				1485633C1A63A10F0019BC9C /* AppDelegate.swift */,
 				148563431A63A10F0019BC9C /* Images.xcassets */,
 				148563451A63A10F0019BC9C /* LaunchScreen.xib */,
@@ -340,14 +325,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14C196F81B4C11200094479A /* ItemView2.xib in Resources */,
 				14AEDD501A63F15C000628E5 /* frickPointView.png in Resources */,
 				148563471A63A10F0019BC9C /* LaunchScreen.xib in Resources */,
 				14574FB51B52206500C17F78 /* MenuIcon1.jpg in Resources */,
 				14AEDD4F1A63F15C000628E5 /* Default-568h@2x.png in Resources */,
 				148563441A63A10F0019BC9C /* Images.xcassets in Resources */,
-				14C196FE1B4D392B0094479A /* FirstViewController.xib in Resources */,
-				14C196FA1B4CD0FB0094479A /* ItemView3.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,12 +380,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14C196F71B4C11200094479A /* ItemView2.swift in Sources */,
 				14C196FC1B4CD1230094479A /* ItemView3.swift in Sources */,
 				14C196F01B4BF3D30094479A /* SecondViewController.swift in Sources */,
 				14090BF11B4AADDF008742E4 /* FirstViewController.swift in Sources */,
 				1457FF031A63D037003B012F /* BaseApiClient.swift in Sources */,
-				14C196F31B4BF6EC0094479A /* ItemView.swift in Sources */,
 				1485633D1A63A10F0019BC9C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

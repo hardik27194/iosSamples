@@ -16,18 +16,110 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYQ-Gq-cx2">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="40" y="0.0" width="68" height="3"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiD-Nu-GXB" userLabel="ItemView1">
+                            <rect key="frame" x="10" y="10" width="30" height="166.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8r-Zm-847">
+                                    <rect key="frame" x="10" y="20" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MenuIcon1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="90C-17-4bl">
+                                    <rect key="frame" x="10" y="10" width="42" height="0.0"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="166.5" id="Nyh-94-5gk"/>
+                                <constraint firstAttribute="width" constant="30" id="wpB-1J-pho"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1N-gd-P5K" userLabel="ItemView2">
+                            <rect key="frame" x="50" y="10" width="30" height="166.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33P-Xp-gTL">
+                                    <rect key="frame" x="10" y="20" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MenuIcon1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XzV-N6-wJb">
+                                    <rect key="frame" x="10" y="10" width="42" height="0.0"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgP-Fp-JSL" userLabel="ItemView3">
+                            <rect key="frame" x="90" y="10" width="30" height="166.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKs-KS-kez">
+                                    <rect key="frame" x="10" y="20" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MenuIcon1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="EHF-ms-VZs">
+                                    <rect key="frame" x="10" y="10" width="42" height="0.0"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UC5-v3-iPa" userLabel="ItemView4">
+                            <rect key="frame" x="-40" y="10" width="30" height="166.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYC-V4-NxC">
+                                    <rect key="frame" x="10" y="20" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MenuIcon1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ziW-Ra-pIY">
+                                    <rect key="frame" x="10" y="10" width="42" height="0.0"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" red="0.99645268220000005" green="1" blue="0.37260584349999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="FiD-Nu-GXB" firstAttribute="top" secondItem="ZYQ-Gq-cx2" secondAttribute="top" constant="10" id="G7o-kf-bOT"/>
+                        <constraint firstItem="e1N-gd-P5K" firstAttribute="leading" secondItem="FiD-Nu-GXB" secondAttribute="trailing" constant="10" id="GeW-dy-X0G"/>
+                        <constraint firstItem="FiD-Nu-GXB" firstAttribute="width" secondItem="fgP-Fp-JSL" secondAttribute="width" id="Osi-fe-XPb"/>
+                        <constraint firstItem="FiD-Nu-GXB" firstAttribute="leading" secondItem="ZYQ-Gq-cx2" secondAttribute="leading" constant="10" id="UDr-5i-EoE"/>
+                        <constraint firstItem="fgP-Fp-JSL" firstAttribute="leading" secondItem="e1N-gd-P5K" secondAttribute="trailing" constant="10" id="UVm-Er-Nhi"/>
+                        <constraint firstItem="FiD-Nu-GXB" firstAttribute="top" secondItem="e1N-gd-P5K" secondAttribute="top" id="UoF-GZ-1ev"/>
+                        <constraint firstItem="FiD-Nu-GXB" firstAttribute="leading" secondItem="UC5-v3-iPa" secondAttribute="trailing" constant="20" id="WFR-H1-xXA"/>
+                        <constraint firstItem="fgP-Fp-JSL" firstAttribute="top" secondItem="e1N-gd-P5K" secondAttribute="top" id="WKS-c0-jEi"/>
+                        <constraint firstAttribute="bottom" secondItem="FiD-Nu-GXB" secondAttribute="bottom" constant="-174" id="Wbj-0E-JmT"/>
+                        <constraint firstItem="UC5-v3-iPa" firstAttribute="top" secondItem="ZYQ-Gq-cx2" secondAttribute="top" constant="10" id="ahM-9v-H3m"/>
+                        <constraint firstItem="FiD-Nu-GXB" firstAttribute="height" secondItem="fgP-Fp-JSL" secondAttribute="height" id="bcO-Wd-scQ"/>
+                        <constraint firstItem="e1N-gd-P5K" firstAttribute="width" secondItem="FiD-Nu-GXB" secondAttribute="width" id="e9d-Lc-vc2"/>
+                        <constraint firstItem="e1N-gd-P5K" firstAttribute="height" secondItem="FiD-Nu-GXB" secondAttribute="height" id="eMe-Kk-xJy"/>
+                        <constraint firstItem="FiD-Nu-GXB" firstAttribute="width" secondItem="UC5-v3-iPa" secondAttribute="width" id="iPM-cL-aIB"/>
+                        <constraint firstAttribute="trailing" secondItem="UC5-v3-iPa" secondAttribute="trailing" constant="10" id="phi-Kj-bfZ"/>
+                        <constraint firstItem="FiD-Nu-GXB" firstAttribute="height" secondItem="UC5-v3-iPa" secondAttribute="height" id="ug1-u0-eFv"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="WKS-c0-jEi"/>
+                        </mask>
+                    </variation>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="0.63161859709805901" green="1" blue="0.88382970793472793" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="ZYQ-Gq-cx2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LkO-Oz-XOZ"/>
-                <constraint firstAttribute="bottom" secondItem="ZYQ-Gq-cx2" secondAttribute="bottom" id="Qlw-9o-mQW"/>
-                <constraint firstItem="ZYQ-Gq-cx2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ta0-Ex-zBc"/>
-                <constraint firstAttribute="trailing" secondItem="ZYQ-Gq-cx2" secondAttribute="trailing" id="wfn-Q0-FrP"/>
+                <constraint firstItem="ZYQ-Gq-cx2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="6c1-hY-3iy"/>
+                <constraint firstAttribute="bottom" secondItem="ZYQ-Gq-cx2" secondAttribute="bottom" constant="597" id="eej-lw-tJd"/>
+                <constraint firstAttribute="trailing" secondItem="ZYQ-Gq-cx2" secondAttribute="trailing" constant="492" id="ibk-DI-aII"/>
+                <constraint firstItem="ZYQ-Gq-cx2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yyw-XF-veE"/>
             </constraints>
             <point key="canvasLocation" x="164" y="208"/>
         </view>
     </objects>
+    <resources>
+        <image name="MenuIcon1.jpg" width="160" height="128"/>
+    </resources>
 </document>

@@ -11,6 +11,10 @@ import UIKit
 class FirstViewController: UIViewController {
 
     @IBOutlet weak var scrollView:UIScrollView!;
+
+    let paddingY = 10.0 as CGFloat
+    let paddingX = 10.0 as CGFloat
+    private var pointY = 0 as CGFloat
     
     
     override func viewDidLoad() {
@@ -33,17 +37,19 @@ class FirstViewController: UIViewController {
         
         
         // itemView
-        for (var idx = 0; idx <= 8; idx++) {
+        for (var idx = 0; idx < 8; idx++) {
             let itemView3 = ItemView3(frame: CGRectZero)
             itemView3.tag = tagForItemView3(idx)
-            itemView3.frame = frameForItemView(startY: 10.0, idx: idx)
+            itemView3.frame = frameForItemView(startY: paddingY, idx: idx)
+            self.scrollView.addSubview(itemView3)
+            pointY = CGRectGetMaxY(itemView3.frame)
         }
-
-        
-        
+        pointY = pointY + paddingY
         
         // AD特集
         let adFeaturesLabel = UILabel()
+        adFeaturesLabel.frame = CGRectMake(paddingX, pointY,
+            CGRectGetWidth(adFeaturesLabel.frame), CGRectGetHeight(adFeaturesLabel.frame))
         adFeaturesLabel.text = "AD特集"
         self.scrollView.addSubview(adFeaturesLabel)
 
@@ -70,31 +76,37 @@ class FirstViewController: UIViewController {
         return 10000 + idx
     }
     
-    func frameForItemView(#startY: CGFloat, idx: NSInteger) -> CGRect {
+    func frameForItemView(#startY: CGFloat, idx: Int) -> CGRect {
         
         var num = posNum(idx: idx, colNum: 4)
         
-        
-        
-        var posY = 0 as CGFloat
-        
-        let screenWidth = CGRectGetWidth(UIScreen.mainScreen().bounds)
-        let padding = 10.0 as CGFloat
-        let width = (screenWidth - (padding * 5.0)) / 4.0
+        // width
+        let screenWidth = (CGRectGetWidth(UIScreen.mainScreen().bounds))
+        let padding = 10 as CGFloat
+        let padding5 = (padding * 5.0) as CGFloat
+        let tmp = screenWidth - padding5
+        let width = tmp / 4.0
 
-        let posX = padding + width * (CGFloat)num.x
+        // Height
+        var height = 100 as CGFloat
 
+        // Position X
+        let posX = padding + (padding + width) * (CGFloat)(num.x)
+
+        // Position Y
+        var posY = startY + (height + padding) * CGFloat(num.y)
         
-        var height = 0 as CGFloat
-        
+
         return CGRectMake(posX, posY, width, height)
         
     }
-    
-    func posNum (#idx: NSInteger, colNum: NSInteger) -> (x: NSInteger, y: NSInteger) {
-        return (x:idx % colNum, y: idx / colNum)
+
+    /*
+     * @abstract  何番目か返す (x,y)
+     */
+    func posNum (#idx: Int, colNum: Int) -> (x: Int, y: Int) {
+        return (x:idx % colNum, y: Int(floor( CGFloat(idx) / CGFloat(colNum))) )
     }
-    
     
 }
 

@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         
-        let viewCon1 = FirstViewController(nibName: "FirstViewController", bundle: nil)
-        let viewCon2 = SecondViewController();
+        //let viewCon1 = FirstViewController(nibName: "FirstViewController", bundle: nil)
+        let viewCon1 = FirstViewController()
+        let viewCon2 = SecondViewController()
 
         viewCon1.tabBarItem = UITabBarItem(title: "viewCon1", image: nil, selectedImage: nil)
         viewCon2.tabBarItem = UITabBarItem(title: "viewCon2", image: nil, selectedImage: nil)

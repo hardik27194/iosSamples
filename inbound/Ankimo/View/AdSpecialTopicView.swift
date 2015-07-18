@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemView3: UIView {
+class AdSpecialTopicView: UIView {
 
     
     required init(coder aDecoder: NSCoder) {
@@ -18,7 +18,7 @@ class ItemView3: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor(red: 0, green: 1, blue: 1, alpha: 1)
+        self.backgroundColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
         
     }
     

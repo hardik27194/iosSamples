@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		14090BF11B4AADDF008742E4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14090BF01B4AADDF008742E4 /* FirstViewController.swift */; };
+		142A9D921B59EB4800DF6F1C /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A9D911B59EB4800DF6F1C /* RecommendView.swift */; };
 		14574FB51B52206500C17F78 /* MenuIcon1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14574FB41B52206500C17F78 /* MenuIcon1.jpg */; };
+		14574FE81B59305200C17F78 /* AdSpecialTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14574FE71B59305200C17F78 /* AdSpecialTopicView.swift */; };
 		1457FED61A63AB49003B012F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1457FED51A63AB49003B012F /* libc++.dylib */; };
 		1457FED71A63AB54003B012F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1457FED51A63AB49003B012F /* libc++.dylib */; };
 		1457FEDD1A63AC17003B012F /* QuestionDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1457FEDC1A63AC17003B012F /* QuestionDataManagerTest.swift */; };
@@ -40,8 +42,10 @@
 /* Begin PBXFileReference section */
 		0AD038D8F8115D2A465B591E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		14090BF01B4AADDF008742E4 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Ankimo/FirstViewController.swift; sourceTree = SOURCE_ROOT; };
+		142A9D911B59EB4800DF6F1C /* RecommendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		1448786B1B51471C006E7233 /* Ankimo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ankimo-Bridging-Header.h"; sourceTree = "<group>"; };
 		14574FB41B52206500C17F78 /* MenuIcon1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MenuIcon1.jpg; sourceTree = "<group>"; };
+		14574FE71B59305200C17F78 /* AdSpecialTopicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdSpecialTopicView.swift; sourceTree = "<group>"; };
 		1457FED51A63AB49003B012F /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		1457FEDC1A63AC17003B012F /* QuestionDataManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDataManagerTest.swift; sourceTree = "<group>"; };
 		1457FF011A63D037003B012F /* BaseApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseApiClient.swift; sourceTree = "<group>"; };
@@ -89,7 +93,9 @@
 		1457FEE31A63CF7E003B012F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14574FE71B59305200C17F78 /* AdSpecialTopicView.swift */,
 				14C196FB1B4CD1230094479A /* ItemView3.swift */,
+				142A9D911B59EB4800DF6F1C /* RecommendView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,6 +391,8 @@
 				14090BF11B4AADDF008742E4 /* FirstViewController.swift in Sources */,
 				1457FF031A63D037003B012F /* BaseApiClient.swift in Sources */,
 				1485633D1A63A10F0019BC9C /* AppDelegate.swift in Sources */,
+				142A9D921B59EB4800DF6F1C /* RecommendView.swift in Sources */,
+				14574FE81B59305200C17F78 /* AdSpecialTopicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

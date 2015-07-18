@@ -1,0 +1,13 @@
+PODS:
+  - FXKeychain (1.3.4)
+  - OCMock (2.0.1)
+
+DEPENDENCIES:
+  - FXKeychain (~> 1.3.1)
+  - OCMock (~> 2.0.1)
+
+SPEC CHECKSUMS:
+  FXKeychain: deef3473ad220573a1ccc91907fd443c37be9e69
+  OCMock: 7a839b55abfb78e8ec3bf6eaa3cdcc567ac71d2a
+
+COCOAPODS: 0.35.0

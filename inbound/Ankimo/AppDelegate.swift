@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let viewCon1 = FirstViewController(nibName: "FirstViewController", bundle: nil)
         let viewCon1 = FirstViewController()
         let viewCon2 = SecondViewController()
+        let searchViewCon = SearchViewController()
 
         viewCon1.tabBarItem = UITabBarItem(title: "viewCon1", image: nil, selectedImage: nil)
         viewCon2.tabBarItem = UITabBarItem(title: "viewCon2", image: nil, selectedImage: nil)
@@ -35,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         
-        let tabs = NSArray(objects: naviCon, viewCon2)
+        let tabs = NSArray(objects: naviCon, searchViewCon)
 
         let tabBarController = UITabBarController();
         tabBarController.setViewControllers(tabs as [AnyObject], animated: false)

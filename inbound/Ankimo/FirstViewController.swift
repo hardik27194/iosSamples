@@ -14,61 +14,45 @@ class FirstViewController: UIViewController {
 
     let paddingY = 10.0 as CGFloat
     let paddingX = 10.0 as CGFloat
+    let paddingAll = 10.0 as CGFloat
     private var pointY = 0 as CGFloat
     
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        self.view.backgroundColor = UIColor(red:0.0, green:0.5, blue:1.0, alpha:1.0)
-//        
-//        
-//        let scrollView = UIScrollView()
-//        scrollView.frame = CGRectMake( 0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))
-//        scrollView.backgroundColor = UIColor(red:0.6, green:0.5, blue:0.0, alpha:1.0)
-//        scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), 800)
-//        
-//        self.view.addSubview(scrollView)
-//        
-//        
-//    }
-    
-
-    
-//    func v1iewDidLoad() {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let screenWidth = UIScreen.mainScreen().bounds.width
+        let screenHeight = UIScreen.mainScreen().bounds.height
+        
         self.view.frame = CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height)
-        self.view.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
+        self.view.backgroundColor = UIColor(red:1, green:1, blue:1, alpha:1)
         
         // navibar
         self.navigationItem.title = "Logo"
         
-        let leftButtonItem = UIBarButtonItem(title: "地域↓", style: .Plain, target: self, action: "onClickMyButton")
+        let leftButtonItem = UIBarButtonItem(title: "地域↓", style: .Plain, target: self, action: "onClickRegionButton")
         self.navigationItem.leftBarButtonItem = leftButtonItem
 
-        let rightButtonItem = UIBarButtonItem(title: "Search", style: .Plain, target: self, action: "onClickMyButton")
+        let rightButtonItem = UIBarButtonItem(title: "Search", style: .Plain, target: self, action: "onClickSearchButton")
         self.navigationItem.rightBarButtonItem = rightButtonItem
 
         let naviCon = self.navigationController;
 
-        //
-        let scrollViewY = CGRectGetHeight(self.navigationController!.navigationBar.frame)
-        self.scrollView = UIScrollView(frame: CGRectMake(0, scrollViewY, 320, 400))
-//        self.scrollView.frame = CGRectMake(0, 100, 320, 300)
+        
+        // scrollView
+        let tabHeight = self.tabBarController!.tabBar.frame.size.height
+        self.scrollView = UIScrollView(frame: CGRectMake(0, 0, screenWidth, screenHeight - tabHeight))
         self.scrollView.contentSize = CGSizeMake(0, 1000)
-        self.scrollView.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1)
+        self.scrollView.backgroundColor = UIColor(red: 0.7, green: 1, blue: 0.7, alpha: 1)
         self.view.addSubview(self.scrollView)
 
-        pointY = 20
+        pointY = paddingAll
         
         // itemView
         let startPoint = pointY
         for (var idx = 0; idx < 8; idx++) {
             let itemView3 = ItemView3(frame: CGRectZero)
             itemView3.tag = 10000 + idx;
-            itemView3.frame = frameForItemView(startY:startPoint, idx:idx, colNum:4, height:100, padding:10)
+            itemView3.frame = frameForItemView(startY:startPoint, idx:idx, colNum:4, height:100, padding:5)
             self.scrollView.addSubview(itemView3)
             pointY = CGRectGetMaxY(itemView3.frame)
         }
@@ -94,47 +78,26 @@ class FirstViewController: UIViewController {
             pointY = CGRectGetMaxY(itemView3.frame)
         }
 
-        // おすすめ商品
+        // おすすめ商品ラベル
         pointY += 20
         let recommendLabel = UILabel()
-        recommendLabel.frame = CGRectMake(paddingX, pointY, 130, 20)
+        recommendLabel.frame = CGRectMake(paddingX, pointY, 130,
+            recommendLabel.font.lineHeight)
         recommendLabel.text = "おすすめ商品"
+        recommendLabel.backgroundColor = UIColor.whiteColor()
         self.scrollView.addSubview(recommendLabel)
+        pointY = CGRectGetMaxY(recommendLabel.frame)
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        // 推奨
-//        let recommendView = UINib(nibName:"RecommendView", bundle:nil)
-//            .instantiateWithOwner(nil, options:nil)[0] as! RecommendView
-//        recommendView.frame = CGRectMake(paddingX, pointY, 200, 100)
-//        self.scrollView.addSubview(recommendView)
-        
-      
-//        // 特集１
-//        let adFeatureView1 = UIView()
-//        let adFeatureLabel = UILabel(frame: CGRectMake(10, 10, 40, 20))
-//        adFeatureLabel.text = "特集"
-//        adFeatureView1.addSubview(adFeatureLabel)
-//        self.scrollView.addSubview(adFeatureView1)
-//
-//        // 特集2
-//        let adFeatureView2 = UIView()
-//        adFeatureView2.addSubview(adFeatureLabel)
-//        self.scrollView.addSubview(adFeatureView2)
-
-        
-        NSLog("selfview recu %@", self.view.subviews )  // .recursiveDescription)
-        
+        // おすすめ商品ラベル
+        pointY += 10
+        for (var idx = 0; idx < 4; idx++) {
+            let recommendView = UINib(nibName: "RecommendView", bundle: nil)
+                .instantiateWithOwner(self, options: nil)[0] as! RecommendView
+            recommendView.frame = CGRectMake(0, pointY, screenWidth, 140)
+            self.scrollView.addSubview(recommendView)
+            recommendView.setupLayout()
+            pointY = CGRectGetMaxY(recommendView.frame) + 2
+        }
         
     }
 
@@ -162,6 +125,19 @@ class FirstViewController: UIViewController {
     func posNum (#idx: Int, colNum: Int) -> (x: Int, y: Int) {
         return (x:idx % colNum, y: Int(floor( CGFloat(idx) / CGFloat(colNum))) )
     }
+    
+    func onClickSearchButton (){
+        let searchViewController = SearchViewController(nibName: "SearchViewController", bundle: nil)
+        self.presentViewController(searchViewController, animated: true, completion: nil)
+    
+    }
+ 
+    func onClickRegionButton (){
+        let regionViewController = RegionViewController(nibName: "RegionViewController", bundle: nil)
+        self.presentViewController(regionViewController, animated: true, completion: nil)
+        
+    }
+    
     
 }
 

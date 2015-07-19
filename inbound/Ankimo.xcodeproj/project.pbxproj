@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		14090BF11B4AADDF008742E4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14090BF01B4AADDF008742E4 /* FirstViewController.swift */; };
 		142A9D921B59EB4800DF6F1C /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A9D911B59EB4800DF6F1C /* RecommendView.swift */; };
+		144750211B5A170000DEFBF2 /* RecommendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144750201B5A170000DEFBF2 /* RecommendView.xib */; };
+		144750241B5A3ED900DEFBF2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144750221B5A3ED900DEFBF2 /* SearchViewController.swift */; };
+		144750251B5A3ED900DEFBF2 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144750231B5A3ED900DEFBF2 /* SearchViewController.xib */; };
 		14574FB51B52206500C17F78 /* MenuIcon1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14574FB41B52206500C17F78 /* MenuIcon1.jpg */; };
 		14574FE81B59305200C17F78 /* AdSpecialTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14574FE71B59305200C17F78 /* AdSpecialTopicView.swift */; };
 		1457FED61A63AB49003B012F /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1457FED51A63AB49003B012F /* libc++.dylib */; };
@@ -24,6 +27,8 @@
 		14AEDD501A63F15C000628E5 /* frickPointView.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AEDD4E1A63F15C000628E5 /* frickPointView.png */; };
 		14C196F01B4BF3D30094479A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196EF1B4BF3D30094479A /* SecondViewController.swift */; };
 		14C196FC1B4CD1230094479A /* ItemView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196FB1B4CD1230094479A /* ItemView3.swift */; };
+		14D93C061B5B5A87007849DB /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D93C041B5B5A87007849DB /* RegionViewController.swift */; };
+		14D93C071B5B5A87007849DB /* RegionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D93C051B5B5A87007849DB /* RegionViewController.xib */; };
 		14FFA6921A63A3FE00B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
 		14FFA6931A63A40500B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
 		CE2379DE86C0026C16CA0142 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1DE0DDABB9163207C3FAB /* libPods.a */; };
@@ -43,6 +48,9 @@
 		0AD038D8F8115D2A465B591E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		14090BF01B4AADDF008742E4 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Ankimo/FirstViewController.swift; sourceTree = SOURCE_ROOT; };
 		142A9D911B59EB4800DF6F1C /* RecommendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
+		144750201B5A170000DEFBF2 /* RecommendView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendView.xib; sourceTree = "<group>"; };
+		144750221B5A3ED900DEFBF2 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		144750231B5A3ED900DEFBF2 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		1448786B1B51471C006E7233 /* Ankimo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ankimo-Bridging-Header.h"; sourceTree = "<group>"; };
 		14574FB41B52206500C17F78 /* MenuIcon1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MenuIcon1.jpg; sourceTree = "<group>"; };
 		14574FE71B59305200C17F78 /* AdSpecialTopicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdSpecialTopicView.swift; sourceTree = "<group>"; };
@@ -61,6 +69,8 @@
 		14AEDD4E1A63F15C000628E5 /* frickPointView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frickPointView.png; sourceTree = "<group>"; };
 		14C196EF1B4BF3D30094479A /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		14C196FB1B4CD1230094479A /* ItemView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView3.swift; sourceTree = "<group>"; };
+		14D93C041B5B5A87007849DB /* RegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
+		14D93C051B5B5A87007849DB /* RegionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegionViewController.xib; sourceTree = "<group>"; };
 		14FFA6911A63A3FE00B79386 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		3F39116080E14CB19988095E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F8F1DE0DDABB9163207C3FAB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +105,7 @@
 			children = (
 				14574FE71B59305200C17F78 /* AdSpecialTopicView.swift */,
 				14C196FB1B4CD1230094479A /* ItemView3.swift */,
+				144750201B5A170000DEFBF2 /* RecommendView.xib */,
 				142A9D911B59EB4800DF6F1C /* RecommendView.swift */,
 			);
 			path = View;
@@ -141,6 +152,10 @@
 				1485633A1A63A10F0019BC9C /* Supporting Files */,
 				1457FEE31A63CF7E003B012F /* View */,
 				1448786B1B51471C006E7233 /* Ankimo-Bridging-Header.h */,
+				14D93C041B5B5A87007849DB /* RegionViewController.swift */,
+				14D93C051B5B5A87007849DB /* RegionViewController.xib */,
+				144750221B5A3ED900DEFBF2 /* SearchViewController.swift */,
+				144750231B5A3ED900DEFBF2 /* SearchViewController.xib */,
 			);
 			path = Ankimo;
 			sourceTree = "<group>";
@@ -332,10 +347,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AEDD501A63F15C000628E5 /* frickPointView.png in Resources */,
+				144750211B5A170000DEFBF2 /* RecommendView.xib in Resources */,
 				148563471A63A10F0019BC9C /* LaunchScreen.xib in Resources */,
 				14574FB51B52206500C17F78 /* MenuIcon1.jpg in Resources */,
+				14D93C071B5B5A87007849DB /* RegionViewController.xib in Resources */,
 				14AEDD4F1A63F15C000628E5 /* Default-568h@2x.png in Resources */,
 				148563441A63A10F0019BC9C /* Images.xcassets in Resources */,
+				144750251B5A3ED900DEFBF2 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +406,8 @@
 			files = (
 				14C196FC1B4CD1230094479A /* ItemView3.swift in Sources */,
 				14C196F01B4BF3D30094479A /* SecondViewController.swift in Sources */,
+				14D93C061B5B5A87007849DB /* RegionViewController.swift in Sources */,
+				144750241B5A3ED900DEFBF2 /* SearchViewController.swift in Sources */,
 				14090BF11B4AADDF008742E4 /* FirstViewController.swift in Sources */,
 				1457FF031A63D037003B012F /* BaseApiClient.swift in Sources */,
 				1485633D1A63A10F0019BC9C /* AppDelegate.swift in Sources */,

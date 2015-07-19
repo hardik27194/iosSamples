@@ -18,7 +18,7 @@ class AdSpecialTopicView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor(red: 0, green: 1, blue: 1, alpha: 0.1)
+        self.backgroundColor = UIColor(red: 0.8, green: 1, blue: 1, alpha: 1)
         
     }
     

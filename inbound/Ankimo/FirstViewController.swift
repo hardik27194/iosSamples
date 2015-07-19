@@ -28,15 +28,11 @@ class FirstViewController: UIViewController {
         
         // navibar
         self.navigationItem.title = "Logo"
-        
         let leftButtonItem = UIBarButtonItem(title: "地域↓", style: .Plain, target: self, action: "onClickRegionButton")
         self.navigationItem.leftBarButtonItem = leftButtonItem
-
         let rightButtonItem = UIBarButtonItem(title: "Search", style: .Plain, target: self, action: "onClickSearchButton")
         self.navigationItem.rightBarButtonItem = rightButtonItem
-
         let naviCon = self.navigationController;
-
         
         // scrollView
         let tabHeight = self.tabBarController!.tabBar.frame.size.height
@@ -134,6 +130,7 @@ class FirstViewController: UIViewController {
  
     func onClickRegionButton (){
         let regionViewController = RegionViewController(nibName: "RegionViewController", bundle: nil)
+//        let regionViewController = RegionViewController(nibName: "RegionViewController")
         self.presentViewController(regionViewController, animated: true, completion: nil)
         
     }

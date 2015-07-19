@@ -24,19 +24,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let viewCon1 = FirstViewController(nibName: "FirstViewController", bundle: nil)
         let viewCon1 = FirstViewController()
         let viewCon2 = SecondViewController()
+        let viewCon3 = SecondViewController()
+        let viewCon4 = SecondViewController()
         let searchViewCon = SearchViewController()
 
-        viewCon1.tabBarItem = UITabBarItem(title: "viewCon1", image: nil, selectedImage: nil)
-        viewCon2.tabBarItem = UITabBarItem(title: "viewCon2", image: nil, selectedImage: nil)
+        
+        viewCon1.tabBarItem = UITabBarItem(title: "TOP",
+            image: UIImage(named: "tab_icon1"), selectedImage: UIImage(named: "tab_icon1-o"))
+        viewCon2.tabBarItem = UITabBarItem(title: "発見",
+            image: UIImage(named: "tab_icon2"), selectedImage: UIImage(named: "tab_icon2-o"))
+        viewCon3.tabBarItem = UITabBarItem(title: "レビュー",
+            image: UIImage(named: "tab_icon3"), selectedImage: UIImage(named: "tab_icon3-o"))
+        viewCon4.tabBarItem = UITabBarItem(title: "マイページ",
+            image: UIImage(named: "tab_icon4"), selectedImage: UIImage(named: "tab_icon4-o"))
 
         
         let naviCon = UINavigationController(rootViewController: viewCon1)
-
         
-
-        
-        
-        let tabs = NSArray(objects: naviCon, searchViewCon)
+        let tabs = NSArray(objects: naviCon, viewCon2, viewCon3, viewCon4)
 
         let tabBarController = UITabBarController();
         tabBarController.setViewControllers(tabs as [AnyObject], animated: false)

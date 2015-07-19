@@ -10,17 +10,24 @@ import UIKit
 
 class RegionViewController: UIViewController {
 
-//    @IBOutlet weak var HotKeywordButton: UIButton?
+    @IBOutlet weak var regionTableView: UITableView?
     
     var regionArray: [String] = []
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
     
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+//        super.init(coder: aDecoder)
+     
+    }
+    
     func setup(){
-        var regionArray = ["日本", "中国", "カナダ", "アメリカ"]
+        regionArray = ["日本 (おすすめ）", "中国", "カナダ", "アメリカ"]
     }
     
     override func viewDidLoad() {
@@ -35,12 +42,9 @@ class RegionViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = rightButtonItem
         
         let naviCon = self.navigationController;
-
         
+        regionTableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        
-
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -75,6 +79,8 @@ extension RegionViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+
+        cell.textLabel!.text = regionArray[indexPath.row]
         
         return cell
     }

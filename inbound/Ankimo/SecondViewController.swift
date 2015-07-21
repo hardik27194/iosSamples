@@ -35,26 +35,32 @@ class SecondViewController: UIViewController {
         let naviCon = self.navigationController;
 
         // scrollView
-        self.scrollView = UIScrollView()
-        self.scrollView.frame = CGRectMake( 0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))
+        let tabHeight = self.tabBarController!.tabBar.frame.size.height
+        self.scrollView = UIScrollView(frame: CGRectMake(0, 0, screenWidth, screenHeight - tabHeight))
         self.scrollView.backgroundColor = UIColor(red:0.8, green:1, blue:0.8, alpha:1.0)
         self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), 800)
         self.view.addSubview(self.scrollView)
         
-        // itemView
+        // 特集Slide
         pointY = paddingAll
-        var startPointY = pointY
-        for (var idx = 0; idx < 4; idx++) {
-            let itemView3 = AdSpecialTopicView(frame: CGRectZero)
-            itemView3.tag = 20000 + idx;
-            itemView3.frame = frameForItemView(startY:startPointY, idx:idx, colNum:2, height:50, padding:2)
-            let label = UILabel(frame: CGRectMake(10, 10, 100, 20))
-            label.text = "特集"
-            itemView3.addSubview(label)
-            self.scrollView.addSubview(itemView3)
-            pointY = CGRectGetMaxY(itemView3.frame)
-        }
-        pointY = pointY + paddingY
+        let view1 = UIView()
+        view1.frame = CGRectMake(0, pointY, screenWidth, 120)
+        view1.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.3)
+        self.scrollView.addSubview(view1)
+        let label = UILabel(frame: CGRectMake(10, 10, 100, 20))
+        label.text = "特集Slide"
+        view1.addSubview(label)
+        pointY = CGRectGetMaxY(view1.frame) + paddingAll
+
+        // 現在の状況タイトル
+        let currentStateTitle = UILabel(frame: CGRectMake(paddingAll, pointY, 100, 20))
+        currentStateTitle.text = "現地の状況"
+        self.scrollView.addSubview(currentStateTitle)
+        
+        
+        // 現在の状況
+        let currentWether = 
+        
         
         // AD特集 Title
         let adFeaturesLabel = UILabel()

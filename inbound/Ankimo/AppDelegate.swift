@@ -39,9 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             image: UIImage(named: "tab_icon4"), selectedImage: UIImage(named: "tab_icon4-o"))
 
         
-        let naviCon = UINavigationController(rootViewController: viewCon1)
+        let naviCon1 = UINavigationController(rootViewController: viewCon1)
+        let naviCon2 = UINavigationController(rootViewController: viewCon2)
         
-        let tabs = NSArray(objects: naviCon, viewCon2, viewCon3, viewCon4)
+        let tabs = NSArray(objects: naviCon1, naviCon2, viewCon3, viewCon4)
 
         let tabBarController = UITabBarController();
         tabBarController.setViewControllers(tabs as [AnyObject], animated: false)

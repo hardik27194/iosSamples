@@ -95,6 +95,18 @@ class FirstViewController: UIViewController {
             pointY = CGRectGetMaxY(recommendView.frame) + 2
         }
         
+        
+        
+        var person = Person()
+        person.name = "person1"
+        person.Id = "1"
+        
+        var realm = RLMRealm.defaultRealm
+        
+        realm().beginWriteTransaction()
+        realm().addObject(person)
+        realm().commitWriteTransaction()
+
     }
 
     func frameForItemView(#startY: CGFloat, idx: Int, colNum: Int, height:CGFloat, padding:CGFloat) -> CGRect {

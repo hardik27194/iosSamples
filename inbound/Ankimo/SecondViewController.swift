@@ -59,7 +59,7 @@ class SecondViewController: UIViewController {
         
         
         // 現在の状況
-        let currentWether = 
+//        let currentWether = 
         
         
         // AD特集 Title
@@ -68,6 +68,7 @@ class SecondViewController: UIViewController {
         adFeaturesLabel.text = "AD特集"
         self.scrollView.addSubview(adFeaturesLabel)
         
+        /*
         // AD特集
         pointY = CGRectGetMaxY(adFeaturesLabel.frame) + paddingY;
         startPointY = pointY
@@ -91,7 +92,8 @@ class SecondViewController: UIViewController {
         recommendLabel.backgroundColor = UIColor.whiteColor()
         self.scrollView.addSubview(recommendLabel)
         pointY = CGRectGetMaxY(recommendLabel.frame)
-
+        
+        */
 
     }
     

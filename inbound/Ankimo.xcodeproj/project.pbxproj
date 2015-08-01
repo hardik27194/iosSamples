@@ -21,7 +21,6 @@
 		148563441A63A10F0019BC9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148563431A63A10F0019BC9C /* Images.xcassets */; };
 		148563471A63A10F0019BC9C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 148563451A63A10F0019BC9C /* LaunchScreen.xib */; };
 		148563531A63A10F0019BC9C /* AnkimoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148563521A63A10F0019BC9C /* AnkimoTests.swift */; };
-		1485635C1A63A1D30019BC9C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1DE0DDABB9163207C3FAB /* libPods.a */; };
 		14C196F01B4BF3D30094479A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196EF1B4BF3D30094479A /* SecondViewController.swift */; };
 		14C196FC1B4CD1230094479A /* ItemView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C196FB1B4CD1230094479A /* ItemView3.swift */; };
 		14D93C061B5B5A87007849DB /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D93C041B5B5A87007849DB /* RegionViewController.swift */; };
@@ -53,9 +52,8 @@
 		14D93C441B5B8EBF007849DB /* tab_icon5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D93C291B5B8EBF007849DB /* tab_icon5@2x.png */; };
 		14D93C451B5B8EBF007849DB /* tab_selection_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D93C2A1B5B8EBF007849DB /* tab_selection_indicator.png */; };
 		14D93C461B5B8EBF007849DB /* tab_selection_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D93C2B1B5B8EBF007849DB /* tab_selection_indicator@2x.png */; };
-		14FFA6921A63A3FE00B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
-		14FFA6931A63A40500B79386 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FFA6911A63A3FE00B79386 /* Realm.framework */; };
-		CE2379DE86C0026C16CA0142 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F1DE0DDABB9163207C3FAB /* libPods.a */; };
+		14D93C491B64EDD8007849DB /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D93C481B64EDD8007849DB /* Person.m */; };
+		AA51BCF6710D9002D6A16EBB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F37EF314EA01A408EE6481 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04F37EF314EA01A408EE6481 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AD038D8F8115D2A465B591E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		14090BF01B4AADDF008742E4 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = Ankimo/FirstViewController.swift; sourceTree = SOURCE_ROOT; };
 		142A9D911B59EB4800DF6F1C /* RecommendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
@@ -119,9 +118,9 @@
 		14D93C291B5B8EBF007849DB /* tab_icon5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_icon5@2x.png"; sourceTree = "<group>"; };
 		14D93C2A1B5B8EBF007849DB /* tab_selection_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_selection_indicator.png; sourceTree = "<group>"; };
 		14D93C2B1B5B8EBF007849DB /* tab_selection_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_selection_indicator@2x.png"; sourceTree = "<group>"; };
-		14FFA6911A63A3FE00B79386 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		14D93C471B64EDD8007849DB /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		14D93C481B64EDD8007849DB /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		3F39116080E14CB19988095E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		F8F1DE0DDABB9163207C3FAB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1457FED61A63AB49003B012F /* libc++.dylib in Frameworks */,
-				14FFA6921A63A3FE00B79386 /* Realm.framework in Frameworks */,
-				CE2379DE86C0026C16CA0142 /* libPods.a in Frameworks */,
+				AA51BCF6710D9002D6A16EBB /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,9 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14FFA6931A63A40500B79386 /* Realm.framework in Frameworks */,
 				1457FED71A63AB54003B012F /* libc++.dylib in Frameworks */,
-				1485635C1A63A1D30019BC9C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +303,8 @@
 				1457FF001A63D037003B012F /* ApiClient */,
 				14FFA6861A63A38000B79386 /* DataManager */,
 				14FFA6891A63A38000B79386 /* DataObject */,
+				14D93C471B64EDD8007849DB /* Person.h */,
+				14D93C481B64EDD8007849DB /* Person.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,8 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				1457FED51A63AB49003B012F /* libc++.dylib */,
-				14FFA6911A63A3FE00B79386 /* Realm.framework */,
-				F8F1DE0DDABB9163207C3FAB /* libPods.a */,
+				04F37EF314EA01A408EE6481 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -511,6 +508,7 @@
 			files = (
 				14C196FC1B4CD1230094479A /* ItemView3.swift in Sources */,
 				14C196F01B4BF3D30094479A /* SecondViewController.swift in Sources */,
+				14D93C491B64EDD8007849DB /* Person.m in Sources */,
 				14D93C061B5B5A87007849DB /* RegionViewController.swift in Sources */,
 				144750241B5A3ED900DEFBF2 /* SearchViewController.swift in Sources */,
 				14090BF11B4AADDF008742E4 /* FirstViewController.swift in Sources */,

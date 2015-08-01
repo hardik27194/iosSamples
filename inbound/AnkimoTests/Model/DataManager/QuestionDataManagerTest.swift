@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Realm
+//import Realm
 import XCTest
 
 class QuestionDataManagerTest: XCTestCase {

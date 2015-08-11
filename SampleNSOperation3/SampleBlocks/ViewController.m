@@ -16,7 +16,7 @@
 
   self.view.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:0.2];
 
-  [self test4];
+  [self test5];
 
 }
 
@@ -92,6 +92,44 @@
 
   NSLog(@" finish ");
 
+}
+
+
+-(void)test5 {
+  // 依存
+
+  NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+
+  NSOperation *operation1= [NSBlockOperation blockOperationWithBlock:^{
+    sleep(rand() % 3);
+    NSLog(@"test1");
+  }];
+
+  NSOperation *operation2 = [NSBlockOperation blockOperationWithBlock:^{
+    sleep(rand() % 3);
+    NSLog(@"test2");
+  }];
+
+  NSOperation *operation3 = [NSBlockOperation blockOperationWithBlock:^{
+    sleep(rand() % 3);
+    NSLog(@"test3");
+  }];
+
+  // 3 -> 2 -> 1 の順番に実行する
+  [operation1 addDependency:operation2];
+  [operation2 addDependency:operation3];
+
+
+  // 1->2->3 の順番にいれるけど実行順は違う
+  [queue addOperation:operation1];
+  [queue addOperation:operation2];
+  [queue addOperation:operation3];
+
+  // 全部終わるまで待つ
+  [queue waitUntilAllOperationsAreFinished];
+
+  NSLog(@" finish ");
+  
 }
 
 

@@ -12,8 +12,8 @@
 		7275B79A1A11A33F0033F85A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7275B7991A11A33F0033F85A /* ViewController.m */; };
 		7275B79F1A11A33F0033F85A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7275B79E1A11A33F0033F85A /* Images.xcassets */; };
 		7275B7AE1A11A33F0033F85A /* SampleBlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7275B7AD1A11A33F0033F85A /* SampleBlocksTests.m */; };
-		F6EAB48D1B4520D1003322F6 /* SampleThread.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EAB48C1B4520D1003322F6 /* SampleThread.m */; };
-		F6EAB4901B452E23003322F6 /* BackGroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EAB48F1B452E23003322F6 /* BackGroundTask.m */; };
+		F6A7352B1B7987310000C751 /* Sample2Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A7352A1B7987310000C751 /* Sample2Operation.m */; };
+		F6EAB4901B452E23003322F6 /* SampleOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6EAB48F1B452E23003322F6 /* SampleOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +38,10 @@
 		7275B7A71A11A33F0033F85A /* SampleBlocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleBlocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7275B7AC1A11A33F0033F85A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7275B7AD1A11A33F0033F85A /* SampleBlocksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleBlocksTests.m; sourceTree = "<group>"; };
-		F6EAB48B1B4520D1003322F6 /* SampleThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleThread.h; sourceTree = "<group>"; };
-		F6EAB48C1B4520D1003322F6 /* SampleThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleThread.m; sourceTree = "<group>"; };
-		F6EAB48E1B452E23003322F6 /* BackGroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackGroundTask.h; sourceTree = "<group>"; };
-		F6EAB48F1B452E23003322F6 /* BackGroundTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackGroundTask.m; sourceTree = "<group>"; };
+		F6A735291B7987310000C751 /* Sample2Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sample2Operation.h; sourceTree = "<group>"; };
+		F6A7352A1B7987310000C751 /* Sample2Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sample2Operation.m; sourceTree = "<group>"; };
+		F6EAB48E1B452E23003322F6 /* SampleOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleOperation.h; sourceTree = "<group>"; };
+		F6EAB48F1B452E23003322F6 /* SampleOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,10 +89,10 @@
 				7275B7911A11A33F0033F85A /* Supporting Files */,
 				7275B7981A11A33F0033F85A /* ViewController.h */,
 				7275B7991A11A33F0033F85A /* ViewController.m */,
-				F6EAB48B1B4520D1003322F6 /* SampleThread.h */,
-				F6EAB48C1B4520D1003322F6 /* SampleThread.m */,
-				F6EAB48E1B452E23003322F6 /* BackGroundTask.h */,
-				F6EAB48F1B452E23003322F6 /* BackGroundTask.m */,
+				F6EAB48E1B452E23003322F6 /* SampleOperation.h */,
+				F6EAB48F1B452E23003322F6 /* SampleOperation.m */,
+				F6A735291B7987310000C751 /* Sample2Operation.h */,
+				F6A7352A1B7987310000C751 /* Sample2Operation.m */,
 			);
 			path = SampleBlocks;
 			sourceTree = "<group>";
@@ -221,11 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6EAB4901B452E23003322F6 /* BackGroundTask.m in Sources */,
+				F6EAB4901B452E23003322F6 /* SampleOperation.m in Sources */,
 				7275B79A1A11A33F0033F85A /* ViewController.m in Sources */,
 				7275B7971A11A33F0033F85A /* AppDelegate.m in Sources */,
-				F6EAB48D1B4520D1003322F6 /* SampleThread.m in Sources */,
 				7275B7941A11A33F0033F85A /* main.m in Sources */,
+				F6A7352B1B7987310000C751 /* Sample2Operation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

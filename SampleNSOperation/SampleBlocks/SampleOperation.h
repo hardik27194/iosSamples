@@ -1,5 +1,5 @@
 //
-//  BackGroundTask.h
+//  SampleTask.h
 //  SampleBlocks
 //
 //  Created by 島田 武史 on 2015/07/02.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BackGroundTask : NSOperation
-
+@interface SampleOperation : NSOperation
+@property int idx;
 @end

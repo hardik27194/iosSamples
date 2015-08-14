@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		721C354A1A198D45000375A0 /* manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C35491A198D45000375A0 /* manager.m */; };
 		7275B7941A11A33F0033F85A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7275B7931A11A33F0033F85A /* main.m */; };
 		7275B7971A11A33F0033F85A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7275B7961A11A33F0033F85A /* AppDelegate.m */; };
 		7275B79A1A11A33F0033F85A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7275B7991A11A33F0033F85A /* ViewController.m */; };
@@ -26,8 +25,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		721C35481A198D45000375A0 /* manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manager.h; sourceTree = "<group>"; };
-		721C35491A198D45000375A0 /* manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = manager.m; sourceTree = "<group>"; };
 		7275B78E1A11A33F0033F85A /* SampleBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7275B7921A11A33F0033F85A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7275B7931A11A33F0033F85A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,12 +79,10 @@
 			children = (
 				7275B7951A11A33F0033F85A /* AppDelegate.h */,
 				7275B7961A11A33F0033F85A /* AppDelegate.m */,
-				7275B7981A11A33F0033F85A /* ViewController.h */,
-				7275B7991A11A33F0033F85A /* ViewController.m */,
-				721C35481A198D45000375A0 /* manager.h */,
-				721C35491A198D45000375A0 /* manager.m */,
 				7275B79E1A11A33F0033F85A /* Images.xcassets */,
 				7275B7911A11A33F0033F85A /* Supporting Files */,
+				7275B7981A11A33F0033F85A /* ViewController.h */,
+				7275B7991A11A33F0033F85A /* ViewController.m */,
 			);
 			path = SampleBlocks;
 			sourceTree = "<group>";
@@ -219,7 +214,6 @@
 				7275B79A1A11A33F0033F85A /* ViewController.m in Sources */,
 				7275B7971A11A33F0033F85A /* AppDelegate.m in Sources */,
 				7275B7941A11A33F0033F85A /* main.m in Sources */,
-				721C354A1A198D45000375A0 /* manager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

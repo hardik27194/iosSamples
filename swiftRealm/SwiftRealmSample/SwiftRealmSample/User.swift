@@ -19,7 +19,7 @@ class User: RLMObject {
         super.init()
     }
     
-    override class func primaryKey() -> String {
-        return "id"
-    }
+//    override class func primaryKey() -> String {
+//        return "id"
+//    }
 }

@@ -34,19 +34,21 @@ class ViewController: UIViewController {
         user.username = "take"
         
         realm.transactionWithBlock{ ()-> Void in
-            realm.addObject(user)
+          realm.addObject(user)
         }
         
     }
 
     override func viewDidAppear(animated: Bool) {
         
-        let realm = RLMRealm.defaultRealm()
-        
-        User.objectsInRealm(realm: realm, where: "id='1'")
-        
-//        User.objectsInRealm(realm, "id='1'")
-        
+      let realm = RLMRealm.defaultRealm()
+
+      let pred = NSPredicate(format: "id = %@", "1")
+      let user = User.objectsInRealm(realm, withPredicate: pred)
+      // User.allObjectsInRealm(realm)
+
+      println("user \(user)")
+
     }
 
 }

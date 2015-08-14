@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import ObjectMapper
 import Realm
+import ObjectMapper
 
 class FirstViewController: UIViewController {
 
@@ -117,10 +117,12 @@ class FirstViewController: UIViewController {
         
         //        let results = User.objectsInRealm(realm, "id = 1")
         //        let results = User.objectsInRealm(realm, "id = 1")
-        
+
         let results = User.allObjectsInRealm
-        
-        let results = User.objectsInRealm(realm: realm, withPredicate: "id = %@", "1")
+
+      let pred = NSPredicate(format: "id = %@", "1")
+
+        let readUser = User.objectsInRealm(realm, withPredicate: pred)
    
 //        class func objectsInRealm(realm: RLMRealm!, withPredicate predicate: NSPredicate!) -> RLMResults!
 

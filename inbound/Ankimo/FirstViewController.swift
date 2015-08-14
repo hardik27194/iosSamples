@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ObjectMapper
+import Realm
 
 class FirstViewController: UIViewController {
 
@@ -94,21 +96,86 @@ class FirstViewController: UIViewController {
             recommendView.setupLayout()
             pointY = CGRectGetMaxY(recommendView.frame) + 2
         }
+     
+        temp2()
         
+    }
+    
+    func temp2(){
         
+        let json = "{\"id\": \"1\", \"username\": \"katsumi\"}"
+        let user = Mapper<User>().map(json)
         
-        var person = Person()
-        person.name = "person1"
-        person.Id = "1"
+        println("user: \(user!.id)")
+        println("user: \(user!.username)")
+        //
+        let realm = RLMRealm.defaultRealm()
         
-        var realm = RLMRealm.defaultRealm
+        realm.transactionWithBlock { () -> Void in
+            realm.addOrUpdateObject(user)
+        }
         
-        realm().beginWriteTransaction()
-        realm().addObject(person)
-        realm().commitWriteTransaction()
+        //        let results = User.objectsInRealm(realm, "id = 1")
+        //        let results = User.objectsInRealm(realm, "id = 1")
+        
+        let results = User.allObjectsInRealm
+        
+        let results = User.objectsInRealm(realm: realm, withPredicate: "id = %@", "1")
+   
+//        class func objectsInRealm(realm: RLMRealm!, withPredicate predicate: NSPredicate!) -> RLMResults!
 
+        
+//        println("results: \(results)")
+//        
+//        if let u = User.objectForIdentifier("1") as? User {
+//            println("user: \(u)")
+//        } else {
+//            println("user: null")
+//        }
+        
     }
 
+
+    func temp3(){
+        
+//        var person = Person()
+//        person.name = "person1"
+//        person.Id = "1"
+//        
+//        var realm = RLMRealm.defaultRealm
+//        
+//        realm().beginWriteTransaction()
+//        realm().addObject(person)
+//        realm().commitWriteTransaction()
+//        
+//        //
+//        var manager = NetworkManager.sharedManager()
+//        manager.temp1()
+//        //        manager.jsonParse()
+//        
+//        var netManager = NetworkSecondManager.sharedInstance
+//        let dic = netManager.insertRealm()
+//        print(dic)
+
+    }
+    
+
+    
+//    func temp1(){
+//        let path : String = NSBundle.mainBundle().pathForResource("data1", ofType: "json")!
+//        let fileHandle : NSFileHandle = NSFileHandle(forReadingAtPath: path)!
+//        let data : NSData = fileHandle.readDataToEndOfFile()
+//        let jsonString = NSString(data: data, encoding: NSUTF8StringEncoding)
+//        let dic = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil)
+//        
+//        let person = Mapper<Person1Entity>().map(jsonString)
+//        
+//        println(jsonString)
+//        println(dic)
+//        println(person)
+//    }
+    
+    
     func frameForItemView(#startY: CGFloat, idx: Int, colNum: Int, height:CGFloat, padding:CGFloat) -> CGRect {
         
         var num = posNum(idx: idx, colNum: colNum)

@@ -6,7 +6,7 @@ import urllib2, json
 dicH = {}
 dicM = {}
 
-
+'''
 # http connection
 url = "https://script.google.com/macros/s/AKfycbyLKoXh9uR6eD2pOsmZlGLZFv9pu7eK7AjReiu2eMhYmWntwFE/exec"
 response = urllib2.urlopen(url);
@@ -20,7 +20,7 @@ FILEIN = "jsondata.txt"
 f = open(FILEIN, "r")
 jsonData = json.load(f)
 f.close
-'''
+
 
 
 # key

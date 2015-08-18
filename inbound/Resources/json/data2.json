@@ -1,0 +1,64 @@
+{
+    "Country": [
+                {
+                "etc": "auto num",
+                "name": "ID",
+                "type": "int"
+                },
+                {
+                "etc": "",
+                "name": "CountryID",
+                "type": "NSString"
+                },
+                {
+                "etc": "",
+                "name": "CountryName",
+                "type": "NSString"
+                },
+                {
+                "etc": "",
+                "name": "ValidFlg",
+                "type": "BOOL"
+                },
+                {
+                "etc": "",
+                "name": "DelFlg",
+                "type": "BOOL"
+                }
+                ],
+    "Friend": [
+               {
+               "etc": "auto increment",
+               "name": "ID",
+               "type": "int"
+               },
+               {
+               "etc": "",
+               "name": "UserID",
+               "type": "NSString"
+               },
+               {
+               "etc": "",
+               "name": "FriendId",
+               "type": "NSString"
+               }
+               ],
+    "User": [
+             {
+             "CountryID": 1,
+             "DelFlg": false,
+             "ID": 1,
+             "UserID": 1,
+             "UserName": "takeshi shimada",
+             "ValidFlg": true
+             }, 
+             {
+             "CountryID": 1, 
+             "DelFlg": false, 
+             "ID": 2, 
+             "UserID": 2, 
+             "UserName": "miku shimada", 
+             "ValidFlg": true
+             }
+             ]
+}

@@ -1,11 +1,30 @@
-{
-    "Person":{
-        "ID":1,
-        "UserID":1,
-        "UserName":"takeshi shimada",
-        "CountryID":1,
-        "ValidFlg":1,
-        "DelFlg":0
-    }
-
-}
+[
+             {
+             "CountryID": 1,
+             "DelFlg": false,
+             "ID": 1,
+             "UserID": 1,
+             "UserName": "takeshi shimada",
+             "ValidFlg": true
+             },
+ {
+ "CountryID": 1,
+ "DelFlg": false,
+ "ID": 2,
+ "UserID": 1,
+ "UserName": "takeshi shimada",
+ "ValidFlg": true
+ },
+ {
+ "CountryID": 1,
+ "DelFlg": false,
+ "ID": 3,
+ "UserID": 1,
+ "UserName": "takeshi shimada",
+ "ValidFlg": true
+ },
+ 
+ 
+  ]
+ 
+ 

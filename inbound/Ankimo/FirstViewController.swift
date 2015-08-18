@@ -97,17 +97,77 @@ class FirstViewController: UIViewController {
             pointY = CGRectGetMaxY(recommendView.frame) + 2
         }
      
-        temp2()
+        temp6()
         
+    }
+
+    
+    func temp6(){
+        
+        User().jsonToRealm()
+        
+    }
+    
+    func temp5(){
+        
+        let path : String = NSBundle.mainBundle().pathForResource("data1", ofType: "json")!
+        let fileHandle : NSFileHandle = NSFileHandle(forReadingAtPath: path)!
+        let data : NSData = fileHandle.readDataToEndOfFile()
+        let jsonString = NSString(data: data, encoding: NSUTF8StringEncoding)
+        println(jsonString)
+
+        let array = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSArray
+        
+        let mapper = Mapper<User>()
+        let users:[User] = mapper.mapArray(array)!
+        println(users)
+        
+        let realm = RLMRealm.defaultRealm()
+        
+        realm.transactionWithBlock { () -> Void in
+            realm.addOrUpdateObjectsFromArray(users)
+        }
+
+    }
+    
+    func temp4(){
+        
+        let path : String = NSBundle.mainBundle().pathForResource("data1", ofType: "json")!
+        let fileHandle : NSFileHandle = NSFileHandle(forReadingAtPath: path)!
+        let data : NSData = fileHandle.readDataToEndOfFile()
+        let jsonString = NSString(data: data, encoding: NSUTF8StringEncoding)
+        println(jsonString)
+        
+        let dic = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSDictionary
+        println(dic)
+        
+        let user = Mapper<User>().map(dic)
+        println(user)
+        
+        println("user: \(user!.ID)")
+        println("user: \(user!.UserName)")
+
+        let realm = RLMRealm.defaultRealm()
+        
+        realm.transactionWithBlock { () -> Void in
+            realm.addOrUpdateObject(user)
+        }
+
+        let results = User.allObjectsInRealm
+        let pred = NSPredicate(format: "ID = %d", 1)
+        let readUser = User.objectsInRealm(realm, withPredicate: pred)
+        
+        println("readUser \(readUser)")
+        println("----------")
     }
     
     func temp2(){
         
-        let json = "{\"id\": \"1\", \"username\": \"katsumi\"}"
+        let json = "{\"User\":{\"id\": \"1\", \"username\": \"katsumi\"}}"
         let user = Mapper<User>().map(json)
         
-        println("user: \(user!.id)")
-        println("user: \(user!.username)")
+        println("user: \(user!.ID)")
+        println("user: \(user!.UserName)")
         //
         let realm = RLMRealm.defaultRealm()
         
@@ -119,11 +179,12 @@ class FirstViewController: UIViewController {
         //        let results = User.objectsInRealm(realm, "id = 1")
 
         let results = User.allObjectsInRealm
-
-      let pred = NSPredicate(format: "id = %@", "1")
-
+        let pred = NSPredicate(format: "ID = %@", "1")
         let readUser = User.objectsInRealm(realm, withPredicate: pred)
    
+        println("readUser \(readUser)")
+        println("----------")
+        
 //        class func objectsInRealm(realm: RLMRealm!, withPredicate predicate: NSPredicate!) -> RLMResults!
 
         
@@ -169,7 +230,7 @@ class FirstViewController: UIViewController {
 //        let data : NSData = fileHandle.readDataToEndOfFile()
 //        let jsonString = NSString(data: data, encoding: NSUTF8StringEncoding)
 //        let dic = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil)
-//        
+//
 //        let person = Mapper<Person1Entity>().map(jsonString)
 //        
 //        println(jsonString)

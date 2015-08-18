@@ -55,7 +55,10 @@
 		14D93C641B7235FF007849DB /* data1.json in Resources */ = {isa = PBXBuildFile; fileRef = 14D93C631B7235FF007849DB /* data1.json */; };
 		14D93C661B723B8C007849DB /* NetworkSecondManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D93C651B723B8C007849DB /* NetworkSecondManager.swift */; };
 		14D93C681B7CACC3007849DB /* Person1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D93C671B7CACC3007849DB /* Person1.swift */; };
-		14D93C6A1B7D5DCC007849DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D93C691B7D5DCC007849DB /* User.swift */; };
+		14D93C9C1B7F31DD007849DB /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D93C9B1B7F31DD007849DB /* Country.swift */; };
+		14D93C9E1B7F3292007849DB /* User1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D93C9D1B7F3292007849DB /* User1.swift */; };
+		14D93CA01B7F32B6007849DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D93C9F1B7F32B6007849DB /* User.swift */; };
+		14D93CA21B82B472007849DB /* data2.json in Resources */ = {isa = PBXBuildFile; fileRef = 14D93CA11B82B472007849DB /* data2.json */; };
 		B28CDEDE93A9DC9EBC8B43AC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9EC9FABBE58141175EB0DF /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -123,7 +126,10 @@
 		14D93C631B7235FF007849DB /* data1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data1.json; path = Resources/json/data1.json; sourceTree = SOURCE_ROOT; };
 		14D93C651B723B8C007849DB /* NetworkSecondManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSecondManager.swift; sourceTree = "<group>"; };
 		14D93C671B7CACC3007849DB /* Person1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person1.swift; sourceTree = "<group>"; };
-		14D93C691B7D5DCC007849DB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		14D93C9B1B7F31DD007849DB /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Country.swift; path = DB/Country.swift; sourceTree = "<group>"; };
+		14D93C9D1B7F3292007849DB /* User1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User1.swift; path = DB/User1.swift; sourceTree = "<group>"; };
+		14D93C9F1B7F32B6007849DB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = DB/User.swift; sourceTree = "<group>"; };
+		14D93CA11B82B472007849DB /* data2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data2.json; path = Resources/json/data2.json; sourceTree = SOURCE_ROOT; };
 		3F39116080E14CB19988095E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9E9EC9FABBE58141175EB0DF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -290,9 +296,11 @@
 		14D93C501B6CCD19007849DB /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				14D93C9D1B7F3292007849DB /* User1.swift */,
+				14D93C9F1B7F32B6007849DB /* User.swift */,
+				14D93C9B1B7F31DD007849DB /* Country.swift */,
 				14D93C651B723B8C007849DB /* NetworkSecondManager.swift */,
 				14D93C671B7CACC3007849DB /* Person1.swift */,
-				14D93C691B7D5DCC007849DB /* User.swift */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -300,6 +308,7 @@
 		14D93C621B7235B6007849DB /* json */ = {
 			isa = PBXGroup;
 			children = (
+				14D93CA11B82B472007849DB /* data2.json */,
 				14D93C631B7235FF007849DB /* data1.json */,
 			);
 			name = json;
@@ -470,6 +479,7 @@
 				14D93C391B5B8EBF007849DB /* tab_icon3-o.png in Resources */,
 				14D93C461B5B8EBF007849DB /* tab_selection_indicator@2x.png in Resources */,
 				148563441A63A10F0019BC9C /* Images.xcassets in Resources */,
+				14D93CA21B82B472007849DB /* data2.json in Resources */,
 				14D93C361B5B8EBF007849DB /* tab_icon2-o@2x.png in Resources */,
 				14D93C3B1B5B8EBF007849DB /* tab_icon3.png in Resources */,
 				144750251B5A3ED900DEFBF2 /* SearchViewController.xib in Resources */,
@@ -548,13 +558,15 @@
 			files = (
 				14C196FC1B4CD1230094479A /* ItemView3.swift in Sources */,
 				14C196F01B4BF3D30094479A /* SecondViewController.swift in Sources */,
+				14D93C9E1B7F3292007849DB /* User1.swift in Sources */,
 				14D93C061B5B5A87007849DB /* RegionViewController.swift in Sources */,
 				144750241B5A3ED900DEFBF2 /* SearchViewController.swift in Sources */,
+				14D93C9C1B7F31DD007849DB /* Country.swift in Sources */,
+				14D93CA01B7F32B6007849DB /* User.swift in Sources */,
 				14D93C661B723B8C007849DB /* NetworkSecondManager.swift in Sources */,
 				14090BF11B4AADDF008742E4 /* FirstViewController.swift in Sources */,
 				1457FF031A63D037003B012F /* BaseApiClient.swift in Sources */,
 				1485633D1A63A10F0019BC9C /* AppDelegate.swift in Sources */,
-				14D93C6A1B7D5DCC007849DB /* User.swift in Sources */,
 				142A9D921B59EB4800DF6F1C /* RecommendView.swift in Sources */,
 				14574FE81B59305200C17F78 /* AdSpecialTopicView.swift in Sources */,
 				14D93C681B7CACC3007849DB /* Person1.swift in Sources */,

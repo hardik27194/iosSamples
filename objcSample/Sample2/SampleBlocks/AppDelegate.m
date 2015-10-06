@@ -18,7 +18,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
+
+   CGRect rect = [UIScreen mainScreen].bounds;
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UINavigationController *naviCon = [[UINavigationController alloc] init];
     self.window.rootViewController = naviCon;

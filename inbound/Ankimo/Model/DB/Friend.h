@@ -5,7 +5,7 @@
 @interface Friend : RLMObject
 
 @property int ID;
-@property NSString *UserID;
-@property NSString *FriendId;
+@property string UserID;
+@property string FriendId;
 
 @end

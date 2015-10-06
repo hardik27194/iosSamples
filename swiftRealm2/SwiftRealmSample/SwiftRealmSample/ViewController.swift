@@ -23,11 +23,18 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
 
       let realm = try! Realm();
-      let user = User()
-      user.id = "1"
-      user.username = "take"
+
+      let users = List<User>()
+
+      for(var i = 0; i < 10; i++){
+        let user = User()
+        user.id = String(i)
+        user.username = "take" + String(i)
+        users.append(user)
+      }
+
       realm.write({()-> Void in
-        realm.add(user)
+        realm.add(users)
       })
 
     }

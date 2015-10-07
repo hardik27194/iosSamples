@@ -34,7 +34,8 @@ class ViewController: UIViewController {
       }
 
       realm.write({()-> Void in
-        realm.add(users)
+//        realm.add(users)
+        realm.add(users, update: true)
       })
 
     }
@@ -42,8 +43,46 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
       let realm = try! Realm();
       let users = realm.objects(User)
-      print("user \(users)")
+      print("all user \(users)")
+
+      let lastUser = realm.objects(User).last!
+      print("last user \(lastUser)")
+
+      let user8 = users.filter("id = '8'")
+      print("user8 \(user8)")
+
+      let cnt = realm.objects(User).count
+      print(" connt \(cnt)")
+
+
+//      delUser()
+
     }
+
+
+  func delUser() {
+    let realm = try! Realm()
+
+    realm.write {
+
+      // user7 削除
+      let user7 = realm.objects(User).filter("id = '7'")
+      realm.delete(user7)
+
+      let cnt1 = realm.objects(User).count
+      print(" connt-1 \(cnt1)")
+
+
+      // 全user削除
+      realm.deleteAll()
+
+      let cnt2 = realm.objects(User).count
+      print(" connt-2 \(cnt2)")
+
+    }
+
+  }
+
 
 }
 

@@ -9,8 +9,12 @@
 
 import RealmSwift
 
-
 class User: Object {
     dynamic var id: String = ""
     dynamic var username: String = ""
+
+  override static func primaryKey() -> String? {
+    return "id"
+  }
+
 }

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <Parse/Parse.h>
 
 
 @interface ViewController ()
@@ -21,6 +22,16 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+
+  PFQuery *query  = [PFQuery queryWithClassName:@"temp1"];
+  [query whereKey:@"col1" equalTo:@"row2"];
+
+  //検索する
+  NSArray *arrays = [query findObjects];
+  for (PFObject *object in arrays) {
+    NSLog(@" pfobject %@", object);
+    NSLog(@" pfobject-col1 %@", object[@"col1"]);
+  }
 
 
 

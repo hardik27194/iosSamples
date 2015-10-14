@@ -19,11 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
+  [Parse enableLocalDatastore];
 
 
   [Parse setApplicationId:@"8fPBzBrIq0MjsSOWm1u9GvwgAgS4lWOsjGVtHLuc"
                 clientKey:@"zxxaHK0OomqC2kX45MQEOkQFZtxlJ1NKhCV2wsF0"];
   [PFUser enableAutomaticUser];
+
   PFACL *defaultACL = [PFACL ACL];
   [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 

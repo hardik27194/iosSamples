@@ -16,7 +16,6 @@
 		F620BDC11BCF72CD00DC354D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F620BDBF1BCF72CD00DC354D /* LaunchScreen.storyboard */; };
 		F620BDCC1BCF72CD00DC354D /* FetchedResultsAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDCB1BCF72CD00DC354D /* FetchedResultsAppTests.m */; };
 		F620BDD71BCF72CD00DC354D /* FetchedResultsAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDD61BCF72CD00DC354D /* FetchedResultsAppUITests.m */; };
-		F620BDE81BCF75AC00DC354D /* Susi+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDE51BCF75AC00DC354D /* Susi+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		F620BDE91BCF75AC00DC354D /* Susi.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDE71BCF75AC00DC354D /* Susi.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -55,8 +54,6 @@
 		F620BDD21BCF72CD00DC354D /* FetchedResultsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchedResultsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F620BDD61BCF72CD00DC354D /* FetchedResultsAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsAppUITests.m; sourceTree = "<group>"; };
 		F620BDD81BCF72CD00DC354D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F620BDE41BCF75AC00DC354D /* Susi+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Susi+CoreDataProperties.h"; path = "FetchedResultsApp/Model/Susi+CoreDataProperties.h"; sourceTree = "<group>"; };
-		F620BDE51BCF75AC00DC354D /* Susi+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Susi+CoreDataProperties.m"; path = "FetchedResultsApp/Model/Susi+CoreDataProperties.m"; sourceTree = "<group>"; };
 		F620BDE61BCF75AC00DC354D /* Susi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Susi.h; path = FetchedResultsApp/Model/Susi.h; sourceTree = "<group>"; };
 		F620BDE71BCF75AC00DC354D /* Susi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Susi.m; path = FetchedResultsApp/Model/Susi.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,8 +150,6 @@
 		F620BDEA1BCF75CA00DC354D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F620BDE41BCF75AC00DC354D /* Susi+CoreDataProperties.h */,
-				F620BDE51BCF75AC00DC354D /* Susi+CoreDataProperties.m */,
 				F620BDE61BCF75AC00DC354D /* Susi.h */,
 				F620BDE71BCF75AC00DC354D /* Susi.m */,
 			);
@@ -297,7 +292,6 @@
 				F620BDB31BCF72CD00DC354D /* AppDelegate.m in Sources */,
 				F620BDE91BCF75AC00DC354D /* Susi.m in Sources */,
 				F620BDB01BCF72CD00DC354D /* main.m in Sources */,
-				F620BDE81BCF75AC00DC354D /* Susi+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FetchedResultsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.cyberagent.FetchedResultsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FetchedResultsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.cyberagent.FetchedResultsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

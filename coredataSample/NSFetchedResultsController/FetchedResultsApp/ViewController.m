@@ -24,6 +24,11 @@
   [super viewDidLoad];
 
 
+UINib *nib = [UINib nibWithNibName:@"" bundle:nil];
+
+[self.tableView registerNib: forCellReuseIdentifier:<#(nonnull NSString *)#>
+
+
 //  NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Susi"];
 
   AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -76,6 +81,18 @@
   [newObject setValue:string forKey:@"neta"];
   [self.managedObjectContext save:&error];
 }
+
+#pragma mark -- UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+
+
+}
+
 
 
 @end

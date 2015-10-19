@@ -35,7 +35,7 @@
                                 <color key="backgroundColor" red="0.93698815558373849" green="1" blue="0.96923366519626375" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="77" id="tA6-Tp-Lhx" userLabel="CustomCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCellID" rowHeight="77" id="tA6-Tp-Lhx" userLabel="CustomCell" customClass="CustomCellTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="550" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tA6-Tp-Lhx" id="D0z-y9-x1P">

@@ -17,6 +17,7 @@
 		F620BDCC1BCF72CD00DC354D /* FetchedResultsAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDCB1BCF72CD00DC354D /* FetchedResultsAppTests.m */; };
 		F620BDD71BCF72CD00DC354D /* FetchedResultsAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDD61BCF72CD00DC354D /* FetchedResultsAppUITests.m */; };
 		F620BDE91BCF75AC00DC354D /* Susi.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDE71BCF75AC00DC354D /* Susi.m */; settings = {ASSET_TAGS = (); }; };
+		F620BDED1BD4EE4200DC354D /* CustomCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDEC1BD4EE4200DC354D /* CustomCellTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		F620BDD81BCF72CD00DC354D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F620BDE61BCF75AC00DC354D /* Susi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Susi.h; path = FetchedResultsApp/Model/Susi.h; sourceTree = "<group>"; };
 		F620BDE71BCF75AC00DC354D /* Susi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Susi.m; path = FetchedResultsApp/Model/Susi.m; sourceTree = "<group>"; };
+		F620BDEB1BD4EE4200DC354D /* CustomCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellTableViewCell.h; sourceTree = "<group>"; };
+		F620BDEC1BD4EE4200DC354D /* CustomCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				F620BDB21BCF72CD00DC354D /* AppDelegate.m */,
 				F620BDB41BCF72CD00DC354D /* ViewController.h */,
 				F620BDB51BCF72CD00DC354D /* ViewController.m */,
+				F620BDEB1BD4EE4200DC354D /* CustomCellTableViewCell.h */,
+				F620BDEC1BD4EE4200DC354D /* CustomCellTableViewCell.m */,
 				F620BDB71BCF72CD00DC354D /* Main.storyboard */,
 				F620BDBD1BCF72CD00DC354D /* Assets.xcassets */,
 				F620BDBF1BCF72CD00DC354D /* LaunchScreen.storyboard */,
@@ -289,6 +294,7 @@
 			files = (
 				F620BDBC1BCF72CD00DC354D /* FetchedResultsApp.xcdatamodeld in Sources */,
 				F620BDB61BCF72CD00DC354D /* ViewController.m in Sources */,
+				F620BDED1BD4EE4200DC354D /* CustomCellTableViewCell.m in Sources */,
 				F620BDB31BCF72CD00DC354D /* AppDelegate.m in Sources */,
 				F620BDE91BCF75AC00DC354D /* Susi.m in Sources */,
 				F620BDB01BCF72CD00DC354D /* main.m in Sources */,
@@ -517,6 +523,7 @@
 				F620BDDD1BCF72CD00DC354D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F620BDDE1BCF72CD00DC354D /* Build configuration list for PBXNativeTarget "FetchedResultsAppTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +532,7 @@
 				F620BDE01BCF72CD00DC354D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F620BDE11BCF72CD00DC354D /* Build configuration list for PBXNativeTarget "FetchedResultsAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +541,7 @@
 				F620BDE31BCF72CD00DC354D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

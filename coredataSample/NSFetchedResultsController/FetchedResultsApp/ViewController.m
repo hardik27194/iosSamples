@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "Susi.h"
 
+#import "CustomCellTableViewCell.h"
+
 
 @interface ViewController ()
 
@@ -23,13 +25,9 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+//  UINib *nib = [UINib nibWithNibName:@"CustomCellID" bundle:nil];
+//  [self.tableView registerNib:nib forCellReuseIdentifier:@"CustomCellID"];
 
-UINib *nib = [UINib nibWithNibName:@"" bundle:nil];
-
-[self.tableView registerNib: forCellReuseIdentifier:<#(nonnull NSString *)#>
-
-
-//  NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Susi"];
 
   AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
   self.managedObjectContext = appDelegate.managedObjectContext;
@@ -89,7 +87,9 @@ UINib *nib = [UINib nibWithNibName:@"" bundle:nil];
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
+  CustomCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCellID" forIndexPath:indexPath];
 
+  return cell;
 
 }
 

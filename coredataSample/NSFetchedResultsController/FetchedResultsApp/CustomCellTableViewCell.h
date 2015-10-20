@@ -10,4 +10,8 @@
 
 @interface CustomCellTableViewCell : UITableViewCell
 
+
+@property (nonatomic, retain) IBOutlet UILabel *label;
+
+
 @end

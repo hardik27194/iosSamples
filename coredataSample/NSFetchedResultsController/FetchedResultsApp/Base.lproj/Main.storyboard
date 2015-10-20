@@ -66,6 +66,9 @@
                                                 <constraint firstItem="hJE-0d-rXB" firstAttribute="leading" secondItem="D0z-y9-x1P" secondAttribute="leadingMargin" constant="5" id="r9J-Wk-Et4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="wrO-mg-t7i" id="JNs-Zv-eUB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

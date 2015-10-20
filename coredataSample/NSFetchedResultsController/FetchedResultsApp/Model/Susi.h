@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Susi : NSManagedObject
+@property (nullable, nonatomic, retain) NSString *variety;
 @property (nullable, nonatomic, retain) NSString *neta;
 @end
 

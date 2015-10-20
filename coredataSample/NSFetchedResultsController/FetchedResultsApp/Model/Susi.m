@@ -11,5 +11,6 @@
 @implementation Susi
 
 @dynamic neta;
+@dynamic variety;
 
 @end

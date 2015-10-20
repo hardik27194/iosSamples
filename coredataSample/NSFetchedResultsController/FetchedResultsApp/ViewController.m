@@ -49,9 +49,9 @@
 
 
   /*
-  // 検索条件を指定
-  NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(name = %@)",@"hryk224"];
-  [request setPredicate:predicate];
+   // 検索条件を指定
+   NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(name = %@)",@"hryk224"];
+   [request setPredicate:predicate];
    */
 
   NSError *error;
@@ -61,7 +61,6 @@
   for (Susi *susi in objects) {
     NSLog(@" susi.neta %@", susi.neta);
   }
-
 
 }
 
@@ -78,19 +77,6 @@
   NSError * error;
   [newObject setValue:string forKey:@"neta"];
   [self.managedObjectContext save:&error];
-}
-
-#pragma mark -- UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 5;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-  CustomCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCellID" forIndexPath:indexPath];
-
-  return cell;
-
 }
 
 

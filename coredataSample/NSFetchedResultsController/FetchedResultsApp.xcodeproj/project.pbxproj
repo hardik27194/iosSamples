@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F617F6271BDF697F00586B0A /* AMoAdNativeViewManagerA.m in Sources */ = {isa = PBXBuildFile; fileRef = F617F6261BDF697F00586B0A /* AMoAdNativeViewManagerA.m */; };
 		F620BDB01BCF72CD00DC354D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDAF1BCF72CD00DC354D /* main.m */; };
 		F620BDB31BCF72CD00DC354D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDB21BCF72CD00DC354D /* AppDelegate.m */; };
 		F620BDB61BCF72CD00DC354D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDB51BCF72CD00DC354D /* ViewController.m */; };
@@ -16,8 +17,8 @@
 		F620BDC11BCF72CD00DC354D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F620BDBF1BCF72CD00DC354D /* LaunchScreen.storyboard */; };
 		F620BDCC1BCF72CD00DC354D /* FetchedResultsAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDCB1BCF72CD00DC354D /* FetchedResultsAppTests.m */; };
 		F620BDD71BCF72CD00DC354D /* FetchedResultsAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDD61BCF72CD00DC354D /* FetchedResultsAppUITests.m */; };
-		F620BDE91BCF75AC00DC354D /* Susi.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDE71BCF75AC00DC354D /* Susi.m */; settings = {ASSET_TAGS = (); }; };
-		F620BDED1BD4EE4200DC354D /* CustomCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDEC1BD4EE4200DC354D /* CustomCellTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		F620BDE91BCF75AC00DC354D /* Susi.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDE71BCF75AC00DC354D /* Susi.m */; };
+		F620BDED1BD4EE4200DC354D /* CustomCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F620BDEC1BD4EE4200DC354D /* CustomCellTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F617F6251BDF697F00586B0A /* AMoAdNativeViewManagerA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMoAdNativeViewManagerA.h; sourceTree = "<group>"; };
+		F617F6261BDF697F00586B0A /* AMoAdNativeViewManagerA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMoAdNativeViewManagerA.m; sourceTree = "<group>"; };
 		F620BDAB1BCF72CD00DC354D /* FetchedResultsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchedResultsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F620BDAF1BCF72CD00DC354D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F620BDB11BCF72CD00DC354D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				F620BDB21BCF72CD00DC354D /* AppDelegate.m */,
 				F620BDB41BCF72CD00DC354D /* ViewController.h */,
 				F620BDB51BCF72CD00DC354D /* ViewController.m */,
+				F617F6251BDF697F00586B0A /* AMoAdNativeViewManagerA.h */,
+				F617F6261BDF697F00586B0A /* AMoAdNativeViewManagerA.m */,
 				F620BDEB1BD4EE4200DC354D /* CustomCellTableViewCell.h */,
 				F620BDEC1BD4EE4200DC354D /* CustomCellTableViewCell.m */,
 				F620BDB71BCF72CD00DC354D /* Main.storyboard */,
@@ -292,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F617F6271BDF697F00586B0A /* AMoAdNativeViewManagerA.m in Sources */,
 				F620BDBC1BCF72CD00DC354D /* FetchedResultsApp.xcdatamodeld in Sources */,
 				F620BDB61BCF72CD00DC354D /* ViewController.m in Sources */,
 				F620BDED1BD4EE4200DC354D /* CustomCellTableViewCell.m in Sources */,

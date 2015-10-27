@@ -26,6 +26,10 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  //sdf
+  self.nativeViewManagerA = [[AMoAdNativeViewManagerA alloc] init];
+
+
   [NSFetchedResultsController deleteCacheWithName:nil];
 
   AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -46,6 +50,10 @@
     NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     abort();
   }
+
+  //sdf fetchResult を登録
+  self.nativeViewManagerA = [[AMoAdNativeViewManagerA alloc] init];
+  [self.nativeViewManagerA registerFetchResultWitdSid:@"sid" tag:@"tag" originalFetchResult:fetchedResultsController];
 
 }
 
@@ -77,6 +85,13 @@
 
   [self registerOneData:@"マグロ" section:@"握り"];
   [self registerOneData:@"コハダ" section:@"握り"];
+  [self registerOneData:@"コハダ2" section:@"握り"];
+  [self registerOneData:@"コハダ3" section:@"握り"];
+  [self registerOneData:@"コハダ4" section:@"握り"];
+  [self registerOneData:@"コハダ5" section:@"握り"];
+  [self registerOneData:@"コハダ6" section:@"握り"];
+  [self registerOneData:@"コハダ7" section:@"握り"];
+  [self registerOneData:@"コハダ8" section:@"握り"];
   [self registerOneData:@"かんぴょう" section:@"巻き"];
   [self registerOneData:@"納豆" section:@"巻き"];
   [self registerOneData:@"ウニ" section:@"軍艦"];
@@ -144,12 +159,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-  CustomCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCellID" forIndexPath:indexPath];
-  Susi *susi = [fetchedResultsController objectAtIndexPath:indexPath];
-  cell.nedaLabel.text = [NSString stringWithFormat:@"%@", susi.neta];
+  id returnObject = [self.nativeViewManagerA fetchResultWitdSid:@"sid" tag:@"tag" indexPath:indexPath];
+  if ([returnObject isKindOfClass:[NSString class]]) {
+    NSLog(@" AD!   amoad view item   ");
 
-  return cell;
+    CustomCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCellID" forIndexPath:indexPath];
+    cell.nedaLabel.text = @"amoad view!!!";
+    return cell;
 
+  } else {
+    if ([returnObject isKindOfClass:[Susi class]]) {
+
+      CustomCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCellID" forIndexPath:indexPath];
+      Susi *susi = [fetchedResultsController objectAtIndexPath:indexPath];
+      cell.nedaLabel.text = [NSString stringWithFormat:@"%@", susi.neta];
+
+      return cell;
+
+    } else {
+      NSLog(@" arienai");
+    }
+  }
+
+  return nil;
+  
 }
 
 #pragma mark -- fetchResultsController

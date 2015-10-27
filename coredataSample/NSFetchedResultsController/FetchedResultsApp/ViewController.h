@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+#import "AMoAdNativeViewManagerA.h"
+
 
 @interface ViewController : UIViewController<
 NSFetchedResultsControllerDelegate,
@@ -24,6 +26,8 @@ UITableViewDelegate
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) AMoAdNativeViewManagerA *nativeViewManagerA;
 
 
 @end

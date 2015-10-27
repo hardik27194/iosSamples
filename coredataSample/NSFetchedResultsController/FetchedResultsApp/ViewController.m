@@ -27,7 +27,7 @@
   [super viewDidLoad];
 
   //sdf
-  self.nativeViewManagerA = [[AMoAdNativeViewManagerA alloc] init];
+  self.nativeViewManagerMock = [[AMoAdNativeViewManagerMock alloc] init];
 
 
   [NSFetchedResultsController deleteCacheWithName:nil];
@@ -52,8 +52,8 @@
   }
 
   //sdf fetchResult を登録
-  self.nativeViewManagerA = [[AMoAdNativeViewManagerA alloc] init];
-  [self.nativeViewManagerA registerFetchResultWitdSid:@"sid" tag:@"tag" originalFetchResult:fetchedResultsController];
+  self.nativeViewManagerMock = [[AMoAdNativeViewManagerMock alloc] init];
+  [self.nativeViewManagerMock registerFetchResultWitdSid:@"sid" tag:@"tag" originalFetchResult:fetchedResultsController];
 
 }
 
@@ -159,7 +159,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-  id returnObject = [self.nativeViewManagerA fetchResultWitdSid:@"sid" tag:@"tag" indexPath:indexPath];
+  id returnObject = [self.nativeViewManagerMock fetchResultWitdSid:@"sid" tag:@"tag" indexPath:indexPath];
   if ([returnObject isKindOfClass:[NSString class]]) {
     NSLog(@" AD!   amoad view item   ");
 

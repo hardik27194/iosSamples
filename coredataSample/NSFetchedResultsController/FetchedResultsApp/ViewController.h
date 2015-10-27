@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-#import "AMoAdNativeViewManagerA.h"
+#import "AMoAdNativeViewManagerMock.h"
 
 
 @interface ViewController : UIViewController<
@@ -27,7 +27,7 @@ UITableViewDelegate
 
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 
-@property (nonatomic, strong) AMoAdNativeViewManagerA *nativeViewManagerA;
+@property (nonatomic, strong) AMoAdNativeViewManagerMock *nativeViewManagerMock;
 
 
 @end

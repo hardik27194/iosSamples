@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface AMoAdNativeViewManagerA : NSObject
+@interface AMoAdNativeViewManagerMock : NSObject
 
 
 - (void)registerFetchResultWitdSid:(NSString *)sid

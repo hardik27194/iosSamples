@@ -6,16 +6,16 @@
 //  Copyright © 2015年 島田 武史. All rights reserved.
 //
 
-#import "AMoAdNativeViewManagerA.h"
+#import "AMoAdNativeViewManagerMock.h"
 #import <UIKit/UIKit.h>
 
 
-@interface AMoAdNativeViewManagerA ()
+@interface AMoAdNativeViewManagerMock ()
 @property (nonatomic, strong) NSFetchedResultsController *originalFetchResult;
 @end
 
 
-@implementation AMoAdNativeViewManagerA
+@implementation AMoAdNativeViewManagerMock
 
 - (void)registerFetchResultWitdSid:(NSString *)sid
                       tag:(NSString *)tag

@@ -56,7 +56,6 @@
   NSEntityDescription *description = [NSEntityDescription entityForName:@"Susi" inManagedObjectContext:self.managedObjectContext];
   [request setEntity:description];
 
-
   /*
    // 検索条件を指定
    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"(name = %@)",@"hryk224"];
@@ -72,11 +71,9 @@
     NSLog(@" susi.variety %@", susi.variety);
   }
 
-
 }
 
 -(void)registerData {
-
   for (int sec = 1; sec < 4; sec++) {
     for (int row = 1; row < 10; row++) {
       [self registerOneData:[NSString stringWithFormat:@"row-%d", row]
@@ -128,6 +125,14 @@
   return [[fetchedResultsController sections] count];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  if ([[fetchedResultsController sections] count] > 0) {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo name];
+  } else
+    return nil;
+}
+
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
   if ([[fetchedResultsController sections] count] > 0) {
     id <NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
@@ -146,10 +151,10 @@
 
 }
 
+
+
 #pragma mark -- fetchResultsController
 - (NSFetchedResultsController *)fetchedResultsController {
-
-  NSLog(@" fetch result controller");
 
   if (fetchedResultsController != nil) {
     return fetchedResultsController;

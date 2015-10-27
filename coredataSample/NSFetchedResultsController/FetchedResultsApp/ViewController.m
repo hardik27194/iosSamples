@@ -82,7 +82,6 @@
   [self registerOneData:@"ウニ" section:@"軍艦"];
   [self registerOneData:@"イクラ" section:@"軍艦"];
 
-
 }
 
 -(void)registerOneData:(NSString*)string section:(NSString *)section {
@@ -178,7 +177,5 @@
   return fetchedResultsController;
 
 }
-
-
 
 @end

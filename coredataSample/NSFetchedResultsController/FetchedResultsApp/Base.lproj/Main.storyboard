@@ -32,25 +32,25 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0N8-uh-vPy">
                                 <rect key="frame" x="25" y="70" width="550" height="525"/>
-                                <color key="backgroundColor" red="0.93698815558373849" green="1" blue="0.96923366519626375" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.7029550703363765" blue="0.8624229765882887" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCellID" rowHeight="77" id="tA6-Tp-Lhx" userLabel="CustomCell" customClass="CustomCellTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="550" height="77"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCellID" rowHeight="58" id="tA6-Tp-Lhx" userLabel="CustomCell" customClass="CustomCellTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="550" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tA6-Tp-Lhx" id="D0z-y9-x1P">
-                                            <rect key="frame" x="0.0" y="0.0" width="550" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="550" height="57"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrO-mg-t7i">
-                                                    <rect key="frame" x="117" y="18" width="415" height="41"/>
+                                                    <rect key="frame" x="81" y="18" width="451" height="21"/>
                                                     <color key="backgroundColor" red="1" green="0.93428593770000001" blue="0.77491587780000004" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hJE-0d-rXB">
-                                                    <rect key="frame" x="13" y="13" width="94" height="50"/>
+                                                    <rect key="frame" x="13" y="13" width="58" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="hJE-0d-rXB" secondAttribute="height" multiplier="15:8" id="gtd-SA-8mr"/>
                                                     </constraints>
@@ -67,7 +67,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="label" destination="wrO-mg-t7i" id="JNs-Zv-eUB"/>
+                                            <outlet property="nedaLabel" destination="wrO-mg-t7i" id="eNy-Ll-4CP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -11,7 +11,7 @@
 @interface CustomCellTableViewCell : UITableViewCell
 
 
-@property (nonatomic, retain) IBOutlet UILabel *label;
+@property (nonatomic, retain) IBOutlet UILabel *nedaLabel;
 
 
 @end

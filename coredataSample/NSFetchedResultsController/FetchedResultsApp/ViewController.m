@@ -74,12 +74,14 @@
 }
 
 -(void)registerData {
-  for (int sec = 1; sec < 4; sec++) {
-    for (int row = 1; row < 10; row++) {
-      [self registerOneData:[NSString stringWithFormat:@"row-%d", row]
-                    section:[NSString stringWithFormat:@"section-%d", sec]];
-    }
-  }
+
+  [self registerOneData:@"マグロ" section:@"握り"];
+  [self registerOneData:@"コハダ" section:@"握り"];
+  [self registerOneData:@"かんぴょう" section:@"巻き"];
+  [self registerOneData:@"納豆" section:@"巻き"];
+  [self registerOneData:@"ウニ" section:@"軍艦"];
+  [self registerOneData:@"イクラ" section:@"軍艦"];
+
 
 }
 
@@ -145,13 +147,11 @@
 
   CustomCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCellID" forIndexPath:indexPath];
   Susi *susi = [fetchedResultsController objectAtIndexPath:indexPath];
-  cell.textLabel.text = [NSString stringWithFormat:@"section %@ : row %@", susi.variety, susi.neta];
+  cell.nedaLabel.text = [NSString stringWithFormat:@"%@", susi.neta];
 
   return cell;
 
 }
-
-
 
 #pragma mark -- fetchResultsController
 - (NSFetchedResultsController *)fetchedResultsController {

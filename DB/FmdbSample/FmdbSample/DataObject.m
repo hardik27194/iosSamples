@@ -33,13 +33,13 @@
   NSString*   sql = @"INSERT INTO users (name) VALUES (?)";
   [db open];
   [db executeUpdate:sql, @"taro"];
+  [db executeUpdate:sql, @"jiro"];
   [db close];
 }
 
 -(void)selectdb {
   FMDatabase* db  = self.db;
   NSString*   sql = @"SELECT id, name FROM users;";
-
   [db open];
   FMResultSet*    results = [db executeQuery:sql];
   while([results next]) {

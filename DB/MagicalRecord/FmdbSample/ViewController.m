@@ -21,10 +21,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
   DataObject *dataObject = [[DataObject alloc] init];
-
-//  [dataObject prepareDb];
-  [dataObject insertdb];
-  [dataObject selectdb];
+  [dataObject selectDB];
 
 }
 

@@ -160,6 +160,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
   id returnObject = [self.nativeViewManagerMock fetchResultWitdSid:@"sid" tag:@"tag" indexPath:indexPath];
+
+
   if ([returnObject isKindOfClass:[NSString class]]) {
     NSLog(@" AD!   amoad view item   ");
 
@@ -171,7 +173,7 @@
     if ([returnObject isKindOfClass:[Susi class]]) {
 
       CustomCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomCellID" forIndexPath:indexPath];
-      Susi *susi = [fetchedResultsController objectAtIndexPath:indexPath];
+      Susi *susi = (Susi *)returnObject;
       cell.nedaLabel.text = [NSString stringWithFormat:@"%@", susi.neta];
 
       return cell;

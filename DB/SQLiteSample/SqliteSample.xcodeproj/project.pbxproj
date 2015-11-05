@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F63F0FC71BEAF13400A8B3BF /* DataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F63F0FC61BEAF13400A8B3BF /* DataObject.m */; };
 		F6D9A5981BE76DC10019388B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D9A5971BE76DC10019388B /* main.m */; };
 		F6D9A59B1BE76DC10019388B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D9A59A1BE76DC10019388B /* AppDelegate.m */; };
 		F6D9A59E1BE76DC10019388B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D9A59D1BE76DC10019388B /* ViewController.m */; };
@@ -17,7 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F6D9A5931BE76DC10019388B /* FmdbSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FmdbSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F63F0FC51BEAF13400A8B3BF /* DataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataObject.h; sourceTree = "<group>"; };
+		F63F0FC61BEAF13400A8B3BF /* DataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataObject.m; sourceTree = "<group>"; };
+		F6D9A5931BE76DC10019388B /* SqliteSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqliteSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D9A5971BE76DC10019388B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F6D9A5991BE76DC10019388B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F6D9A59A1BE76DC10019388B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,7 +57,7 @@
 		F6D9A5941BE76DC10019388B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F6D9A5931BE76DC10019388B /* FmdbSample.app */,
+				F6D9A5931BE76DC10019388B /* SqliteSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +69,8 @@
 				F6D9A59A1BE76DC10019388B /* AppDelegate.m */,
 				F6D9A59C1BE76DC10019388B /* ViewController.h */,
 				F6D9A59D1BE76DC10019388B /* ViewController.m */,
+				F63F0FC51BEAF13400A8B3BF /* DataObject.h */,
+				F63F0FC61BEAF13400A8B3BF /* DataObject.m */,
 				F6D9A59F1BE76DC10019388B /* Main.storyboard */,
 				F6D9A5A21BE76DC10019388B /* Assets.xcassets */,
 				F6D9A5A41BE76DC10019388B /* LaunchScreen.storyboard */,
@@ -86,9 +91,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F6D9A5921BE76DC00019388B /* FmdbSample */ = {
+		F6D9A5921BE76DC00019388B /* SqliteSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F6D9A5AA1BE76DC10019388B /* Build configuration list for PBXNativeTarget "FmdbSample" */;
+			buildConfigurationList = F6D9A5AA1BE76DC10019388B /* Build configuration list for PBXNativeTarget "SqliteSample" */;
 			buildPhases = (
 				F6D9A58F1BE76DC00019388B /* Sources */,
 				F6D9A5901BE76DC00019388B /* Frameworks */,
@@ -98,9 +103,9 @@
 			);
 			dependencies = (
 			);
-			name = FmdbSample;
+			name = SqliteSample;
 			productName = FmdbSample;
-			productReference = F6D9A5931BE76DC10019388B /* FmdbSample.app */;
+			productReference = F6D9A5931BE76DC10019388B /* SqliteSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -117,7 +122,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F6D9A58E1BE76DC00019388B /* Build configuration list for PBXProject "FmdbSample" */;
+			buildConfigurationList = F6D9A58E1BE76DC00019388B /* Build configuration list for PBXProject "SqliteSample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -130,7 +135,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F6D9A5921BE76DC00019388B /* FmdbSample */,
+				F6D9A5921BE76DC00019388B /* SqliteSample */,
 			);
 		};
 /* End PBXProject section */
@@ -155,6 +160,7 @@
 			files = (
 				F6D9A59E1BE76DC10019388B /* ViewController.m in Sources */,
 				F6D9A59B1BE76DC10019388B /* AppDelegate.m in Sources */,
+				F63F0FC71BEAF13400A8B3BF /* DataObject.m in Sources */,
 				F6D9A5981BE76DC10019388B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,7 +274,7 @@
 				INFOPLIST_FILE = FmdbSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.cyberagent.FmdbSample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SqliteSample;
 			};
 			name = Debug;
 		};
@@ -279,14 +285,14 @@
 				INFOPLIST_FILE = FmdbSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.cyberagent.FmdbSample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SqliteSample;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F6D9A58E1BE76DC00019388B /* Build configuration list for PBXProject "FmdbSample" */ = {
+		F6D9A58E1BE76DC00019388B /* Build configuration list for PBXProject "SqliteSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F6D9A5A81BE76DC10019388B /* Debug */,
@@ -295,13 +301,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F6D9A5AA1BE76DC10019388B /* Build configuration list for PBXNativeTarget "FmdbSample" */ = {
+		F6D9A5AA1BE76DC10019388B /* Build configuration list for PBXNativeTarget "SqliteSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F6D9A5AB1BE76DC10019388B /* Debug */,
 				F6D9A5AC1BE76DC10019388B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

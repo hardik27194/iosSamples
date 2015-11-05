@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  FmdbSample
+//  MagicalRecord
 //
-//  Created by 島田 武史 on 2015/11/02.
+//  Created by 島田 武史 on 2015/11/05.
 //  Copyright © 2015年 AMoAd. All rights reserved.
 //
 

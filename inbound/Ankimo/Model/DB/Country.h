@@ -5,9 +5,9 @@
 @interface Country : RLMObject
 
 @property int ID;
-@property NSString *CountryID;
-@property NSString *CountryName;
-@property BOOL ValidFlg;
-@property BOOL DelFlg;
+@property string CountryID;
+@property string CountryName;
+@property bool ValidFlg;
+@property bool DelFlg;
 
 @end

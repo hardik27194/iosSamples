@@ -420,6 +420,7 @@
 		1485632F1A63A10F0019BC9C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = takeshi;
 				TargetAttributes = {

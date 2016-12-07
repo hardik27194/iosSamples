@@ -5,10 +5,10 @@
 @interface User : RLMObject
 
 @property int ID;
-@property NSString *UserID;
-@property NSString *UserName;
-@property NSString *CountryID;
-@property BOOL ValidFlg;
-@property BOOL DelFlg;
+@property int UserID;
+@property string UserName;
+@property int CountryID;
+@property bool ValidFlg;
+@property bool DelFlg;
 
 @end

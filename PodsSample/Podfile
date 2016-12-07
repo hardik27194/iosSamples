@@ -1,0 +1,18 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, "6.0"
+
+target "SampleBlocks" do
+    
+pod 'FXKeychain'
+pod 'AFNetworking'
+pod 'BlocksKit'
+pod 'MOAspects'
+pod 'Mantle'
+pod 'MTDates'
+
+end
+
+target "SampleBlocksTests" do
+ pod 'OCMock', '~> 2.0.1'
+end
+

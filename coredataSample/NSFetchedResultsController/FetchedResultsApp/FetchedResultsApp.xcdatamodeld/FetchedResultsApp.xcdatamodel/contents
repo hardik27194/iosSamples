@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="Susi" representedClassName="Susi" syncable="YES">
+        <attribute name="neta" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="variety" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Susi" positionX="-27" positionY="18" width="128" height="75"/>
+    </elements>
+</model>

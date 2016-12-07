@@ -189,6 +189,7 @@
 		72F4952D19ECC24B0042EFE5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = jp.co.sakura.charorin;
 				TargetAttributes = {

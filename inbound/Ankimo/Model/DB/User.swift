@@ -45,6 +45,9 @@ class User: RLMObject, Mappable {
         
         let usersAry: NSArray = dic["User"] as! NSArray
         
+        
+        
+
         let mapper = Mapper<User>()
         let users:[User] = mapper.mapArray(usersAry)!
         println(users)
@@ -60,3 +63,12 @@ class User: RLMObject, Mappable {
     
     
 }
+
+
+
+
+
+
+
+
+
